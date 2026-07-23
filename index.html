@@ -207,9 +207,16 @@
         }
 
         .nav-cta:hover { transform: translateY(-2px); }
+        .nav-cta { white-space: nowrap; }
 
         @media (max-width: 880px) {
             .nav-links li:not(.nav-cta-li) { display: none; }
+        }
+
+        @media (max-width: 560px) {
+            .nav-logo span { display: none; }
+            .nav-logo { font-size: 0.88rem; }
+            .nav-cta { padding: 0.55rem 1.1rem; font-size: 0.72rem; }
         }
 
         /* ─── BUTTONS ─── */
@@ -1059,7 +1066,7 @@
             </div>
             <h1 class="hero-title">
                 <span class="l"><span>AIと戦略で、</span></span>
-                <span class="l"><span>あなたのビジネスを、</span></span>
+                <span class="l"><span>あなたのビジネスを</span></span>
                 <span class="l"><span class="gradient-text">次のステージへ。</span></span>
             </h1>
             <p class="hero-sub fade-up">
@@ -1141,35 +1148,35 @@
             </div>
             <div class="services-grid">
                 <div class="service-card service-card-photo fade-up fade-up-delay-1">
-                    <div class="service-photo"><img src="assets/ai-consulting.jpg" alt="AIコンサルティング"></div>
+                    <div class="service-photo"><img src="assets/ai-efficiency.jpg" alt="AI業務効率化提案"></div>
                     <div class="service-card-body">
                         <div class="service-num">SERVICE 01</div>
+                        <h3>AI業務効率化提案</h3>
+                        <p>現在の業務フローを分析し、AIツールを活用した効率化プランをご提案。繰り返し作業の自動化で、本来の仕事に集中できる環境をつくります。</p>
+                    </div>
+                </div>
+                <div class="service-card service-card-photo fade-up fade-up-delay-2">
+                    <div class="service-photo"><img src="assets/ai-consulting.jpg" alt="AIコンサルティング"></div>
+                    <div class="service-card-body">
+                        <div class="service-num">SERVICE 02</div>
                         <h3>AIコンサルティング</h3>
                         <p>ChatGPTをはじめとした生成AIツールの導入・活用方法をご提案。あなたのビジネスに合ったAI活用で、業務効率と売上を向上させます。</p>
                     </div>
                 </div>
-                <div class="service-card service-card-photo fade-up fade-up-delay-2">
+                <div class="service-card service-card-photo fade-up fade-up-delay-3">
                     <div class="service-photo"><img src="assets/sns-support.jpg" alt="SNS運用サポート"></div>
                     <div class="service-card-body">
-                        <div class="service-num">SERVICE 02</div>
+                        <div class="service-num">SERVICE 03</div>
                         <h3>SNS運用サポート</h3>
                         <p>Instagram・X・Facebookなど各SNSの戦略立案から投稿制作・運用まで一貫サポート。フォロワー獲得・集客につながる発信を実現します。</p>
                     </div>
                 </div>
-                <div class="service-card service-card-photo fade-up fade-up-delay-3">
+                <div class="service-card service-card-photo fade-up fade-up-delay-4">
                     <div class="service-photo"><img src="assets/web-writing.jpg" alt="ウェブライティング"></div>
                     <div class="service-card-body">
-                        <div class="service-num">SERVICE 03</div>
+                        <div class="service-num">SERVICE 04</div>
                         <h3>ウェブライティング</h3>
                         <p>SEOを意識したブログ記事・LP・サービス紹介ページなどの文章制作。読まれて、伝わって、行動につながる文章をお届けします。</p>
-                    </div>
-                </div>
-                <div class="service-card service-card-photo fade-up fade-up-delay-4">
-                    <div class="service-photo"><img src="assets/ai-efficiency.jpg" alt="AI業務効率化提案"></div>
-                    <div class="service-card-body">
-                        <div class="service-num">SERVICE 04</div>
-                        <h3>AI業務効率化提案</h3>
-                        <p>現在の業務フローを分析し、AIツールを活用した効率化プランをご提案。繰り返し作業の自動化で、本来の仕事に集中できる環境をつくります。</p>
                     </div>
                 </div>
             </div>
