@@ -625,15 +625,15 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(0.5) contrast(1.05) brightness(0.85) saturate(0.9);
+            filter: contrast(1.03) brightness(1.08) saturate(1.02);
         }
 
         .service-photo::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(160deg, rgba(201, 164, 92, 0.28), rgba(10, 9, 7, 0.55) 75%);
-            mix-blend-mode: multiply;
+            background: linear-gradient(160deg, rgba(201, 164, 92, 0.16), rgba(201, 164, 92, 0.03) 65%);
+            mix-blend-mode: soft-light;
         }
 
         .service-card-body {
@@ -721,15 +721,15 @@
             height: 100%;
             object-fit: cover;
             object-position: top center;
-            filter: grayscale(0.55) contrast(1.08) brightness(0.92) saturate(0.9);
+            filter: contrast(1.03) brightness(1.08) saturate(1.02);
         }
 
         .profile-mark::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(160deg, rgba(201, 164, 92, 0.32), rgba(10, 9, 7, 0.5) 70%);
-            mix-blend-mode: multiply;
+            background: linear-gradient(160deg, rgba(201, 164, 92, 0.16), rgba(201, 164, 92, 0.03) 65%);
+            mix-blend-mode: soft-light;
             pointer-events: none;
         }
 
@@ -1093,17 +1093,21 @@
                         <p>Instagram・X・Facebookなど各SNSの戦略立案から投稿制作・運用まで一貫サポート。フォロワー獲得・集客につながる発信を実現します。</p>
                     </div>
                 </div>
-                <div class="service-card fade-up fade-up-delay-3">
-                    <div class="service-num">SERVICE 03</div>
-                    <span class="service-emoji">✍️</span>
-                    <h3>ウェブライティング</h3>
-                    <p>SEOを意識したブログ記事・LP・サービス紹介ページなどの文章制作。読まれて、伝わって、行動につながる文章をお届けします。</p>
+                <div class="service-card service-card-photo fade-up fade-up-delay-3">
+                    <div class="service-photo"><img src="assets/web-writing.jpg" alt="ウェブライティング"></div>
+                    <div class="service-card-body">
+                        <div class="service-num">SERVICE 03</div>
+                        <h3>ウェブライティング</h3>
+                        <p>SEOを意識したブログ記事・LP・サービス紹介ページなどの文章制作。読まれて、伝わって、行動につながる文章をお届けします。</p>
+                    </div>
                 </div>
-                <div class="service-card fade-up fade-up-delay-4">
-                    <div class="service-num">SERVICE 04</div>
-                    <span class="service-emoji">⚡</span>
-                    <h3>AI業務効率化提案</h3>
-                    <p>現在の業務フローを分析し、AIツールを活用した効率化プランをご提案。繰り返し作業の自動化で、本来の仕事に集中できる環境をつくります。</p>
+                <div class="service-card service-card-photo fade-up fade-up-delay-4">
+                    <div class="service-photo"><img src="assets/ai-efficiency.jpg" alt="AI業務効率化提案"></div>
+                    <div class="service-card-body">
+                        <div class="service-num">SERVICE 04</div>
+                        <h3>AI業務効率化提案</h3>
+                        <p>現在の業務フローを分析し、AIツールを活用した効率化プランをご提案。繰り返し作業の自動化で、本来の仕事に集中できる環境をつくります。</p>
+                    </div>
                 </div>
             </div>
         </div>
