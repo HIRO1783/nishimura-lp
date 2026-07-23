@@ -685,6 +685,23 @@
             -webkit-text-fill-color: transparent;
         }
 
+        .profile-mark img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            filter: grayscale(0.55) contrast(1.08) brightness(0.92) saturate(0.9);
+        }
+
+        .profile-mark::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(201, 164, 92, 0.32), rgba(10, 9, 7, 0.5) 70%);
+            mix-blend-mode: multiply;
+            pointer-events: none;
+        }
+
         .profile-name {
             font-family: var(--serif);
             font-size: 2rem;
@@ -821,6 +838,13 @@
             grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
             margin-top: 3.5rem;
+        }
+
+        .contact-cards-single {
+            grid-template-columns: 1fr;
+            max-width: 340px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .contact-card {
@@ -1092,7 +1116,7 @@
                 <div class="divider"></div>
             </div>
             <div class="profile-layout">
-                <div class="profile-mark fade-up"><span>西</span></div>
+                <div class="profile-mark fade-up"><img src="assets/profile.png" alt="西村康弘"></div>
                 <div class="fade-up fade-up-delay-1">
                     <div class="profile-name">西村 康弘</div>
                     <div class="profile-name-en">NISHIMURA YASUHIRO</div>
@@ -1184,18 +1208,11 @@
                         まずはお気軽にご連絡ください。
                     </p>
                 </div>
-                <div class="contact-cards fade-up">
-                    <!-- ★ メールアドレスをここに入力してください -->
-                    <a href="mailto:your-email@example.com" class="contact-card">
+                <div class="contact-cards contact-cards-single fade-up">
+                    <a href="mailto:brothethood0514@gmail.com" class="contact-card">
                         <div class="contact-icon-wrap">📧</div>
                         <h3>メールで相談する</h3>
-                        <p>your-email@example.com<br>（件名：相談希望）</p>
-                    </a>
-                    <!-- ★ LINEのURLをここに入力してください -->
-                    <a href="https://line.me/ti/p/XXXXXXXX" class="contact-card" target="_blank" rel="noopener">
-                        <div class="contact-icon-wrap">💬</div>
-                        <h3>LINEで相談する</h3>
-                        <p>友だち追加して<br>メッセージをお送りください</p>
+                        <p>brothethood0514@gmail.com<br>（件名：相談希望）</p>
                     </a>
                 </div>
                 <p class="contact-note fade-up">※ 返信は通常2営業日以内にお送りします。</p>
