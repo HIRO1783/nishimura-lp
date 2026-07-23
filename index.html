@@ -682,9 +682,13 @@
 
         .strengths-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.6rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.8rem 3.5rem;
             margin-top: 3.5rem;
+        }
+
+        @media (max-width: 680px) {
+            .strengths-grid { grid-template-columns: 1fr; }
         }
 
         .strength-item {
