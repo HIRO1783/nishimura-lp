@@ -319,12 +319,14 @@
 
         .hero-badge {
             display: inline-flex;
+            flex-wrap: wrap;
             align-items: center;
-            gap: 0.7rem;
+            justify-content: center;
+            gap: 0.4rem 0.7rem;
             padding: 0.5rem 1.4rem;
             background: rgba(201, 164, 92, 0.08);
             border: 1px solid var(--line);
-            border-radius: 50px;
+            border-radius: 26px;
             font-size: 0.76rem;
             font-family: var(--sans);
             color: var(--gold-2);
@@ -332,6 +334,8 @@
             letter-spacing: 0.14em;
             font-weight: 600;
         }
+
+        .badge-text { white-space: nowrap; }
 
         .badge-dot {
             width: 6px;
@@ -1066,7 +1070,7 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="badge-dot"></span>
-                AI × BUSINESS STRATEGY — 無料相談受付中
+                <span class="badge-text">AI × BUSINESS STRATEGY —</span> <span class="badge-text">無料相談受付中</span>
             </div>
             <h1 class="hero-title">
                 <span class="l"><span>AIと戦略で、</span></span>
@@ -1116,24 +1120,24 @@
                     </div>
                 </div>
                 <div class="problem-card problem-card-photo fade-up fade-up-delay-2">
+                    <div class="problem-photo"><img src="assets/writing-problem.jpg" alt="業務効率化したいが何から手をつければ？"></div>
+                    <div class="problem-card-body">
+                        <h3>業務効率化したいが<br>何から手をつければ？</h3>
+                        <p>毎日の作業が多く時間が足りない。どの業務をAIで自動化できるか判断できない。</p>
+                    </div>
+                </div>
+                <div class="problem-card problem-card-photo fade-up fade-up-delay-3">
                     <div class="problem-photo"><img src="assets/sns-problem.jpg" alt="SNSを始めたが成果が出ない"></div>
                     <div class="problem-card-body">
                         <h3>SNSを始めたが<br>成果が出ない</h3>
                         <p>発信しているつもりだが、フォロワーが増えず集客にもつながっていない。</p>
                     </div>
                 </div>
-                <div class="problem-card problem-card-photo fade-up fade-up-delay-3">
+                <div class="problem-card problem-card-photo fade-up fade-up-delay-4">
                     <div class="problem-photo"><img src="assets/writing-laptop.jpg" alt="文章を書くのが苦手・時間がない"></div>
                     <div class="problem-card-body">
                         <h3>文章を書くのが苦手・<br>時間がない</h3>
                         <p>ブログやHPの文章を書きたいが、何から始めればいいかわからない。</p>
-                    </div>
-                </div>
-                <div class="problem-card problem-card-photo fade-up fade-up-delay-4">
-                    <div class="problem-photo"><img src="assets/writing-problem.jpg" alt="業務効率化したいが何から手をつければ？"></div>
-                    <div class="problem-card-body">
-                        <h3>業務効率化したいが<br>何から手をつければ？</h3>
-                        <p>毎日の作業が多く時間が足りない。どの業務をAIで自動化できるか判断できない。</p>
                     </div>
                 </div>
             </div>
@@ -1246,9 +1250,9 @@
                     <div class="profile-name-en">NISHIMURA YASUHIRO</div>
                     <div class="profile-tags">
                         <span class="tag">AIコンサルタント</span>
+                        <span class="tag">業務効率化アドバイザー</span>
                         <span class="tag">SNSマーケター</span>
                         <span class="tag">ウェブライター</span>
-                        <span class="tag">業務効率化アドバイザー</span>
                     </div>
                     <p class="profile-bio">
                         上場企業にて営業・企画・物流部門を幅広く経験。現場でのビジネス実務を通じて培った戦略思考と問題解決力を武器に、現在は個人事業主・中小企業向けのAI活用・SNS運用・ウェブライティングを中心としたビジネス支援を行っています。
