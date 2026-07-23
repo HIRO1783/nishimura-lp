@@ -696,6 +696,23 @@
             align-items: center;
             justify-content: center;
             font-size: 1.4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .strength-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(1.03) brightness(1.05) saturate(1.02);
+        }
+
+        .strength-icon-photo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(201, 164, 92, 0.18), rgba(201, 164, 92, 0.03) 65%);
+            mix-blend-mode: soft-light;
         }
 
         .strength-item h3 {
@@ -1070,10 +1087,12 @@
                 <div class="divider"></div>
             </div>
             <div class="problems-grid">
-                <div class="problem-card fade-up fade-up-delay-1">
-                    <span class="problem-emoji">🤖</span>
-                    <h3>AIをどう活用すれば<br>いいかわからない</h3>
-                    <p>ChatGPTは話題になっているが、自社ビジネスにどう活かせるか見当がつかない。</p>
+                <div class="problem-card problem-card-photo fade-up fade-up-delay-1">
+                    <div class="problem-photo"><img src="assets/ai-problem.jpg" alt="AIをどう活用すればいいかわからない"></div>
+                    <div class="problem-card-body">
+                        <h3>AIをどう活用すれば<br>いいかわからない</h3>
+                        <p>ChatGPTは話題になっているが、自社ビジネスにどう活かせるか見当がつかない。</p>
+                    </div>
                 </div>
                 <div class="problem-card problem-card-photo fade-up fade-up-delay-2">
                     <div class="problem-photo"><img src="assets/sns-problem.jpg" alt="SNSを始めたが成果が出ない"></div>
@@ -1158,28 +1177,28 @@
             </div>
             <div class="strengths-grid">
                 <div class="strength-item fade-up fade-up-delay-1">
-                    <div class="strength-icon">🏢</div>
+                    <div class="strength-icon strength-icon-photo"><img src="assets/enterprise-experience.jpg" alt="上場企業でのビジネス実務経験"></div>
                     <div>
                         <h3>上場企業でのビジネス実務経験</h3>
                         <p>営業・企画・物流と複数部門にわたる実務経験から、現場感覚に基づいた具体的なアドバイスが可能です。</p>
                     </div>
                 </div>
                 <div class="strength-item fade-up fade-up-delay-2">
-                    <div class="strength-icon">🎯</div>
+                    <div class="strength-icon strength-icon-photo"><img src="assets/small-business.jpg" alt="個人・中小企業に特化した提案"></div>
                     <div>
                         <h3>個人・中小企業に特化した提案</h3>
                         <p>大企業向けの理論ではなく、リソースが限られた規模に合った、現実的で実行可能な戦略を提案します。</p>
                     </div>
                 </div>
                 <div class="strength-item fade-up fade-up-delay-3">
-                    <div class="strength-icon">🤝</div>
+                    <div class="strength-icon strength-icon-photo"><img src="assets/personal-support.jpg" alt="一人ひとりに寄り添う対応"></div>
                     <div>
                         <h3>一人ひとりに寄り添う対応</h3>
                         <p>テンプレートではなく、お客様の状況・目標に合わせてカスタマイズしたサポートを一貫して提供します。</p>
                     </div>
                 </div>
                 <div class="strength-item fade-up fade-up-delay-4">
-                    <div class="strength-icon">⚡</div>
+                    <div class="strength-icon strength-icon-photo"><img src="assets/ai-business-fusion.jpg" alt="AIとビジネス視点の融合"></div>
                     <div>
                         <h3>AIとビジネス視点の融合</h3>
                         <p>最新AIツールの知識と実際のビジネス現場の経験を掛け合わせた、実用的かつ成果につながる提案が強みです。</p>
