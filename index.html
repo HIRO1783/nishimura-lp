@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西村康弘 | AI・SNS・Web戦略コンサルタント</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --noir-950: #0a0907;
+            --noir-900: #131110;
+            --noir-800: #1d1a16;
+            --card: rgba(245, 239, 224, 0.035);
+            --gold: #c9a45c;
+            --gold-2: #e3c485;
+            --cream: #f5efe0;
+            --cream-dim: #cabfa4;
+            --muted: #8d8066;
+            --line: rgba(201, 164, 92, 0.22);
+            --gradient-gold: linear-gradient(135deg, #a9823c, var(--gold) 45%, var(--gold-2));
+            --gradient-text: linear-gradient(135deg, var(--gold) 15%, var(--gold-2) 55%, #f3e3bc);
+            --serif: 'Noto Serif JP', serif;
+            --sans: 'Noto Sans JP', -apple-system, 'Hiragino Kaku Gothic ProN', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; overflow-x: clip; }
+
+        body {
+            font-family: var(--sans);
+            background-color: var(--noir-950);
+            color: var(--cream);
+            line-height: 1.9;
+            overflow-x: clip;
+            font-feature-settings: "palt";
+        }
+
+        /* ─── PROGRESS BAR ─── */
+        #progress {
+            position: fixed;
+            top: 0; left: 0;
+            height: 3px;
+            width: 100%;
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            background: linear-gradient(90deg, #8a6a25, var(--gold), var(--gold-2));
+            z-index: 2000;
+        }
+
+        /* ─── INTRO / SPOTLIGHT ─── */
+        #intro {
+            position: fixed;
+            inset: 0;
+            background: var(--noir-950);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .intro-logo {
+            font-family: var(--serif);
+            font-size: clamp(24px, 3.4vw, 40px);
+            font-weight: 900;
+            color: var(--cream);
+            letter-spacing: 0.3em;
+            text-align: center;
+        }
+
+        .intro-logo small {
+            display: block;
+            text-align: center;
+            font-size: 0.32em;
+            letter-spacing: 0.4em;
+            color: var(--gold);
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        #spotlight {
+            position: fixed;
+            left: 0; top: 0;
+            width: 560px; height: 560px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 5;
+            background: radial-gradient(circle, rgba(201,164,92,.12), rgba(201,164,92,.05) 42%, transparent 68%);
+            mix-blend-mode: screen;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .reduced #intro, .reduced #spotlight { display: none; }
+
+        /* ─── SHADER / PARTICLES ─── */
+        .shader-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .bgfx {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .reduced .shader-bg, .reduced .bgfx { display: none; }
+
+        .fv-tate {
+            writing-mode: vertical-rl;
+            position: absolute;
+            right: 46px;
+            top: 180px;
+            font-family: var(--serif);
+            letter-spacing: 0.5em;
+            color: rgba(245, 239, 224, 0.45);
+            font-size: 12px;
+            z-index: 1;
+        }
+
+        @media (max-width: 880px) { .fv-tate { display: none; } }
+
+        /* ─── NAV ─── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 1.4rem 0;
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(10, 9, 7, 0.86);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: 0 1px 0 var(--line);
+            padding: 0.95rem 0;
+        }
+
+        .nav-wrap {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 0 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--serif);
+            font-size: 1rem;
+            font-weight: 900;
+            letter-spacing: 0.18em;
+            color: var(--cream);
+            display: flex;
+            align-items: baseline;
+            gap: 0.9rem;
+        }
+
+        .nav-logo span {
+            font-family: var(--sans);
+            font-weight: 500;
+            font-size: 0.62rem;
+            color: var(--muted);
+            letter-spacing: 0.14em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--cream-dim);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--gold-2); }
+
+        .nav-cta {
+            padding: 0.6rem 1.5rem;
+            background: var(--gradient-gold);
+            border-radius: 2px;
+            color: #181206 !important;
+            font-size: 0.8rem;
+            font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .nav-cta:hover { transform: translateY(-2px); }
+
+        @media (max-width: 880px) {
+            .nav-links li:not(.nav-cta-li) { display: none; }
+        }
+
+        /* ─── BUTTONS ─── */
+        .btn-primary, .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--sans);
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+        }
+
+        .btn-primary {
+            padding: 1.05rem 2.8rem;
+            background: var(--gradient-gold);
+            color: #181206;
+            font-size: 0.95rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 14px 40px -12px rgba(201, 164, 92, 0.55);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px -12px rgba(201, 164, 92, 0.75);
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -70%;
+            width: 45%; height: 100%;
+            background: linear-gradient(105deg, transparent, rgba(255,255,255,0.45), transparent);
+            transform: skewX(-20deg);
+            animation: shimmer 3.6s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 55% { left: -70%; }
+            85%, 100% { left: 130%; }
+        }
+
+        .btn-outline {
+            padding: 1rem 2.8rem;
+            background: transparent;
+            border: 1px solid var(--line);
+            color: var(--cream);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold-2);
+            transform: translateY(-2px);
+        }
+
+        /* ─── HERO ─── */
+        #hero {
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 160px 2rem 120px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 12% 60%, rgba(201, 164, 92, 0.12) 0%, transparent 55%),
+                radial-gradient(ellipse at 88% 15%, rgba(201, 164, 92, 0.09) 0%, transparent 55%),
+                radial-gradient(ellipse at 55% 90%, rgba(201, 164, 92, 0.05) 0%, transparent 45%);
+        }
+
+        .kanji {
+            position: absolute;
+            font-family: var(--serif);
+            font-weight: 900;
+            font-size: clamp(200px, 26vw, 400px);
+            color: rgba(201, 164, 92, 0.055);
+            z-index: 0;
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 920px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.5rem 1.4rem;
+            background: rgba(201, 164, 92, 0.08);
+            border: 1px solid var(--line);
+            border-radius: 50px;
+            font-size: 0.76rem;
+            font-family: var(--sans);
+            color: var(--gold-2);
+            margin-bottom: 2.2rem;
+            letter-spacing: 0.14em;
+            font-weight: 600;
+        }
+
+        .badge-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: badgePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes badgePulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(201, 164, 92, 0.4); }
+            50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(201, 164, 92, 0); }
+        }
+
+        .hero-title {
+            font-family: var(--serif);
+            font-size: clamp(2.4rem, 6vw, 4.6rem);
+            font-weight: 900;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+            letter-spacing: 0.03em;
+        }
+
+        .hero-title .l { display: block; overflow: hidden; }
+        .hero-title .l > span {
+            display: inline-block;
+            animation: lineUp 1s cubic-bezier(.16,1,.3,1) both;
+        }
+        .hero-title .l:nth-child(1) > span { animation-delay: .15s; }
+        .hero-title .l:nth-child(2) > span { animation-delay: .34s; }
+
+        @keyframes lineUp {
+            from { transform: translateY(112%); }
+            to { transform: translateY(0); }
+        }
+
+        .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-sub {
+            font-size: clamp(0.92rem, 1.7vw, 1.08rem);
+            color: var(--cream-dim);
+            max-width: 580px;
+            margin: 0 auto 3rem;
+            font-weight: 300;
+            line-height: 2.1;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1.1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--muted);
+            font-size: 0.66rem;
+            letter-spacing: 0.2em;
+            z-index: 1;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 48px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .scroll-line span {
+            position: absolute;
+            left: 0; top: -40%;
+            width: 1px; height: 40%;
+            background: linear-gradient(var(--gold), transparent);
+            animation: cueLine 2s ease-in-out infinite;
+        }
+
+        @keyframes cueLine { to { top: 110%; } }
+
+        /* ─── MARQUEE STRIP ─── */
+        .strip {
+            overflow: hidden;
+            padding: 44px 0;
+            background: var(--noir-900);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .strip-track {
+            display: flex;
+            gap: 60px;
+            width: max-content;
+            white-space: nowrap;
+            animation: stripMove 30s linear infinite;
+            font-family: var(--serif);
+            font-weight: 900;
+            font-size: clamp(28px, 4.6vw, 54px);
+            letter-spacing: 0.08em;
+            line-height: 1;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(245, 239, 224, 0.45);
+        }
+
+        .strip-track em {
+            font-style: normal;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: 0;
+        }
+
+        @keyframes stripMove { to { transform: translateX(-50%); } }
+
+        /* ─── COMMON ─── */
+        section { padding: 120px 2rem; position: relative; overflow: hidden; }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-label {
+            font-family: var(--sans);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.36em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--serif);
+            font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+            font-weight: 700;
+            line-height: 1.6;
+            letter-spacing: 0.04em;
+        }
+
+        .section-title .ch {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(18px) rotateX(-40deg);
+            transition: opacity .55s ease, transform .55s cubic-bezier(.2,.8,.2,1);
+        }
+
+        .fade-up.visible .ch,
+        .section-title.visible .ch { opacity: 1; transform: none; }
+
+        .section-desc {
+            margin-top: 1.2rem;
+            color: var(--cream-dim);
+            font-size: 0.97rem;
+            max-width: 560px;
+            line-height: 2;
+        }
+
+        .divider {
+            width: 56px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            margin: 1.8rem 0 2.5rem;
+        }
+
+        /* ─── PROBLEMS ─── */
+        #problems { background: var(--noir-900); }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin-top: 3.5rem;
+        }
+
+        .problem-card {
+            padding: 2.2rem 1.85rem;
+            background: var(--card);
+            border: 1px solid var(--line);
+            transition: border-color 0.3s, transform 0.15s;
+        }
+
+        .problem-card:hover { border-color: rgba(201, 164, 92, 0.5); }
+
+        .problem-emoji {
+            font-size: 1.9rem;
+            margin-bottom: 1.1rem;
+            display: block;
+            filter: grayscale(0.15) sepia(0.25);
+        }
+
+        .problem-card h3 {
+            font-family: var(--serif);
+            font-size: 1.02rem;
+            font-weight: 700;
+            margin-bottom: 0.7rem;
+            line-height: 1.6;
+            color: var(--cream);
+        }
+
+        .problem-card p {
+            font-size: 0.87rem;
+            color: var(--cream-dim);
+            line-height: 1.85;
+        }
+
+        /* ─── SERVICES ─── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .service-card {
+            padding: 2.6rem 2.1rem;
+            background: var(--card);
+            border: 1px solid var(--line);
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.35s, transform 0.15s, box-shadow 0.35s;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: var(--gradient-gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            border-color: rgba(201, 164, 92, 0.5);
+            box-shadow: 0 24px 70px -20px rgba(201, 164, 92, 0.18);
+        }
+
+        .service-card:hover::after { transform: scaleX(1); }
+
+        .service-num {
+            font-family: var(--sans);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            color: var(--gold);
+            margin-bottom: 1.8rem;
+        }
+
+        .service-emoji {
+            font-size: 2.2rem;
+            margin-bottom: 1.3rem;
+            display: block;
+            filter: grayscale(0.15) sepia(0.25);
+        }
+
+        .service-card h3 {
+            font-family: var(--serif);
+            font-size: 1.18rem;
+            font-weight: 700;
+            margin-bottom: 0.9rem;
+            color: var(--cream);
+            letter-spacing: 0.03em;
+        }
+
+        .service-card p {
+            font-size: 0.87rem;
+            color: var(--cream-dim);
+            line-height: 1.9;
+        }
+
+        /* ─── STRENGTHS ─── */
+        #strengths { background: var(--noir-900); }
+
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.6rem;
+            margin-top: 3.5rem;
+        }
+
+        .strength-item {
+            display: flex;
+            gap: 1.4rem;
+            align-items: flex-start;
+        }
+
+        .strength-icon {
+            width: 54px;
+            height: 54px;
+            min-width: 54px;
+            background: rgba(201, 164, 92, 0.08);
+            border: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .strength-item h3 {
+            font-family: var(--serif);
+            font-size: 1.02rem;
+            font-weight: 700;
+            margin-bottom: 0.55rem;
+            color: var(--cream);
+            letter-spacing: 0.02em;
+        }
+
+        .strength-item p {
+            font-size: 0.87rem;
+            color: var(--cream-dim);
+            line-height: 1.9;
+        }
+
+        /* ─── PROFILE ─── */
+        .profile-layout {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 5rem;
+            align-items: start;
+            margin-top: 3.5rem;
+        }
+
+        .profile-mark {
+            width: 100%;
+            aspect-ratio: 1;
+            border: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(201, 164, 92, 0.07), transparent 70%);
+        }
+
+        .profile-mark span {
+            font-family: var(--serif);
+            font-size: 6rem;
+            font-weight: 700;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .profile-name {
+            font-family: var(--serif);
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.4rem;
+            color: var(--cream);
+        }
+
+        .profile-name-en {
+            font-size: 0.78rem;
+            color: var(--muted);
+            letter-spacing: 0.24em;
+            margin-bottom: 1.6rem;
+        }
+
+        .profile-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+            margin-bottom: 1.9rem;
+        }
+
+        .tag {
+            padding: 0.35rem 1.05rem;
+            background: rgba(201, 164, 92, 0.07);
+            border: 1px solid var(--line);
+            border-radius: 50px;
+            font-size: 0.76rem;
+            color: var(--gold-2);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+        }
+
+        .profile-bio {
+            font-size: 0.93rem;
+            color: var(--cream-dim);
+            line-height: 2.1;
+            margin-bottom: 1rem;
+        }
+
+        .career-list {
+            list-style: none;
+            margin-top: 1.6rem;
+            border-top: 1px dashed var(--line);
+        }
+
+        .career-list li {
+            display: flex;
+            align-items: baseline;
+            gap: 0.8rem;
+            padding: 0.95rem 0;
+            border-bottom: 1px dashed var(--line);
+            font-size: 0.87rem;
+            color: var(--cream-dim);
+        }
+
+        .career-list li::before {
+            content: '▸';
+            color: var(--gold);
+            font-size: 0.72rem;
+            min-width: 12px;
+        }
+
+        /* ─── FAQ ─── */
+        #faq { background: var(--noir-900); }
+
+        .faq-wrap {
+            max-width: 780px;
+            margin-top: 3.5rem;
+        }
+
+        .faq-item { border-bottom: 1px solid var(--line); }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.6rem 0;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.98rem;
+            color: var(--cream);
+            transition: color 0.2s;
+            user-select: none;
+        }
+
+        .faq-question:hover { color: var(--gold-2); }
+
+        .faq-toggle {
+            width: 26px;
+            height: 26px;
+            min-width: 26px;
+            border: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+            color: var(--gold);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .faq-item.open .faq-toggle {
+            transform: rotate(45deg);
+            background: rgba(201, 164, 92, 0.12);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+            font-size: 0.9rem;
+            color: var(--cream-dim);
+            line-height: 2;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 220px;
+            padding-bottom: 1.6rem;
+        }
+
+        /* ─── CONTACT ─── */
+        #contact { background: var(--noir-950); }
+
+        .contact-inner {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .contact-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .contact-card {
+            padding: 3rem 2rem;
+            background: var(--card);
+            border: 1px solid var(--line);
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: block;
+        }
+
+        .contact-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-6px);
+            box-shadow: 0 24px 60px -20px rgba(201, 164, 92, 0.22);
+        }
+
+        .contact-icon-wrap { font-size: 2.6rem; margin-bottom: 1rem; }
+
+        .contact-card h3 {
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: var(--cream);
+        }
+
+        .contact-card p {
+            font-size: 0.84rem;
+            color: var(--cream-dim);
+            line-height: 1.7;
+        }
+
+        .contact-note {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            padding: 2.2rem;
+            text-align: center;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 0.76rem;
+            letter-spacing: 0.06em;
+            background: var(--noir-950);
+        }
+
+        /* ─── ANIMATIONS ─── */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        .fade-up-delay-1 { transition-delay: 0.1s; }
+        .fade-up-delay-2 { transition-delay: 0.2s; }
+        .fade-up-delay-3 { transition-delay: 0.3s; }
+        .fade-up-delay-4 { transition-delay: 0.4s; }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 768px) {
+            .nav-wrap { padding: 0 1.5rem; }
+            section { padding: 90px 1.5rem; }
+
+            .profile-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+            .profile-mark { max-width: 190px; margin: 0 auto; }
+
+            .contact-cards { grid-template-columns: 1fr; }
+            .hero-cta-group { flex-direction: column; align-items: center; }
+            .kanji { font-size: 160px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { font-size: 2.1rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .problems-grid { grid-template-columns: 1fr; }
+            .kanji { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="intro"><span class="intro-logo">西村康弘<small>AI STRATEGY CONSULTANT</small></span></div>
+    <div id="progress"></div>
+
+    <!-- ── NAVIGATION ── -->
+    <nav id="navbar">
+        <div class="nav-wrap">
+            <div class="nav-logo">西村康弘<span>AI STRATEGY CONSULTANT</span></div>
+            <ul class="nav-links">
+                <li><a href="#problems">お悩み</a></li>
+                <li><a href="#services">サービス</a></li>
+                <li><a href="#strengths">強み</a></li>
+                <li><a href="#about">プロフィール</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li class="nav-cta-li"><a href="#contact" class="nav-cta">無料相談はこちら</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section id="hero">
+        <div class="hero-bg"></div>
+        <canvas class="shader-bg" data-shader-speed="0.8" aria-hidden="true" style="mix-blend-mode:screen; opacity:.5;"></canvas>
+        <div id="hero-particles" class="bgfx" aria-hidden="true"></div>
+        <span class="kanji" style="right:-40px; top:60px;">智</span>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                AI × BUSINESS STRATEGY — 無料相談受付中
+            </div>
+            <h1 class="hero-title">
+                <span class="l"><span>AIと戦略で、</span></span>
+                <span class="l"><span class="gradient-text">あなたのビジネスを次のステージへ。</span></span>
+            </h1>
+            <p class="hero-sub fade-up">
+                上場企業での営業・企画・物流経験を活かし、<br>
+                AIコンサル・SNS運用・ウェブライティングで<br>
+                個人事業主・中小企業の成長を力強く支援します。
+            </p>
+            <div class="hero-cta-group fade-up fade-up-delay-1">
+                <a href="#contact" class="btn-primary">まずは無料相談</a>
+                <a href="#services" class="btn-outline">サービスを見る</a>
+            </div>
+        </div>
+        <span class="fv-tate" aria-hidden="true">AIと言葉で、事業を動かす。</span>
+        <div class="hero-scroll-indicator">
+            <span>SCROLL</span>
+            <div class="scroll-line"><span></span></div>
+        </div>
+    </section>
+
+    <!-- ── MARQUEE STRIP ── -->
+    <div class="strip" aria-hidden="true">
+        <div class="strip-track">
+            <span>AI CONSULTING — <em>SNS MARKETING</em> — WEB WRITING — <em>BUSINESS STRATEGY</em> — &nbsp;</span>
+            <span>AI CONSULTING — <em>SNS MARKETING</em> — WEB WRITING — <em>BUSINESS STRATEGY</em> — &nbsp;</span>
+        </div>
+    </div>
+
+    <!-- ── PROBLEMS ── -->
+    <section id="problems">
+        <span class="kanji" style="left:-40px; top:40px;">悩</span>
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">PROBLEMS</div>
+                <h2 class="section-title">こんなお悩み、<br>抱えていませんか？</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="problems-grid">
+                <div class="problem-card fade-up fade-up-delay-1">
+                    <span class="problem-emoji">🤖</span>
+                    <h3>AIをどう活用すれば<br>いいかわからない</h3>
+                    <p>ChatGPTは話題になっているが、自社ビジネスにどう活かせるか見当がつかない。</p>
+                </div>
+                <div class="problem-card fade-up fade-up-delay-2">
+                    <span class="problem-emoji">📱</span>
+                    <h3>SNSを始めたが<br>成果が出ない</h3>
+                    <p>発信しているつもりだが、フォロワーが増えず集客にもつながっていない。</p>
+                </div>
+                <div class="problem-card fade-up fade-up-delay-3">
+                    <span class="problem-emoji">✍️</span>
+                    <h3>文章を書くのが苦手・<br>時間がない</h3>
+                    <p>ブログやHPの文章を書きたいが、何から始めればいいかわからない。</p>
+                </div>
+                <div class="problem-card fade-up fade-up-delay-4">
+                    <span class="problem-emoji">⏱️</span>
+                    <h3>業務効率化したいが<br>何から手をつければ？</h3>
+                    <p>毎日の作業が多く時間が足りない。どの業務をAIで自動化できるか判断できない。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SERVICES ── -->
+    <section id="services">
+        <span class="kanji" style="right:-30px; bottom:20px;">策</span>
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">SERVICES</div>
+                <h2 class="section-title">提供サービス</h2>
+                <div class="divider"></div>
+                <p class="section-desc">ビジネスの課題に合わせて、最適なサポートをご提供します。</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-up fade-up-delay-1">
+                    <div class="service-num">SERVICE 01</div>
+                    <span class="service-emoji">🤖</span>
+                    <h3>AIコンサルティング</h3>
+                    <p>ChatGPTをはじめとした生成AIツールの導入・活用方法をご提案。あなたのビジネスに合ったAI活用で、業務効率と売上を向上させます。</p>
+                </div>
+                <div class="service-card fade-up fade-up-delay-2">
+                    <div class="service-num">SERVICE 02</div>
+                    <span class="service-emoji">📱</span>
+                    <h3>SNS運用サポート</h3>
+                    <p>Instagram・X・Facebookなど各SNSの戦略立案から投稿制作・運用まで一貫サポート。フォロワー獲得・集客につながる発信を実現します。</p>
+                </div>
+                <div class="service-card fade-up fade-up-delay-3">
+                    <div class="service-num">SERVICE 03</div>
+                    <span class="service-emoji">✍️</span>
+                    <h3>ウェブライティング</h3>
+                    <p>SEOを意識したブログ記事・LP・サービス紹介ページなどの文章制作。読まれて、伝わって、行動につながる文章をお届けします。</p>
+                </div>
+                <div class="service-card fade-up fade-up-delay-4">
+                    <div class="service-num">SERVICE 04</div>
+                    <span class="service-emoji">⚡</span>
+                    <h3>AI業務効率化提案</h3>
+                    <p>現在の業務フローを分析し、AIツールを活用した効率化プランをご提案。繰り返し作業の自動化で、本来の仕事に集中できる環境をつくります。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── STRENGTHS ── -->
+    <section id="strengths">
+        <span class="kanji" style="right:6%; top:30px;">力</span>
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">WHY CHOOSE ME</div>
+                <h2 class="section-title">選ばれる理由</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="strengths-grid">
+                <div class="strength-item fade-up fade-up-delay-1">
+                    <div class="strength-icon">🏢</div>
+                    <div>
+                        <h3>上場企業でのビジネス実務経験</h3>
+                        <p>営業・企画・物流と複数部門にわたる実務経験から、現場感覚に基づいた具体的なアドバイスが可能です。</p>
+                    </div>
+                </div>
+                <div class="strength-item fade-up fade-up-delay-2">
+                    <div class="strength-icon">🎯</div>
+                    <div>
+                        <h3>個人・中小企業に特化した提案</h3>
+                        <p>大企業向けの理論ではなく、リソースが限られた規模に合った、現実的で実行可能な戦略を提案します。</p>
+                    </div>
+                </div>
+                <div class="strength-item fade-up fade-up-delay-3">
+                    <div class="strength-icon">🤝</div>
+                    <div>
+                        <h3>一人ひとりに寄り添う対応</h3>
+                        <p>テンプレートではなく、お客様の状況・目標に合わせてカスタマイズしたサポートを一貫して提供します。</p>
+                    </div>
+                </div>
+                <div class="strength-item fade-up fade-up-delay-4">
+                    <div class="strength-icon">⚡</div>
+                    <div>
+                        <h3>AIとビジネス視点の融合</h3>
+                        <p>最新AIツールの知識と実際のビジネス現場の経験を掛け合わせた、実用的かつ成果につながる提案が強みです。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── PROFILE ── -->
+    <section id="about">
+        <span class="kanji" style="left:-50px; top:80px;">歴</span>
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">PROFILE</div>
+                <h2 class="section-title">プロフィール</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="profile-layout">
+                <div class="profile-mark fade-up"><span>西</span></div>
+                <div class="fade-up fade-up-delay-1">
+                    <div class="profile-name">西村 康弘</div>
+                    <div class="profile-name-en">NISHIMURA YASUHIRO</div>
+                    <div class="profile-tags">
+                        <span class="tag">AIコンサルタント</span>
+                        <span class="tag">SNSマーケター</span>
+                        <span class="tag">ウェブライター</span>
+                        <span class="tag">業務効率化アドバイザー</span>
+                    </div>
+                    <p class="profile-bio">
+                        上場企業にて営業・企画・物流部門を幅広く経験。現場でのビジネス実務を通じて培った戦略思考と問題解決力を武器に、現在は個人事業主・中小企業向けのAI活用・SNS運用・ウェブライティングを中心としたビジネス支援を行っています。
+                    </p>
+                    <p class="profile-bio">
+                        「難しいことをわかりやすく、現実的な形で」をモットーに、お客様のビジネス成長に伴走します。
+                    </p>
+                    <ul class="career-list">
+                        <li>上場企業 営業部門にて新規開拓・顧客管理を担当</li>
+                        <li>企画部門にて事業戦略・マーケティング施策の立案に携わる</li>
+                        <li>物流部門にて業務フロー改善・効率化プロジェクトを推進</li>
+                        <li>現在：AI・SNS・Web領域で個人・中小企業のビジネス支援に従事</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FAQ ── -->
+    <section id="faq">
+        <span class="kanji" style="right:-30px; top:40px;">問</span>
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">FAQ</div>
+                <h2 class="section-title">よくある質問</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="faq-wrap fade-up">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>料金はどのくらいかかりますか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">ご相談内容や規模によって異なります。まずは無料でご相談をお受けしていますので、お気軽にお問い合わせください。ヒアリング後に詳細なお見積りをご提示します。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>AIについて知識がなくても大丈夫ですか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">はい、まったく問題ありません。AIやIT知識がゼロの方でも丁寧にご説明しながらサポートします。難しい専門用語は使わず、わかりやすい言葉で進めます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>どのような業種・業態でも対応できますか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">個人事業主・中小企業であれば、業種を問わず対応しております。まずはお気軽にご相談ください。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>オンラインでの対応は可能ですか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">はい、Zoom・Google Meet等のオンラインツールでの対応が可能です。全国どこからでもご相談いただけます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>単発の相談だけでも大丈夫ですか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">もちろんです。継続サポートだけでなく、スポットでのご相談にも柔軟に対応しています。まずは一度ご連絡ください。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section id="contact">
+        <canvas class="shader-bg" data-shader-speed="0.75" aria-hidden="true" style="opacity:.35;"></canvas>
+        <div id="contact-particles" class="bgfx" aria-hidden="true"></div>
+        <span class="kanji" style="left:-30px; bottom:30px;">縁</span>
+        <div class="container">
+            <div class="contact-inner">
+                <div class="fade-up">
+                    <div class="section-label">CONTACT</div>
+                    <h2 class="section-title">お問い合わせ</h2>
+                    <div class="divider" style="margin-left: auto; margin-right: auto;"></div>
+                    <p class="section-desc" style="margin: 0 auto; text-align: center; max-width: 480px;">
+                        ご相談・お見積りは無料です。<br>
+                        まずはお気軽にご連絡ください。
+                    </p>
+                </div>
+                <div class="contact-cards fade-up">
+                    <!-- ★ メールアドレスをここに入力してください -->
+                    <a href="mailto:your-email@example.com" class="contact-card">
+                        <div class="contact-icon-wrap">📧</div>
+                        <h3>メールで相談する</h3>
+                        <p>your-email@example.com<br>（件名：相談希望）</p>
+                    </a>
+                    <!-- ★ LINEのURLをここに入力してください -->
+                    <a href="https://line.me/ti/p/XXXXXXXX" class="contact-card" target="_blank" rel="noopener">
+                        <div class="contact-icon-wrap">💬</div>
+                        <h3>LINEで相談する</h3>
+                        <p>友だち追加して<br>メッセージをお送りください</p>
+                    </a>
+                </div>
+                <p class="contact-note fade-up">※ 返信は通常2営業日以内にお送りします。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+        <p>© 2025 Nishimura Yasuhiro. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // ── Reduced-motion & pointer capability ──
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduced) document.body.classList.add('reduced');
+        const fine = window.matchMedia('(pointer:fine)').matches;
+
+        // ── Intro reveal ──
+        (function () {
+            const intro = document.getElementById('intro');
+            if (!intro) return;
+            if (reduced) { intro.remove(); return; }
+            const logo = intro.querySelector('.intro-logo');
+            requestAnimationFrame(() => {
+                logo.style.transition = 'opacity .6s ease, transform .6s ease, letter-spacing .6s ease';
+                logo.style.opacity = '0';
+                logo.style.transform = 'translateY(26px)';
+                logo.style.letterSpacing = '.6em';
+                requestAnimationFrame(() => {
+                    logo.style.opacity = '1';
+                    logo.style.transform = 'translateY(0)';
+                    logo.style.letterSpacing = '.3em';
+                });
+            });
+            setTimeout(() => {
+                logo.style.transition = 'opacity .35s ease, transform .35s ease';
+                logo.style.opacity = '0';
+                logo.style.transform = 'translateY(-16px)';
+                intro.style.transition = 'clip-path .65s cubic-bezier(.7,0,.3,1)';
+                intro.style.clipPath = 'inset(0 0 100% 0)';
+                setTimeout(() => intro.remove(), 700);
+            }, 1150);
+        })();
+
+        // ── Spotlight cursor glow ──
+        if (fine && !reduced) {
+            const spot = document.createElement('div');
+            spot.id = 'spotlight';
+            document.body.appendChild(spot);
+            let sx = 0, sy = 0, tx = 0, ty = 0, spotActive = false;
+            window.addEventListener('mousemove', e => {
+                tx = e.clientX; ty = e.clientY;
+                if (!spotActive) { spotActive = true; spot.style.opacity = '1'; sx = tx; sy = ty; }
+            }, { passive: true });
+            (function loop() {
+                sx += (tx - sx) * 0.12;
+                sy += (ty - sy) * 0.12;
+                spot.style.left = sx + 'px';
+                spot.style.top = sy + 'px';
+                requestAnimationFrame(loop);
+            })();
+        }
+
+        // ── WebGL ambient light-flow shader ──
+        (function () {
+            const canvases = document.querySelectorAll('.shader-bg');
+            if (!canvases.length || reduced) return;
+            const FS = [
+                'precision highp float;',
+                'uniform vec2 u_res; uniform float u_time;',
+                'void main(){',
+                '  vec2 uv = gl_FragCoord.xy / u_res.xy;',
+                '  vec2 p = uv * 2.0 - 1.0; p.x *= u_res.x / u_res.y;',
+                '  float t = u_time * 0.14;',
+                '  float v = 0.0;',
+                '  v += sin(p.x * 1.3 + t + sin(p.y * 2.0 - t * 0.55) * 1.3);',
+                '  v += sin(length(p + vec2(sin(t * 0.32), cos(t * 0.26))) * 2.6 - t);',
+                '  v += sin(p.y * 1.9 - t * 0.75 + sin(p.x * 1.5 + t * 0.4) * 1.1);',
+                '  v *= 0.3333;',
+                '  float m1 = smoothstep(0.05, 0.95, sin(v * 3.14159 + t) * 0.5 + 0.5);',
+                '  float m2 = smoothstep(0.2, 1.0, sin(v * 4.2 - t * 1.0) * 0.5 + 0.5);',
+                '  vec3 col = vec3(0.039, 0.035, 0.028);',
+                '  col = mix(col, vec3(0.30, 0.24, 0.15), m1 * 0.5);',
+                '  col = mix(col, vec3(0.79, 0.64, 0.36) * 0.85, m2 * 0.4);',
+                '  col = mix(col, vec3(0.89, 0.77, 0.52) * 0.9, smoothstep(0.6, 1.0, m1 * m2) * 0.6);',
+                '  col *= 1.0 - 0.4 * length(uv - 0.5);',
+                '  gl_FragColor = vec4(col, 1.0);',
+                '}'
+            ].join('\n');
+            const VS = 'attribute vec2 a; void main(){ gl_Position = vec4(a, 0.0, 1.0); }';
+            const items = [];
+            canvases.forEach(cv => {
+                const gl = cv.getContext('webgl', { antialias: false, depth: false, stencil: false });
+                if (!gl) return;
+                const sh = (type, src) => { const o = gl.createShader(type); gl.shaderSource(o, src); gl.compileShader(o); return o; };
+                const prog = gl.createProgram();
+                gl.attachShader(prog, sh(gl.VERTEX_SHADER, VS));
+                gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, FS));
+                gl.linkProgram(prog);
+                if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) return;
+                gl.useProgram(prog);
+                const buf = gl.createBuffer();
+                gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+                gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+                const loc = gl.getAttribLocation(prog, 'a');
+                gl.enableVertexAttribArray(loc);
+                gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+                items.push({
+                    cv, gl, uRes: gl.getUniformLocation(prog, 'u_res'), uTime: gl.getUniformLocation(prog, 'u_time'),
+                    speed: parseFloat(cv.getAttribute('data-shader-speed') || '1'), visible: false
+                });
+            });
+            if (!items.length) return;
+            const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+            function resize() {
+                items.forEach(it => {
+                    const r = it.cv.getBoundingClientRect();
+                    const w = Math.max(1, Math.round(r.width * dpr)), h = Math.max(1, Math.round(r.height * dpr));
+                    if (it.cv.width !== w || it.cv.height !== h) { it.cv.width = w; it.cv.height = h; it.gl.viewport(0, 0, w, h); }
+                });
+            }
+            resize();
+            window.addEventListener('resize', resize, { passive: true });
+            const vIO = new IntersectionObserver(entries => {
+                entries.forEach(en => {
+                    const it = items.find(x => x.cv === en.target);
+                    if (it) it.visible = en.isIntersecting;
+                });
+            }, { rootMargin: '80px' });
+            items.forEach(it => vIO.observe(it.cv));
+            const t0 = performance.now();
+            (function loop(now) {
+                const t = (now - t0) / 1000;
+                items.forEach(it => {
+                    if (!it.visible) return;
+                    it.gl.uniform2f(it.uRes, it.cv.width, it.cv.height);
+                    it.gl.uniform1f(it.uTime, t * it.speed);
+                    it.gl.drawArrays(it.gl.TRIANGLE_STRIP, 0, 4);
+                });
+                requestAnimationFrame(loop);
+            })(t0);
+        })();
+
+        // ── Ambient gold dust particles ──
+        (function () {
+            const containers = document.querySelectorAll('.bgfx');
+            if (!containers.length || reduced || !window.matchMedia('(min-width:769px)').matches) return;
+            containers.forEach(container => {
+                const canvas = document.createElement('canvas');
+                canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;';
+                container.appendChild(canvas);
+                const ctx = canvas.getContext('2d');
+                let w, h, particles = [], running = false;
+                function resize() {
+                    const r = container.getBoundingClientRect();
+                    w = canvas.width = r.width;
+                    h = canvas.height = r.height;
+                }
+                function spawn() {
+                    return { x: Math.random() * w, y: h + Math.random() * 40, r: 0.8 + Math.random() * 1.8, s: 0.25 + Math.random() * 0.55, drift: (Math.random() - 0.5) * 0.4, o: 0.15 + Math.random() * 0.5 };
+                }
+                resize();
+                for (let i = 0; i < 34; i++) { const p = spawn(); p.y = Math.random() * h; particles.push(p); }
+                window.addEventListener('resize', resize, { passive: true });
+                function tick() {
+                    if (!running) return;
+                    ctx.clearRect(0, 0, w, h);
+                    particles.forEach(p => {
+                        p.y -= p.s;
+                        p.x += p.drift;
+                        if (p.y < -10) Object.assign(p, spawn());
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                        ctx.fillStyle = `rgba(230,190,110,${p.o})`;
+                        ctx.fill();
+                    });
+                    requestAnimationFrame(tick);
+                }
+                const io = new IntersectionObserver(entries => {
+                    entries.forEach(en => {
+                        if (en.isIntersecting && !running) { running = true; tick(); }
+                        else if (!en.isIntersecting) { running = false; }
+                    });
+                }, { rootMargin: '100px' });
+                io.observe(container);
+            });
+        })();
+
+        // ── Navbar on scroll ──
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+        }, { passive: true });
+
+        // ── Scroll progress bar ──
+        const progressBar = document.getElementById('progress');
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement;
+            const scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
+            progressBar.style.transform = `scaleX(${scrolled})`;
+        }, { passive: true });
+
+        // ── Split section headings into characters for cascade reveal ──
+        document.querySelectorAll('.section-title').forEach(h2 => {
+            const frag = document.createDocumentFragment();
+            Array.from(h2.childNodes).forEach(node => {
+                if (node.nodeType === 3) {
+                    [...node.textContent].forEach(ch => {
+                        if (ch === '\n') return;
+                        const span = document.createElement('span');
+                        span.className = 'ch';
+                        span.textContent = ch === ' ' ? ' ' : ch;
+                        frag.appendChild(span);
+                    });
+                } else {
+                    frag.appendChild(node.cloneNode(true));
+                }
+            });
+            h2.innerHTML = '';
+            h2.appendChild(frag);
+            h2.querySelectorAll('.ch').forEach((span, i) => {
+                span.style.transitionDelay = (i * 22) + 'ms';
+            });
+        });
+
+        // ── Scroll reveal ──
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.fade-up').forEach(el => revealObserver.observe(el));
+
+        // ── Card tilt on hover (fine pointers only) ──
+        if (window.matchMedia('(pointer:fine)').matches) {
+            document.querySelectorAll('.problem-card, .service-card').forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const r = card.getBoundingClientRect();
+                    const rx = ((e.clientY - r.top) / r.height - 0.5) * -6;
+                    const ry = ((e.clientX - r.left) / r.width - 0.5) * 6;
+                    card.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+                });
+                card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+            });
+        }
+
+        // ── Kanji watermark parallax ──
+        const kanjis = document.querySelectorAll('.kanji');
+        window.addEventListener('scroll', () => {
+            kanjis.forEach((k, i) => {
+                const rect = k.parentElement.getBoundingClientRect();
+                const center = rect.top + rect.height / 2 - window.innerHeight / 2;
+                k.style.transform = `translateY(${center * -0.06 * (i % 2 ? 1 : -1)}px)`;
+            });
+        }, { passive: true });
+
+        // ── FAQ accordion ──
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+
+                document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+        // ── Smooth scroll for anchor links ──
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
