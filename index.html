@@ -546,6 +546,34 @@
             line-height: 1.85;
         }
 
+        .problem-card-photo { padding: 0; }
+
+        .problem-photo {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+        }
+
+        .problem-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(1.03) brightness(1.08) saturate(1.02);
+        }
+
+        .problem-photo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(201, 164, 92, 0.16), rgba(201, 164, 92, 0.03) 65%);
+            mix-blend-mode: soft-light;
+        }
+
+        .problem-card-body {
+            padding: 2rem 1.85rem 2.2rem;
+        }
+
         /* ─── SERVICES ─── */
         .services-grid {
             display: grid;
@@ -1047,10 +1075,12 @@
                     <h3>AIをどう活用すれば<br>いいかわからない</h3>
                     <p>ChatGPTは話題になっているが、自社ビジネスにどう活かせるか見当がつかない。</p>
                 </div>
-                <div class="problem-card fade-up fade-up-delay-2">
-                    <span class="problem-emoji">📱</span>
-                    <h3>SNSを始めたが<br>成果が出ない</h3>
-                    <p>発信しているつもりだが、フォロワーが増えず集客にもつながっていない。</p>
+                <div class="problem-card problem-card-photo fade-up fade-up-delay-2">
+                    <div class="problem-photo"><img src="assets/sns-problem.jpg" alt="SNSを始めたが成果が出ない"></div>
+                    <div class="problem-card-body">
+                        <h3>SNSを始めたが<br>成果が出ない</h3>
+                        <p>発信しているつもりだが、フォロワーが増えず集客にもつながっていない。</p>
+                    </div>
                 </div>
                 <div class="problem-card fade-up fade-up-delay-3">
                     <span class="problem-emoji">✍️</span>
