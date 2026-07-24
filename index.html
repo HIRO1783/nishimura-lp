@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FMP WORKs（西村康弘） | AI・SNS・Web戦略コンサルタント</title>
+    <title>生成AI業務改善支援 | ChatGPT活用・YouTube/SNS運用効率化 - FMP WORKs（西村康弘）</title>
+    <meta name="description" content="中小企業・個人事業主向けの生成AI業務改善コンサルティング、社内AI活用研修、YouTube・SNSコンテンツ制作効率化支援。ChatGPT・Claude・Geminiを実務で使える形に。無料相談受付中。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -380,6 +381,16 @@
             background-clip: text;
         }
 
+        .hero-subcopy {
+            font-family: var(--serif);
+            font-size: clamp(1.02rem, 2.2vw, 1.3rem);
+            color: var(--gold-2);
+            max-width: 560px;
+            margin: 0 auto 1.6rem;
+            font-weight: 700;
+            line-height: 1.9;
+        }
+
         .hero-sub {
             font-size: clamp(0.92rem, 1.7vw, 1.08rem);
             color: var(--cream-dim);
@@ -526,6 +537,16 @@
             margin-top: 3.5rem;
         }
 
+        .problems-grid-6 { grid-template-columns: repeat(3, 1fr); }
+
+        @media (max-width: 900px) {
+            .problems-grid-6 { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 640px) {
+            .problems-grid-6 { grid-template-columns: 1fr; }
+        }
+
         .problem-card {
             padding: 2.2rem 1.85rem;
             background: var(--card);
@@ -651,6 +672,32 @@
             line-height: 1.9;
         }
 
+        .service-features {
+            list-style: none;
+            margin-top: 1.3rem;
+            padding-top: 1.2rem;
+            border-top: 1px dashed var(--line);
+        }
+
+        .service-features li {
+            position: relative;
+            padding-left: 1.15rem;
+            font-size: 0.83rem;
+            color: var(--cream-dim);
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-features li:last-child { margin-bottom: 0; }
+
+        .service-features li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 0.72rem;
+        }
+
         .service-card-photo { padding: 0; }
 
         .service-photo {
@@ -743,6 +790,63 @@
             font-size: 0.87rem;
             color: var(--cream-dim);
             line-height: 1.9;
+        }
+
+        /* ─── RESULTS ─── */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+            max-width: 640px;
+        }
+
+        .stat-card {
+            padding: 2.2rem 1.5rem;
+            background: var(--card);
+            border: 1px solid var(--line);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--serif);
+            font-size: clamp(2.2rem, 5vw, 3rem);
+            font-weight: 900;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .stat-number span {
+            font-size: 0.42em;
+            font-weight: 700;
+            margin-left: 0.15em;
+        }
+
+        .stat-label {
+            margin-top: 0.6rem;
+            font-size: 0.82rem;
+            color: var(--cream-dim);
+            letter-spacing: 0.05em;
+        }
+
+        #results .career-list { max-width: 720px; margin-top: 2.8rem; border-top: 1px dashed var(--line); }
+
+        /* ─── CTA BAND ─── */
+        .cta-band {
+            padding: 3.2rem 2rem;
+            text-align: center;
+            background: var(--noir-900);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .cta-band p {
+            font-size: 0.95rem;
+            color: var(--cream-dim);
+            margin-bottom: 1.4rem;
         }
 
         /* ─── PROFILE ─── */
@@ -1019,6 +1123,8 @@
         .fade-up-delay-2 { transition-delay: 0.2s; }
         .fade-up-delay-3 { transition-delay: 0.3s; }
         .fade-up-delay-4 { transition-delay: 0.4s; }
+        .fade-up-delay-5 { transition-delay: 0.5s; }
+        .fade-up-delay-6 { transition-delay: 0.6s; }
 
         /* ─── RESPONSIVE ─── */
         @media (max-width: 768px) {
@@ -1054,6 +1160,7 @@
                 <li><a href="#problems">お悩み</a></li>
                 <li><a href="#services">サービス</a></li>
                 <li><a href="#strengths">強み</a></li>
+                <li><a href="#results">実績</a></li>
                 <li><a href="#about">プロフィール</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li class="nav-cta-li"><a href="#contact" class="nav-cta">無料相談はこちら</a></li>
@@ -1070,24 +1177,30 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="badge-dot"></span>
-                <span class="badge-text">AI × BUSINESS STRATEGY —</span> <span class="badge-text">無料相談受付中</span>
+                <span class="badge-text">生成AI業務改善支援</span> <span class="badge-text">× YouTube/SNS運用支援</span> <span class="badge-text">— 無料相談受付中</span>
             </div>
             <h1 class="hero-title">
-                <span class="l"><span>AIと戦略で、</span></span>
-                <span class="l"><span>あなたのビジネスを</span></span>
-                <span class="l"><span class="gradient-text">次のステージへ。</span></span>
+                <span class="l"><span>ChatGPTを</span></span>
+                <span class="l"><span>「導入しただけ」で</span></span>
+                <span class="l"><span class="gradient-text">終わらせない。</span></span>
             </h1>
-            <p class="hero-sub fade-up">
-                上場企業での営業・企画・物流経験を活かし、<br>
-                AIコンサル・SNS運用・ウェブライティングで<br>
-                個人事業主・中小企業の成長を力強く支援します。
+            <p class="hero-subcopy fade-up">
+                中小企業・個人事業主の業務に合わせて、<br>
+                生成AIを実際に使える仕組みに変えます。
             </p>
-            <div class="hero-cta-group fade-up fade-up-delay-1">
-                <a href="#contact" class="btn-primary">まずは無料相談</a>
+            <p class="hero-sub fade-up fade-up-delay-1">
+                営業、資料作成、議事録、マニュアル、SNS・YouTube運用など、<br>
+                日々の業務を整理し、生成AIを活用した効率化を支援します。
+                <br><br>
+                AIやITに詳しくない方にも、専門用語をできるだけ使わず、<br>
+                現場で実践できる形でご提案します。
+            </p>
+            <div class="hero-cta-group fade-up fade-up-delay-2">
+                <a href="#contact" class="btn-primary">自社で活用できる業務を無料で相談する</a>
                 <a href="#services" class="btn-outline">サービスを見る</a>
             </div>
         </div>
-        <span class="fv-tate" aria-hidden="true">AIと言葉で、事業を動かす。</span>
+        <span class="fv-tate" aria-hidden="true">AIを、実務で使える形に。</span>
         <div class="hero-scroll-indicator">
             <span>SCROLL</span>
             <div class="scroll-line"><span></span></div>
@@ -1097,8 +1210,8 @@
     <!-- ── MARQUEE STRIP ── -->
     <div class="strip" aria-hidden="true">
         <div class="strip-track">
-            <span>AI CONSULTING — <em>SNS MARKETING</em> — WEB WRITING — <em>BUSINESS STRATEGY</em> — &nbsp;</span>
-            <span>AI CONSULTING — <em>SNS MARKETING</em> — WEB WRITING — <em>BUSINESS STRATEGY</em> — &nbsp;</span>
+            <span>生成AI業務改善 — <em>社内AI活用研修</em> — YouTube・SNS運用支援 — <em>無料相談受付中</em> — &nbsp;</span>
+            <span>生成AI業務改善 — <em>社内AI活用研修</em> — YouTube・SNS運用支援 — <em>無料相談受付中</em> — &nbsp;</span>
         </div>
     </div>
 
@@ -1108,36 +1221,50 @@
         <div class="container">
             <div class="fade-up">
                 <div class="section-label">PROBLEMS</div>
-                <h2 class="section-title">こんなお悩み、<br>抱えていませんか？</h2>
+                <h2 class="section-title">こんな課題を<br>抱えていませんか？</h2>
                 <div class="divider"></div>
             </div>
-            <div class="problems-grid">
+            <div class="problems-grid problems-grid-6">
                 <div class="problem-card problem-card-photo fade-up fade-up-delay-1">
-                    <div class="problem-photo"><img src="assets/ai-problem.jpg" alt="AIをどう活用すればいいかわからない"></div>
+                    <div class="problem-photo"><img src="assets/problem-1-chatgpt.jpg" alt="ChatGPTを導入したものの、業務で使いこなせていない"></div>
                     <div class="problem-card-body">
-                        <h3>AIをどう活用すれば<br>いいかわからない</h3>
-                        <p>ChatGPTは話題になっているが、自社ビジネスにどう活かせるか見当がつかない。</p>
+                        <h3>ChatGPTを導入したものの、<br>業務で使いこなせていない</h3>
+                        <p>会社でChatGPTや生成AIを導入したものの、社員が文章作成や検索に使うだけで、日々の業務効率化までつながっていない。</p>
                     </div>
                 </div>
                 <div class="problem-card problem-card-photo fade-up fade-up-delay-2">
-                    <div class="problem-photo"><img src="assets/writing-problem.jpg" alt="業務効率化したいが何から手をつければ？"></div>
+                    <div class="problem-photo"><img src="assets/problem-2-task-selection.jpg" alt="AIで効率化できそうだが、対象業務を決められない"></div>
                     <div class="problem-card-body">
-                        <h3>業務効率化したいが<br>何から手をつければ？</h3>
-                        <p>毎日の作業が多く時間が足りない。どの業務をAIで自動化できるか判断できない。</p>
+                        <h3>AIで効率化できそうだが、<br>対象業務を決められない</h3>
+                        <p>メール作成、議事録、報告書、マニュアル、データ整理などに時間がかかっているものの、どの業務からAI化すべきかわからない。</p>
                     </div>
                 </div>
                 <div class="problem-card problem-card-photo fade-up fade-up-delay-3">
-                    <div class="problem-photo"><img src="assets/sns-problem.jpg" alt="SNSを始めたが成果が出ない"></div>
+                    <div class="problem-photo"><img src="assets/problem-3-tool-selection.jpg" alt="AIツールが多すぎて、自社に合うものを選べない"></div>
                     <div class="problem-card-body">
-                        <h3>SNSを始めたが<br>成果が出ない</h3>
-                        <p>発信しているつもりだが、フォロワーが増えず集客にもつながっていない。</p>
+                        <h3>AIツールが多すぎて、<br>自社に合うものを選べない</h3>
+                        <p>ChatGPT、Claude、Geminiなど、さまざまなサービスがあり、どれを導入すればよいのか、費用に見合う効果があるのか判断できない。</p>
                     </div>
                 </div>
                 <div class="problem-card problem-card-photo fade-up fade-up-delay-4">
-                    <div class="problem-photo"><img src="assets/writing-laptop.jpg" alt="文章を書くのが苦手・時間がない"></div>
+                    <div class="problem-photo"><img src="assets/problem-4-content-solo.jpg" alt="SNSやYouTubeの運用が属人化している"></div>
                     <div class="problem-card-body">
-                        <h3>文章を書くのが苦手・<br>時間がない</h3>
-                        <p>ブログやHPの文章を書きたいが、何から始めればいいかわからない。</p>
+                        <h3>SNSやYouTubeの運用が<br>属人化している</h3>
+                        <p>投稿企画、台本作成、画像制作、分析に時間がかかり、担当者一人に負担が集中している。AIを活用して制作時間を短縮したい。</p>
+                    </div>
+                </div>
+                <div class="problem-card problem-card-photo fade-up fade-up-delay-5">
+                    <div class="problem-photo"><img src="assets/problem-5-youtube-start.jpg" alt="YouTubeを始めたいが、何から準備すればよいかわからない"></div>
+                    <div class="problem-card-body">
+                        <h3>YouTubeを始めたいが、<br>何から準備すればよいかわからない</h3>
+                        <p>チャンネル設計、企画、タイトル、台本、投稿後の分析など、必要な作業が多く、社内だけでは進められない。</p>
+                    </div>
+                </div>
+                <div class="problem-card problem-card-photo fade-up fade-up-delay-6">
+                    <div class="problem-photo"><img src="assets/problem-6-team-adoption.jpg" alt="AIを導入しても、社員が使わなくなることが不安"></div>
+                    <div class="problem-card-body">
+                        <h3>AIを導入しても、<br>社員が使わなくなることが不安</h3>
+                        <p>ツールを導入するだけではなく、自社の業務に合わせた使い方や、現場で継続して使える仕組みを整えたい。</p>
                     </div>
                 </div>
             </div>
@@ -1152,44 +1279,64 @@
                 <div class="section-label">SERVICES</div>
                 <h2 class="section-title">提供サービス</h2>
                 <div class="divider"></div>
-                <p class="section-desc">ビジネスの課題に合わせて、最適なサポートをご提供します。</p>
+                <p class="section-desc">AIツールを導入するだけではなく、実際の業務で使い続けられる仕組みづくりまで支援します。</p>
             </div>
             <div class="services-grid">
                 <div class="service-card service-card-photo fade-up fade-up-delay-1">
-                    <div class="service-photo"><img src="assets/ai-efficiency.jpg" alt="AI業務効率化提案"></div>
+                    <div class="service-photo"><img src="assets/ai-efficiency.jpg" alt="生成AI業務改善コンサルティング"></div>
                     <div class="service-card-body">
                         <div class="service-num">SERVICE 01</div>
-                        <h3>AI業務効率化提案</h3>
-                        <p>現在の業務フローを分析し、AIツールを活用した効率化プランをご提案。繰り返し作業の自動化で、本来の仕事に集中できる環境をつくります。</p>
+                        <h3>生成AI業務改善コンサルティング</h3>
+                        <p>現在の業務内容をヒアリングし、生成AIで効率化できる業務を整理します。メール、議事録、報告書、マニュアル、営業資料、データ整理など、日常業務に合わせた具体的な活用方法をご提案します。</p>
+                        <ul class="service-features">
+                            <li>業務内容と課題のヒアリング</li>
+                            <li>AIで効率化できる業務の洗い出し</li>
+                            <li>ChatGPT、Claude、Geminiなどのツール選定</li>
+                            <li>自社業務に合わせたプロンプト作成</li>
+                            <li>導入後の運用方法の整理</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="service-card service-card-photo fade-up fade-up-delay-2">
-                    <div class="service-photo"><img src="assets/ai-consulting.jpg" alt="AIコンサルティング"></div>
+                    <div class="service-photo"><img src="assets/ai-consulting.jpg" alt="社内向け生成AI活用支援・研修"></div>
                     <div class="service-card-body">
                         <div class="service-num">SERVICE 02</div>
-                        <h3>AIコンサルティング</h3>
-                        <p>ChatGPTをはじめとした生成AIツールの導入・活用方法をご提案。あなたのビジネスに合ったAI活用で、業務効率と売上を向上させます。</p>
+                        <h3>社内向け生成AI活用支援・研修</h3>
+                        <p>生成AIを初めて使う社員の方にもわかりやすく、実際の業務を題材にした活用支援を行います。一般的なAI研修ではなく、自社の仕事内容に合わせた実践型の内容にカスタマイズします。</p>
+                        <ul class="service-features">
+                            <li>生成AIの基本操作</li>
+                            <li>安全に使用するための注意点</li>
+                            <li>部署別の活用事例</li>
+                            <li>業務で使えるプロンプト作成</li>
+                            <li>社内マニュアル、活用ルールの作成</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="service-card service-card-photo fade-up fade-up-delay-3">
-                    <div class="service-photo"><img src="assets/sns-support.jpg" alt="SNS運用サポート"></div>
+                    <div class="service-photo"><img src="assets/sns-support.jpg" alt="YouTube・SNSコンテンツ制作効率化支援"></div>
                     <div class="service-card-body">
                         <div class="service-num">SERVICE 03</div>
-                        <h3>SNS運用サポート</h3>
-                        <p>Instagram・X・Facebookなど各SNSの戦略立案から投稿制作・運用まで一貫サポート。フォロワー獲得・集客につながる発信を実現します。</p>
-                    </div>
-                </div>
-                <div class="service-card service-card-photo fade-up fade-up-delay-4">
-                    <div class="service-photo"><img src="assets/web-writing.jpg" alt="ウェブライティング"></div>
-                    <div class="service-card-body">
-                        <div class="service-num">SERVICE 04</div>
-                        <h3>ウェブライティング</h3>
-                        <p>SEOを意識したブログ記事・LP・サービス紹介ページなどの文章制作。読まれて、伝わって、行動につながる文章をお届けします。</p>
+                        <h3>YouTube・SNSコンテンツ制作効率化支援</h3>
+                        <p>YouTubeやSNSの企画、台本作成、投稿文、画像制作、分析業務に生成AIを取り入れ、コンテンツ制作の負担を軽減します。自身のYouTube・Facebook運用経験をもとに、実際の運用現場で使える方法をご提案します。</p>
+                        <ul class="service-features">
+                            <li>YouTubeチャンネル、SNSの企画設計</li>
+                            <li>動画タイトル、構成、台本作成</li>
+                            <li>投稿文、画像制作の効率化</li>
+                            <li>競合リサーチの仕組みづくり</li>
+                            <li>投稿後の数値分析と改善提案</li>
+                            <li>AIを使った制作フローの構築</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- ── CTA BAND ── -->
+    <div class="cta-band fade-up">
+        <p>どのサービスが合うか分からない場合も、まずは無料相談でご相談ください。</p>
+        <a href="#contact" class="btn-primary">自社で活用できる業務を無料で相談する</a>
+    </div>
 
     <!-- ── STRENGTHS ── -->
     <section id="strengths">
@@ -1232,6 +1379,41 @@
             </div>
         </div>
     </section>
+
+    <!-- ── RESULTS / TRACK RECORD ── -->
+    <section id="results">
+        <span class="kanji" style="right:-30px; top:50px;">実</span>
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">TRACK RECORD</div>
+                <h2 class="section-title">実績・信頼性</h2>
+                <div class="divider"></div>
+                <p class="section-desc">YouTube・SNS運用と会社員としての実務経験、両方を掛け合わせてご支援します。</p>
+            </div>
+            <div class="stats-grid fade-up">
+                <div class="stat-card">
+                    <div class="stat-number">2万人<span>超</span></div>
+                    <div class="stat-label">YouTube登録者数</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5万人<span>以上</span></div>
+                    <div class="stat-label">SNS総フォロワー数</div>
+                </div>
+            </div>
+            <ul class="career-list fade-up fade-up-delay-1">
+                <li>YouTube・Facebookでのコンテンツ収益化実績</li>
+                <li>営業・物流を中心とした会社員経験 20年</li>
+                <li>ChatGPT・Claude・Geminiなどを実務で活用</li>
+                <li>AIを活用した企画・台本・投稿文作成・分析・業務フロー構築の実務経験</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ── CTA BAND ── -->
+    <div class="cta-band fade-up">
+        <p>ご自身のYouTube・SNS運用経験も踏まえてご提案します。</p>
+        <a href="#contact" class="btn-primary">自社で活用できる業務を無料で相談する</a>
+    </div>
 
     <!-- ── PROFILE ── -->
     <section id="about">
@@ -1340,9 +1522,9 @@
                     <div class="section-label">CONTACT</div>
                     <h2 class="section-title">お問い合わせ</h2>
                     <div class="divider" style="margin-left: auto; margin-right: auto;"></div>
-                    <p class="section-desc" style="margin: 0 auto; text-align: center; max-width: 480px;">
-                        ご相談・お見積りは無料です。<br>
-                        まずはお気軽にご連絡ください。
+                    <p class="section-desc" style="margin: 0 auto; text-align: center; max-width: 520px;">
+                        無料相談では、現在の業務やお困りごとを伺い、生成AIを活用できそうな業務を一緒に整理します。<br><br>
+                        無理な営業や、その場での契約を求めることはありません。
                     </p>
                 </div>
                 <div class="contact-cards contact-cards-single fade-up">
