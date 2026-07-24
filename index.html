@@ -682,10 +682,10 @@
         .service-features li {
             position: relative;
             padding-left: 1.15rem;
-            font-size: 0.83rem;
+            font-size: 0.87rem;
             color: var(--cream-dim);
-            line-height: 1.8;
-            margin-bottom: 0.5rem;
+            line-height: 1.85;
+            margin-bottom: 0.55rem;
         }
 
         .service-features li:last-child { margin-bottom: 0; }
@@ -832,7 +832,19 @@
             letter-spacing: 0.05em;
         }
 
-        #results .career-list { max-width: 720px; margin-top: 2.8rem; border-top: 1px dashed var(--line); }
+        .results-block { margin-top: 2.8rem; }
+        .results-block + .results-block { margin-top: 3.2rem; }
+
+        .results-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.28em;
+            color: var(--gold);
+            margin-bottom: 1.2rem;
+        }
+
+        #results .stats-grid { margin-top: 0; margin-bottom: 1.8rem; }
+        #results .career-list { max-width: 720px; margin-top: 0; border-top: 1px dashed var(--line); }
 
         /* ─── CTA BAND ─── */
         .cta-band {
@@ -1137,6 +1149,13 @@
             .contact-cards { grid-template-columns: 1fr; }
             .hero-cta-group { flex-direction: column; align-items: center; }
             .kanji { font-size: 160px; }
+
+            #hero { padding: 130px 1.5rem 90px; }
+            .hero-badge { margin-bottom: 1.5rem; }
+            .hero-title { margin-bottom: 1.3rem; }
+            .hero-subcopy { margin-bottom: 1.1rem; }
+            .hero-sub { margin-bottom: 1.8rem; line-height: 1.9; }
+            .hero-sub br + br { display: none; }
         }
 
         @media (max-width: 480px) {
@@ -1149,13 +1168,13 @@
 </head>
 <body>
 
-    <div id="intro"><span class="intro-logo">FMP WORKs<small>西村康弘 ── AI STRATEGY CONSULTANT</small></span></div>
+    <div id="intro"><span class="intro-logo">FMP WORKs<small>西村康弘 ── 生成AI業務改善 / YouTube・SNS運用支援</small></span></div>
     <div id="progress"></div>
 
     <!-- ── NAVIGATION ── -->
     <nav id="navbar">
         <div class="nav-wrap">
-            <div class="nav-logo">FMP WORKs<span>西村康弘 — AI STRATEGY CONSULTANT</span></div>
+            <div class="nav-logo">FMP WORKs<span>西村康弘 — 生成AI業務改善 / YouTube・SNS運用支援</span></div>
             <ul class="nav-links">
                 <li><a href="#problems">お悩み</a></li>
                 <li><a href="#services">サービス</a></li>
@@ -1307,7 +1326,7 @@
                             <li>生成AIの基本操作</li>
                             <li>安全に使用するための注意点</li>
                             <li>部署別の活用事例</li>
-                            <li>業務で使えるプロンプト作成</li>
+                            <li>実践ワークを交えたハンズオン研修</li>
                             <li>社内マニュアル、活用ルールの作成</li>
                         </ul>
                     </div>
@@ -1388,24 +1407,32 @@
                 <div class="section-label">TRACK RECORD</div>
                 <h2 class="section-title">実績・信頼性</h2>
                 <div class="divider"></div>
-                <p class="section-desc">YouTube・SNS運用と会社員としての実務経験、両方を掛け合わせてご支援します。</p>
+                <p class="section-desc">生成AI活用の実務経験と、YouTube・SNS運用の実績。両方を掛け合わせてご支援します。</p>
             </div>
-            <div class="stats-grid fade-up">
-                <div class="stat-card">
-                    <div class="stat-number">2万人<span>超</span></div>
-                    <div class="stat-label">YouTube登録者数</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">5万人<span>以上</span></div>
-                    <div class="stat-label">SNS総フォロワー数</div>
-                </div>
+            <div class="results-block fade-up">
+                <div class="results-label">生成AI活用の実務経験</div>
+                <ul class="career-list">
+                    <li>ChatGPT・Claude・Geminiなどを実務で活用</li>
+                    <li>AIを活用した企画・台本・投稿文作成・分析・業務フロー構築の実務経験</li>
+                    <li>営業・物流を中心とした会社員経験 20年</li>
+                </ul>
             </div>
-            <ul class="career-list fade-up fade-up-delay-1">
-                <li>YouTube・Facebookでのコンテンツ収益化実績</li>
-                <li>営業・物流を中心とした会社員経験 20年</li>
-                <li>ChatGPT・Claude・Geminiなどを実務で活用</li>
-                <li>AIを活用した企画・台本・投稿文作成・分析・業務フロー構築の実務経験</li>
-            </ul>
+            <div class="results-block fade-up fade-up-delay-1">
+                <div class="results-label">YouTube・SNS運用実績</div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">2万人<span>超</span></div>
+                        <div class="stat-label">YouTube登録者数</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5万人<span>以上</span></div>
+                        <div class="stat-label">SNS総フォロワー数</div>
+                    </div>
+                </div>
+                <ul class="career-list">
+                    <li>YouTube・Facebookでのコンテンツ収益化実績</li>
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -1431,13 +1458,12 @@
                     <div class="profile-name">西村 康弘</div>
                     <div class="profile-name-en">NISHIMURA YASUHIRO</div>
                     <div class="profile-tags">
-                        <span class="tag">AIコンサルタント</span>
+                        <span class="tag">生成AIコンサルタント</span>
                         <span class="tag">業務効率化アドバイザー</span>
-                        <span class="tag">SNSマーケター</span>
-                        <span class="tag">ウェブライター</span>
+                        <span class="tag">YouTube・SNS運用アドバイザー</span>
                     </div>
                     <p class="profile-bio">
-                        上場企業にて営業・企画・物流部門を幅広く経験。現場でのビジネス実務を通じて培った戦略思考と問題解決力を武器に、現在は個人事業主・中小企業向けのAI活用・SNS運用・ウェブライティングを中心としたビジネス支援を行っています。
+                        上場企業にて営業・企画・物流部門を幅広く経験。現場でのビジネス実務を通じて培った戦略思考と問題解決力を武器に、現在は中小企業・個人事業主向けの生成AI業務改善支援と、YouTube・SNS運用支援を中心にビジネス支援を行っています。
                     </p>
                     <p class="profile-bio">
                         「難しいことをわかりやすく、現実的な形で」をモットーに、お客様のビジネス成長に伴走します。
@@ -1446,7 +1472,7 @@
                         <li>上場企業 営業部門にて新規開拓・顧客管理を担当</li>
                         <li>企画部門にて事業戦略・マーケティング施策の立案に携わる</li>
                         <li>物流部門にて業務フロー改善・効率化プロジェクトを推進</li>
-                        <li>現在：AI・SNS・Web領域で個人・中小企業のビジネス支援に従事</li>
+                        <li>現在：生成AI業務改善支援とYouTube・SNS運用支援を中心に、個人・中小企業のビジネス支援に従事</li>
                     </ul>
                     <div class="qualifications">
                         <div class="qualifications-label">保有資格</div>
