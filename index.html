@@ -1762,6 +1762,39 @@
             progressBar.style.transform = `scaleX(${scrolled})`;
         }, { passive: true });
 
+        // ── Prevent key compound terms from breaking mid-word on narrow screens ──
+        (function () {
+            const terms = ['生成AI'];
+            const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+                acceptNode(node) {
+                    if (!node.nodeValue || !terms.some(t => node.nodeValue.includes(t))) return NodeFilter.FILTER_SKIP;
+                    const p = node.parentElement;
+                    if (p && (p.tagName === 'SCRIPT' || p.tagName === 'STYLE')) return NodeFilter.FILTER_REJECT;
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            });
+            const nodes = [];
+            let n;
+            while ((n = walker.nextNode())) nodes.push(n);
+            const pattern = new RegExp('(' + terms.join('|') + ')');
+            nodes.forEach(node => {
+                const parts = node.nodeValue.split(pattern);
+                if (parts.length < 2) return;
+                const frag = document.createDocumentFragment();
+                parts.forEach(part => {
+                    if (terms.includes(part)) {
+                        const span = document.createElement('span');
+                        span.className = 'nowrap';
+                        span.textContent = part;
+                        frag.appendChild(span);
+                    } else if (part) {
+                        frag.appendChild(document.createTextNode(part));
+                    }
+                });
+                node.parentNode.replaceChild(frag, node);
+            });
+        })();
+
         // ── Split section headings into characters for cascade reveal ──
         document.querySelectorAll('.section-title').forEach(h2 => {
             const frag = document.createDocumentFragment();
