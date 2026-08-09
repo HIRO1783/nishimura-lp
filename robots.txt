@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nishimura-lp.vercel.app/sitemap.xml
+Sitemap: https://fmpworks.jp/sitemap.xml
