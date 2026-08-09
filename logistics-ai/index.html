@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>物流特化 生成AI業務改善支援 | 現場ヒアリング型コンサルティング - FMP WORKs（西村康弘）</title>
+    <meta name="description" content="物流業界向けの生成AI業務改善支援。現場ヒアリングを起点に、必要な場合だけAIを提案する誠実なコンサルティング。請求書処理・問い合わせ対応の効率化など。無料相談受付中。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --paper: #ffffff;
+            --paper-soft: #f2f6fa;
+            --ink-900: #0e2138;
+            --ink-700: #1c3a5a;
+            --blue: #1c5ea8;
+            --blue-2: #2f7fd1;
+            --blue-deep: #0b3d68;
+            --slate: #4d6480;
+            --muted: #7286a0;
+            --card: #ffffff;
+            --line: rgba(14, 33, 56, 0.12);
+            --gradient-blue: linear-gradient(135deg, var(--blue-deep), var(--blue) 55%, var(--blue-2));
+            --gradient-text: linear-gradient(135deg, var(--blue-deep) 10%, var(--blue) 55%, var(--blue-2));
+            --serif: 'Noto Serif JP', serif;
+            --sans: 'Noto Sans JP', -apple-system, 'Hiragino Kaku Gothic ProN', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; overflow-x: clip; }
+
+        body {
+            font-family: var(--sans);
+            background-color: var(--paper);
+            color: var(--ink-700);
+            line-height: 1.9;
+            overflow-x: clip;
+            font-feature-settings: "palt";
+        }
+
+        /* ─── PROGRESS BAR ─── */
+        #progress {
+            position: fixed;
+            top: 0; left: 0;
+            height: 3px;
+            width: 100%;
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            background: linear-gradient(90deg, var(--blue-deep), var(--blue), var(--blue-2));
+            z-index: 2000;
+        }
+
+        /* ─── NAV ─── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 1.4rem 0;
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: 0 1px 0 var(--line);
+            padding: 0.95rem 0;
+        }
+
+        .nav-wrap {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 0 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--serif);
+            font-size: 1rem;
+            font-weight: 900;
+            letter-spacing: 0.18em;
+            color: var(--ink-900);
+            display: flex;
+            align-items: baseline;
+            gap: 0.9rem;
+        }
+
+        .nav-logo span {
+            font-family: var(--sans);
+            font-weight: 500;
+            font-size: 0.62rem;
+            color: var(--muted);
+            letter-spacing: 0.14em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--slate);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--blue); }
+
+        .nav-cta {
+            padding: 0.6rem 1.5rem;
+            background: var(--gradient-blue);
+            border-radius: 2px;
+            color: #ffffff !important;
+            font-size: 0.8rem;
+            font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .nav-cta:hover { transform: translateY(-2px); }
+        .nav-cta { white-space: nowrap; }
+
+        @media (max-width: 880px) {
+            .nav-links li:not(.nav-cta-li) { display: none; }
+        }
+
+        @media (max-width: 560px) {
+            .nav-logo span { display: none; }
+            .nav-logo { font-size: 0.88rem; }
+            .nav-cta { padding: 0.55rem 1.1rem; font-size: 0.72rem; }
+        }
+
+        /* ─── BUTTONS ─── */
+        .btn-primary, .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--sans);
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+        }
+
+        .btn-primary {
+            padding: 1.35rem 3.6rem;
+            background: var(--gradient-blue);
+            color: #ffffff;
+            font-size: 1.1rem;
+            box-shadow: 0 14px 40px -14px rgba(28, 94, 168, 0.55);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px -14px rgba(28, 94, 168, 0.65);
+        }
+
+        .btn-outline {
+            padding: 1rem 2.8rem;
+            background: transparent;
+            border: 1px solid var(--line);
+            color: var(--ink-700);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+            transform: translateY(-2px);
+        }
+
+        /* ─── HERO ─── */
+        #hero {
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 160px 2rem 120px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 12% 60%, rgba(28, 94, 168, 0.08) 0%, transparent 55%),
+                radial-gradient(ellipse at 88% 15%, rgba(47, 127, 209, 0.08) 0%, transparent 55%),
+                radial-gradient(ellipse at 55% 90%, rgba(28, 94, 168, 0.05) 0%, transparent 45%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 920px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem 0.7rem;
+            padding: 0.5rem 1.4rem;
+            background: rgba(28, 94, 168, 0.06);
+            border: 1px solid var(--line);
+            border-radius: 26px;
+            font-size: 0.76rem;
+            font-family: var(--sans);
+            color: var(--blue);
+            margin-bottom: 2.2rem;
+            letter-spacing: 0.14em;
+            font-weight: 600;
+        }
+
+        .badge-text { white-space: nowrap; }
+        .nowrap { white-space: nowrap; }
+
+        .badge-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--blue);
+            border-radius: 50%;
+            animation: badgePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes badgePulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(28, 94, 168, 0.4); }
+            50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(28, 94, 168, 0); }
+        }
+
+        .hero-title {
+            font-family: var(--serif);
+            font-size: clamp(2.2rem, 5.6vw, 4.2rem);
+            font-weight: 900;
+            line-height: 1.55;
+            margin-bottom: 2rem;
+            letter-spacing: 0.02em;
+            color: var(--ink-900);
+        }
+
+        .hero-title .l { display: block; overflow: hidden; }
+        .hero-title .l > span {
+            display: inline-block;
+            animation: lineUp 1s cubic-bezier(.16,1,.3,1) both;
+        }
+        .hero-title .l:nth-child(1) > span { animation-delay: .15s; }
+        .hero-title .l:nth-child(2) > span { animation-delay: .3s; }
+        .hero-title .l:nth-child(3) > span { animation-delay: .45s; }
+        .hero-title .l:nth-child(4) > span { animation-delay: .6s; }
+
+        @keyframes lineUp {
+            from { transform: translateY(112%); }
+            to { transform: translateY(0); }
+        }
+
+        .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subcopy {
+            font-family: var(--serif);
+            font-size: clamp(1.0rem, 2.1vw, 1.22rem);
+            color: var(--blue-deep);
+            max-width: 600px;
+            margin: 0 auto 1.6rem;
+            font-weight: 700;
+            line-height: 1.9;
+        }
+
+        .hero-sub {
+            font-size: clamp(0.92rem, 1.7vw, 1.08rem);
+            color: var(--slate);
+            max-width: 580px;
+            margin: 0 auto 3rem;
+            font-weight: 300;
+            line-height: 2.1;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1.1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--muted);
+            font-size: 0.66rem;
+            letter-spacing: 0.2em;
+            z-index: 1;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 48px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .scroll-line span {
+            position: absolute;
+            left: 0; top: -40%;
+            width: 1px; height: 40%;
+            background: linear-gradient(var(--blue), transparent);
+            animation: cueLine 2s ease-in-out infinite;
+        }
+
+        @keyframes cueLine { to { top: 110%; } }
+
+        /* ─── MARQUEE STRIP ─── */
+        .strip {
+            overflow: hidden;
+            padding: 44px 0;
+            background: var(--paper-soft);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .strip-track {
+            display: flex;
+            gap: 60px;
+            width: max-content;
+            white-space: nowrap;
+            animation: stripMove 30s linear infinite;
+            font-family: var(--serif);
+            font-weight: 900;
+            font-size: clamp(24px, 4vw, 46px);
+            letter-spacing: 0.06em;
+            line-height: 1;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(14, 33, 56, 0.28);
+        }
+
+        .strip-track em {
+            font-style: normal;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: 0;
+        }
+
+        @keyframes stripMove { to { transform: translateX(-50%); } }
+
+        /* ─── COMMON ─── */
+        section { padding: 120px 2rem; position: relative; overflow: hidden; }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-label {
+            font-family: var(--sans);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.36em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--serif);
+            font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+            font-weight: 700;
+            line-height: 1.6;
+            letter-spacing: 0.03em;
+            color: var(--ink-900);
+        }
+
+        .section-title .ch {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(18px) rotateX(-40deg);
+            transition: opacity .55s ease, transform .55s cubic-bezier(.2,.8,.2,1);
+        }
+
+        .fade-up.visible .ch,
+        .section-title.visible .ch { opacity: 1; transform: none; }
+
+        .section-desc {
+            margin-top: 1.2rem;
+            color: var(--slate);
+            font-size: 0.97rem;
+            max-width: 580px;
+            line-height: 2;
+        }
+
+        .divider {
+            width: 56px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--blue), transparent);
+            margin: 1.8rem 0 2.5rem;
+        }
+
+        /* ─── PROBLEMS ─── */
+        #problems { background: var(--paper-soft); }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin-top: 3.5rem;
+        }
+
+        .problems-grid-6 { grid-template-columns: repeat(3, 1fr); }
+
+        .problem-card-photo { padding: 0; }
+
+        .problem-photo {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+        }
+
+        .problem-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(1.03) brightness(1.05) saturate(1.02);
+            transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
+        }
+
+        .problem-card:hover .problem-photo img {
+            transform: scale(1.08);
+        }
+
+        .problem-photo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(28, 94, 168, 0.18), rgba(28, 94, 168, 0.03) 65%);
+            mix-blend-mode: soft-light;
+        }
+
+        .problem-card-body {
+            padding: 2rem 1.85rem 2.2rem;
+        }
+
+        @media (max-width: 900px) {
+            .problems-grid-6 { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 640px) {
+            .problems-grid-6 { grid-template-columns: 1fr; }
+        }
+
+        .problem-card {
+            padding: 2.2rem 1.85rem;
+            background: var(--card);
+            border: 1px solid var(--line);
+            transition: border-color 0.3s, transform 0.15s, box-shadow 0.3s;
+        }
+
+        .problem-card:hover {
+            border-color: rgba(28, 94, 168, 0.4);
+            box-shadow: 0 18px 50px -22px rgba(14, 33, 56, 0.18);
+        }
+
+        .problem-icon {
+            font-size: 1.8rem;
+            margin-bottom: 1.1rem;
+            display: block;
+        }
+
+        .problem-card h3 {
+            font-family: var(--serif);
+            font-size: 1.02rem;
+            font-weight: 700;
+            margin-bottom: 0.7rem;
+            line-height: 1.6;
+            color: var(--ink-900);
+        }
+
+        .problem-card p {
+            font-size: 0.87rem;
+            color: var(--slate);
+            line-height: 1.85;
+        }
+
+        /* ─── COMMITMENTS (差別化・支援姿勢) ─── */
+        #commitments { background: var(--paper); }
+
+        .commit-tagline {
+            font-family: var(--serif);
+            font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+            font-weight: 700;
+            color: var(--blue-deep);
+            margin-top: 1.2rem;
+            max-width: 640px;
+            line-height: 1.9;
+        }
+
+        .commit-list {
+            margin-top: 3.5rem;
+            border-top: 1px solid var(--line);
+        }
+
+        .commit-item {
+            display: grid;
+            grid-template-columns: 84px 1fr;
+            gap: 1.8rem;
+            align-items: start;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .commit-num {
+            font-family: var(--serif);
+            font-size: 2rem;
+            font-weight: 900;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+
+        .commit-item h3 {
+            font-family: var(--serif);
+            font-size: 1.08rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: var(--ink-900);
+        }
+
+        .commit-item p {
+            font-size: 0.92rem;
+            color: var(--slate);
+            line-height: 1.95;
+            max-width: 620px;
+        }
+
+        @media (max-width: 640px) {
+            .commit-item { grid-template-columns: 48px 1fr; gap: 1.1rem; }
+            .commit-num { font-size: 1.5rem; }
+        }
+
+        /* ─── SERVICES ─── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .service-card {
+            padding: 2.6rem 2.1rem;
+            background: var(--card);
+            border: 1px solid var(--line);
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.35s, transform 0.15s, box-shadow 0.35s;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: var(--gradient-blue);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            border-color: rgba(28, 94, 168, 0.4);
+            box-shadow: 0 24px 70px -24px rgba(14, 33, 56, 0.2);
+        }
+
+        .service-card:hover::after { transform: scaleX(1); }
+
+        .service-num {
+            font-family: var(--sans);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            color: var(--blue);
+            margin-bottom: 1.8rem;
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 1.3rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-family: var(--serif);
+            font-size: 1.14rem;
+            font-weight: 700;
+            margin-bottom: 0.9rem;
+            color: var(--ink-900);
+            letter-spacing: 0.02em;
+        }
+
+        .service-card p {
+            font-size: 0.87rem;
+            color: var(--slate);
+            line-height: 1.9;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-top: 1.3rem;
+            padding-top: 1.2rem;
+            border-top: 1px dashed var(--line);
+        }
+
+        .service-features li {
+            position: relative;
+            padding-left: 1.15rem;
+            font-size: 0.87rem;
+            color: var(--slate);
+            line-height: 1.85;
+            margin-bottom: 0.55rem;
+        }
+
+        .service-features li:last-child { margin-bottom: 0; }
+
+        .service-features li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--blue);
+            font-size: 0.72rem;
+        }
+
+        .service-card-photo { padding: 0; }
+
+        .service-photo {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+        }
+
+        .service-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(1.03) brightness(1.05) saturate(1.02);
+            transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
+        }
+
+        .service-card:hover .service-photo img {
+            transform: scale(1.08);
+        }
+
+        .service-photo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(28, 94, 168, 0.18), rgba(28, 94, 168, 0.03) 65%);
+            mix-blend-mode: soft-light;
+        }
+
+        .service-card-body { padding: 2rem 2.1rem 2.6rem; }
+        .service-card-body .service-num { margin-bottom: 1rem; }
+
+        /* ─── STRENGTHS ─── */
+        #strengths { background: var(--paper-soft); }
+
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.8rem 3.5rem;
+            margin-top: 3.5rem;
+        }
+
+        @media (max-width: 680px) {
+            .strengths-grid { grid-template-columns: 1fr; }
+        }
+
+        .strength-item {
+            display: flex;
+            gap: 1.4rem;
+            align-items: flex-start;
+        }
+
+        .strength-icon {
+            width: 54px;
+            height: 54px;
+            min-width: 54px;
+            background: rgba(28, 94, 168, 0.06);
+            border: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .strength-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(1.03) brightness(1.05) saturate(1.02);
+            transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
+        }
+
+        .strength-item:hover .strength-icon img {
+            transform: scale(1.12);
+        }
+
+        .strength-icon-photo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(28, 94, 168, 0.2), rgba(28, 94, 168, 0.04) 65%);
+            mix-blend-mode: soft-light;
+        }
+
+        .strength-item h3 {
+            font-family: var(--serif);
+            font-size: 1.02rem;
+            font-weight: 700;
+            margin-bottom: 0.55rem;
+            color: var(--ink-900);
+            letter-spacing: 0.02em;
+        }
+
+        .strength-item p {
+            font-size: 0.87rem;
+            color: var(--slate);
+            line-height: 1.9;
+        }
+
+        /* ─── RESULTS ─── */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+            max-width: 340px;
+        }
+
+        .stat-card {
+            padding: 2.2rem 1.5rem;
+            background: var(--card);
+            border: 1px solid var(--line);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--serif);
+            font-size: clamp(2.2rem, 5vw, 3rem);
+            font-weight: 900;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .stat-number span {
+            font-size: 0.42em;
+            font-weight: 700;
+            margin-left: 0.15em;
+        }
+
+        .stat-label {
+            margin-top: 0.6rem;
+            font-size: 0.82rem;
+            color: var(--slate);
+            letter-spacing: 0.05em;
+        }
+
+        .results-block { margin-top: 2.8rem; }
+        .results-block + .results-block { margin-top: 3.2rem; }
+
+        .results-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.28em;
+            color: var(--blue);
+            margin-bottom: 1.2rem;
+        }
+
+        #results .stats-grid { margin-top: 0; margin-bottom: 1.8rem; }
+
+        .career-list {
+            list-style: none;
+            margin-top: 1.6rem;
+            border-top: 1px dashed var(--line);
+            max-width: 720px;
+        }
+
+        .career-list li {
+            position: relative;
+            padding: 0.95rem 0 0.95rem 1.15rem;
+            border-bottom: 1px dashed var(--line);
+            font-size: 0.87rem;
+            color: var(--slate);
+        }
+
+        .career-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            top: 0.95rem;
+            color: var(--blue);
+            font-size: 0.72rem;
+        }
+
+        /* ─── CTA BAND ─── */
+        .cta-band {
+            padding: 3.2rem 2rem;
+            text-align: center;
+            background: var(--paper-soft);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .cta-band p {
+            font-size: 0.95rem;
+            color: var(--slate);
+            margin-bottom: 1.4rem;
+        }
+
+        /* ─── PROFILE ─── */
+        .profile-layout {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 5rem;
+            align-items: start;
+            margin-top: 3.5rem;
+        }
+
+        .profile-mark {
+            width: 100%;
+            aspect-ratio: 1;
+            border: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(28, 94, 168, 0.06), transparent 70%);
+        }
+
+        .profile-mark img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            filter: contrast(1.03) brightness(1.05) saturate(1.02);
+            transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
+        }
+
+        .profile-mark:hover img {
+            transform: scale(1.06);
+        }
+
+        .profile-mark::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(28, 94, 168, 0.16), rgba(28, 94, 168, 0.03) 65%);
+            mix-blend-mode: soft-light;
+            pointer-events: none;
+        }
+
+        .profile-mark span {
+            font-family: var(--serif);
+            font-size: 4.4rem;
+            font-weight: 700;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .profile-brand {
+            font-family: var(--sans);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.28em;
+            color: var(--blue);
+            margin-bottom: 0.7rem;
+        }
+
+        .profile-name {
+            font-family: var(--serif);
+            font-size: 1.9rem;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.4rem;
+            color: var(--ink-900);
+        }
+
+        .profile-name-en {
+            font-size: 0.78rem;
+            color: var(--muted);
+            letter-spacing: 0.24em;
+            margin-bottom: 1.6rem;
+        }
+
+        .profile-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+            margin-bottom: 1.9rem;
+        }
+
+        .tag {
+            padding: 0.35rem 1.05rem;
+            background: rgba(28, 94, 168, 0.06);
+            border: 1px solid var(--line);
+            border-radius: 50px;
+            font-size: 0.76rem;
+            color: var(--blue-deep);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+        }
+
+        .profile-bio {
+            font-size: 0.93rem;
+            color: var(--slate);
+            line-height: 2.1;
+            margin-bottom: 1rem;
+        }
+
+        .qualifications { margin-top: 2rem; }
+
+        .qualifications-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.28em;
+            color: var(--blue);
+            margin-bottom: 0.8rem;
+        }
+
+        /* ─── FAQ ─── */
+        #faq { background: var(--paper-soft); }
+
+        .faq-wrap {
+            max-width: 780px;
+            margin-top: 3.5rem;
+        }
+
+        .faq-item { border-bottom: 1px solid var(--line); }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.6rem 0;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.98rem;
+            color: var(--ink-900);
+            transition: color 0.2s;
+            user-select: none;
+        }
+
+        .faq-question:hover { color: var(--blue); }
+
+        .faq-toggle {
+            width: 26px;
+            height: 26px;
+            min-width: 26px;
+            border: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+            color: var(--blue);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .faq-item.open .faq-toggle {
+            transform: rotate(45deg);
+            background: rgba(28, 94, 168, 0.1);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+            font-size: 0.9rem;
+            color: var(--slate);
+            line-height: 2;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 260px;
+            padding-bottom: 1.6rem;
+        }
+
+        /* ─── CONTACT ─── */
+        #contact { background: var(--paper); }
+
+        .contact-inner {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .contact-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            max-width: 340px;
+            margin: 3.5rem auto 0;
+            gap: 1.5rem;
+        }
+
+        .contact-card {
+            padding: 3rem 2rem;
+            background: var(--card);
+            border: 1px solid var(--line);
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: block;
+        }
+
+        .contact-card:hover {
+            border-color: var(--blue);
+            transform: translateY(-6px);
+            box-shadow: 0 24px 60px -22px rgba(28, 94, 168, 0.25);
+        }
+
+        .contact-icon-wrap { font-size: 2.4rem; margin-bottom: 1rem; }
+
+        .contact-card h3 {
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: var(--ink-900);
+        }
+
+        .contact-card p {
+            font-size: 0.84rem;
+            color: var(--slate);
+            line-height: 1.7;
+        }
+
+        .contact-note {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            padding: 2.2rem;
+            text-align: center;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 0.76rem;
+            letter-spacing: 0.06em;
+            background: var(--paper);
+        }
+
+        /* ─── ANIMATIONS ─── */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        .fade-up-delay-1 { transition-delay: 0.1s; }
+        .fade-up-delay-2 { transition-delay: 0.2s; }
+        .fade-up-delay-3 { transition-delay: 0.3s; }
+        .fade-up-delay-4 { transition-delay: 0.4s; }
+        .fade-up-delay-5 { transition-delay: 0.5s; }
+        .fade-up-delay-6 { transition-delay: 0.6s; }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 768px) {
+            .nav-wrap { padding: 0 1.5rem; }
+            section { padding: 90px 1.5rem; }
+
+            .profile-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+            .profile-mark { max-width: 170px; margin: 0 auto; }
+
+            .hero-cta-group { flex-direction: column; align-items: center; }
+
+            #hero { padding: 130px 1.5rem 90px; }
+            .hero-badge { margin-bottom: 1.5rem; }
+            .hero-title { margin-bottom: 1.3rem; }
+            .hero-subcopy { margin-bottom: 1.1rem; }
+            .hero-sub { margin-bottom: 1.8rem; line-height: 1.9; }
+            .hero-sub br + br { display: none; }
+            .hero-scroll-indicator { display: none; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { font-size: 1.9rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .problems-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ─── FLOATING CTA ─── */
+        .floating-cta {
+            position: fixed;
+            right: 1.6rem;
+            bottom: 1.6rem;
+            z-index: 1001;
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            background: var(--gradient-blue);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            line-height: 1.4;
+            box-shadow: 0 14px 34px -10px rgba(28, 94, 168, 0.55);
+            opacity: 0;
+            transform: translateY(16px) scale(0.9);
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.25s ease;
+        }
+
+        .floating-cta.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        .floating-cta:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 20px 44px -10px rgba(28, 94, 168, 0.65);
+        }
+
+        @media (max-width: 560px) {
+            .floating-cta {
+                width: 72px;
+                height: 72px;
+                right: 1rem;
+                bottom: 1rem;
+                font-size: 0.62rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progress"></div>
+
+    <a href="#contact" class="floating-cta" id="floatingCta"><span>無料相談は<br>こちら</span></a>
+
+    <!-- ── NAVIGATION ── -->
+    <nav id="navbar">
+        <div class="nav-wrap">
+            <div class="nav-logo">FMP WORKs<span>西村康弘 — 物流特化 生成AI業務改善支援</span></div>
+            <ul class="nav-links">
+                <li><a href="#problems">お悩み</a></li>
+                <li><a href="#commitments">支援姿勢</a></li>
+                <li><a href="#services">サービス</a></li>
+                <li><a href="#strengths">強み</a></li>
+                <li><a href="#results">実績</a></li>
+                <li><a href="#about">プロフィール</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li class="nav-cta-li"><a href="#contact" class="nav-cta">無料相談はこちら</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span class="badge-text">物流業界向け 生成AI業務改善支援</span> <span class="badge-text">— 無料相談受付中</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="l"><span>物流現場を</span></span>
+                <span class="l"><span>経験してきたから、</span></span>
+                <span class="l"><span>AIを入れる前に</span></span>
+                <span class="l"><span class="gradient-text">現場のどこが非効率かを</span></span>
+                <span class="l"><span class="gradient-text">一緒に整理できます。</span></span>
+            </h1>
+            <p class="hero-subcopy fade-up">
+                物流現場の業務内容を丁寧に伺い、<br>
+                必要な場合に限って生成AIをご提案します。
+            </p>
+            <p class="hero-sub fade-up fade-up-delay-1">
+                配送計画、請求書処理、問い合わせ対応、シフト管理など、<br>
+                日々の業務にはそれぞれ事情があります。
+                <br><br>
+                抽象的な「効率化」ではなく、<br>
+                誰が・何を・どう変えるかまで具体化してご支援します。
+            </p>
+            <div class="hero-cta-group fade-up fade-up-delay-2">
+                <a href="#contact" class="btn-primary">現場の課題を<br>無料で相談する</a>
+                <a href="#commitments" class="btn-outline">支援の姿勢を見る</a>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>SCROLL</span>
+            <div class="scroll-line"><span></span></div>
+        </div>
+    </section>
+
+    <!-- ── MARQUEE STRIP ── -->
+    <div class="strip" aria-hidden="true">
+        <div class="strip-track">
+            <span>物流特化 生成AI業務改善支援 — <em>現場ヒアリングを起点に</em> — <em>無料相談受付中</em> — &nbsp;</span>
+            <span>物流特化 生成AI業務改善支援 — <em>現場ヒアリングを起点に</em> — <em>無料相談受付中</em> — &nbsp;</span>
+        </div>
+    </div>
+
+    <!-- ── PROBLEMS ── -->
+    <section id="problems">
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">PROBLEMS</div>
+                <h2 class="section-title">こんな課題を<br>抱えていませんか？</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="problems-grid problems-grid-6">
+                <div class="problem-card problem-card-photo fade-up fade-up-delay-1">
+                    <div class="problem-photo"><img src="assets/problem-1-driver-shortage.jpg" alt="ドライバー不足で、配送計画に追われている"></div>
+                    <div class="problem-card-body">
+                        <h3>ドライバー不足で、<br>配送計画に追われている</h3>
+                        <p>人手が足りない中で配送ルートやシフトの調整に多くの時間を取られ、他の業務に手が回らない。</p>
+                    </div>
+                </div>
+                <div class="problem-card problem-card-photo fade-up fade-up-delay-2">
+                    <div class="problem-photo"><img src="assets/problem-2-invoice.jpg" alt="請求書・伝票処理などの事務作業に追われている"></div>
+                    <div class="problem-card-body">
+                        <h3>請求書・伝票処理などの<br>事務作業に追われている</h3>
+                        <p>紙やExcelでの管理が多く、月末の請求処理や伝票の突き合わせに時間がかかっている。</p>
+                    </div>
+                </div>
+                <div class="problem-card problem-card-photo fade-up fade-up-delay-4">
+                    <div class="problem-photo"><img src="assets/problem-3-phone-support.jpg" alt="電話・メールの問い合わせ対応に人手を取られている"></div>
+                    <div class="problem-card-body">
+                        <h3>電話・メールでの<br>問い合わせ対応に<br>人手を取られている</h3>
+                        <p>配送状況の確認や見積もり対応など、日々の問い合わせ対応が業務を圧迫している。</p>
+                    </div>
+                </div>
+                <div class="problem-card problem-card-photo fade-up fade-up-delay-5">
+                    <div class="problem-photo"><img src="assets/problem-4-shift-management.jpg" alt="シフト・配車管理が属人化している"></div>
+                    <div class="problem-card-body">
+                        <h3>シフト・配車管理が<br>属人化している</h3>
+                        <p>特定の担当者の経験と勘に頼っており、担当者不在時に業務が滞るリスクを抱えている。</p>
+                    </div>
+                </div>
+                <div class="problem-card problem-card-photo fade-up fade-up-delay-6">
+                    <div class="problem-photo"><img src="assets/problem-5-ai-confused.jpg" alt="AIを使ってみたいが、何から手をつければよいかわからない"></div>
+                    <div class="problem-card-body">
+                        <h3>AIを使ってみたいが、<br>何から手をつければ<br>よいかわからない</h3>
+                        <p>生成AIが話題になっているが、自社のどの業務に、どう使えば効果があるのか判断できない。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── COMMITMENTS（差別化・支援姿勢） ── -->
+    <section id="commitments">
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">OUR COMMITMENT</div>
+                <h2 class="section-title">現場目線のAI支援</h2>
+                <div class="divider"></div>
+                <p class="commit-tagline">AIを入れることが目的ではありません。<br>現場の困りごとを減らすことが目的です。</p>
+                <p class="section-desc">AI業界にありがちな「簡単に成果が出る」「AIを入れればすぐ効率化できる」といった訴求は行いません。当方が大切にしている5つのことをお伝えします。</p>
+            </div>
+            <div class="commit-list fade-up">
+                <div class="commit-item">
+                    <div class="commit-num">01</div>
+                    <div>
+                        <h3>まず、現場をヒアリングします</h3>
+                        <p>物流の業務フロー・課題を丁寧に伺うことから始めます。話を聞かないまま提案することはありません。</p>
+                    </div>
+                </div>
+                <div class="commit-item">
+                    <div class="commit-num">02</div>
+                    <div>
+                        <h3>AIありきでは提案しません</h3>
+                        <p>必要な場合に限って生成AIをご提案します。業務整理や運用の見直しだけで解決することもあります。</p>
+                    </div>
+                </div>
+                <div class="commit-item">
+                    <div class="commit-num">03</div>
+                    <div>
+                        <h3>誰が・何を・どう変えるかまで具体化します</h3>
+                        <p>抽象的な「効率化」ではなく、担当者・業務・手順のレベルまで落とし込んでご提案します。</p>
+                    </div>
+                </div>
+                <div class="commit-item">
+                    <div class="commit-num">04</div>
+                    <div>
+                        <h3>できること・できないこと・リスクを先にお伝えします</h3>
+                        <p>過度な成果保証はいたしません。導入前に限界や注意点も含めて正直にお話しします。</p>
+                    </div>
+                </div>
+                <div class="commit-item">
+                    <div class="commit-num">05</div>
+                    <div>
+                        <h3>その場での契約は求めません</h3>
+                        <p>ご提案後は持ち帰ってご検討いただけます。現場に定着して使い続けられることを重視しています。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SERVICES ── -->
+    <section id="services">
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">SERVICES</div>
+                <h2 class="section-title">提供サービス</h2>
+                <div class="divider"></div>
+                <p class="section-desc">AIツールを導入するだけではなく、現場のヒアリングから運用の定着まで、必要な範囲でご支援します。</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card service-card-photo fade-up fade-up-delay-1">
+                    <div class="service-photo"><img src="assets/service-1-hearing.jpg" alt="物流現場ヒアリング・業務改善診断"></div>
+                    <div class="service-card-body">
+                        <div class="service-num">SERVICE 01</div>
+                        <h3>物流現場ヒアリング・業務改善診断</h3>
+                        <p>まずは配送、請求、問い合わせ対応など日々の業務内容を伺い、時間がかかっている業務を整理します。AIが必要かどうかも含めて、フラットにご提案します。</p>
+                        <ul class="service-features">
+                            <li>現場業務・課題のヒアリング</li>
+                            <li>業務フローの可視化</li>
+                            <li>AI活用が有効な業務の見極め</li>
+                            <li>費用対効果の整理</li>
+                            <li>改善優先順位のご提案</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card service-card-photo fade-up fade-up-delay-2">
+                    <div class="service-photo"><img src="assets/service-2-ai-support.jpg" alt="物流特化 生成AI活用支援"></div>
+                    <div class="service-card-body">
+                        <div class="service-num">SERVICE 02</div>
+                        <h3>物流特化 生成AI活用支援</h3>
+                        <p>請求書・伝票処理、配送状況の問い合わせ対応、シフト・マニュアル作成など、物流現場で発生しやすい業務に絞って生成AIの活用方法をご提案します。</p>
+                        <ul class="service-features">
+                            <li>請求書・伝票処理の効率化</li>
+                            <li>問い合わせ対応の下書き作成支援</li>
+                            <li>シフト表・マニュアル作成支援</li>
+                            <li>ChatGPT、Claude、Geminiなどのツール選定</li>
+                            <li>現場で使い続けられる運用設計</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CTA BAND ── -->
+    <div class="cta-band fade-up">
+        <p>どこから手をつければよいか分からない場合も、<br>まずは無料相談で現場の状況をお聞かせください。</p>
+        <a href="#contact" class="btn-primary">現場の課題を<br>無料で相談する</a>
+    </div>
+
+    <!-- ── STRENGTHS ── -->
+    <section id="strengths">
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">WHY CHOOSE ME</div>
+                <h2 class="section-title">選ばれる理由</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="strengths-grid">
+                <div class="strength-item fade-up fade-up-delay-1">
+                    <div class="strength-icon strength-icon-photo"><img src="assets/strength-1-warehouse-experience.jpg" alt="物流部門での実務経験"></div>
+                    <div>
+                        <h3>物流部門での実務経験</h3>
+                        <p>物流センターで派遣・パートスタッフのマネジメントと在庫管理・出荷業務に従事した実務経験があります。物流現場を経験してきたから、AIを入れる前に現場のどこが非効率なのかを一緒に整理できます。</p>
+                    </div>
+                </div>
+                <div class="strength-item fade-up fade-up-delay-2">
+                    <div class="strength-icon strength-icon-photo"><img src="assets/strength-2-honest.jpg" alt="誇張しない、現実的な提案"></div>
+                    <div>
+                        <h3>誇張しない、現実的な提案</h3>
+                        <p>「すぐに成果が出る」といった過度な訴求は行いません。できること・できないことを正直にお伝えします。</p>
+                    </div>
+                </div>
+                <div class="strength-item fade-up fade-up-delay-3">
+                    <div class="strength-icon strength-icon-photo"><img src="assets/strength-3-small-business.jpg" alt="中小規模の物流事業者に寄り添う対応"></div>
+                    <div>
+                        <h3>中小規模の物流事業者に寄り添う対応</h3>
+                        <p>大規模なシステム導入ではなく、限られた人員・予算でも実行できる、現実的な改善策をご提案します。</p>
+                    </div>
+                </div>
+                <div class="strength-item fade-up fade-up-delay-4">
+                    <div class="strength-icon strength-icon-photo"><img src="assets/strength-4-ai-business.jpg" alt="AIとビジネス現場、両方の視点"></div>
+                    <div>
+                        <h3>AIとビジネス現場、両方の視点</h3>
+                        <p>物流の現場業務そのものでNotebookLM・GPTs・GASなどの生成AIツールを日常的に活用してきた経験があります。「使われ続けるAI活用」を、自らの現場実務で実践しています。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── RESULTS / TRACK RECORD ── -->
+    <section id="results">
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">TRACK RECORD</div>
+                <h2 class="section-title">実績・信頼性</h2>
+                <div class="divider"></div>
+                <p class="section-desc">物流部門での実務経験と、生成AI活用の実務経験。両方を掛け合わせてご支援します。</p>
+            </div>
+            <div class="results-block fade-up">
+                <div class="results-label">物流・実務での経験</div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">20年</div>
+                        <div class="stat-label">会社員としての実務経験</div>
+                    </div>
+                </div>
+                <ul class="career-list">
+                    <li>東証プライム上場企業グループの物流会社に出向し、物流センターにて派遣・パートスタッフ20名のマネジメント、在庫管理・出荷業務に従事</li>
+                    <li>業務マニュアルの策定・スタッフ教育を主導し、属人化していた作業の標準化を推進</li>
+                    <li>日々の物流業務においてNotebookLM・Canva・GPTs・GASなどの生成AIツールを実務で活用</li>
+                </ul>
+            </div>
+            <div class="results-block fade-up fade-up-delay-1">
+                <div class="results-label">支援に対する考え方</div>
+                <ul class="career-list">
+                    <li>成果を過度に保証しない、現実的なご提案</li>
+                    <li>契約を急がず、持ち帰ってご検討いただける進め方</li>
+                    <li>現場に定着することを重視した伴走型の支援</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CTA BAND ── -->
+    <div class="cta-band fade-up">
+        <p>物流部門での実務経験をもとに、<br>現場の事情を踏まえてご提案します。</p>
+        <a href="#contact" class="btn-primary">現場の課題を<br>無料で相談する</a>
+    </div>
+
+    <!-- ── PROFILE ── -->
+    <section id="about">
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">PROFILE</div>
+                <h2 class="section-title">プロフィール</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="profile-layout">
+                <div class="profile-mark fade-up"><img src="assets/profile.jpg" alt="西村康弘"></div>
+                <div class="fade-up fade-up-delay-1">
+                    <div class="profile-brand">FMP WORKs</div>
+                    <div class="profile-name">西村 康弘</div>
+                    <div class="profile-name-en">NISHIMURA YASUHIRO</div>
+                    <div class="profile-tags">
+                        <span class="tag">生成AIコンサルタント</span>
+                        <span class="tag">物流業務改善アドバイザー</span>
+                        <span class="tag">現場目線のAI活用支援</span>
+                    </div>
+                    <p class="profile-bio">
+                        東証プライム上場企業グループにて営業・企画・物流部門を幅広く経験。物流会社に出向し、物流センターの現場マネジメントと業務改善に従事してきました。
+                    </p>
+                    <p class="profile-bio">
+                        現在は、その実務経験を活かし、物流業界向けの生成AI業務改善支援を行っています。「AIを入れることが目的ではなく、現場の困りごとを減らすことが目的」という考え方を大切にしています。
+                    </p>
+                    <ul class="career-list">
+                        <li>上場企業 営業部門にて新規開拓・顧客管理を担当</li>
+                        <li>企画部門にて事業戦略・マーケティング施策の立案に携わる</li>
+                        <li>物流会社に出向し、物流センターの現場マネジメント・在庫管理・出荷業務に従事</li>
+                        <li>現在：物流業界向けの生成AI業務改善支援を中心に活動</li>
+                    </ul>
+                    <div class="qualifications">
+                        <div class="qualifications-label">保有資格</div>
+                        <div class="profile-tags">
+                            <span class="tag">宅地建物取引士</span>
+                            <span class="tag">2級ファイナンシャル・プランニング技能士</span>
+                            <span class="tag">危険物取扱者乙種</span>
+                            <span class="tag">ITパスポート</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FAQ ── -->
+    <section id="faq">
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">FAQ</div>
+                <h2 class="section-title">よくある質問</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="faq-wrap fade-up">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>AIを導入すれば、すぐに効果が出ますか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">すぐに大きな効果が出るとは限りません。まずは現場の業務を伺い、AIが有効な部分とそうでない部分を整理した上で、現実的な効果をお伝えします。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>物流業界の実務経験がなくても対応してもらえますか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">上場企業の物流部門で業務フロー改善・効率化プロジェクトを推進してきた実務経験がありますので、現場の事情を踏まえたご提案が可能です。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>小規模の運送会社・倉庫業でも依頼できますか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">はい、規模を問わずご相談いただけます。限られた人員・予算でも実行できる、現実的な改善策をご提案します。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>無料相談で、その場で契約を迫られませんか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">いいえ、その場での契約を求めることはありません。ご提案後は持ち帰ってご検討いただけます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>オンラインでの対応は可能ですか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">はい、Zoom・Google Meet等のオンラインツールでの対応が可能です。全国どこからでもご相談いただけます。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-inner">
+                <div class="fade-up">
+                    <div class="section-label">CONTACT</div>
+                    <h2 class="section-title">お問い合わせ</h2>
+                    <div class="divider" style="margin-left: auto; margin-right: auto;"></div>
+                    <p class="section-desc" style="margin: 0 auto; text-align: center; max-width: 520px;">
+                        無料相談では、まず現在の業務内容や課題を伺います。<br><br>
+                        AIありきでの提案や、その場での契約を求めることはありません。
+                    </p>
+                </div>
+                <div class="contact-cards fade-up">
+                    <a href="mailto:brothethood0514@gmail.com?subject=%E7%89%A9%E6%B5%81AI%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B" class="contact-card">
+                        <div class="contact-icon-wrap">📧</div>
+                        <h3>メールで相談する</h3>
+                        <p>ボタンを押すとメールアプリが開きます<br>（件名：物流AI相談希望）</p>
+                    </a>
+                </div>
+                <p class="contact-note fade-up">※ 返信は通常2営業日以内にお送りします。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+        <p>© 2026 FMP WORKs（Nishimura Yasuhiro）. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // ── Reduced-motion ──
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduced) document.body.classList.add('reduced');
+
+        // ── Navbar on scroll ──
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+        }, { passive: true });
+
+        // ── Floating CTA after hero ──
+        const floatingCta = document.getElementById('floatingCta');
+        const heroEl = document.getElementById('hero');
+        const toggleFloatingCta = () => {
+            floatingCta.classList.toggle('visible', heroEl.getBoundingClientRect().bottom < 0);
+        };
+        window.addEventListener('scroll', toggleFloatingCta, { passive: true });
+        toggleFloatingCta();
+
+        // ── Scroll progress bar ──
+        const progressBar = document.getElementById('progress');
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement;
+            const scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
+            progressBar.style.transform = `scaleX(${scrolled})`;
+        }, { passive: true });
+
+        // ── Prevent key compound terms from breaking mid-word on narrow screens ──
+        (function () {
+            const terms = ['生成AI'];
+            const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+                acceptNode(node) {
+                    if (!node.nodeValue || !terms.some(t => node.nodeValue.includes(t))) return NodeFilter.FILTER_SKIP;
+                    const p = node.parentElement;
+                    if (p && (p.tagName === 'SCRIPT' || p.tagName === 'STYLE')) return NodeFilter.FILTER_REJECT;
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            });
+            const nodes = [];
+            let n;
+            while ((n = walker.nextNode())) nodes.push(n);
+            const pattern = new RegExp('(' + terms.join('|') + ')');
+            nodes.forEach(node => {
+                const parts = node.nodeValue.split(pattern);
+                if (parts.length < 2) return;
+                const frag = document.createDocumentFragment();
+                parts.forEach(part => {
+                    if (terms.includes(part)) {
+                        const span = document.createElement('span');
+                        span.className = 'nowrap';
+                        span.textContent = part;
+                        frag.appendChild(span);
+                    } else if (part) {
+                        frag.appendChild(document.createTextNode(part));
+                    }
+                });
+                node.parentNode.replaceChild(frag, node);
+            });
+        })();
+
+        // ── Split section headings into characters for cascade reveal ──
+        document.querySelectorAll('.section-title').forEach(h2 => {
+            const frag = document.createDocumentFragment();
+            Array.from(h2.childNodes).forEach(node => {
+                if (node.nodeType === 3) {
+                    [...node.textContent].forEach(ch => {
+                        if (ch === '\n') return;
+                        const span = document.createElement('span');
+                        span.className = 'ch';
+                        span.textContent = ch === ' ' ? ' ' : ch;
+                        frag.appendChild(span);
+                    });
+                } else {
+                    frag.appendChild(node.cloneNode(true));
+                }
+            });
+            h2.innerHTML = '';
+            h2.appendChild(frag);
+            h2.querySelectorAll('.ch').forEach((span, i) => {
+                span.style.transitionDelay = (i * 22) + 'ms';
+            });
+        });
+
+        // ── Scroll reveal ──
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.fade-up').forEach(el => revealObserver.observe(el));
+
+        // ── FAQ accordion ──
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+
+                document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+        // ── Smooth scroll for anchor links ──
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
