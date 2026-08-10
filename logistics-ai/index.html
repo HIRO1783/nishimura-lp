@@ -303,6 +303,24 @@
             flex-wrap: wrap;
         }
 
+        .hero-sub-link {
+            margin-top: 1.6rem;
+            text-align: center;
+        }
+
+        .hero-sub-link a {
+            font-size: 0.78rem;
+            color: var(--muted);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .hero-sub-link a:hover {
+            color: var(--blue);
+            border-color: var(--blue);
+        }
+
         .hero-scroll-indicator {
             position: absolute;
             bottom: 2.5rem;
@@ -1248,6 +1266,7 @@
                 <a href="#contact" class="btn-primary">現場の課題を<br>無料で相談する</a>
                 <a href="#commitments" class="btn-outline">支援の姿勢を見る</a>
             </div>
+            <p class="hero-sub-link fade-up fade-up-delay-3"><a href="/">その他の生成AI・業務改善支援について →</a></p>
         </div>
         <div class="hero-scroll-indicator">
             <span>SCROLL</span>
