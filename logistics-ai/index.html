@@ -1089,6 +1089,22 @@
             background: var(--paper);
         }
 
+        .footer-other-link {
+            margin-bottom: 0.9rem;
+        }
+
+        .footer-other-link a {
+            color: var(--muted);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .footer-other-link a:hover {
+            color: var(--blue);
+            border-color: var(--blue);
+        }
+
         /* ─── ANIMATIONS ─── */
         .fade-up {
             opacity: 0;
@@ -1596,6 +1612,7 @@
 
     <!-- ── FOOTER ── -->
     <footer>
+        <p class="footer-other-link"><a href="/">その他の生成AI・業務改善支援について</a></p>
         <p>© 2026 FMP WORKs（Nishimura Yasuhiro）. All rights reserved.</p>
     </footer>
 

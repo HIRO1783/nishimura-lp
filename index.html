@@ -729,6 +729,26 @@
 
         .service-card-body .service-num { margin-bottom: 1rem; }
 
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 1.3rem;
+            padding-top: 1.2rem;
+            border-top: 1px dashed var(--line);
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: gap 0.25s, color 0.25s;
+        }
+
+        .service-link:hover {
+            gap: 0.7rem;
+            color: var(--gold-2);
+        }
+
         /* ─── STRENGTHS ─── */
         #strengths { background: var(--noir-900); }
 
@@ -1349,6 +1369,15 @@
                             <li>投稿後の数値分析と改善提案</li>
                             <li>AIを使った制作フローの構築</li>
                         </ul>
+                    </div>
+                </div>
+                <div class="service-card service-card-photo fade-up fade-up-delay-4">
+                    <div class="service-photo"><img src="logistics-ai/assets/strength-1-warehouse-experience.jpg" alt="物流・倉庫・運送業向け生成AI業務改善支援"></div>
+                    <div class="service-card-body">
+                        <div class="service-num">SERVICE 04</div>
+                        <h3>物流・倉庫・運送業向け生成AI業務改善支援</h3>
+                        <p>物流センターでの現場マネジメント経験を活かし、配送計画・請求書処理・問い合わせ対応など物流業界特有の業務課題に絞ってAI活用をご提案する、業界特化型の支援プログラムです。</p>
+                        <a href="/logistics-ai/" class="service-link">物流特化ページを見る →</a>
                     </div>
                 </div>
             </div>
