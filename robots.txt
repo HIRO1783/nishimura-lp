@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fmpworks.jp/sitemap.xml
+Sitemap: https://www.fmpworks.jp/sitemap.xml
