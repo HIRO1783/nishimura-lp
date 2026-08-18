@@ -3139,24 +3139,23 @@
            未設定の間は、自動的にメール送信（メーラー起動）に切り替わります。
            ============================================================ */
         const GOOGLE_FORM = {
-            // 例: 'https://docs.google.com/forms/d/e/1FAIpQLSxxxxxxxxxxxx/formResponse'
-            actionUrl: '',
+            actionUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfXDABEACoj7ED-LEbZBnpRsUf2v7jLv2cAoIPWzfaYxwf4eQ/formResponse',
             fields: {
-                company:  '', // 会社名            例: 'entry.123456789'
-                name:     '', // お名前
-                email:    '', // メールアドレス
-                tel:      '', // 電話番号
-                industry: '', // 業種
-                size:     '', // 従業員規模
-                issues:   '', // 現在困っていること（チェックボックス）
-                message:  ''  // ご相談内容
+                company:  'entry.87414654',   // 会社名
+                name:     'entry.127413698',  // お名前
+                email:    'entry.2103741711', // メールアドレス
+                tel:      'entry.671809913',  // 電話番号
+                industry: 'entry.213601191',  // 業種
+                size:     'entry.2084401005', // 従業員規模
+                issues:   'entry.510879797',  // 現在困っていること（チェックボックス）
+                message:  'entry.716999445'   // ご相談内容
             }
         };
 
         /* 迷惑メール対策：アドレスはページ上に一切表示しません。
            Googleフォーム未設定時の送信先としてのみ、分割した文字列から組み立てます。
            GOOGLE_FORM を設定すればこの経路は使われなくなり、丸ごと削除できます。 */
-        const MAIL_PARTS = ['brothe', 'thood', '0514', String.fromCharCode(64), 'gmail', '.', 'com'];
+        const MAIL_PARTS = ['brothe', 'rhood', '0514', String.fromCharCode(64), 'gmail', '.', 'com'];
         const mailAddress = () => MAIL_PARTS.slice(0, 3).join('') + MAIL_PARTS[3] + MAIL_PARTS.slice(4).join('');
 
         (function () {

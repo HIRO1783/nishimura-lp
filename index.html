@@ -1626,7 +1626,7 @@
         /* 迷惑メール対策：メールアドレスはページ上に一切記載しません。
            「メールで相談する」を押した時点で、分割した文字列から組み立てます。 */
         (function () {
-            const PARTS = ['brothe', 'thood', '0514', String.fromCharCode(64), 'gmail', '.', 'com'];
+            const PARTS = ['brothe', 'rhood', '0514', String.fromCharCode(64), 'gmail', '.', 'com'];
             const address = () => PARTS.slice(0, 3).join('') + PARTS[3] + PARTS.slice(4).join('');
             const card = document.getElementById('mailContact');
             if (!card) return;
