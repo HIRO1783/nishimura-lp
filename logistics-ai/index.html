@@ -3263,10 +3263,23 @@
                     const h = doneBox.querySelector('h3');
                     const p = doneBox.querySelector('p');
                     if (h) h.innerHTML = 'メール作成画面を開きました。<br>そのまま送信してください。';
-                    if (p) p.innerHTML = 'メールアプリが開かない場合は、お手数ですが下記アドレス宛に直接ご連絡ください。<br>通常2営業日以内にご返信します。';
+                    if (p) p.innerHTML = '送信フォームが一時的に使えなかったため、メールでの送信に切り替えました。<br>メールアプリが開かない場合は、お手数ですが時間をおいて再度お試しください。';
                 }
                 doneBox.classList.add('show');
                 doneBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            };
+
+            // Googleフォームが使えないときの送信手段。メールソフトを起動します。
+            const sendByMail = () => {
+                const subject = '【物流AI相談】' + val('cf-company') + '／' + val('cf-name') + ' 様';
+                try {
+                    window.location.href = 'mailto:' + mailAddress() +
+                        '?subject=' + encodeURIComponent(subject) +
+                        '&body=' + encodeURIComponent(buildMailBody());
+                } catch (e) {
+                    // メールソフトを開けない環境でも、案内は必ず表示します
+                }
+                setTimeout(() => showDone('mail'), 400);
             };
 
             form.addEventListener('submit', async (e) => {
@@ -3300,23 +3313,15 @@
                         showDone('form');
                         return;
                     } catch (err) {
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = originalLabel;
-                        if (globalErr) {
-                            globalErr.textContent = '送信に失敗しました。お手数ですが、しばらく時間をおいて再度お試しください。';
-                            globalErr.classList.add('show');
-                        }
+                        // Googleフォームに届かなかった場合は、メール送信に切り替えます
+                        // （通信が切れている、Googleフォーム側が停止している等）
+                        sendByMail();
                         return;
                     }
                 }
 
-                // Googleフォーム未設定時：メーラーを起動
-                const subject = '【物流AI相談】' + val('cf-company') + '／' + val('cf-name') + ' 様';
-                const href = 'mailto:' + mailAddress() +
-                    '?subject=' + encodeURIComponent(subject) +
-                    '&body=' + encodeURIComponent(buildMailBody());
-                window.location.href = href;
-                setTimeout(() => showDone('mail'), 400);
+                // Googleフォーム未設定時も、同じくメールで送信します
+                sendByMail();
             });
         })();
 
