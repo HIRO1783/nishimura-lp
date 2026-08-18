@@ -1868,6 +1868,26 @@
 
         .contact-alt a:hover { border-color: var(--blue); }
 
+        .mail-reveal {
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-family: var(--sans);
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: var(--blue);
+            background: transparent;
+            border: 1px solid var(--line);
+            border-radius: 2px;
+            padding: 0.6rem 1.4rem;
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .mail-reveal:hover {
+            border-color: var(--blue);
+            background: rgba(28, 94, 168, 0.06);
+        }
+
         @media (max-width: 640px) {
             .cform { padding: 1.9rem 1.3rem 2.2rem; }
             .check-grid { grid-template-columns: 1fr; }
@@ -1977,7 +1997,6 @@
     "name": "日本"
   },
   "availableLanguage": "ja",
-  "email": "brothethood0514@gmail.com",
   "founder": {
     "@type": "Person",
     "name": "西村 康弘",
@@ -2966,15 +2985,14 @@
                     <h3>お問い合わせありがとうございます。<br>内容を確認のうえご連絡いたします。</h3>
                     <p>
                         通常2営業日以内に、ご記入いただいたメールアドレス宛にご返信します。<br>
-                        しばらく経っても返信が届かない場合は、迷惑メールフォルダをご確認のうえ、<br>
-                        お手数ですが下記アドレスへ直接ご連絡ください。
+                        しばらく経っても返信が届かない場合は、<br>
+                        お手数ですが迷惑メールフォルダをご確認ください。
                     </p>
-                    <p style="margin-top: 1.2rem;"><a href="mailto:brothethood0514@gmail.com" style="color: var(--blue); font-weight: 700; text-decoration: none;">brothethood0514@gmail.com</a></p>
                 </div>
 
                 <p class="contact-alt">
                     フォームがうまく動かない場合や、直接メールをご希望の場合は<br>
-                    <a href="mailto:brothethood0514@gmail.com?subject=%E7%89%A9%E6%B5%81AI%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B">brothethood0514@gmail.com</a> 宛にご連絡ください。
+                    <button type="button" class="mail-reveal" id="mailReveal">メールアドレスを表示する</button>
                 </p>
             </div>
         </div>
@@ -3154,7 +3172,10 @@
             }
         };
 
-        const MAIL_TO = 'brothethood0514@gmail.com';
+        /* 迷惑メール対策：アドレスは分割して保持し、必要になった時点で組み立てます。
+           ページのソースにそのままの文字列としては残しません。 */
+        const MAIL_PARTS = ['brothe', 'thood', '0514', String.fromCharCode(64), 'gmail', '.', 'com'];
+        const mailAddress = () => MAIL_PARTS.slice(0, 3).join('') + MAIL_PARTS[3] + MAIL_PARTS.slice(4).join('');
 
         (function () {
             const form = document.getElementById('contactForm');
@@ -3267,6 +3288,18 @@
                 doneBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
             };
 
+            // 「メールアドレスを表示する」：人がクリックしたときだけ組み立てて表示
+            const reveal = document.getElementById('mailReveal');
+            if (reveal) {
+                reveal.addEventListener('click', () => {
+                    const addr = mailAddress();
+                    const a = document.createElement('a');
+                    a.href = 'mailto:' + addr + '?subject=' + encodeURIComponent('物流AI相談希望');
+                    a.textContent = addr;
+                    reveal.replaceWith(a);
+                });
+            }
+
             form.addEventListener('submit', async (e) => {
                 e.preventDefault();
 
@@ -3301,7 +3334,7 @@
                         submitBtn.disabled = false;
                         submitBtn.textContent = originalLabel;
                         if (globalErr) {
-                            globalErr.textContent = '送信に失敗しました。お手数ですが ' + MAIL_TO + ' 宛に直接ご連絡ください。';
+                            globalErr.textContent = '送信に失敗しました。お手数ですが ' + mailAddress() + ' 宛に直接ご連絡ください。';
                             globalErr.classList.add('show');
                         }
                         return;
@@ -3310,7 +3343,7 @@
 
                 // Googleフォーム未設定時：メーラーを起動
                 const subject = '【物流AI相談】' + val('cf-company') + '／' + val('cf-name') + ' 様';
-                const href = 'mailto:' + MAIL_TO +
+                const href = 'mailto:' + mailAddress() +
                     '?subject=' + encodeURIComponent(subject) +
                     '&body=' + encodeURIComponent(buildMailBody());
                 window.location.href = href;
