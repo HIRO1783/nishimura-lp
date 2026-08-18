@@ -1868,25 +1868,6 @@
 
         .contact-alt a:hover { border-color: var(--blue); }
 
-        .mail-reveal {
-            display: inline-block;
-            margin-top: 0.5rem;
-            font-family: var(--sans);
-            font-size: 0.84rem;
-            font-weight: 700;
-            color: var(--blue);
-            background: transparent;
-            border: 1px solid var(--line);
-            border-radius: 2px;
-            padding: 0.6rem 1.4rem;
-            cursor: pointer;
-            transition: border-color 0.2s, background 0.2s;
-        }
-
-        .mail-reveal:hover {
-            border-color: var(--blue);
-            background: rgba(28, 94, 168, 0.06);
-        }
 
         @media (max-width: 640px) {
             .cform { padding: 1.9rem 1.3rem 2.2rem; }
@@ -2991,8 +2972,8 @@
                 </div>
 
                 <p class="contact-alt">
-                    フォームがうまく動かない場合や、直接メールをご希望の場合は<br>
-                    <button type="button" class="mail-reveal" id="mailReveal">メールアドレスを表示する</button>
+                    お問い合わせは上記フォームからのみ承っております。<br>
+                    ご記入いただいたメールアドレス宛に、直接ご返信します。
                 </p>
             </div>
         </div>
@@ -3172,8 +3153,9 @@
             }
         };
 
-        /* 迷惑メール対策：アドレスは分割して保持し、必要になった時点で組み立てます。
-           ページのソースにそのままの文字列としては残しません。 */
+        /* 迷惑メール対策：アドレスはページ上に一切表示しません。
+           Googleフォーム未設定時の送信先としてのみ、分割した文字列から組み立てます。
+           GOOGLE_FORM を設定すればこの経路は使われなくなり、丸ごと削除できます。 */
         const MAIL_PARTS = ['brothe', 'thood', '0514', String.fromCharCode(64), 'gmail', '.', 'com'];
         const mailAddress = () => MAIL_PARTS.slice(0, 3).join('') + MAIL_PARTS[3] + MAIL_PARTS.slice(4).join('');
 
@@ -3288,18 +3270,6 @@
                 doneBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
             };
 
-            // 「メールアドレスを表示する」：人がクリックしたときだけ組み立てて表示
-            const reveal = document.getElementById('mailReveal');
-            if (reveal) {
-                reveal.addEventListener('click', () => {
-                    const addr = mailAddress();
-                    const a = document.createElement('a');
-                    a.href = 'mailto:' + addr + '?subject=' + encodeURIComponent('物流AI相談希望');
-                    a.textContent = addr;
-                    reveal.replaceWith(a);
-                });
-            }
-
             form.addEventListener('submit', async (e) => {
                 e.preventDefault();
 
@@ -3334,7 +3304,7 @@
                         submitBtn.disabled = false;
                         submitBtn.textContent = originalLabel;
                         if (globalErr) {
-                            globalErr.textContent = '送信に失敗しました。お手数ですが ' + mailAddress() + ' 宛に直接ご連絡ください。';
+                            globalErr.textContent = '送信に失敗しました。お手数ですが、しばらく時間をおいて再度お試しください。';
                             globalErr.classList.add('show');
                         }
                         return;

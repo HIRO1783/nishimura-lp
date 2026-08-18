@@ -1606,7 +1606,7 @@
                     </p>
                 </div>
                 <div class="contact-cards contact-cards-single fade-up">
-                    <a href="mailto:brothethood0514@gmail.com?subject=%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B" class="contact-card">
+                    <a class="contact-card" id="mailContact" role="button" tabindex="0" style="cursor: pointer;">
                         <div class="contact-icon-wrap">📧</div>
                         <h3>メールで相談する</h3>
                         <p>ボタンを押すとメールアプリが開きます<br>（件名：相談希望）</p>
@@ -1623,6 +1623,23 @@
     </footer>
 
     <script>
+        /* 迷惑メール対策：メールアドレスはページ上に一切記載しません。
+           「メールで相談する」を押した時点で、分割した文字列から組み立てます。 */
+        (function () {
+            const PARTS = ['brothe', 'thood', '0514', String.fromCharCode(64), 'gmail', '.', 'com'];
+            const address = () => PARTS.slice(0, 3).join('') + PARTS[3] + PARTS.slice(4).join('');
+            const card = document.getElementById('mailContact');
+            if (!card) return;
+            const open = () => {
+                window.location.href = 'mailto:' + address() +
+                    '?subject=' + encodeURIComponent('相談希望');
+            };
+            card.addEventListener('click', open);
+            card.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+            });
+        })();
+
         // ── Reduced-motion & pointer capability ──
         const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (reduced) document.body.classList.add('reduced');
