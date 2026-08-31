@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>物流×生成AIの業務改善支援｜倉庫・運送会社のAI導入相談 - FMP WORKs</title>
-    <meta name="description" content="運送・倉庫・EC物流の現場向け生成AI業務改善支援。人手不足・新人教育・マニュアル属人化・日報作成・誤出荷対策の課題整理から始めます。AIありきでは提案しません。料金の目安を掲載、初回相談無料・モニター企業募集中。">
+    <title>物流改善コンサル｜大阪・兵庫の倉庫・運送AI業務改善 - FMP WORKs</title>
+    <meta name="description" content="大阪・兵庫・京阪神の中小物流会社・倉庫・メーカー向け物流改善コンサル。物流現場経験を活かし、誤出荷・在庫差異・属人化・新人教育・マニュアル作成などの課題を現場改善と生成AI活用で支援します。尼崎拠点で京阪神へ訪問、オンラインは全国対応。">
     <link rel="canonical" href="https://www.fmpworks.jp/logistics-ai/">
     <meta name="robots" content="index, follow">
 
@@ -13,14 +13,14 @@
     <meta property="og:site_name" content="FMP WORKs">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:url" content="https://www.fmpworks.jp/logistics-ai/">
-    <meta property="og:title" content="物流×生成AIの業務改善支援｜倉庫・運送会社のAI導入相談 - FMP WORKs">
-    <meta property="og:description" content="人手不足・新人教育・マニュアル属人化・日報作成・誤出荷対策。物流現場の困りごとを起点に、必要な場合だけ生成AIをご提案します。初回相談無料・モニター企業募集中。">
+    <meta property="og:title" content="物流改善コンサル｜大阪・兵庫の倉庫・運送AI業務改善 - FMP WORKs">
+    <meta property="og:description" content="大阪・兵庫・京阪神の物流改善コンサル。尼崎拠点で訪問対応、オンラインは全国可。誤出荷・在庫差異・属人化など、現場の困りごとを起点に、必要な場合だけ生成AIをご提案します。初回相談無料。">
     <meta property="og:image" content="https://www.fmpworks.jp/logistics-ai/assets/service-1-hearing.jpg">
     <meta property="og:image:width" content="1100">
     <meta property="og:image:height" content="698">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="物流×生成AIの業務改善支援｜倉庫・運送会社のAI導入相談">
-    <meta name="twitter:description" content="人手不足・新人教育・マニュアル属人化・日報作成・誤出荷対策。物流現場の困りごとを起点にご支援します。初回相談無料。">
+    <meta name="twitter:title" content="物流改善コンサル｜大阪・兵庫の倉庫・運送AI業務改善">
+    <meta name="twitter:description" content="大阪・兵庫・京阪神の物流改善コンサル。誤出荷・在庫差異・属人化など、現場の困りごとを起点に、必要な場合だけ生成AIをご提案します。初回相談無料。">
     <meta name="twitter:image" content="https://www.fmpworks.jp/logistics-ai/assets/service-1-hearing.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1211,12 +1211,37 @@
             line-height: 1.5;
         }
 
+        /* ─── PROBLEM DETAIL（課題の解説文） ─── */
+        .problem-detail {
+            margin-top: 3rem;
+            max-width: 760px;
+            padding-top: 2.6rem;
+            border-top: 1px solid var(--line);
+        }
+
+        .problem-detail h3 {
+            font-family: var(--serif);
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: var(--ink-900);
+            margin-bottom: 0.6rem;
+        }
+
+        .problem-detail p {
+            font-size: 0.9rem;
+            color: var(--slate);
+            line-height: 2;
+            margin-bottom: 1.6rem;
+        }
+
+        .problem-detail p:last-child { margin-bottom: 0; }
+
         /* ─── IMPROVEMENTS（具体的改善例） ─── */
         #improvements { background: var(--paper); }
 
         .imp-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
             margin-top: 3.5rem;
         }
@@ -1369,7 +1394,7 @@
 
         .price-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 1.1rem;
             margin-top: 3.5rem;
             align-items: stretch;
@@ -1517,6 +1542,10 @@
         .price-cta {
             text-align: center;
             margin-top: 2.8rem;
+        }
+
+        @media (max-width: 1180px) {
+            .price-grid { grid-template-columns: repeat(3, 1fr); }
         }
 
         @media (max-width: 980px) {
@@ -1969,14 +1998,23 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "FMP WORKs 物流特化 生成AI業務改善支援",
+  "name": "FMP WORKs 物流改善コンサル（物流特化 生成AI業務改善支援）",
   "url": "https://www.fmpworks.jp/logistics-ai/",
   "image": "https://www.fmpworks.jp/logistics-ai/assets/service-1-hearing.jpg",
-  "description": "運送・倉庫・EC物流の現場向けに、生成AIを活用した業務改善を支援します。人手不足、新人教育、マニュアルの属人化、日報・報告書の作成、誤出荷・ヒヤリハットの整理などの課題整理から始めます。",
-  "areaServed": {
-    "@type": "Country",
-    "name": "日本"
+  "description": "大阪・兵庫・京阪神の運送会社・倉庫会社・物流センター・メーカー・卸売会社・EC事業者向けに、物流現場改善と生成AI活用を支援します。誤出荷、在庫差異、属人化、新人教育、マニュアル整備などの課題整理から始めます。尼崎拠点、京阪神は訪問対応、オンラインは全国対応です。",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "尼崎市",
+    "addressRegion": "兵庫県",
+    "addressCountry": "JP"
   },
+  "areaServed": [
+    { "@type": "City", "name": "尼崎市" },
+    { "@type": "AdministrativeArea", "name": "大阪府" },
+    { "@type": "AdministrativeArea", "name": "兵庫県" },
+    { "@type": "AdministrativeArea", "name": "京都府" },
+    { "@type": "Country", "name": "日本" }
+  ],
   "availableLanguage": "ja",
   "founder": {
     "@type": "Person",
@@ -2001,25 +2039,30 @@
   "makesOffer": [
     {
       "@type": "Offer",
-      "name": "初回相談",
+      "name": "初回オンライン相談",
       "description": "60分・オンライン可。現場の困りごとのヒアリング。",
       "price": "0",
       "priceCurrency": "JPY"
     },
     {
       "@type": "Offer",
-      "name": "業務改善診断",
-      "description": "現場ヒアリング・業務の棚卸し・改善提案書のご提出。内容により個別見積。"
+      "name": "物流現場簡易診断",
+      "description": "現場ヒアリング・業務の棚卸し・簡易診断レポートのご提出。5万円〜、内容により個別見積。"
     },
     {
       "@type": "Offer",
-      "name": "継続支援（伴走）",
-      "description": "マニュアル・SOP整備、プロンプト作成、定着支援。内容により個別見積。"
+      "name": "業務改善提案・改善レポート",
+      "description": "診断結果をもとにした改善提案書・改善レポートの作成。10万円〜、内容により個別見積。"
     },
     {
       "@type": "Offer",
-      "name": "社内研修・勉強会",
-      "description": "自社の物流業務を題材にした生成AI研修。内容により個別見積。"
+      "name": "月額伴走支援",
+      "description": "マニュアル・SOP整備、プロンプト作成、定着支援を月次で継続支援。月額15万円〜、内容により個別見積。"
+    },
+    {
+      "@type": "Offer",
+      "name": "生成AI研修・マニュアル作成支援",
+      "description": "自社の物流業務を題材にした生成AI研修とマニュアル作成支援。8万円〜、内容により個別見積。"
     }
   ]
 }
@@ -2029,6 +2072,14 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "物流改善コンサルでは何をしてもらえますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "まず物流・倉庫現場の業務内容と困りごとを伺い、時間がかかっている作業や属人化している業務を整理するところから始めます。そのうえで、マニュアル整備・作業標準化・生成AI活用など、必要な改善策をご提案します。いきなりAIツールの導入から始めることはありません。"
+      }
+    },
     {
       "@type": "Question",
       "name": "新人教育に時間がかかっています。生成AIで何ができますか？",
@@ -2047,10 +2098,26 @@
     },
     {
       "@type": "Question",
-      "name": "誤出荷をAIだけで防止できますか？",
+      "name": "倉庫の業務改善も相談できますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "AIだけで誤出荷を防げるとは考えていません。WMS、バーコード検品、ダブルチェック、ロケーション管理、作業動線の見直し、ピッキングルールの整備といった既存の対策が引き続き重要です。生成AIについては、過去の誤出荷事例の分類、ヒヤリハットの整理、原因の整理、再発防止資料や新人教育教材づくりでの活用を検討します。"
+        "text": "はい、ご相談いただけます。入荷・保管・ピッキング・検品・梱包・出荷・在庫管理といった倉庫内オペレーション全般について、作業の流れと確認ポイントを整理し、標準化やマニュアル化をご支援します。倉庫会社様、物流センター様、自社倉庫を持つメーカー様・卸売会社様からのご相談も多くいただいています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "運送会社の生成AI活用についても相談できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、ご相談いただけます。配車・シフト管理、請求書・伝票処理、問い合わせ対応、日報・報告書の作成など、運送会社様で発生しやすい業務を伺ったうえで、生成AIが向いている部分とそうでない部分を整理してご提案します。AIの導入自体を目的にはしません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "誤出荷や在庫差異の改善も対応できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AIだけで誤出荷や在庫差異を防げるとは考えていません。WMS、バーコード検品、ダブルチェック、ロケーション管理、作業動線の見直し、ピッキングルールの整備といった既存の対策が引き続き重要です。そのうえで、まず現状の作業手順と発生状況を整理し、原因を特定します。生成AIについては、過去の誤出荷・在庫差異事例の分類、ヒヤリハットの整理、原因の整理、再発防止資料や新人教育教材づくりでの活用を検討します。"
       }
     },
     {
@@ -2067,6 +2134,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "最初からAIツールを選ぶ必要はありません。時間がかかっている仕事、同じ作業を繰り返している仕事、ベテランに依存している仕事、文章作成が多い仕事、情報を探すのに時間がかかる仕事を整理し、その中からAIが向いている業務だけを選定します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "AIを導入していなくても相談できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、むしろAI未導入の状態からのご相談がほとんどです。生成AIを使ったことがない企業様でも問題ありません。まずは現場の業務内容と課題を整理し、AIを使う必要があるかどうかも含めてご提案します。"
       }
     },
     {
@@ -2095,7 +2170,7 @@
     },
     {
       "@type": "Question",
-      "name": "小規模の運送会社・倉庫業でも依頼できますか？",
+      "name": "小規模な物流会社・倉庫会社でも依頼できますか？",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "規模を問わずご相談いただけます。限られた人員・予算でも実行できる、現実的な改善策を提案します。"
@@ -2115,6 +2190,22 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Zoom・Google Meet等のオンラインツールでの対応が可能です。全国どこからでもご相談いただけます。現場を実際に見たほうがよい場合は、訪問についてもご相談ください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "大阪・兵庫以外でも対応できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "訪問は尼崎を拠点に、大阪・兵庫・京都を中心とした京阪神エリアを中心にお伺いしています。京阪神エリア外の場合も、まずはオンラインでの相談から承っています。オンラインでの物流改善・生成AI活用のご相談は全国対応です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "物流現場を直接見てもらうことはできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、可能です。大阪・兵庫・京都を中心とした京阪神エリアの企業様には、現場への訪問対応もしております。作業の様子を直接拝見することで、書類やヒアリングだけでは分かりにくい作業導線やムダも整理しやすくなります。訪問の要否は、初回相談の中でご相談ください。"
       }
     }
   ]
@@ -2155,6 +2246,7 @@
                 <li><a href="#problems">お悩み</a></li>
                 <li><a href="#improvements">改善事例</a></li>
                 <li><a href="#services">サービス</a></li>
+                <li class="nav-hide-md"><a href="#diagnosis">現場診断</a></li>
                 <li class="nav-hide-md"><a href="#flow">支援の流れ</a></li>
                 <li class="nav-hide-md"><a href="#about">プロフィール</a></li>
                 <li><a href="#pricing">料金</a></li>
@@ -2170,26 +2262,24 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="badge-dot"></span>
-                <span class="badge-text">物流業界向け 生成AI業務改善支援</span> <span class="badge-text">— 無料相談受付中</span>
+                <span class="badge-text">大阪・兵庫の物流業界向け 生成AI業務改善支援</span> <span class="badge-text">— 無料相談受付中</span>
             </div>
             <h1 class="hero-title">
-                <span class="l"><span>物流現場を</span></span>
-                <span class="l"><span>経験してきたから、</span></span>
-                <span class="l"><span>AIを入れる前に</span></span>
-                <span class="l"><span class="gradient-text">現場のどこが非効率かを</span></span>
-                <span class="l"><span class="gradient-text">一緒に整理できます。</span></span>
+                <span class="l"><span>物流現場の</span></span>
+                <span class="l"><span>ムダ・ミス・属人化を</span></span>
+                <span class="l"><span class="gradient-text">現場改善×生成AIで</span></span>
+                <span class="l"><span class="gradient-text">減らします。</span></span>
             </h1>
             <p class="hero-subcopy fade-up">
-                AIを入れることが目的ではありません。<br>
-                現場の困りごとを減らすことが目的です。
+                物流現場経験者だから、AI導入ありきではなく、<br>
+                まず「どこを改善すべきか」から一緒に整理します。
             </p>
             <p class="hero-sub fade-up fade-up-delay-1">
-                物流現場の業務内容を丁寧に伺い、<br>
-                必要な場合に限って生成AIをご提案します。
+                物流現場を経験してきたから、AIを入れる前に<br>
+                現場のどこが非効率かを一緒に整理できます。
                 <br><br>
-                人手不足、新人教育、マニュアルの属人化、日報・報告書の作成、<br>
-                誤出荷・ヒヤリハットの再発防止など、<br>
-                日々の業務にはそれぞれ事情があります。
+                人手不足、新人教育、マニュアルの属人化、誤出荷・在庫差異、<br>
+                日報・報告書の作成など、日々の業務にはそれぞれ事情があります。
                 <br><br>
                 抽象的な「効率化」ではなく、<br>
                 誰が・何を・どう変えるかまで具体化してご支援します。
@@ -2209,50 +2299,70 @@
     <!-- ── MARQUEE STRIP ── -->
     <div class="strip" aria-hidden="true">
         <div class="strip-track">
-            <span>物流特化 生成AI業務改善支援 — <em>現場ヒアリングを起点に</em> — <em>無料相談受付中</em> — &nbsp;</span>
-            <span>物流特化 生成AI業務改善支援 — <em>現場ヒアリングを起点に</em> — <em>無料相談受付中</em> — &nbsp;</span>
+            <span>物流特化 生成AI業務改善支援 — <em>尼崎拠点・京阪神＋全国オンライン対応</em> — <em>現場ヒアリングを起点に</em> — <em>無料相談受付中</em> — &nbsp;</span>
+            <span>物流特化 生成AI業務改善支援 — <em>尼崎拠点・京阪神＋全国オンライン対応</em> — <em>現場ヒアリングを起点に</em> — <em>無料相談受付中</em> — &nbsp;</span>
         </div>
     </div>
+
+    <!-- ── AREA（対応エリア） ── -->
+    <section id="area">
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">SERVICE AREA</div>
+                <h2 class="section-title">大阪・兵庫・京阪神の<br>物流企業へ訪問対応</h2>
+                <div class="divider"></div>
+                <p class="section-desc">尼崎を拠点に、大阪・兵庫・京都を中心とした京阪神エリアの物流会社・倉庫・メーカーへ訪問対応しています。大阪市・尼崎市・西宮市・神戸市など阪神間を中心に伺えます。オンラインでの物流改善・生成AI活用のご相談は全国対応しています。</p>
+            </div>
+            <div class="profile-tags fade-up" style="margin-top: 2.2rem;">
+                <span class="tag">尼崎市</span>
+                <span class="tag">大阪市</span>
+                <span class="tag">西宮市</span>
+                <span class="tag">神戸市</span>
+                <span class="tag">阪神間 訪問対応</span>
+                <span class="tag">オンライン相談 全国対応</span>
+            </div>
+        </div>
+    </section>
 
     <!-- ── PROBLEMS ── -->
     <section id="problems">
         <div class="container">
             <div class="fade-up">
                 <div class="section-label">PROBLEMS</div>
-                <h2 class="section-title">こんな課題を<br>抱えていませんか？</h2>
+                <h2 class="section-title">物流・倉庫現場で<br>こんな課題はありませんか？</h2>
                 <div class="divider"></div>
             </div>
             <div class="problems-grid problems-grid-6">
                 <div class="problem-card problem-card-photo fade-up fade-up-delay-1">
-                    <div class="problem-photo"><img src="assets/problem-1-driver-shortage.jpg" alt="車庫に並ぶ配送トラック — ドライバー不足で配送計画に追われている"></div>
+                    <div class="problem-photo"><img src="assets/problem-1-driver-shortage.jpg" alt="車庫に並ぶ配送トラック — ドライバー不足で配送計画に追われている" width="640" height="427" loading="lazy" decoding="async"></div>
                     <div class="problem-card-body">
                         <h3>ドライバー不足で、<br>配送計画に追われている</h3>
                         <p>人手が足りない中で配送ルートやシフトの調整に多くの時間を取られ、他の業務に手が回らない。</p>
                     </div>
                 </div>
                 <div class="problem-card problem-card-photo fade-up fade-up-delay-2">
-                    <div class="problem-photo"><img src="assets/problem-2-invoice.jpg" alt="請求書・伝票処理などの事務作業に追われている"></div>
+                    <div class="problem-photo"><img src="assets/problem-2-invoice.jpg" alt="請求書・伝票処理などの事務作業に追われている" width="1000" height="667" loading="lazy" decoding="async"></div>
                     <div class="problem-card-body">
                         <h3>請求書・伝票処理などの<br>事務作業に追われている</h3>
                         <p>紙やExcelでの管理が多く、月末の請求処理や伝票の突き合わせに時間がかかっている。</p>
                     </div>
                 </div>
                 <div class="problem-card problem-card-photo fade-up fade-up-delay-4">
-                    <div class="problem-photo"><img src="assets/problem-3-phone-support.jpg" alt="電話・メールの問い合わせ対応に人手を取られている"></div>
+                    <div class="problem-photo"><img src="assets/problem-3-phone-support.jpg" alt="電話・メールの問い合わせ対応に人手を取られている" width="1000" height="667" loading="lazy" decoding="async"></div>
                     <div class="problem-card-body">
                         <h3>電話・メールでの<br>問い合わせ対応に<br>人手を取られている</h3>
                         <p>配送状況の確認や見積もり対応など、日々の問い合わせ対応が業務を圧迫している。</p>
                     </div>
                 </div>
                 <div class="problem-card problem-card-photo fade-up fade-up-delay-5">
-                    <div class="problem-photo"><img src="assets/problem-4-shift-management.jpg" alt="シフト・配車管理が属人化している"></div>
+                    <div class="problem-photo"><img src="assets/problem-4-shift-management.jpg" alt="シフト・配車管理が属人化している" width="1000" height="667" loading="lazy" decoding="async"></div>
                     <div class="problem-card-body">
                         <h3>シフト・配車管理が<br>属人化している</h3>
                         <p>特定の担当者の経験と勘に頼っており、担当者不在時に業務が滞るリスクを抱えている。</p>
                     </div>
                 </div>
                 <div class="problem-card problem-card-photo fade-up fade-up-delay-6">
-                    <div class="problem-photo"><img src="assets/problem-5-ai-confused.jpg" alt="AIを使ってみたいが、何から手をつければよいかわからない"></div>
+                    <div class="problem-photo"><img src="assets/problem-5-ai-confused.jpg" alt="AIを使ってみたいが、何から手をつければよいかわからない" width="1000" height="638" loading="lazy" decoding="async"></div>
                     <div class="problem-card-body">
                         <h3>AIを使ってみたいが、<br>何から手をつければ<br>よいかわからない</h3>
                         <p>生成AIが話題になっているが、自社のどの業務に、どう使えば効果があるのか判断できない。</p>
@@ -2261,99 +2371,85 @@
             </div>
             <div class="problem-tags fade-up">
                 <span class="problem-tags-label">その他、こんなご相談もいただきます</span>
+                <span class="ptag">誤出荷や作業ミスが減らない</span>
+                <span class="ptag">在庫差異が発生している</span>
                 <span class="ptag">新人教育に時間がかかる</span>
-                <span class="ptag">マニュアルが古い</span>
-                <span class="ptag">ベテランに聞かないと分からない</span>
+                <span class="ptag">ベテランしか分からない仕事がある</span>
+                <span class="ptag">マニュアルが古い、または存在しない</span>
+                <span class="ptag">担当者ごとに作業方法が違う</span>
+                <span class="ptag">紙・Excel・口頭指示が多い</span>
                 <span class="ptag">日報・報告書の作成に時間がかかる</span>
                 <span class="ptag">誤出荷・ヒヤリハットを再発防止に活かせていない</span>
                 <span class="ptag">情報共有がうまくいかない</span>
+                <span class="ptag">AIを物流業務のどこに使えばよいか分からない</span>
+            </div>
+
+            <div class="problem-detail fade-up">
+                <h3>入出荷・ピッキング・検品・梱包のばらつき</h3>
+                <p>入出荷、ピッキング、検品、梱包といった日々の作業は、担当者の経験や感覚に頼りがちな工程です。手順が明文化されていないと、繁忙期や新人対応時にミスが発生しやすくなります。作業の流れと確認ポイントを整理し、誰が行っても同じ品質になる状態を目指すことが、物流・倉庫現場改善の第一歩です。</p>
+
+                <h3>誤出荷・在庫差異・作業導線</h3>
+                <p>誤出荷や在庫差異は、検品・棚入れ・出荷確認・在庫管理のどこかに手順のばらつきがあることが原因になっているケースが多く見られます。作業導線や確認手順を見直すことで、原因を特定し、再発防止につなげることができます。生成AIは、過去の誤出荷・ヒヤリハット事例を分類し、原因や傾向を整理する場面で活用できますが、最終的な検品判断や現場での確認作業は人が担う部分です。</p>
+
+                <h3>新人教育・属人化・マニュアル整備</h3>
+                <p>新人教育に時間がかかる、ベテランに聞かないと分からない業務がある、といった状況は、マニュアルが古い、または存在しないことが背景にあるケースが多くあります。作業手順を整理し、マニュアル・FAQ・確認問題として形にすることで、教育担当者の負担を減らし、属人化を軽減できます。この整備作業では、資料の作成・更新を生成AIで効率化できる部分があります。</p>
+
+                <h3>Excel・紙業務・情報共有と生成AIの線引き</h3>
+                <p>紙やExcel、口頭での情報共有が多い現場では、必要な情報を探すのに時間がかかったり、担当者ごとに管理方法が異なったりすることがあります。まずは業務の流れと情報の持ち方を整理したうえで、生成AIを使える部分と、人が判断すべき部分を切り分けてご提案します。AIを導入すること自体を目的にはしません。</p>
             </div>
         </div>
     </section>
 
-    <!-- ── IMPROVEMENTS（具体的改善例） ── -->
-    <section id="improvements">
+    <!-- ── TARGET（このような企業様におすすめ） ── -->
+    <section id="target">
         <div class="container">
             <div class="fade-up">
-                <div class="section-label">IMPROVEMENTS</div>
-                <h2 class="section-title">例えば、こんな業務を<br>改善します</h2>
+                <div class="section-label">FOR COMPANIES LIKE YOU</div>
+                <h2 class="section-title">このような企業様に<br>おすすめです</h2>
                 <div class="divider"></div>
-                <p class="section-desc">物流現場でご相談の多い4つの業務について、現状と改善の進め方、目指す状態をご紹介します。いずれもAIを入れること自体が目的ではなく、現場の負担を減らすことが目的です。</p>
+                <p class="section-desc">運送会社に限らず、物流現場を持つさまざまな企業様からご相談いただいています。</p>
             </div>
-            <div class="imp-grid">
-                <div class="imp-card fade-up fade-up-delay-1">
-                    <h3>新人教育</h3>
-                    <div class="imp-step imp-now">
-                        <span class="imp-step-label">現在</span>
-                        <p>班長やベテランが、新人ごとに同じ説明を繰り返している。</p>
-                    </div>
-                    <div class="imp-step imp-fix">
-                        <span class="imp-step-label">改善案</span>
-                        <p>作業手順を整理し、マニュアル・FAQ・確認問題を整備します。</p>
-                    </div>
-                    <div class="imp-step imp-goal">
-                        <span class="imp-step-label">目指す状態</span>
-                        <p>新人が自分でも確認でき、教育担当者の負担を軽減する。</p>
-                    </div>
+            <div class="problems-grid fade-up" style="margin-top: 3rem;">
+                <div class="problem-card fade-up fade-up-delay-1">
+                    <span class="problem-icon">🚛</span>
+                    <h3>中小規模の運送会社</h3>
+                    <p>ドライバー・配車・事務にかけられる人員が限られる中で、業務改善を進めたい会社様。</p>
                 </div>
-                <div class="imp-card fade-up fade-up-delay-2">
-                    <h3>マニュアル・属人化</h3>
-                    <div class="imp-step imp-now">
-                        <span class="imp-step-label">現在</span>
-                        <p>マニュアルが古く、結局ベテランに聞かないと分からない。</p>
-                    </div>
-                    <div class="imp-step imp-fix">
-                        <span class="imp-step-label">改善案</span>
-                        <p>ベテランの知識や既存資料を整理し、SOP・FAQとして形にします。</p>
-                    </div>
-                    <div class="imp-step imp-goal">
-                        <span class="imp-step-label">目指す状態</span>
-                        <p>必要な情報を探しやすくし、ノウハウを会社に残す。</p>
-                    </div>
+                <div class="problem-card fade-up fade-up-delay-2">
+                    <span class="problem-icon">🏢</span>
+                    <h3>倉庫会社</h3>
+                    <p>入出荷・保管・在庫管理など、現場オペレーションを見直したい会社様。</p>
                 </div>
-                <div class="imp-card fade-up fade-up-delay-3">
-                    <h3>日報・報告書</h3>
-                    <div class="imp-step imp-now">
-                        <span class="imp-step-label">現在</span>
-                        <p>毎日、文章作成・要約・転記に時間がかかっている。</p>
-                    </div>
-                    <div class="imp-step imp-fix">
-                        <span class="imp-step-label">改善案</span>
-                        <p>入力テンプレートと生成AIを組み合わせ、文章作成を補助します。</p>
-                    </div>
-                    <div class="imp-step imp-goal">
-                        <span class="imp-step-label">目指す状態</span>
-                        <p>管理者が文章作成ではなく、本来の改善業務に時間を使える。</p>
-                    </div>
+                <div class="problem-card fade-up fade-up-delay-3">
+                    <span class="problem-icon">📦</span>
+                    <h3>物流センター</h3>
+                    <p>複数の現場・拠点でのオペレーションを標準化したい会社様。</p>
                 </div>
-                <div class="imp-card fade-up fade-up-delay-4">
-                    <h3>誤出荷・ヒヤリハット</h3>
-                    <div class="imp-step imp-now">
-                        <span class="imp-step-label">現在</span>
-                        <p>事例を記録しているが、再発防止に十分活用できていない。</p>
-                    </div>
-                    <div class="imp-step imp-fix">
-                        <span class="imp-step-label">改善案</span>
-                        <p>事例を分類し、原因・工程・再発防止策を整理します。</p>
-                    </div>
-                    <div class="imp-step imp-goal">
-                        <span class="imp-step-label">目指す状態</span>
-                        <p>過去の失敗を、新人教育と再発防止に活用できる。</p>
-                    </div>
+                <div class="problem-card fade-up fade-up-delay-4">
+                    <span class="problem-icon">🏭</span>
+                    <h3>自社倉庫を持つメーカー</h3>
+                    <p>製造だけでなく、物流・出荷業務も自社で抱えている会社様。</p>
+                </div>
+                <div class="problem-card fade-up fade-up-delay-5">
+                    <span class="problem-icon">🗂️</span>
+                    <h3>卸売会社</h3>
+                    <p>受発注・出荷・在庫管理といった物流業務を担う会社様。</p>
+                </div>
+                <div class="problem-card fade-up fade-up-delay-6">
+                    <span class="problem-icon">🛒</span>
+                    <h3>EC・通販事業者</h3>
+                    <p>出荷量の増加にともない、ピッキング・梱包・検品体制を整えたい会社様。</p>
                 </div>
             </div>
-            <p class="imp-note fade-up">
-                誤出荷対策については、WMS・バーコード・ダブルチェック・ロケーション管理・作業動線・ピッキングルールといった既存の対策が引き続き重要です。生成AIだけで防げるものとは考えていません。生成AIは、過去事例の分類や再発防止資料・教育教材の整理といった部分での活用を想定しています。
-            </p>
         </div>
     </section>
 
-    <!-- ── COMMITMENTS（差別化・支援姿勢） ── -->
+    <!-- ── COMMITMENTS（私ができること） ── -->
     <section id="commitments">
         <div class="container">
             <div class="fade-up">
-                <div class="section-label">OUR COMMITMENT</div>
-                <h2 class="section-title">現場目線のAI支援</h2>
+                <div class="section-label">WHAT I CAN DO</div>
+                <h2 class="section-title">私ができること</h2>
                 <div class="divider"></div>
                 <p class="commit-tagline">AIを入れることが目的ではありません。<br>現場の困りごとを減らすことが目的です。</p>
                 <p class="section-desc">AI業界にありがちな「簡単に成果が出る」「AIを入れればすぐ効率化できる」といった訴求は行いません。当方が大切にしている5つのことをお伝えします。</p>
@@ -2398,22 +2494,84 @@
         </div>
     </section>
 
+    <!-- ── IMPROVEMENTS（改善事例） ── -->
+    <section id="improvements">
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">IMPROVEMENT CASES</div>
+                <h2 class="section-title">物流改善の<br>事例</h2>
+                <div class="divider"></div>
+                <p class="section-desc">物流業界向けのコンサルティングとしての正式な実績はまだ多くありません。以下は、これまでの物流現場での実務経験をもとにした改善例です。実際の支援では、各社の状況に合わせてご提案します。</p>
+            </div>
+            <div class="imp-grid">
+                <div class="imp-card fade-up fade-up-delay-1">
+                    <h3>改善例1｜新人教育の属人化</h3>
+                    <div class="imp-step imp-now">
+                        <span class="imp-step-label">課題</span>
+                        <p>担当者によって作業方法が異なり、新人教育に時間がかかる。</p>
+                    </div>
+                    <div class="imp-step imp-fix">
+                        <span class="imp-step-label">対応</span>
+                        <p>作業工程・確認ポイントを整理し、標準作業・マニュアル化。</p>
+                    </div>
+                    <div class="imp-step imp-goal">
+                        <span class="imp-step-label">期待できる効果</span>
+                        <p>教育時間の短縮、作業品質の均一化、属人化の軽減。</p>
+                    </div>
+                </div>
+                <div class="imp-card fade-up fade-up-delay-2">
+                    <h3>改善例2｜出荷確認のばらつき</h3>
+                    <div class="imp-step imp-now">
+                        <span class="imp-step-label">課題</span>
+                        <p>出荷確認が担当者の経験に依存しており、確認漏れや誤出荷のリスクがある。</p>
+                    </div>
+                    <div class="imp-step imp-fix">
+                        <span class="imp-step-label">対応</span>
+                        <p>チェックポイント・確認手順を可視化し、標準化。</p>
+                    </div>
+                    <div class="imp-step imp-goal">
+                        <span class="imp-step-label">期待できる効果</span>
+                        <p>確認漏れの防止、誤出荷リスクの低減、新人でも判断しやすい仕組みづくり。</p>
+                    </div>
+                </div>
+                <div class="imp-card fade-up fade-up-delay-3">
+                    <h3>改善例3｜資料作成の負荷</h3>
+                    <div class="imp-step imp-now">
+                        <span class="imp-step-label">課題</span>
+                        <p>マニュアル・FAQ・社内資料の作成に時間がかかる。</p>
+                    </div>
+                    <div class="imp-step imp-fix">
+                        <span class="imp-step-label">対応</span>
+                        <p>ChatGPT、Claude、NotebookLMなどの生成AIを活用し、資料作成・更新フローを効率化。</p>
+                    </div>
+                    <div class="imp-step imp-goal">
+                        <span class="imp-step-label">期待できる効果</span>
+                        <p>資料作成時間の短縮、情報共有の効率化、更新しやすい仕組みづくり。</p>
+                    </div>
+                </div>
+            </div>
+            <p class="imp-note fade-up">
+                上記は、実際のコンサルティング実績ではなく、過去の物流現場での実務経験をもとにした改善例です。支援時には、貴社の業務内容・現場状況に合わせて具体的な進め方をご提案します。
+            </p>
+        </div>
+    </section>
+
     <!-- ── SERVICES ── -->
     <section id="services">
         <div class="container">
             <div class="fade-up">
                 <div class="section-label">SERVICES</div>
-                <h2 class="section-title">提供サービス</h2>
+                <h2 class="section-title">物流改善コンサルで<br>支援できること</h2>
                 <div class="divider"></div>
                 <p class="section-desc">AIツールを導入するだけではなく、現場のヒアリングから運用の定着まで、必要な範囲でご支援します。</p>
             </div>
             <div class="services-grid">
                 <div class="service-card service-card-photo fade-up fade-up-delay-1">
-                    <div class="service-photo"><img src="assets/service-1-hearing.jpg" alt="会議室での業務ヒアリングの様子 — 物流現場ヒアリング・業務改善診断"></div>
+                    <div class="service-photo"><img src="assets/service-1-hearing.jpg" alt="会議室での業務ヒアリングの様子 — 物流現場ヒアリング・業務改善診断" width="640" height="427" loading="lazy" decoding="async"></div>
                     <div class="service-card-body">
                         <div class="service-num">SERVICE 01</div>
-                        <h3>物流現場ヒアリング・業務改善診断</h3>
-                        <p>まずは配送、請求、問い合わせ対応など日々の業務内容を伺い、時間がかかっている業務を整理します。AIが必要かどうかも含めて、フラットにご提案します。</p>
+                        <h3>物流・倉庫現場ヒアリング・業務改善診断</h3>
+                        <p>まずは配送、入出荷、在庫管理、請求、問い合わせ対応など日々の業務内容を伺い、時間がかかっている業務を整理します。AIが必要かどうかも含めて、フラットにご提案します。</p>
                         <ul class="service-features">
                             <li>現場業務・課題のヒアリング</li>
                             <li>業務フローの可視化・棚卸し</li>
@@ -2425,11 +2583,11 @@
                     </div>
                 </div>
                 <div class="service-card service-card-photo fade-up fade-up-delay-2">
-                    <div class="service-photo"><img src="assets/service-2-ai-support.jpg" alt="パソコンで業務データを確認する様子 — 物流特化 生成AI活用支援"></div>
+                    <div class="service-photo"><img src="assets/service-2-ai-support.jpg" alt="パソコンで業務データを確認する様子 — 物流特化 生成AI活用支援" width="640" height="427" loading="lazy" decoding="async"></div>
                     <div class="service-card-body">
                         <div class="service-num">SERVICE 02</div>
-                        <h3>物流特化 生成AI活用支援</h3>
-                        <p>請求書・伝票処理、配送状況の問い合わせ対応、シフト・マニュアル作成など、物流現場で発生しやすい業務に絞って生成AIの活用方法をご提案します。</p>
+                        <h3>物流・倉庫業務への生成AI活用支援</h3>
+                        <p>請求書・伝票処理、配送状況の問い合わせ対応、シフト・マニュアル作成など、物流・倉庫現場で発生しやすい業務に絞って生成AIの活用方法をご提案します。</p>
                         <ul class="service-features">
                             <li>新人教育用マニュアル・FAQ・確認問題の整備</li>
                             <li>ベテランの知識を残すSOP・作業手順の整理</li>
@@ -2445,62 +2603,130 @@
         </div>
     </section>
 
+    <!-- ── DIAGNOSIS（物流現場簡易診断） ── -->
+    <section id="diagnosis">
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">SECOND OPINION</div>
+                <h2 class="section-title">物流現場簡易診断<br><span class="gradient-text">（現場のセカンドオピニオン）</span></h2>
+                <div class="divider"></div>
+                <p class="section-desc">長年同じ現場で働いていると、非効率な作業も「当たり前」になってしまうことがあります。物流現場経験者が第三者の視点から、ムダ・ミス・属人化の原因を整理します。</p>
+            </div>
+            <div class="results-block fade-up">
+                <div class="results-label">診断項目例</div>
+                <div class="profile-tags" style="max-width: 820px;">
+                    <span class="tag">入荷</span>
+                    <span class="tag">保管</span>
+                    <span class="tag">ピッキング</span>
+                    <span class="tag">検品</span>
+                    <span class="tag">梱包</span>
+                    <span class="tag">出荷</span>
+                    <span class="tag">在庫管理</span>
+                    <span class="tag">作業導線</span>
+                    <span class="tag">新人教育</span>
+                    <span class="tag">マニュアル</span>
+                    <span class="tag">Excel・紙業務</span>
+                    <span class="tag">情報共有</span>
+                    <span class="tag">生成AI活用余地</span>
+                </div>
+            </div>
+            <div class="hero-cta-group fade-up" style="justify-content: flex-start; margin-top: 2.6rem;">
+                <a href="#pricing" class="btn-outline">診断の料金を見る</a>
+                <a href="#contact" class="btn-primary">簡易診断について相談する</a>
+            </div>
+        </div>
+    </section>
+
     <!-- ── CTA BAND ── -->
     <div class="cta-band fade-up">
         <p>どこから手をつければよいか分からない場合も、<br>まずは無料相談で現場の状況をお聞かせください。</p>
         <a href="#contact" class="btn-primary">現場の課題を<br>無料で相談する</a>
     </div>
 
-    <!-- ── FLOW（支援の流れ） ── -->
-    <section id="flow">
+    <!-- ── PRICING（参考価格） ── -->
+    <!-- ▼▼ 金額は仮置きです。確定後、このPRICINGセクション内の .price-amount / .price-unit を差し替えてください ▼▼ -->
+    <section id="pricing">
         <div class="container">
             <div class="fade-up">
-                <div class="section-label">FLOW</div>
-                <h2 class="section-title">支援の流れ</h2>
+                <div class="section-label">PRICE</div>
+                <h2 class="section-title">物流改善コンサルの<br>参考価格</h2>
                 <div class="divider"></div>
-                <p class="section-desc">お問い合わせから支援開始までの進め方です。いきなりAIツールの導入から始めることはありません。また、途中で中止いただいても構いません。</p>
+                <p class="section-desc">まずは初回相談（無料）から始めていただけます。金額はいずれも目安であり、企業規模・訪問回数・対象業務・支援内容によって変わるため、内容を伺ったうえで個別にお見積りします。ご納得いただけない場合は、そこで終了で構いません。</p>
             </div>
-            <div class="flow-list">
-                <div class="flow-step fade-up">
-                    <div class="flow-num">STEP<strong>01</strong></div>
-                    <div>
-                        <h3>お問い合わせ</h3>
-                        <p>フォームから、いま困っていることをお送りください。まとまっていない状態でも構いません。通常2営業日以内にご返信します。</p>
-                        <span class="flow-tag">無料</span>
-                    </div>
+            <div class="price-grid">
+                <div class="price-card fade-up fade-up-delay-1">
+                    <div class="price-name">初回オンライン相談</div>
+                    <p class="price-for">まず話を聞いてみたい方へ</p>
+                    <div class="price-amount">無料</div>
+                    <div class="price-unit">60分／オンライン</div>
+                    <ul class="price-features">
+                        <li>現場の困りごとのヒアリング</li>
+                        <li>AI活用が向く業務／向かない業務の整理</li>
+                        <li>次に取り得る選択肢のご提示</li>
+                        <li>その場での契約は求めません</li>
+                    </ul>
                 </div>
-                <div class="flow-step fade-up fade-up-delay-1">
-                    <div class="flow-num">STEP<strong>02</strong></div>
-                    <div>
-                        <h3>初回相談（60分・オンライン可）</h3>
-                        <p>現在の業務内容、人員体制、時間がかかっている作業を伺います。この時点で「AIは不要」と判断した場合は、その旨を正直にお伝えします。その場での契約は求めません。</p>
-                        <span class="flow-tag">無料</span>
-                    </div>
+                <div class="price-card price-card-featured fade-up fade-up-delay-2">
+                    <div class="price-badge">まずはここから</div>
+                    <div class="price-name">物流現場簡易診断</div>
+                    <p class="price-for">現場の状況を第三者視点で整理したい方へ</p>
+                    <div class="price-amount">5万円〜 <small>／内容により個別見積</small></div>
+                    <div class="price-unit">現場ヒアリング＋簡易診断レポート</div>
+                    <ul class="price-features">
+                        <li>入荷・保管・ピッキング・検品・出荷などの現状確認</li>
+                        <li>ムダ・ミス・属人化しやすい箇所の洗い出し</li>
+                        <li>生成AIの活用余地の整理</li>
+                        <li>AIを使わない改善案も含みます</li>
+                    </ul>
                 </div>
-                <div class="flow-step fade-up fade-up-delay-2">
-                    <div class="flow-num">STEP<strong>03</strong></div>
-                    <div>
-                        <h3>業務診断・改善提案</h3>
-                        <p>現場ヒアリングをもとに業務を棚卸しし、時間がかかっている作業・属人化している作業を整理します。そのうえで、改善の優先順位と進め方を提案書としてまとめます。</p>
-                        <span class="flow-tag">業務改善診断プラン</span>
-                    </div>
+                <div class="price-card fade-up fade-up-delay-3">
+                    <div class="price-name">業務改善提案・改善レポート</div>
+                    <p class="price-for">どこから手をつけるかを決めたい方へ</p>
+                    <div class="price-amount">10万円〜 <small>／内容により個別見積</small></div>
+                    <div class="price-unit">簡易診断をもとにした提案書のご提出</div>
+                    <ul class="price-features">
+                        <li>改善の優先順位と進め方の提案</li>
+                        <li>標準作業・マニュアル化の方向性</li>
+                        <li>生成AI活用が有効な業務の見極め</li>
+                        <li>費用対効果の整理</li>
+                    </ul>
                 </div>
-                <div class="flow-step fade-up fade-up-delay-3">
-                    <div class="flow-num">STEP<strong>04</strong></div>
-                    <div>
-                        <h3>小さく試す</h3>
-                        <p>いきなり全社展開はしません。まずは1業務・1チームから試し、実際に現場で使えるか、時間が減るかを確認します。使いにくければ、その場で作り直します。</p>
-                        <span class="flow-tag">継続支援プラン</span>
-                    </div>
+                <div class="price-card fade-up fade-up-delay-4">
+                    <div class="price-name">月額伴走支援</div>
+                    <p class="price-for">現場に定着するまで一緒に進めたい方へ</p>
+                    <div class="price-amount">月15万円〜 <small>／内容により個別見積</small></div>
+                    <div class="price-unit">月次・オンライン中心／訪問はご相談</div>
+                    <ul class="price-features">
+                        <li>マニュアル・SOP・FAQの整備</li>
+                        <li>誤出荷・ヒヤリハット事例の整理</li>
+                        <li>運用ルールづくりと定着支援</li>
+                        <li>途中でのご中止も可能です</li>
+                    </ul>
                 </div>
-                <div class="flow-step fade-up fade-up-delay-4">
-                    <div class="flow-num">STEP<strong>05</strong></div>
-                    <div>
-                        <h3>定着・対象業務を広げる</h3>
-                        <p>効果を確認しながら、対象業務を少しずつ広げます。担当者が変わっても運用が続くよう、手順とルールを残す形でご支援します。</p>
-                        <span class="flow-tag">継続支援プラン</span>
-                    </div>
+                <div class="price-card fade-up fade-up-delay-5">
+                    <div class="price-name">生成AI研修・マニュアル作成支援</div>
+                    <p class="price-for">まず社員に触れてもらいたい方へ</p>
+                    <div class="price-amount">8万円〜 <small>／内容により個別見積</small></div>
+                    <div class="price-unit">研修＋マニュアル作成支援／オンライン可</div>
+                    <ul class="price-features">
+                        <li>自社の物流業務を題材にした実践形式の研修</li>
+                        <li>ChatGPT等を使ったことがない方も対象</li>
+                        <li>新人教育用マニュアル・FAQの作成支援</li>
+                        <li>そのまま使えるプロンプト例をお渡し</li>
+                    </ul>
                 </div>
+            </div>
+            <div class="price-notes fade-up">
+                <div class="price-notes-title">料金についての補足</div>
+                <ul>
+                    <li>企業規模、訪問回数、対象業務、支援内容により個別にお見積りします。</li>
+                    <li>表示金額は税別です。交通費等の実費が発生する場合は、事前にお伝えします。</li>
+                    <li>お見積りにご納得いただいてからの開始となります。見積りの段階で終了いただいても費用は発生しません。</li>
+                    <li>サービス立ち上げ期のため、内容・料金は今後変更となる場合があります。ご相談時点の条件でご案内します。</li>
+                </ul>
+            </div>
+            <div class="price-cta fade-up">
+                <a href="#contact" class="btn-primary">まずは無料相談から<br>始める</a>
             </div>
         </div>
     </section>
@@ -2515,28 +2741,28 @@
             </div>
             <div class="strengths-grid">
                 <div class="strength-item fade-up fade-up-delay-1">
-                    <div class="strength-icon strength-icon-photo"><img src="assets/strength-1-warehouse-experience.jpg" alt="物流部門での実務経験"></div>
+                    <div class="strength-icon strength-icon-photo"><img src="assets/strength-1-warehouse-experience.jpg" alt="物流部門での実務経験" width="400" height="252" loading="lazy" decoding="async"></div>
                     <div>
                         <h3>物流部門での実務経験</h3>
                         <p>物流センターで派遣・パートスタッフのマネジメントと在庫管理・出荷業務に従事した実務経験があります。物流現場を経験してきたから、AIを入れる前に現場のどこが非効率なのかを一緒に整理できます。</p>
                     </div>
                 </div>
                 <div class="strength-item fade-up fade-up-delay-2">
-                    <div class="strength-icon strength-icon-photo"><img src="assets/strength-2-honest.jpg" alt="誇張しない、現実的な提案"></div>
+                    <div class="strength-icon strength-icon-photo"><img src="assets/strength-2-honest.jpg" alt="誇張しない、現実的な提案" width="400" height="267" loading="lazy" decoding="async"></div>
                     <div>
                         <h3>誇張しない、現実的な提案</h3>
                         <p>「すぐに成果が出る」といった過度な訴求は行いません。できること・できないことを正直にお伝えします。</p>
                     </div>
                 </div>
                 <div class="strength-item fade-up fade-up-delay-3">
-                    <div class="strength-icon strength-icon-photo"><img src="assets/strength-3-small-business.jpg" alt="中小規模の物流事業者に寄り添う対応"></div>
+                    <div class="strength-icon strength-icon-photo"><img src="assets/strength-3-small-business.jpg" alt="中小規模の物流事業者に寄り添う対応" width="400" height="245" loading="lazy" decoding="async"></div>
                     <div>
                         <h3>中小規模の物流事業者に寄り添う対応</h3>
                         <p>大規模なシステム導入ではなく、限られた人員・予算でも実行できる、現実的な改善策をご提案します。</p>
                     </div>
                 </div>
                 <div class="strength-item fade-up fade-up-delay-4">
-                    <div class="strength-icon strength-icon-photo"><img src="assets/strength-4-ai-business.jpg" alt="AIとビジネス現場、両方の視点"></div>
+                    <div class="strength-icon strength-icon-photo"><img src="assets/strength-4-ai-business.jpg" alt="AIとビジネス現場、両方の視点" width="400" height="267" loading="lazy" decoding="async"></div>
                     <div>
                         <h3>AIとビジネス現場、両方の視点</h3>
                         <p>物流現場での業務経験と、現在の支援業務で使い込んでいるNotebookLM・GPTs・GASなどの生成AIツール。その両方をふまえて、現場で「使われ続ける」形に落とし込みます。</p>
@@ -2596,7 +2822,7 @@
                 <div class="divider"></div>
             </div>
             <div class="profile-layout">
-                <div class="profile-mark fade-up"><img src="assets/profile.jpg" alt="西村康弘"></div>
+                <div class="profile-mark fade-up"><img src="assets/profile.jpg" alt="FMP WORKs 西村康弘のプロフィール写真" width="675" height="900" loading="lazy" decoding="async"></div>
                 <div class="fade-up fade-up-delay-1">
                     <div class="profile-brand">FMP WORKs</div>
                     <div class="profile-name">西村 康弘</div>
@@ -2632,80 +2858,56 @@
         </div>
     </section>
 
-    <!-- ── PRICING（料金・導入プラン） ── -->
-    <!-- ▼▼ 金額は仮置きです。確定後、このPRICINGセクション内の .price-amount / .price-unit を差し替えてください ▼▼ -->
-    <section id="pricing">
+    <!-- ── FLOW（支援の流れ） ── -->
+    <section id="flow">
         <div class="container">
             <div class="fade-up">
-                <div class="section-label">PRICE</div>
-                <h2 class="section-title">料金・導入プラン</h2>
+                <div class="section-label">FLOW</div>
+                <h2 class="section-title">支援の流れ</h2>
                 <div class="divider"></div>
-                <p class="section-desc">まずは初回相談（無料）から始めていただけます。金額は目安であり、業務の範囲・拠点数・期間によって変わるため、内容を伺ったうえで個別にお見積りします。ご納得いただけない場合は、そこで終了で構いません。</p>
+                <p class="section-desc">お問い合わせから支援開始までの進め方です。いきなりAIツールの導入から始めることはありません。また、途中で中止いただいても構いません。</p>
             </div>
-            <div class="price-grid">
-                <div class="price-card fade-up fade-up-delay-1">
-                    <div class="price-name">初回相談</div>
-                    <p class="price-for">まず話を聞いてみたい方へ</p>
-                    <div class="price-amount">無料</div>
-                    <div class="price-unit">60分／オンライン可</div>
-                    <ul class="price-features">
-                        <li>現場の困りごとのヒアリング</li>
-                        <li>AI活用が向く業務／向かない業務の整理</li>
-                        <li>次に取り得る選択肢のご提示</li>
-                        <li>その場での契約は求めません</li>
-                    </ul>
+            <div class="flow-list">
+                <div class="flow-step fade-up">
+                    <div class="flow-num">STEP<strong>01</strong></div>
+                    <div>
+                        <h3>お問い合わせ</h3>
+                        <p>フォームから、いま困っていることをお送りください。まとまっていない状態でも構いません。通常2営業日以内にご返信します。</p>
+                        <span class="flow-tag">無料</span>
+                    </div>
                 </div>
-                <div class="price-card price-card-featured fade-up fade-up-delay-2">
-                    <div class="price-badge">まずはここから</div>
-                    <div class="price-name">業務改善診断</div>
-                    <p class="price-for">どこから手をつけるかを決めたい方へ</p>
-                    <div class="price-amount">5万円〜 <small>／内容により個別見積</small></div>
-                    <div class="price-unit">現場ヒアリング＋提案書のご提出</div>
-                    <ul class="price-features">
-                        <li>現場ヒアリング・業務の棚卸し</li>
-                        <li>時間がかかっている業務の可視化</li>
-                        <li>属人化している業務の洗い出し</li>
-                        <li>改善の優先順位と進め方の提案書</li>
-                        <li>AIを使わない改善案も含みます</li>
-                    </ul>
+                <div class="flow-step fade-up fade-up-delay-1">
+                    <div class="flow-num">STEP<strong>02</strong></div>
+                    <div>
+                        <h3>初回相談（60分・オンライン可）</h3>
+                        <p>現在の業務内容、人員体制、時間がかかっている作業を伺います。この時点で「AIは不要」と判断した場合は、その旨を正直にお伝えします。その場での契約は求めません。</p>
+                        <span class="flow-tag">無料</span>
+                    </div>
                 </div>
-                <div class="price-card fade-up fade-up-delay-3">
-                    <div class="price-name">継続支援（伴走）</div>
-                    <p class="price-for">現場に定着するまで一緒に進めたい方へ</p>
-                    <div class="price-amount">月5万円〜 <small>／内容により個別見積</small></div>
-                    <div class="price-unit">月次・オンライン中心／訪問はご相談</div>
-                    <ul class="price-features">
-                        <li>マニュアル・SOP・FAQの整備</li>
-                        <li>日報・報告書テンプレートとプロンプト作成</li>
-                        <li>誤出荷・ヒヤリハット事例の整理</li>
-                        <li>運用ルールづくりと定着支援</li>
-                        <li>途中でのご中止も可能です</li>
-                    </ul>
+                <div class="flow-step fade-up fade-up-delay-2">
+                    <div class="flow-num">STEP<strong>03</strong></div>
+                    <div>
+                        <h3>業務診断・改善提案</h3>
+                        <p>現場ヒアリングをもとに業務を棚卸しし、時間がかかっている作業・属人化している作業を整理します。そのうえで、改善の優先順位と進め方を提案書としてまとめます。</p>
+                        <span class="flow-tag">業務改善診断プラン</span>
+                    </div>
                 </div>
-                <div class="price-card fade-up fade-up-delay-4">
-                    <div class="price-name">社内研修・勉強会</div>
-                    <p class="price-for">まず社員に触れてもらいたい方へ</p>
-                    <div class="price-amount">3万円〜 <small>／回・個別見積</small></div>
-                    <div class="price-unit">1回90分程度／オンライン可</div>
-                    <ul class="price-features">
-                        <li>自社の物流業務を題材にした実践形式</li>
-                        <li>ChatGPT等を使ったことがない方も対象</li>
-                        <li>ツール操作より「自分の業務での使い方」を重視</li>
-                        <li>そのまま使えるプロンプト例をお渡し</li>
-                    </ul>
+                <div class="flow-step fade-up fade-up-delay-3">
+                    <div class="flow-num">STEP<strong>04</strong></div>
+                    <div>
+                        <h3>小さく試す</h3>
+                        <p>いきなり全社展開はしません。まずは1業務・1チームから試し、実際に現場で使えるか、時間が減るかを確認します。使いにくければ、その場で作り直します。</p>
+                        <span class="flow-tag">継続支援プラン</span>
+                    </div>
                 </div>
-            </div>
-            <div class="price-notes fade-up">
-                <div class="price-notes-title">料金についての補足</div>
-                <ul>
-                    <li>金額はいずれも目安です。業務範囲・拠点数・期間・関与量によって変動するため、内容を伺ったうえで個別にお見積りします。</li>
-                    <li>表示金額は税別です。交通費等の実費が発生する場合は、事前にお伝えします。</li>
-                    <li>お見積りにご納得いただいてからの開始となります。見積りの段階で終了いただいても費用は発生しません。</li>
-                    <li>サービス立ち上げ期のため、内容・料金は今後変更となる場合があります。ご相談時点の条件でご案内します。</li>
-                </ul>
-            </div>
-            <div class="price-cta fade-up">
-                <a href="#contact" class="btn-primary">まずは無料相談から<br>始める</a>
+                <div class="flow-step fade-up fade-up-delay-4">
+                    <div class="flow-num">STEP<strong>05</strong></div>
+                    <div>
+                        <h3>定着・対象業務を広げる</h3>
+                        <p>効果を確認しながら、対象業務を少しずつ広げます。担当者が変わっても運用が続くよう、手順とルールを残す形でご支援します。</p>
+                        <span class="flow-tag">継続支援プラン</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -2758,11 +2960,18 @@
         <div class="container">
             <div class="fade-up">
                 <div class="section-label">FAQ</div>
-                <h2 class="section-title">よくある質問</h2>
+                <h2 class="section-title">物流改善・AI活用に関する<br>よくある質問</h2>
                 <div class="divider"></div>
             </div>
             <p class="section-desc fade-up" style="margin-bottom: 0;">物流現場からよくいただくご質問をまとめました。できること・できないことを、正直にお答えしています。</p>
             <div class="faq-wrap fade-up">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>物流改善コンサルでは何をしてもらえますか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>まず物流・倉庫現場の業務内容と困りごとを伺い、時間がかかっている作業や属人化している業務を整理するところから始めます。そのうえで、マニュアル整備・作業標準化・生成AI活用など、必要な改善策をご提案します。いきなりAIツールの導入から始めることはありません。</p></div></div>
+                </div>
                 <div class="faq-item">
                     <div class="faq-question">
                         <span>新人教育に時間がかかっています。生成AIで何ができますか？</span>
@@ -2779,10 +2988,24 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>誤出荷をAIだけで防止できますか？</span>
+                        <span>倉庫の業務改善も相談できますか？</span>
                         <div class="faq-toggle">+</div>
                     </div>
-                    <div class="faq-answer"><div class="faq-answer-inner"><p>AIだけで誤出荷を防げるとは考えていません。誤出荷対策では、次のような既存の対策が引き続き重要です。</p><ul><li>WMS（倉庫管理システム）</li><li>バーコード検品</li><li>ダブルチェック</li><li>ロケーション管理</li><li>作業動線の見直し</li><li>ピッキングルールの整備</li></ul><p>生成AIについては、過去の誤出荷事例の分類、ヒヤリハットの整理、原因の整理、再発防止資料や新人教育教材づくりといった部分での活用を検討します。</p></div></div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>はい、ご相談いただけます。入荷・保管・ピッキング・検品・梱包・出荷・在庫管理といった倉庫内オペレーション全般について、作業の流れと確認ポイントを整理し、標準化やマニュアル化をご支援します。倉庫会社様、物流センター様、自社倉庫を持つメーカー様・卸売会社様からのご相談も多くいただいています。</p></div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>運送会社の生成AI活用についても相談できますか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>はい、ご相談いただけます。配車・シフト管理、請求書・伝票処理、問い合わせ対応、日報・報告書の作成など、運送会社様で発生しやすい業務を伺ったうえで、生成AIが向いている部分とそうでない部分を整理してご提案します。AIの導入自体を目的にはしません。</p></div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>誤出荷や在庫差異の改善も対応できますか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>AIだけで誤出荷や在庫差異を防げるとは考えていません。次のような既存の対策が引き続き重要です。</p><ul><li>WMS（倉庫管理システム）</li><li>バーコード検品</li><li>ダブルチェック</li><li>ロケーション管理</li><li>作業動線の見直し</li><li>ピッキングルールの整備</li></ul><p>そのうえで、まず現状の作業手順と発生状況を整理し、原因を特定します。生成AIについては、過去の誤出荷・在庫差異事例の分類、ヒヤリハットの整理、原因の整理、再発防止資料や新人教育教材づくりといった部分での活用を検討します。</p></div></div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
@@ -2797,6 +3020,13 @@
                         <div class="faq-toggle">+</div>
                     </div>
                     <div class="faq-answer"><div class="faq-answer-inner"><p>最初からAIツールを選ぶ必要はありません。まず、社内の業務を次の観点で整理するところから始めます。</p><ul><li>時間がかかっている仕事</li><li>同じ作業を繰り返している仕事</li><li>ベテランに依存している仕事</li><li>文章作成が多い仕事</li><li>情報を探すのに時間がかかる仕事</li></ul><p>そのうえで、AIが向いている業務だけを選定します。向いていない業務には、無理に使いません。</p></div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>AIを導入していなくても相談できますか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>はい、むしろAI未導入の状態からのご相談がほとんどです。生成AIを使ったことがない企業様でも問題ありません。まずは現場の業務内容と課題を整理し、AIを使う必要があるかどうかも含めてご提案します。</p></div></div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
@@ -2821,7 +3051,7 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>小規模の運送会社・倉庫業でも依頼できますか？</span>
+                        <span>小規模な物流会社・倉庫会社でも依頼できますか？</span>
                         <div class="faq-toggle">+</div>
                     </div>
                     <div class="faq-answer"><div class="faq-answer-inner"><p>はい、規模を問わずご相談いただけます。限られた人員・予算でも実行できる、現実的な改善策をご提案します。</p></div></div>
@@ -2839,6 +3069,20 @@
                         <div class="faq-toggle">+</div>
                     </div>
                     <div class="faq-answer"><div class="faq-answer-inner"><p>はい、Zoom・Google Meet等のオンラインツールでの対応が可能です。全国どこからでもご相談いただけます。現場を実際に拝見したほうがよい場合は、訪問についてもご相談ください。</p></div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>大阪・兵庫以外でも対応できますか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>訪問は尼崎を拠点に、大阪・兵庫・京都を中心とした京阪神エリアを中心にお伺いしています。京阪神エリア外の場合も、まずはオンラインでの相談から承っています。オンラインでの物流改善・生成AI活用のご相談は全国対応です。</p></div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>物流現場を直接見てもらうことはできますか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>はい、可能です。大阪・兵庫・京都を中心とした京阪神エリアの企業様には、現場への訪問対応もしております。作業の様子を直接拝見することで、書類やヒアリングだけでは分かりにくい作業導線やムダも整理しやすくなります。訪問の要否は、初回相談の中でご相談ください。</p></div></div>
                 </div>
             </div>
         </div>
@@ -2892,7 +3136,9 @@
                             <option value="">選択してください</option>
                         <option value="運送">運送</option>
                         <option value="倉庫">倉庫</option>
-                        <option value="物流">物流</option>
+                        <option value="物流センター">物流センター</option>
+                        <option value="メーカー（自社倉庫）">メーカー（自社倉庫）</option>
+                        <option value="卸売">卸売</option>
                         <option value="EC物流">EC物流</option>
                         <option value="その他">その他</option>
                         </select>
