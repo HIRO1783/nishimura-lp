@@ -3,8 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>生成AI業務改善支援 | ChatGPT活用・YouTube/SNS運用効率化 - FMP WORKs（西村康弘）</title>
-    <meta name="description" content="中小企業・個人事業主向けの生成AI業務改善コンサルティング、社内AI活用研修、YouTube・SNSコンテンツ制作効率化支援。ChatGPT・Claude・Geminiを実務で使える形に。無料相談受付中。">
+    <title>生成AI業務改善支援｜中小企業・個人事業主のAI活用 - FMP WORKs（西村康弘）</title>
+    <meta name="description" content="中小企業・個人事業主向けの生成AI業務改善コンサルティングと社内AI活用研修。業務を整理し、ChatGPT・Claude・Geminiなどを現場で使い続けられる仕組みにします。物流・運送・倉庫向けの業務改善、YouTube・SNS制作の効率化にも対応。オンライン全国対応・無料相談受付中。">
+    <link rel="canonical" href="https://www.fmpworks.jp/">
+    <meta name="robots" content="index, follow">
+
+    <!-- OGP -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FMP WORKs">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:url" content="https://www.fmpworks.jp/">
+    <meta property="og:title" content="生成AI業務改善支援｜中小企業・個人事業主のAI活用 - FMP WORKs（西村康弘）">
+    <meta property="og:description" content="AIを「導入しただけ」で終わらせない。中小企業・個人事業主の業務を整理し、生成AIを現場で使い続けられる仕組みにします。社内AI研修にも対応。無料相談受付中。">
+    <meta property="og:image" content="https://www.fmpworks.jp/assets/ai-efficiency.jpg">
+    <meta property="og:image:width" content="700">
+    <meta property="og:image:height" content="467">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="生成AI業務改善支援｜中小企業・個人事業主のAI活用 - FMP WORKs">
+    <meta name="twitter:description" content="AIを「導入しただけ」で終わらせない。中小企業・個人事業主の業務を整理し、生成AIを現場で使い続けられる仕組みにします。無料相談受付中。">
+    <meta name="twitter:image" content="https://www.fmpworks.jp/assets/ai-efficiency.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -1098,50 +1115,181 @@
             margin: 0 auto;
         }
 
-        .contact-cards {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-top: 3.5rem;
+        /* ─── CONTACT FORM ─── */
+        .contact-form-wrap {
+            max-width: 640px;
+            margin: 3.2rem auto 0;
+            text-align: left;
         }
 
-        .contact-cards-single {
-            grid-template-columns: 1fr;
-            max-width: 340px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .contact-card {
-            padding: 3rem 2rem;
+        .cform {
             background: var(--card);
             border: 1px solid var(--line);
-            text-align: center;
-            text-decoration: none;
-            transition: all 0.3s;
+            padding: 2.6rem 2.4rem 2.8rem;
+        }
+
+        .cform-row { margin-bottom: 1.6rem; }
+
+        .cform-label {
             display: block;
-        }
-
-        .contact-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-6px);
-            box-shadow: 0 24px 60px -20px rgba(201, 164, 92, 0.22);
-        }
-
-        .contact-icon-wrap { font-size: 2.6rem; margin-bottom: 1rem; }
-
-        .contact-card h3 {
-            font-family: var(--serif);
-            font-size: 1.05rem;
+            font-size: 0.86rem;
             font-weight: 700;
-            margin-bottom: 0.6rem;
             color: var(--cream);
+            margin-bottom: 0.55rem;
         }
 
-        .contact-card p {
-            font-size: 0.84rem;
-            color: var(--cream-dim);
+        .req, .opt {
+            font-size: 0.66rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            padding: 0.16rem 0.5rem;
+            margin-left: 0.55rem;
+            border-radius: 2px;
+            vertical-align: 0.08em;
+            white-space: nowrap;
+        }
+
+        .req { color: #181206; background: var(--gold); }
+        .opt { color: var(--cream-dim); background: rgba(245, 239, 224, 0.08); }
+
+        .cform input[type="text"],
+        .cform input[type="email"],
+        .cform input[type="tel"],
+        .cform textarea {
+            width: 100%;
+            font-family: var(--sans);
+            font-size: 0.95rem;
+            color: var(--cream);
+            background: rgba(245, 239, 224, 0.04);
+            border: 1px solid var(--line);
+            border-radius: 2px;
+            padding: 0.85rem 0.95rem;
             line-height: 1.7;
+            transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .cform input::placeholder,
+        .cform textarea::placeholder { color: var(--muted); }
+
+        .cform textarea { resize: vertical; min-height: 140px; }
+
+        .cform input:focus,
+        .cform textarea:focus {
+            outline: none;
+            background: rgba(245, 239, 224, 0.07);
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(201, 164, 92, 0.18);
+        }
+
+        .cform input.invalid,
+        .cform textarea.invalid { border-color: #e07a5f; }
+
+        .cform-hint {
+            font-size: 0.77rem;
+            color: var(--muted);
+            margin-top: 0.45rem;
+            line-height: 1.7;
+        }
+
+        .cform-error {
+            display: none;
+            font-size: 0.78rem;
+            color: #f0a08a;
+            font-weight: 700;
+            margin-top: 0.45rem;
+        }
+
+        .cform-error.show { display: block; }
+
+        .consent-box {
+            border: 1px solid var(--line);
+            background: rgba(245, 239, 224, 0.025);
+            padding: 1.3rem 1.4rem;
+            margin-top: 2.2rem;
+        }
+
+        .consent-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: 0.6rem;
+        }
+
+        .consent-box p {
+            font-size: 0.78rem;
+            color: var(--cream-dim);
+            line-height: 1.9;
+        }
+
+        .consent-check {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            margin-top: 1rem;
+            font-size: 0.87rem;
+            font-weight: 700;
+            color: var(--cream);
+            cursor: pointer;
+            line-height: 1.6;
+        }
+
+        .consent-check input { margin-top: 0.24em; accent-color: var(--gold); width: 16px; height: 16px; flex-shrink: 0; }
+
+        .cform-submit-wrap { text-align: center; margin-top: 2.2rem; }
+
+        .cform-submit {
+            width: 100%;
+            max-width: 420px;
+            border: none;
+            padding: 1.35rem 2rem;
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+
+        .cform-submit[disabled] { opacity: 0.6; cursor: wait; transform: none; }
+
+        .cform-submit-note {
+            font-size: 0.78rem;
+            color: var(--muted);
+            margin-top: 1rem;
+            line-height: 1.8;
+        }
+
+        .cform-done {
+            display: none;
+            background: var(--card);
+            border: 1px solid var(--gold);
+            padding: 3.4rem 2.4rem;
+            text-align: center;
+        }
+
+        .cform-done.show { display: block; }
+
+        .cform-done-icon {
+            font-size: 2.4rem;
+            color: var(--gold-2);
+            margin-bottom: 1rem;
+        }
+
+        .cform-done h3 {
+            font-family: var(--serif);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--cream);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .cform-done p {
+            font-size: 0.89rem;
+            color: var(--cream-dim);
+            line-height: 2;
+        }
+
+        @media (max-width: 640px) {
+            .cform { padding: 1.9rem 1.3rem 2.2rem; }
         }
 
         .contact-note {
@@ -1185,7 +1333,6 @@
             .profile-layout { grid-template-columns: 1fr; gap: 2.5rem; }
             .profile-mark { max-width: 190px; margin: 0 auto; }
 
-            .contact-cards { grid-template-columns: 1fr; }
             .hero-cta-group { flex-direction: column; align-items: center; }
             .kanji { font-size: 160px; }
 
@@ -1205,16 +1352,124 @@
             .kanji { display: none; }
         }
     </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "FMP WORKs",
+  "url": "https://www.fmpworks.jp/",
+  "image": "https://www.fmpworks.jp/assets/ai-efficiency.jpg",
+  "description": "中小企業・個人事業主向けに、生成AIを実際の業務で使い続けられる仕組みづくりを支援します。業務の整理、AIツールの選定、社内AI活用研修のほか、物流・運送・倉庫向けの業務改善支援、YouTube・SNSコンテンツ制作の効率化支援にも対応しています。オンラインで全国対応です。",
+  "areaServed": {
+    "@type": "Country",
+    "name": "日本"
+  },
+  "availableLanguage": "ja",
+  "founder": {
+    "@type": "Person",
+    "name": "西村 康弘",
+    "jobTitle": "生成AIコンサルタント／業務効率化アドバイザー"
+  },
+  "knowsAbout": [
+    "生成AI 業務改善",
+    "生成AI 業務効率化",
+    "AI活用 中小企業",
+    "生成AI 研修",
+    "AIツール 選定",
+    "物流 業務改善",
+    "YouTube・SNS運用 効率化"
+  ],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "name": "生成AI業務改善コンサルティング",
+      "description": "業務内容のヒアリング、AIで効率化できる業務の洗い出し、ツール選定、プロンプト作成、運用方法の整理。"
+    },
+    {
+      "@type": "Offer",
+      "name": "社内向け生成AI活用支援・研修",
+      "description": "自社の業務を題材にした実践型の生成AI研修と、社内マニュアル・活用ルールの作成。"
+    },
+    {
+      "@type": "Offer",
+      "name": "物流・運送・倉庫向け 業務改善支援",
+      "description": "紙・FAX・Excel・属人化などの業務課題を整理し、AI・SaaS・既存システムの中から現場に合った改善方法をご提案。",
+      "url": "https://www.fmpworks.jp/logistics-ai/"
+    },
+    {
+      "@type": "Offer",
+      "name": "YouTube・SNSコンテンツ制作効率化支援",
+      "description": "企画・台本・投稿文・画像制作・分析に生成AIを取り入れ、コンテンツ制作の負担を軽減。"
+    }
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "料金はどのくらいかかりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ご相談内容や規模によって異なります。まずは無料でご相談をお受けしていますので、お気軽にお問い合わせください。ヒアリング後に詳細なお見積りをご提示します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "AIについて知識がなくても大丈夫ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、まったく問題ありません。AIやIT知識がゼロの方でも丁寧にご説明しながらサポートします。難しい専門用語は使わず、わかりやすい言葉で進めます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ChatGPT以外のAIツールにも対応していますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。ChatGPT・Claude・Geminiなど、業務内容や社内の環境に合わせて適したツールを選びます。特定のツールの導入を前提にはせず、すでにお使いのツールを活かす方法も含めてご提案します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "どのような業種・業態でも対応できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "個人事業主・中小企業であれば、業種を問わず対応しております。まずはお気軽にご相談ください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "オンラインでの対応は可能ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、Zoom・Google Meet等のオンラインツールでの対応が可能です。全国どこからでもご相談いただけます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "単発の相談だけでも大丈夫ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "もちろんです。継続サポートだけでなく、スポットでのご相談にも柔軟に対応しています。まずは一度ご連絡ください。"
+      }
+    }
+  ]
+}
+    </script>
 </head>
 <body>
 
-    <div id="intro"><span class="intro-logo">FMP WORKs<small>西村康弘 ── 生成AI業務改善 / YouTube・SNS運用支援</small></span></div>
+    <div id="intro"><span class="intro-logo">FMP WORKs<small>西村康弘 ── 中小企業の生成AI業務改善支援</small></span></div>
     <div id="progress"></div>
 
     <!-- ── NAVIGATION ── -->
     <nav id="navbar">
         <div class="nav-wrap">
-            <div class="nav-logo">FMP WORKs<span>西村康弘 — 生成AI業務改善 / YouTube・SNS運用支援</span></div>
+            <div class="nav-logo">FMP WORKs<span>西村康弘 — 中小企業の生成AI業務改善支援</span></div>
             <ul class="nav-links">
                 <li><a href="#problems">お悩み</a></li>
                 <li><a href="#services">サービス</a></li>
@@ -1236,10 +1491,10 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="badge-dot"></span>
-                <span class="badge-text">生成AI業務改善支援</span> <span class="badge-text">× YouTube/SNS運用支援</span> <span class="badge-text">— 無料相談受付中</span>
+                <span class="badge-text">中小企業・個人事業主向け</span> <span class="badge-text">生成AI業務改善支援</span> <span class="badge-text">— 無料相談受付中</span>
             </div>
             <h1 class="hero-title">
-                <span class="l"><span>ChatGPTを</span></span>
+                <span class="l"><span>生成AIを</span></span>
                 <span class="l"><span>「導入しただけ」で</span></span>
                 <span class="l"><span class="gradient-text">終わらせない。</span></span>
             </h1>
@@ -1248,7 +1503,7 @@
                 生成AIを実際に使える仕組みに変えます。
             </p>
             <p class="hero-sub fade-up fade-up-delay-1">
-                営業、資料作成、議事録、マニュアル、SNS・<span class="nowrap">YouTube運用</span>など、<br>
+                営業、資料作成、議事録、マニュアル、データ整理、<span class="nowrap">SNS発信など、</span><br>
                 日々の業務を整理し、<br>
                 生成AIを活用した効率化を支援します。
                 <br><br>
@@ -1272,8 +1527,8 @@
     <!-- ── MARQUEE STRIP ── -->
     <div class="strip" aria-hidden="true">
         <div class="strip-track">
-            <span>生成AI業務改善 — <em>社内AI活用研修</em> — YouTube・SNS運用支援 — <em>無料相談受付中</em> — &nbsp;</span>
-            <span>生成AI業務改善 — <em>社内AI活用研修</em> — YouTube・SNS運用支援 — <em>無料相談受付中</em> — &nbsp;</span>
+            <span>生成AI業務改善 — <em>社内AI活用研修</em> — 物流・運送・倉庫の業務改善 — <em>無料相談受付中</em> — &nbsp;</span>
+            <span>生成AI業務改善 — <em>社内AI活用研修</em> — 物流・運送・倉庫の業務改善 — <em>無料相談受付中</em> — &nbsp;</span>
         </div>
     </div>
 
@@ -1288,45 +1543,45 @@
             </div>
             <div class="problems-grid problems-grid-6">
                 <div class="problem-card problem-card-photo fade-up fade-up-delay-1">
-                    <div class="problem-photo"><img src="assets/problem-1-chatgpt.jpg" alt="ChatGPTを導入したものの、業務で使いこなせていない"></div>
+                    <div class="problem-photo"><img src="assets/problem-1-chatgpt.jpg" alt="生成AIを導入したものの、業務で使いこなせていない" width="700" height="466" loading="lazy" decoding="async"></div>
                     <div class="problem-card-body">
-                        <h3>ChatGPTを導入したものの、<br>業務で使いこなせていない</h3>
-                        <p>会社でChatGPTや生成AIを導入したものの、社員が文章作成や検索に使うだけで、日々の業務効率化までつながっていない。</p>
+                        <h3>生成AIを導入したものの、<br>業務で使いこなせていない</h3>
+                        <p>ChatGPTなどの生成AIを導入したものの、社員が文章作成や検索に使うだけで、日々の業務効率化までつながっていない。</p>
                     </div>
                 </div>
                 <div class="problem-card problem-card-photo fade-up fade-up-delay-2">
-                    <div class="problem-photo"><img src="assets/problem-2-task-selection.jpg" alt="AIで効率化できそうだが、対象業務を決められない"></div>
+                    <div class="problem-photo"><img src="assets/problem-2-task-selection.jpg" alt="AIで効率化できそうだが、対象業務を決められない" width="700" height="393" loading="lazy" decoding="async"></div>
                     <div class="problem-card-body">
                         <h3>AIで効率化できそうだが、<br>対象業務を決められない</h3>
                         <p>メール作成、議事録、報告書、マニュアル、データ整理などに時間がかかっているものの、どの業務からAI化すべきかわからない。</p>
                     </div>
                 </div>
                 <div class="problem-card problem-card-photo fade-up fade-up-delay-3">
-                    <div class="problem-photo"><img src="assets/problem-3-tool-selection.jpg" alt="AIツールが多すぎて、自社に合うものを選べない"></div>
+                    <div class="problem-photo"><img src="assets/problem-3-tool-selection.jpg" alt="AIツールが多すぎて、自社に合うものを選べない" width="700" height="466" loading="lazy" decoding="async"></div>
                     <div class="problem-card-body">
                         <h3>AIツールが多すぎて、<br>自社に合うものを選べない</h3>
                         <p>ChatGPT、Claude、Geminiなど、さまざまなサービスがあり、どれを導入すればよいのか、費用に見合う効果があるのか判断できない。</p>
                     </div>
                 </div>
                 <div class="problem-card problem-card-photo fade-up fade-up-delay-4">
-                    <div class="problem-photo"><img src="assets/problem-4-content-solo.jpg" alt="SNSやYouTubeの運用が属人化している"></div>
+                    <div class="problem-photo"><img src="assets/problem-6-team-adoption.jpg" alt="AIを導入しても、社員が使わなくなることが不安" width="466" height="700" loading="lazy" decoding="async"></div>
+                    <div class="problem-card-body">
+                        <h3>AIを導入しても、<br>社員が使わなくなることが不安</h3>
+                        <p>ツールを導入するだけではなく、自社の業務に合わせた使い方や、現場で継続して使える仕組みを整えたい。</p>
+                    </div>
+                </div>
+                <div class="problem-card problem-card-photo fade-up fade-up-delay-5">
+                    <div class="problem-photo"><img src="assets/problem-4-content-solo.jpg" alt="SNSやYouTubeの運用が属人化している" width="466" height="700" loading="lazy" decoding="async"></div>
                     <div class="problem-card-body">
                         <h3>SNSやYouTubeの運用が<br>属人化している</h3>
                         <p>投稿企画、台本作成、画像制作、分析に時間がかかり、担当者一人に負担が集中している。AIを活用して制作時間を短縮したい。</p>
                     </div>
                 </div>
-                <div class="problem-card problem-card-photo fade-up fade-up-delay-5">
-                    <div class="problem-photo"><img src="assets/problem-5-youtube-start.jpg" alt="YouTubeを始めたいが、何から準備すればよいかわからない"></div>
+                <div class="problem-card problem-card-photo fade-up fade-up-delay-6">
+                    <div class="problem-photo"><img src="assets/problem-5-youtube-start.jpg" alt="YouTubeを始めたいが、何から準備すればよいかわからない" width="700" height="393" loading="lazy" decoding="async"></div>
                     <div class="problem-card-body">
                         <h3>YouTubeを始めたいが、<br>何から準備すればよいかわからない</h3>
                         <p>チャンネル設計、企画、タイトル、台本、投稿後の分析など、必要な作業が多く、社内だけでは進められない。</p>
-                    </div>
-                </div>
-                <div class="problem-card problem-card-photo fade-up fade-up-delay-6">
-                    <div class="problem-photo"><img src="assets/problem-6-team-adoption.jpg" alt="AIを導入しても、社員が使わなくなることが不安"></div>
-                    <div class="problem-card-body">
-                        <h3>AIを導入しても、<br>社員が使わなくなることが不安</h3>
-                        <p>ツールを導入するだけではなく、自社の業務に合わせた使い方や、現場で継続して使える仕組みを整えたい。</p>
                     </div>
                 </div>
             </div>
@@ -1345,7 +1600,7 @@
             </div>
             <div class="services-grid">
                 <div class="service-card service-card-photo fade-up fade-up-delay-1">
-                    <div class="service-photo"><img src="assets/ai-efficiency.jpg" alt="生成AI業務改善コンサルティング"></div>
+                    <div class="service-photo"><img src="assets/ai-efficiency.jpg" alt="生成AI業務改善コンサルティング" width="700" height="467" loading="lazy" decoding="async"></div>
                     <div class="service-card-body">
                         <div class="service-num">SERVICE 01</div>
                         <h3>生成AI業務改善コンサルティング</h3>
@@ -1360,7 +1615,7 @@
                     </div>
                 </div>
                 <div class="service-card service-card-photo fade-up fade-up-delay-2">
-                    <div class="service-photo"><img src="assets/ai-consulting.jpg" alt="社内向け生成AI活用支援・研修"></div>
+                    <div class="service-photo"><img src="assets/ai-consulting.jpg" alt="社内向け生成AI活用支援・研修" width="700" height="467" loading="lazy" decoding="async"></div>
                     <div class="service-card-body">
                         <div class="service-num">SERVICE 02</div>
                         <h3>社内向け生成AI活用支援・研修</h3>
@@ -1375,9 +1630,18 @@
                     </div>
                 </div>
                 <div class="service-card service-card-photo fade-up fade-up-delay-3">
-                    <div class="service-photo"><img src="assets/sns-support.jpg" alt="YouTube・SNSコンテンツ制作効率化支援"></div>
+                    <div class="service-photo"><img src="logistics-ai/assets/strength-1-warehouse-experience.jpg" alt="物流・運送・倉庫向け 業務改善支援" width="400" height="252" loading="lazy" decoding="async"></div>
                     <div class="service-card-body">
                         <div class="service-num">SERVICE 03</div>
+                        <h3>物流・運送・倉庫向け 業務改善支援</h3>
+                        <p>物流センターでの現場マネジメント経験を活かし、紙・FAX・Excel・属人化などの業務課題を整理して、AI・SaaS・既存システムの中から現場に合った改善方法をご提案する業界特化型の支援です。AI導入ありき、システム開発ありきではありません。</p>
+                        <a href="/logistics-ai/" class="service-link">物流特化ページを見る →</a>
+                    </div>
+                </div>
+                <div class="service-card service-card-photo fade-up fade-up-delay-4">
+                    <div class="service-photo"><img src="assets/sns-support.jpg" alt="YouTube・SNSコンテンツ制作効率化支援" width="700" height="466" loading="lazy" decoding="async"></div>
+                    <div class="service-card-body">
+                        <div class="service-num">SERVICE 04</div>
                         <h3>YouTube・SNSコンテンツ制作効率化支援</h3>
                         <p>YouTubeやSNSの企画、台本作成、投稿文、画像制作、分析業務に生成AIを取り入れ、コンテンツ制作の負担を軽減します。自身のYouTube・Facebook運用経験をもとに、実際の運用現場で使える方法をご提案します。</p>
                         <ul class="service-features">
@@ -1388,15 +1652,6 @@
                             <li>投稿後の数値分析と改善提案</li>
                             <li>AIを使った制作フローの構築</li>
                         </ul>
-                    </div>
-                </div>
-                <div class="service-card service-card-photo fade-up fade-up-delay-4">
-                    <div class="service-photo"><img src="logistics-ai/assets/strength-1-warehouse-experience.jpg" alt="物流・倉庫・運送業向け生成AI業務改善支援"></div>
-                    <div class="service-card-body">
-                        <div class="service-num">SERVICE 04</div>
-                        <h3>物流・倉庫・運送業向け生成AI業務改善支援</h3>
-                        <p>物流センターでの現場マネジメント経験を活かし、配送計画・請求書処理・問い合わせ対応など物流業界特有の業務課題に絞ってAI活用をご提案する、業界特化型の支援プログラムです。</p>
-                        <a href="/logistics-ai/" class="service-link">物流特化ページを見る →</a>
                     </div>
                 </div>
             </div>
@@ -1420,31 +1675,31 @@
             </div>
             <div class="strengths-grid">
                 <div class="strength-item fade-up fade-up-delay-1">
-                    <div class="strength-icon strength-icon-photo"><img src="assets/enterprise-experience.jpg" alt="上場企業でのビジネス実務経験"></div>
+                    <div class="strength-icon strength-icon-photo"><img src="assets/enterprise-experience.jpg" alt="上場企業でのビジネス実務経験" width="160" height="124" loading="lazy" decoding="async"></div>
                     <div>
                         <h3>上場企業でのビジネス実務経験</h3>
                         <p>営業・企画・物流と複数部門にわたる実務経験から、現場感覚に基づいた具体的なアドバイスが可能です。</p>
                     </div>
                 </div>
                 <div class="strength-item fade-up fade-up-delay-2">
-                    <div class="strength-icon strength-icon-photo"><img src="assets/small-business.jpg" alt="個人・中小企業に特化した提案"></div>
+                    <div class="strength-icon strength-icon-photo"><img src="assets/small-business.jpg" alt="個人・中小企業に特化した提案" width="160" height="106" loading="lazy" decoding="async"></div>
                     <div>
                         <h3>個人・中小企業に特化した提案</h3>
                         <p>大企業向けの理論ではなく、リソースが限られた規模に合った、現実的で実行可能な戦略を提案します。</p>
                     </div>
                 </div>
                 <div class="strength-item fade-up fade-up-delay-3">
-                    <div class="strength-icon strength-icon-photo"><img src="assets/personal-support.jpg" alt="一人ひとりに寄り添う対応"></div>
+                    <div class="strength-icon strength-icon-photo"><img src="assets/personal-support.jpg" alt="一人ひとりに寄り添う対応" width="160" height="91" loading="lazy" decoding="async"></div>
                     <div>
                         <h3>一人ひとりに寄り添う対応</h3>
                         <p>テンプレートではなく、お客様の状況・目標に合わせてカスタマイズしたサポートを一貫して提供します。</p>
                     </div>
                 </div>
                 <div class="strength-item fade-up fade-up-delay-4">
-                    <div class="strength-icon strength-icon-photo"><img src="assets/ai-business-fusion.jpg" alt="AIとビジネス視点の融合"></div>
+                    <div class="strength-icon strength-icon-photo"><img src="assets/ai-business-fusion.jpg" alt="AIとビジネス視点の融合" width="160" height="91" loading="lazy" decoding="async"></div>
                     <div>
                         <h3>AIとビジネス視点の融合</h3>
-                        <p>最新AIツールの知識と実際のビジネス現場の経験を掛け合わせた、実用的かつ成果につながる提案が強みです。</p>
+                        <p>Claude Code・Codex・Geminiなどの最新AIツールを実際の業務で使い分けている知見と、ビジネス現場の経験を掛け合わせ、現場で使い続けられる形に落とし込みます。</p>
                     </div>
                 </div>
             </div>
@@ -1459,14 +1714,14 @@
                 <div class="section-label">TRACK RECORD</div>
                 <h2 class="section-title">実績・信頼性</h2>
                 <div class="divider"></div>
-                <p class="section-desc">生成AI活用の実務経験と、YouTube・SNS運用の実績。両方を掛け合わせてご支援します。</p>
+                <p class="section-desc">会社員としての約20年の実務経験と、生成AIを実務で使い込んできた実践知をもとにご支援します。</p>
             </div>
             <div class="results-block fade-up">
                 <div class="results-label">生成AI活用の実務経験</div>
                 <ul class="career-list">
-                    <li>ChatGPT・Claude・Geminiなどを実務で活用</li>
-                    <li>AIを活用した企画・台本・投稿文作成・分析・業務フロー構築の実務経験</li>
-                    <li>営業・物流を中心とした会社員経験 20年</li>
+                    <li>Claude Code・Codex・Gemini・ChatGPTなどを、用途に応じて使い分けて実務で活用</li>
+                    <li>AIを活用した資料作成・情報整理・分析・業務フロー構築の実務経験</li>
+                    <li>会社員としての実務経験 約20年（物流・倉庫現場 約8年、法人営業 約10年）</li>
                 </ul>
             </div>
             <div class="results-block fade-up fade-up-delay-1">
@@ -1490,7 +1745,7 @@
 
     <!-- ── CTA BAND ── -->
     <div class="cta-band fade-up">
-        <p>ご自身のYouTube・SNS運用経験も<br>踏まえてご提案します。</p>
+        <p>上場企業での実務経験とAIの実践知をもとに、<br>現実的な形でご提案します。</p>
         <a href="#contact" class="btn-primary">自社で活用できる業務を<br>無料で相談する</a>
     </div>
 
@@ -1504,7 +1759,7 @@
                 <div class="divider"></div>
             </div>
             <div class="profile-layout">
-                <div class="profile-mark fade-up"><img src="assets/profile.jpg" alt="西村康弘"></div>
+                <div class="profile-mark fade-up"><img src="assets/profile.jpg" alt="西村康弘" width="675" height="900" loading="lazy" decoding="async"></div>
                 <div class="fade-up fade-up-delay-1">
                     <div class="profile-brand">FMP WORKs</div>
                     <div class="profile-name">西村 康弘</div>
@@ -1512,10 +1767,11 @@
                     <div class="profile-tags">
                         <span class="tag">生成AIコンサルタント</span>
                         <span class="tag">業務効率化アドバイザー</span>
+                        <span class="tag">物流DX・業務改善アドバイザー</span>
                         <span class="tag">YouTube・SNS運用アドバイザー</span>
                     </div>
                     <p class="profile-bio">
-                        上場企業にて営業・企画・物流部門を幅広く経験。現場でのビジネス実務を通じて培った戦略思考と問題解決力を武器に、現在は中小企業・個人事業主向けの生成AI業務改善支援と、YouTube・SNS運用支援を中心にビジネス支援を行っています。
+                        上場企業にて営業・企画・物流部門を幅広く経験。現場でのビジネス実務を通じて培った戦略思考と問題解決力を武器に、現在は中小企業・個人事業主向けの生成AI業務改善支援を中心に、物流・運送・倉庫向けの業務改善支援や、YouTube・SNS運用支援も行っています。
                     </p>
                     <p class="profile-bio">
                         「難しいことをわかりやすく、現実的な形で」をモットーに、お客様のビジネス成長に伴走します。
@@ -1524,7 +1780,7 @@
                         <li>上場企業 営業部門にて新規開拓・顧客管理を担当</li>
                         <li>企画部門にて事業戦略・マーケティング施策の立案に携わる</li>
                         <li>物流部門にて業務フロー改善・効率化プロジェクトを推進</li>
-                        <li>現在：生成AI業務改善支援とYouTube・SNS運用支援を中心に、個人・中小企業のビジネス支援に従事</li>
+                        <li>現在：生成AI業務改善支援を中心に、個人・中小企業のビジネス支援に従事</li>
                     </ul>
                     <div class="qualifications">
                         <div class="qualifications-label">保有資格</div>
@@ -1563,6 +1819,13 @@
                         <div class="faq-toggle">+</div>
                     </div>
                     <div class="faq-answer">はい、まったく問題ありません。AIやIT知識がゼロの方でも丁寧にご説明しながらサポートします。難しい専門用語は使わず、わかりやすい言葉で進めます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>ChatGPT以外のAIツールにも対応していますか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">はい。ChatGPT・Claude・Geminiなど、業務内容や社内の環境に合わせて適したツールを選びます。特定のツールの導入を前提にはせず、すでにお使いのツールを活かす方法も含めてご提案します。</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
@@ -1605,14 +1868,75 @@
                         無理な営業や、その場での契約を<br>求めることはありません。
                     </p>
                 </div>
-                <div class="contact-cards contact-cards-single fade-up">
-                    <a class="contact-card" id="mailContact" role="button" tabindex="0" style="cursor: pointer;">
-                        <div class="contact-icon-wrap">📧</div>
-                        <h3>メールで相談する</h3>
-                        <p>ボタンを押すとメールアプリが開きます<br>（件名：相談希望）</p>
-                    </a>
+                <div class="contact-form-wrap fade-up">
+                    <form id="contactForm" class="cform" novalidate>
+                        <div class="cform-row">
+                            <label class="cform-label" for="cf-company">会社名・屋号<span class="req">必須</span></label>
+                            <input type="text" id="cf-company" name="company" autocomplete="organization" placeholder="株式会社○○／○○事務所">
+                            <p class="cform-error" id="err-company"></p>
+                        </div>
+
+                        <div class="cform-row">
+                            <label class="cform-label" for="cf-name">お名前<span class="req">必須</span></label>
+                            <input type="text" id="cf-name" name="name" autocomplete="name" placeholder="山田 太郎">
+                            <p class="cform-error" id="err-name"></p>
+                        </div>
+
+                        <div class="cform-row">
+                            <label class="cform-label" for="cf-email">メールアドレス<span class="req">必須</span></label>
+                            <input type="email" id="cf-email" name="email" autocomplete="email" placeholder="info@example.co.jp">
+                            <p class="cform-error" id="err-email"></p>
+                        </div>
+
+                        <div class="cform-row">
+                            <label class="cform-label" for="cf-tel">電話番号<span class="opt">任意</span></label>
+                            <input type="tel" id="cf-tel" name="tel" autocomplete="tel" placeholder="03-1234-5678">
+                            <p class="cform-hint">お電話でのご連絡をご希望の場合のみご記入ください。</p>
+                        </div>
+
+                        <div class="cform-row">
+                            <label class="cform-label" for="cf-message">ご相談内容<span class="opt">任意</span></label>
+                            <textarea id="cf-message" name="message" placeholder="例）営業資料や議事録の作成に時間がかかっています。どの業務からAIを使えばよいか相談したいです。"></textarea>
+                            <p class="cform-hint">まとまっていない状態でも構いません。現状をそのままお書きください。</p>
+                        </div>
+
+                        <div class="consent-box">
+                            <div class="consent-title">個人情報の取り扱いについて</div>
+                            <p>
+                                ご記入いただいた個人情報は、お問い合わせへのご返信、ご相談内容の確認、および必要なご連絡のためにのみ利用します。
+                                ご本人の同意なく第三者へ提供することはありません。営業目的の一斉配信は行いません。
+                                削除をご希望の場合は、ご連絡いただければ速やかに対応します。
+                            </p>
+                            <label class="consent-check">
+                                <input type="checkbox" id="cf-consent" name="consent">
+                                <span>個人情報の取り扱いに同意する<span class="req">必須</span></span>
+                            </label>
+                            <p class="cform-error" id="err-consent"></p>
+                        </div>
+
+                        <div class="cf-hp" aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;">
+                            <label for="cf-website">Website</label>
+                            <input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <div class="cform-submit-wrap">
+                            <button type="submit" class="btn-primary cform-submit" id="cfSubmit">無料相談を申し込む</button>
+                            <p class="cform-submit-note">この時点で費用は一切発生しません。</p>
+                            <p class="cform-error" id="err-global" style="margin-top: 1rem;"></p>
+                        </div>
+                    </form>
+
+                    <div class="cform-done" id="cformDone" role="status" aria-live="polite">
+                        <div class="cform-done-icon">✓</div>
+                        <h3>お問い合わせありがとうございます。<br>内容を確認のうえご連絡いたします。</h3>
+                        <p>
+                            通常2営業日以内に、ご記入いただいたメールアドレス宛にご返信します。<br>
+                            しばらく経っても返信が届かない場合は、<br>
+                            お手数ですが迷惑メールフォルダをご確認ください。
+                        </p>
+                    </div>
                 </div>
-                <p class="contact-note fade-up">※ 返信は通常2営業日以内にお送りします。</p>
+                <p class="contact-note fade-up">※ 返信は通常2営業日以内に、ご記入のメールアドレス宛にお送りします。</p>
             </div>
         </div>
     </section>
@@ -1623,20 +1947,166 @@
     </footer>
 
     <script>
-        /* 迷惑メール対策：メールアドレスはページ上に一切記載しません。
-           「メールで相談する」を押した時点で、分割した文字列から組み立てます。 */
+        /* ============================================================
+           お問い合わせフォーム
+           ------------------------------------------------------------
+           物流LP（/logistics-ai/）と同じGoogleフォームに送信します。
+           回答シートで見分けられるよう、ご相談内容の先頭に【トップページから】を付けます。
+           Googleフォームに届かなかった場合は、メール送信（メーラー起動）に切り替わります。
+           ============================================================ */
+        const GOOGLE_FORM = {
+            actionUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfXDABEACoj7ED-LEbZBnpRsUf2v7jLv2cAoIPWzfaYxwf4eQ/formResponse',
+            fields: {
+                company: 'entry.87414654',   // 会社名
+                name:    'entry.127413698',  // お名前
+                email:   'entry.2103741711', // メールアドレス
+                tel:     'entry.671809913',  // 電話番号
+                message: 'entry.716999445'   // ご相談内容
+            },
+            sourceLabel: '【トップページから】'
+        };
+
+        /* 迷惑メール対策：アドレスはページ上に一切表示しません。
+           Googleフォームに届かなかったときの送信先としてのみ、分割した文字列から組み立てます。 */
+        const MAIL_PARTS = ['brothe', 'rhood', '0514', String.fromCharCode(64), 'gmail', '.', 'com'];
+        const mailAddress = () => MAIL_PARTS.slice(0, 3).join('') + MAIL_PARTS[3] + MAIL_PARTS.slice(4).join('');
+
         (function () {
-            const PARTS = ['brothe', 'rhood', '0514', String.fromCharCode(64), 'gmail', '.', 'com'];
-            const address = () => PARTS.slice(0, 3).join('') + PARTS[3] + PARTS.slice(4).join('');
-            const card = document.getElementById('mailContact');
-            if (!card) return;
-            const open = () => {
-                window.location.href = 'mailto:' + address() +
-                    '?subject=' + encodeURIComponent('相談希望');
+            const form = document.getElementById('contactForm');
+            if (!form) return;
+
+            const doneBox = document.getElementById('cformDone');
+            const submitBtn = document.getElementById('cfSubmit');
+            const globalErr = document.getElementById('err-global');
+
+            const showError = (key, message) => {
+                const el = document.getElementById('err-' + key);
+                if (el) { el.textContent = message; el.classList.add('show'); }
+                const field = document.getElementById('cf-' + key);
+                if (field) field.classList.add('invalid');
             };
-            card.addEventListener('click', open);
-            card.addEventListener('keydown', e => {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+
+            const clearErrors = () => {
+                form.querySelectorAll('.cform-error').forEach(el => {
+                    el.textContent = ''; el.classList.remove('show');
+                });
+                form.querySelectorAll('.invalid').forEach(el => el.classList.remove('invalid'));
+                if (globalErr) { globalErr.textContent = ''; globalErr.classList.remove('show'); }
+            };
+
+            const val = (id) => {
+                const el = document.getElementById(id);
+                return el ? el.value.trim() : '';
+            };
+
+            const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+            // 入力し直したらエラー表示を消す
+            form.querySelectorAll('input, textarea').forEach(el => {
+                el.addEventListener('input', () => {
+                    el.classList.remove('invalid');
+                    const err = document.getElementById('err-' + el.name);
+                    if (err) { err.textContent = ''; err.classList.remove('show'); }
+                });
+            });
+
+            const validate = () => {
+                clearErrors();
+                let firstInvalid = null;
+
+                if (!val('cf-company')) { showError('company', '会社名・屋号をご入力ください。'); firstInvalid = firstInvalid || 'cf-company'; }
+                if (!val('cf-name'))    { showError('name', 'お名前をご入力ください。'); firstInvalid = firstInvalid || 'cf-name'; }
+
+                const email = val('cf-email');
+                if (!email) {
+                    showError('email', 'メールアドレスをご入力ください。');
+                    firstInvalid = firstInvalid || 'cf-email';
+                } else if (!isEmail(email)) {
+                    showError('email', 'メールアドレスの形式をご確認ください。');
+                    firstInvalid = firstInvalid || 'cf-email';
+                }
+
+                if (!document.getElementById('cf-consent').checked) {
+                    showError('consent', '個人情報の取り扱いへの同意が必要です。');
+                    firstInvalid = firstInvalid || 'cf-consent';
+                }
+
+                if (firstInvalid) {
+                    const el = document.getElementById(firstInvalid);
+                    if (el) {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        setTimeout(() => { try { el.focus({ preventScroll: true }); } catch (e) {} }, 320);
+                    }
+                    return false;
+                }
+                return true;
+            };
+
+            const buildMailBody = () => [
+                '■ 会社名・屋号: ' + val('cf-company'),
+                '■ お名前: ' + val('cf-name'),
+                '■ メールアドレス: ' + val('cf-email'),
+                '■ 電話番号: ' + (val('cf-tel') || '（未記入）'),
+                '',
+                '■ ご相談内容:',
+                (val('cf-message') || '（未記入）'),
+                '',
+                '（個人情報の取り扱いに同意済み）'
+            ].join('\n');
+
+            const showDone = (mode) => {
+                form.style.display = 'none';
+                if (mode === 'mail') {
+                    const h = doneBox.querySelector('h3');
+                    const p = doneBox.querySelector('p');
+                    if (h) h.innerHTML = 'メール作成画面を開きました。<br>そのまま送信してください。';
+                    if (p) p.innerHTML = '送信フォームが一時的に使えなかったため、メールでの送信に切り替えました。<br>メールアプリが開かない場合は、お手数ですが時間をおいて再度お試しください。';
+                }
+                doneBox.classList.add('show');
+                doneBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            };
+
+            // Googleフォームが使えないときの送信手段。メールソフトを起動します。
+            const sendByMail = () => {
+                const subject = '【AI業務改善相談】' + val('cf-company') + '／' + val('cf-name') + ' 様';
+                try {
+                    window.location.href = 'mailto:' + mailAddress() +
+                        '?subject=' + encodeURIComponent(subject) +
+                        '&body=' + encodeURIComponent(buildMailBody());
+                } catch (e) {
+                    // メールソフトを開けない環境でも、案内は必ず表示します
+                }
+                setTimeout(() => showDone('mail'), 400);
+            };
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                // ハニーポット（自動投稿対策）：入力されていたら送信しない
+                const hp = document.getElementById('cf-website');
+                if (hp && hp.value) { showDone('form'); return; }
+
+                if (!validate()) return;
+
+                submitBtn.disabled = true;
+                submitBtn.textContent = '送信中…';
+
+                try {
+                    const fd = new FormData();
+                    const f = GOOGLE_FORM.fields;
+                    const put = (key, value) => { if (f[key] && value) fd.append(f[key], value); };
+                    put('company', val('cf-company'));
+                    put('name', val('cf-name'));
+                    put('email', val('cf-email'));
+                    put('tel', val('cf-tel'));
+                    put('message', GOOGLE_FORM.sourceLabel + '\n' + val('cf-message'));
+
+                    await fetch(GOOGLE_FORM.actionUrl, { method: 'POST', mode: 'no-cors', body: fd });
+                    showDone('form');
+                } catch (err) {
+                    // Googleフォームに届かなかった場合は、メール送信に切り替えます
+                    sendByMail();
+                }
             });
         })();
 

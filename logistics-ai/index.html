@@ -1787,6 +1787,7 @@
             margin-left: 0.55rem;
             border-radius: 2px;
             vertical-align: 0.08em;
+            white-space: nowrap;
         }
 
         .req { color: #ffffff; background: #c0392b; }
@@ -3598,7 +3599,12 @@
                 size:     'entry.2084401005', // 従業員規模
                 issues:   'entry.510879797',  // 現在困っていること（チェックボックス）
                 message:  'entry.716999445'   // ご相談内容
-            }
+            },
+            /* Googleフォーム側「業種」の選択肢。選択肢にない値を送ると回答ごと受け付けられないため、
+               ここにない業種は近い選択肢に置き換え、元の業種はご相談内容の先頭に残します。
+               Googleフォームに選択肢を追加したら、ここにも同じ文字列を追加してください。 */
+            industryOptions: ['運送', '倉庫', '物流', 'EC物流', 'その他'],
+            industryFallback: { '物流センター': '物流' }
         };
 
         /* 迷惑メール対策：アドレスはページ上に一切表示しません。
@@ -3753,9 +3759,15 @@
                         put('name', val('cf-name'));
                         put('email', val('cf-email'));
                         put('tel', val('cf-tel'));
-                        put('industry', val('cf-industry'));
+                        const industry = val('cf-industry');
+                        const formIndustry = !industry || GOOGLE_FORM.industryOptions.includes(industry)
+                            ? industry
+                            : (GOOGLE_FORM.industryFallback[industry] || 'その他');
+                        put('industry', formIndustry);
                         put('size', val('cf-size'));
-                        put('message', val('cf-message'));
+                        put('message', industry !== formIndustry
+                            ? '【業種：' + industry + '】\n' + val('cf-message')
+                            : val('cf-message'));
                         if (f.issues) checkedIssues().forEach(v => fd.append(f.issues, v));
 
                         await fetch(GOOGLE_FORM.actionUrl, { method: 'POST', mode: 'no-cors', body: fd });
