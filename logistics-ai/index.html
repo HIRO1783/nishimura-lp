@@ -2256,6 +2256,9 @@
         .profile-stats { margin: 1.4rem 0; }
         #about .stats-grid { grid-template-columns: repeat(3, 1fr); gap: .5rem; }
         #about .stat-card { padding: 1rem .3rem; }
+        /* v3修正（2026-11-21）：プロフィールの数字（約10年など）が2行に割れないように */
+        #about .profile-stats { max-width: 460px; }
+        #about .stat-number { white-space: nowrap; font-size: clamp(1.8rem, 4vw, 2.4rem); }
         .ptable-wrap { margin-top: 2.6rem; overflow-x: auto; }
         .ptable { width: 100%; max-width: 820px; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; }
         .ptable th, .ptable td { padding: 1rem 1.2rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
@@ -2481,7 +2484,7 @@
       "name": "倉庫の業務改善も相談できますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい、ご相談いただけます。入荷・保管・ピッキング・検品・梱包・出荷・在庫管理といった倉庫内オペレーション全般について、作業の流れと確認ポイントを整理し、標準化やマニュアル化をご支援します。倉庫会社様、物流センター様、自社倉庫を持つメーカー様・卸売会社様からのご相談も多くいただいています。"
+        "text": "はい、ご相談いただけます。入荷・保管・ピッキング・検品・梱包・出荷・在庫管理といった倉庫内オペレーション全般について、作業の流れと確認ポイントを整理し、標準化やマニュアル化をご支援します。倉庫会社様、物流センター様、自社倉庫を持つメーカー様・卸売会社様からのご相談もお受けしています。"
       }
     },
     {
@@ -3121,7 +3124,7 @@
                         <span>倉庫の業務改善も相談できますか？</span>
                         <div class="faq-toggle">+</div>
                     </div>
-                    <div class="faq-answer"><div class="faq-answer-inner"><p>はい、ご相談いただけます。入荷・保管・ピッキング・検品・梱包・出荷・在庫管理といった倉庫内オペレーション全般について、作業の流れと確認ポイントを整理し、標準化やマニュアル化をご支援します。倉庫会社様、物流センター様、自社倉庫を持つメーカー様・卸売会社様からのご相談も多くいただいています。</p></div></div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>はい、ご相談いただけます。入荷・保管・ピッキング・検品・梱包・出荷・在庫管理といった倉庫内オペレーション全般について、作業の流れと確認ポイントを整理し、標準化やマニュアル化をご支援します。倉庫会社様、物流センター様、自社倉庫を持つメーカー様・卸売会社様からのご相談もお受けしています。</p></div></div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
