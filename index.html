@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <!-- FMPWORKs トップページ（2026-11-21 改訂） -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>生成AI業務改善支援｜中小企業・個人事業主のAI活用 - FMP WORKs（西村康弘）</title>
-    <meta name="description" content="中小企業・個人事業主向けの生成AI業務改善コンサルティングと社内AI活用研修。業務を整理し、ChatGPT・Claude・Geminiなどを現場で使い続けられる仕組みにします。物流・運送・倉庫向けの業務改善、YouTube・SNS制作の効率化にも対応。オンライン全国対応・無料相談受付中。">
+    <title>尼崎・阪神の生成AI研修と業務効率化｜Excel自動化・ChatGPT活用の相談 - FMPWORKs</title>
+    <meta name="description" content="尼崎拠点。兵庫・大阪の中小企業と個人事業主の方へ。毎月の集計や見積書などのExcel作業を自動にし、メール・議事録・マニュアルづくりを生成AIで軽くします。社内のAI研修・セミナー講師も承ります。AI導入ありきではありません。初回相談60分無料。">
     <link rel="canonical" href="https://www.fmpworks.jp/">
     <meta name="robots" content="index, follow">
 
     <!-- OGP -->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="FMP WORKs">
+    <meta property="og:site_name" content="FMPWORKs">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:url" content="https://www.fmpworks.jp/">
-    <meta property="og:title" content="生成AI業務改善支援｜中小企業・個人事業主のAI活用 - FMP WORKs（西村康弘）">
-    <meta property="og:description" content="AIを「導入しただけ」で終わらせない。中小企業・個人事業主の業務を整理し、生成AIを現場で使い続けられる仕組みにします。社内AI研修にも対応。無料相談受付中。">
+    <meta property="og:title" content="尼崎・阪神の生成AI研修と業務効率化｜Excel自動化・ChatGPT活用の相談 - FMPWORKs">
+    <meta property="og:description" content="見積書、議事録、毎月の集計。毎日の事務を、Excelと生成AIで軽くします。尼崎拠点・京阪神へ訪問。社内のAI研修・セミナー講師も。初回相談60分無料。">
     <meta property="og:image" content="https://www.fmpworks.jp/assets/ai-efficiency.jpg">
     <meta property="og:image:width" content="700">
     <meta property="og:image:height" content="467">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="生成AI業務改善支援｜中小企業・個人事業主のAI活用 - FMP WORKs">
-    <meta name="twitter:description" content="AIを「導入しただけ」で終わらせない。中小企業・個人事業主の業務を整理し、生成AIを現場で使い続けられる仕組みにします。無料相談受付中。">
+    <meta name="twitter:title" content="毎日の事務を、Excelと生成AIで軽く｜尼崎・阪神 - FMPWORKs">
+    <meta name="twitter:description" content="見積書、議事録、毎月の集計。毎日の事務を、Excelと生成AIで軽くします。尼崎拠点・京阪神へ訪問。社内のAI研修・セミナー講師も。初回相談60分無料。">
     <meta name="twitter:image" content="https://www.fmpworks.jp/assets/ai-efficiency.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,18 +34,19 @@
         }
 
         :root {
-            --noir-950: #0a0907;
-            --noir-900: #131110;
-            --noir-800: #1d1a16;
-            --card: rgba(245, 239, 224, 0.035);
-            --gold: #c9a45c;
-            --gold-2: #e3c485;
-            --cream: #f5efe0;
-            --cream-dim: #cabfa4;
-            --muted: #8d8066;
-            --line: rgba(201, 164, 92, 0.22);
-            --gradient-gold: linear-gradient(135deg, #a9823c, var(--gold) 45%, var(--gold-2));
-            --gradient-text: linear-gradient(135deg, var(--gold) 15%, var(--gold-2) 55%, #f3e3bc);
+            --paper: #ffffff;
+            --paper-soft: #f2f6fa;
+            --ink-900: #0e2138;
+            --ink-700: #1c3a5a;
+            --blue: #1c5ea8;
+            --blue-2: #2f7fd1;
+            --blue-deep: #0b3d68;
+            --slate: #4d6480;
+            --muted: #7286a0;
+            --card: #ffffff;
+            --line: rgba(14, 33, 56, 0.12);
+            --gradient-blue: linear-gradient(135deg, var(--blue-deep), var(--blue) 55%, var(--blue-2));
+            --gradient-text: linear-gradient(135deg, var(--blue-deep) 10%, var(--blue) 55%, var(--blue-2));
             --serif: 'Noto Serif JP', serif;
             --sans: 'Noto Sans JP', -apple-system, 'Hiragino Kaku Gothic ProN', sans-serif;
         }
@@ -53,8 +55,8 @@
 
         body {
             font-family: var(--sans);
-            background-color: var(--noir-950);
-            color: var(--cream);
+            background-color: var(--paper);
+            color: var(--ink-700);
             line-height: 1.9;
             overflow-x: clip;
             font-feature-settings: "palt";
@@ -68,88 +70,9 @@
             width: 100%;
             transform: scaleX(0);
             transform-origin: 0 50%;
-            background: linear-gradient(90deg, #8a6a25, var(--gold), var(--gold-2));
+            background: linear-gradient(90deg, var(--blue-deep), var(--blue), var(--blue-2));
             z-index: 2000;
         }
-
-        /* ─── INTRO / SPOTLIGHT ─── */
-        #intro {
-            position: fixed;
-            inset: 0;
-            background: var(--noir-950);
-            z-index: 3000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .intro-logo {
-            font-family: var(--serif);
-            font-size: clamp(24px, 3.4vw, 40px);
-            font-weight: 900;
-            color: var(--cream);
-            letter-spacing: 0.3em;
-            text-align: center;
-        }
-
-        .intro-logo small {
-            display: block;
-            text-align: center;
-            font-size: 0.32em;
-            letter-spacing: 0.4em;
-            color: var(--gold);
-            margin-top: 10px;
-            font-weight: 600;
-        }
-
-        #spotlight {
-            position: fixed;
-            left: 0; top: 0;
-            width: 560px; height: 560px;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 5;
-            background: radial-gradient(circle, rgba(201,164,92,.12), rgba(201,164,92,.05) 42%, transparent 68%);
-            mix-blend-mode: screen;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-
-        .reduced #intro, .reduced #spotlight { display: none; }
-
-        /* ─── SHADER / PARTICLES ─── */
-        .shader-bg {
-            position: absolute;
-            inset: 0;
-            width: 100%; height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .bgfx {
-            position: absolute;
-            inset: 0;
-            overflow: hidden;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .reduced .shader-bg, .reduced .bgfx { display: none; }
-
-        .fv-tate {
-            writing-mode: vertical-rl;
-            position: absolute;
-            right: 46px;
-            top: 180px;
-            font-family: var(--serif);
-            letter-spacing: 0.5em;
-            color: rgba(245, 239, 224, 0.45);
-            font-size: 12px;
-            z-index: 1;
-        }
-
-        @media (max-width: 880px) { .fv-tate { display: none; } }
 
         /* ─── NAV ─── */
         nav {
@@ -161,7 +84,7 @@
         }
 
         nav.scrolled {
-            background: rgba(10, 9, 7, 0.86);
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
             box-shadow: 0 1px 0 var(--line);
@@ -182,7 +105,7 @@
             font-size: 1rem;
             font-weight: 900;
             letter-spacing: 0.18em;
-            color: var(--cream);
+            color: var(--ink-900);
             display: flex;
             align-items: baseline;
             gap: 0.9rem;
@@ -198,7 +121,7 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             align-items: center;
             list-style: none;
         }
@@ -206,19 +129,20 @@
         .nav-links a {
             font-size: 0.82rem;
             font-weight: 500;
-            color: var(--cream-dim);
+            color: var(--slate);
             text-decoration: none;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
             transition: color 0.2s;
         }
 
-        .nav-links a:hover { color: var(--gold-2); }
+        .nav-links a:hover { color: var(--blue); }
 
         .nav-cta {
             padding: 0.6rem 1.5rem;
-            background: var(--gradient-gold);
+            background: var(--gradient-blue);
             border-radius: 2px;
-            color: #181206 !important;
+            color: #ffffff !important;
             font-size: 0.8rem;
             font-weight: 700;
             transition: transform 0.2s, box-shadow 0.2s;
@@ -226,6 +150,19 @@
 
         .nav-cta:hover { transform: translateY(-2px); }
         .nav-cta { white-space: nowrap; }
+        /* v3修正（2026-11-21）：ロゴ横の説明文を1行に収める */
+        .nav-logo { flex-shrink: 0; white-space: nowrap; }
+        .nav-logo span { white-space: nowrap; }
+        .nav-links { gap: 1.25rem; }
+
+        @media (max-width: 1240px) {
+            .nav-links { gap: 1.15rem; }
+            .nav-logo span { display: none; }
+        }
+
+        @media (max-width: 1080px) {
+            .nav-links li.nav-hide-md { display: none; }
+        }
 
         @media (max-width: 880px) {
             .nav-links li:not(.nav-cta-li) { display: none; }
@@ -252,47 +189,30 @@
         }
 
         .btn-primary {
-            padding: 1.05rem 2.8rem;
-            background: var(--gradient-gold);
-            color: #181206;
-            font-size: 0.95rem;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 14px 40px -12px rgba(201, 164, 92, 0.55);
+            padding: 1.35rem 3.6rem;
+            background: var(--gradient-blue);
+            color: #ffffff;
+            font-size: 1.1rem;
+            box-shadow: 0 14px 40px -14px rgba(28, 94, 168, 0.55);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 20px 50px -12px rgba(201, 164, 92, 0.75);
-        }
-
-        .btn-primary::after {
-            content: '';
-            position: absolute;
-            top: 0; left: -70%;
-            width: 45%; height: 100%;
-            background: linear-gradient(105deg, transparent, rgba(255,255,255,0.45), transparent);
-            transform: skewX(-20deg);
-            animation: shimmer 3.6s ease-in-out infinite;
-        }
-
-        @keyframes shimmer {
-            0%, 55% { left: -70%; }
-            85%, 100% { left: 130%; }
+            box-shadow: 0 20px 50px -14px rgba(28, 94, 168, 0.65);
         }
 
         .btn-outline {
             padding: 1rem 2.8rem;
             background: transparent;
             border: 1px solid var(--line);
-            color: var(--cream);
+            color: var(--ink-700);
             font-size: 0.95rem;
             font-weight: 500;
         }
 
         .btn-outline:hover {
-            border-color: var(--gold);
-            color: var(--gold-2);
+            border-color: var(--blue);
+            color: var(--blue);
             transform: translateY(-2px);
         }
 
@@ -311,21 +231,9 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse at 12% 60%, rgba(201, 164, 92, 0.12) 0%, transparent 55%),
-                radial-gradient(ellipse at 88% 15%, rgba(201, 164, 92, 0.09) 0%, transparent 55%),
-                radial-gradient(ellipse at 55% 90%, rgba(201, 164, 92, 0.05) 0%, transparent 45%);
-        }
-
-        .kanji {
-            position: absolute;
-            font-family: var(--serif);
-            font-weight: 900;
-            font-size: clamp(200px, 26vw, 400px);
-            color: rgba(201, 164, 92, 0.055);
-            z-index: 0;
-            line-height: 1;
-            pointer-events: none;
-            user-select: none;
+                radial-gradient(ellipse at 12% 60%, rgba(28, 94, 168, 0.08) 0%, transparent 55%),
+                radial-gradient(ellipse at 88% 15%, rgba(47, 127, 209, 0.08) 0%, transparent 55%),
+                radial-gradient(ellipse at 55% 90%, rgba(28, 94, 168, 0.05) 0%, transparent 45%);
         }
 
         .hero-content {
@@ -342,12 +250,12 @@
             justify-content: center;
             gap: 0.4rem 0.7rem;
             padding: 0.5rem 1.4rem;
-            background: rgba(201, 164, 92, 0.08);
+            background: rgba(28, 94, 168, 0.06);
             border: 1px solid var(--line);
             border-radius: 26px;
             font-size: 0.76rem;
             font-family: var(--sans);
-            color: var(--gold-2);
+            color: var(--blue);
             margin-bottom: 2.2rem;
             letter-spacing: 0.14em;
             font-weight: 600;
@@ -359,23 +267,24 @@
         .badge-dot {
             width: 6px;
             height: 6px;
-            background: var(--gold);
+            background: var(--blue);
             border-radius: 50%;
             animation: badgePulse 2s ease-in-out infinite;
         }
 
         @keyframes badgePulse {
-            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(201, 164, 92, 0.4); }
-            50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(201, 164, 92, 0); }
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(28, 94, 168, 0.4); }
+            50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(28, 94, 168, 0); }
         }
 
         .hero-title {
             font-family: var(--serif);
-            font-size: clamp(2.4rem, 6vw, 4.6rem);
+            font-size: clamp(2.2rem, 5.6vw, 4.2rem);
             font-weight: 900;
-            line-height: 1.5;
+            line-height: 1.55;
             margin-bottom: 2rem;
-            letter-spacing: 0.03em;
+            letter-spacing: 0.02em;
+            color: var(--ink-900);
         }
 
         .hero-title .l { display: block; overflow: hidden; }
@@ -386,6 +295,7 @@
         .hero-title .l:nth-child(1) > span { animation-delay: .15s; }
         .hero-title .l:nth-child(2) > span { animation-delay: .3s; }
         .hero-title .l:nth-child(3) > span { animation-delay: .45s; }
+        .hero-title .l:nth-child(4) > span { animation-delay: .6s; }
 
         @keyframes lineUp {
             from { transform: translateY(112%); }
@@ -401,9 +311,9 @@
 
         .hero-subcopy {
             font-family: var(--serif);
-            font-size: clamp(1.02rem, 2.2vw, 1.3rem);
-            color: var(--gold-2);
-            max-width: 560px;
+            font-size: clamp(1.0rem, 2.1vw, 1.22rem);
+            color: var(--blue-deep);
+            max-width: 600px;
             margin: 0 auto 1.6rem;
             font-weight: 700;
             line-height: 1.9;
@@ -411,7 +321,7 @@
 
         .hero-sub {
             font-size: clamp(0.92rem, 1.7vw, 1.08rem);
-            color: var(--cream-dim);
+            color: var(--slate);
             max-width: 580px;
             margin: 0 auto 3rem;
             font-weight: 300;
@@ -431,16 +341,21 @@
         }
 
         .hero-sub-link a {
-            font-size: 0.8rem;
-            color: var(--cream-dim);
+            font-size: 0.78rem;
+            color: var(--muted);
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: color 0.2s, border-color 0.2s;
         }
 
         .hero-sub-link a:hover {
-            color: var(--gold-2);
-            border-color: var(--gold-2);
+            color: var(--blue);
+            border-color: var(--blue);
+        }
+
+        .hero-sub-lead {
+            font-weight: 500;
+            color: var(--ink-700);
         }
 
         .hero-scroll-indicator {
@@ -469,7 +384,7 @@
             position: absolute;
             left: 0; top: -40%;
             width: 1px; height: 40%;
-            background: linear-gradient(var(--gold), transparent);
+            background: linear-gradient(var(--blue), transparent);
             animation: cueLine 2s ease-in-out infinite;
         }
 
@@ -479,7 +394,7 @@
         .strip {
             overflow: hidden;
             padding: 44px 0;
-            background: var(--noir-900);
+            background: var(--paper-soft);
             border-top: 1px solid var(--line);
             border-bottom: 1px solid var(--line);
         }
@@ -492,11 +407,11 @@
             animation: stripMove 30s linear infinite;
             font-family: var(--serif);
             font-weight: 900;
-            font-size: clamp(28px, 4.6vw, 54px);
-            letter-spacing: 0.08em;
+            font-size: clamp(24px, 4vw, 46px);
+            letter-spacing: 0.06em;
             line-height: 1;
             color: transparent;
-            -webkit-text-stroke: 1px rgba(245, 239, 224, 0.45);
+            -webkit-text-stroke: 1px rgba(14, 33, 56, 0.28);
         }
 
         .strip-track em {
@@ -526,16 +441,17 @@
             font-weight: 700;
             letter-spacing: 0.36em;
             text-transform: uppercase;
-            color: var(--gold);
+            color: var(--blue);
             margin-bottom: 1rem;
         }
 
         .section-title {
             font-family: var(--serif);
-            font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+            font-size: clamp(1.7rem, 3.4vw, 2.4rem);
             font-weight: 700;
             line-height: 1.6;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.03em;
+            color: var(--ink-900);
         }
 
         .section-title .ch {
@@ -550,21 +466,21 @@
 
         .section-desc {
             margin-top: 1.2rem;
-            color: var(--cream-dim);
+            color: var(--slate);
             font-size: 0.97rem;
-            max-width: 560px;
+            max-width: 580px;
             line-height: 2;
         }
 
         .divider {
             width: 56px;
             height: 1px;
-            background: linear-gradient(90deg, var(--gold), transparent);
+            background: linear-gradient(90deg, var(--blue), transparent);
             margin: 1.8rem 0 2.5rem;
         }
 
         /* ─── PROBLEMS ─── */
-        #problems { background: var(--noir-900); }
+        #problems { background: var(--paper-soft); }
 
         .problems-grid {
             display: grid;
@@ -574,45 +490,6 @@
         }
 
         .problems-grid-6 { grid-template-columns: repeat(3, 1fr); }
-
-        @media (max-width: 900px) {
-            .problems-grid-6 { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 640px) {
-            .problems-grid-6 { grid-template-columns: 1fr; }
-        }
-
-        .problem-card {
-            padding: 2.2rem 1.85rem;
-            background: var(--card);
-            border: 1px solid var(--line);
-            transition: border-color 0.3s, transform 0.15s;
-        }
-
-        .problem-card:hover { border-color: rgba(201, 164, 92, 0.5); }
-
-        .problem-emoji {
-            font-size: 1.9rem;
-            margin-bottom: 1.1rem;
-            display: block;
-            filter: grayscale(0.15) sepia(0.25);
-        }
-
-        .problem-card h3 {
-            font-family: var(--serif);
-            font-size: 1.02rem;
-            font-weight: 700;
-            margin-bottom: 0.7rem;
-            line-height: 1.6;
-            color: var(--cream);
-        }
-
-        .problem-card p {
-            font-size: 0.87rem;
-            color: var(--cream-dim);
-            line-height: 1.85;
-        }
 
         .problem-card-photo { padding: 0; }
 
@@ -627,19 +504,123 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: contrast(1.03) brightness(1.08) saturate(1.02);
+            filter: contrast(1.03) brightness(1.05) saturate(1.02);
+            transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
+        }
+
+        .problem-card:hover .problem-photo img {
+            transform: scale(1.08);
         }
 
         .problem-photo::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(160deg, rgba(201, 164, 92, 0.16), rgba(201, 164, 92, 0.03) 65%);
+            background: linear-gradient(160deg, rgba(28, 94, 168, 0.18), rgba(28, 94, 168, 0.03) 65%);
             mix-blend-mode: soft-light;
         }
 
         .problem-card-body {
             padding: 2rem 1.85rem 2.2rem;
+        }
+
+        @media (max-width: 900px) {
+            .problems-grid-6 { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 640px) {
+            .problems-grid-6 { grid-template-columns: 1fr; }
+        }
+
+        .problem-card {
+            padding: 2.2rem 1.85rem;
+            background: var(--card);
+            border: 1px solid var(--line);
+            transition: border-color 0.3s, transform 0.15s, box-shadow 0.3s;
+        }
+
+        .problem-card:hover {
+            border-color: rgba(28, 94, 168, 0.4);
+            box-shadow: 0 18px 50px -22px rgba(14, 33, 56, 0.18);
+        }
+
+        .problem-icon {
+            font-size: 1.8rem;
+            margin-bottom: 1.1rem;
+            display: block;
+        }
+
+        .problem-card h3 {
+            font-family: var(--serif);
+            font-size: 1.02rem;
+            font-weight: 700;
+            margin-bottom: 0.7rem;
+            line-height: 1.6;
+            color: var(--ink-900);
+        }
+
+        .problem-card p {
+            font-size: 0.87rem;
+            color: var(--slate);
+            line-height: 1.85;
+        }
+
+        /* ─── COMMITMENTS (差別化・支援姿勢) ─── */
+        #commitments { background: var(--paper); }
+
+        .commit-tagline {
+            font-family: var(--serif);
+            font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+            font-weight: 700;
+            color: var(--blue-deep);
+            margin-top: 1.2rem;
+            max-width: 640px;
+            line-height: 1.9;
+        }
+
+        .commit-list {
+            margin-top: 3.5rem;
+            border-top: 1px solid var(--line);
+        }
+
+        .commit-item {
+            display: grid;
+            grid-template-columns: 84px 1fr;
+            gap: 1.8rem;
+            align-items: start;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .commit-num {
+            font-family: var(--serif);
+            font-size: 2rem;
+            font-weight: 900;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+
+        .commit-item h3 {
+            font-family: var(--serif);
+            font-size: 1.08rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: var(--ink-900);
+        }
+
+        .commit-item p {
+            font-size: 0.92rem;
+            color: var(--slate);
+            line-height: 1.95;
+            max-width: 620px;
+        }
+
+        @media (max-width: 640px) {
+            .commit-item { grid-template-columns: 48px 1fr; gap: 1.1rem; }
+            .commit-num { font-size: 1.5rem; }
         }
 
         /* ─── SERVICES ─── */
@@ -664,15 +645,15 @@
             position: absolute;
             top: 0; left: 0; right: 0;
             height: 2px;
-            background: var(--gradient-gold);
+            background: var(--gradient-blue);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.4s ease;
         }
 
         .service-card:hover {
-            border-color: rgba(201, 164, 92, 0.5);
-            box-shadow: 0 24px 70px -20px rgba(201, 164, 92, 0.18);
+            border-color: rgba(28, 94, 168, 0.4);
+            box-shadow: 0 24px 70px -24px rgba(14, 33, 56, 0.2);
         }
 
         .service-card:hover::after { transform: scaleX(1); }
@@ -682,29 +663,28 @@
             font-size: 0.7rem;
             font-weight: 700;
             letter-spacing: 0.16em;
-            color: var(--gold);
+            color: var(--blue);
             margin-bottom: 1.8rem;
         }
 
-        .service-emoji {
-            font-size: 2.2rem;
+        .service-icon {
+            font-size: 2rem;
             margin-bottom: 1.3rem;
             display: block;
-            filter: grayscale(0.15) sepia(0.25);
         }
 
         .service-card h3 {
             font-family: var(--serif);
-            font-size: 1.18rem;
+            font-size: 1.14rem;
             font-weight: 700;
             margin-bottom: 0.9rem;
-            color: var(--cream);
-            letter-spacing: 0.03em;
+            color: var(--ink-900);
+            letter-spacing: 0.02em;
         }
 
         .service-card p {
             font-size: 0.87rem;
-            color: var(--cream-dim);
+            color: var(--slate);
             line-height: 1.9;
         }
 
@@ -719,7 +699,7 @@
             position: relative;
             padding-left: 1.15rem;
             font-size: 0.87rem;
-            color: var(--cream-dim);
+            color: var(--slate);
             line-height: 1.85;
             margin-bottom: 0.55rem;
         }
@@ -730,7 +710,7 @@
             content: '▸';
             position: absolute;
             left: 0;
-            color: var(--gold);
+            color: var(--blue);
             font-size: 0.72rem;
         }
 
@@ -747,45 +727,86 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: contrast(1.03) brightness(1.08) saturate(1.02);
+            filter: contrast(1.03) brightness(1.05) saturate(1.02);
+            transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
+        }
+
+        .service-card:hover .service-photo img {
+            transform: scale(1.08);
         }
 
         .service-photo::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(160deg, rgba(201, 164, 92, 0.16), rgba(201, 164, 92, 0.03) 65%);
+            background: linear-gradient(160deg, rgba(28, 94, 168, 0.18), rgba(28, 94, 168, 0.03) 65%);
             mix-blend-mode: soft-light;
         }
 
-        .service-card-body {
-            padding: 2rem 2.1rem 2.6rem;
-        }
-
+        .service-card-body { padding: 2rem 2.1rem 2.6rem; }
         .service-card-body .service-num { margin-bottom: 1rem; }
+        .service-card p + p { margin-top: 0.8rem; }
 
-        .service-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            margin-top: 1.3rem;
-            padding-top: 1.2rem;
-            border-top: 1px dashed var(--line);
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--gold);
-            text-decoration: none;
-            letter-spacing: 0.03em;
-            transition: gap 0.25s, color 0.25s;
+        /* 5サービス：1段目に写真付き2枚、2段目に3枚 */
+        .services-grid-5 { grid-template-columns: repeat(6, 1fr); }
+        .services-grid-5 > .service-card-photo { grid-column: span 3; }
+        .services-grid-5 > .service-card:not(.service-card-photo) { grid-column: span 2; }
+
+        @media (max-width: 980px) {
+            .services-grid-5 { grid-template-columns: repeat(2, 1fr); }
+            .services-grid-5 > .service-card-photo,
+            .services-grid-5 > .service-card:not(.service-card-photo) { grid-column: span 1; }
+            .services-grid-5 > .service-card:last-child { grid-column: 1 / -1; }
         }
 
-        .service-link:hover {
-            gap: 0.7rem;
-            color: var(--gold-2);
+        @media (max-width: 640px) {
+            .services-grid-5 { grid-template-columns: 1fr; }
+        }
+
+        /* ─── SECOND OPINION ─── */
+        .diag-cases {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.1rem;
+            margin-top: 3rem;
+        }
+
+        .diag-case {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-left: 3px solid var(--blue);
+            padding: 1.5rem 1.4rem;
+            font-family: var(--serif);
+            font-size: 0.98rem;
+            font-weight: 700;
+            line-height: 1.85;
+            color: var(--ink-900);
+        }
+
+        .diag-lead {
+            margin-top: 2.2rem;
+            max-width: 720px;
+            font-family: var(--serif);
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            font-weight: 700;
+            line-height: 1.9;
+            color: var(--blue-deep);
+        }
+
+        .diag-note {
+            margin-top: 2rem;
+            max-width: 720px;
+            font-size: 0.87rem;
+            line-height: 1.9;
+            color: var(--slate);
+        }
+
+        @media (max-width: 820px) {
+            .diag-cases { grid-template-columns: 1fr; }
         }
 
         /* ─── STRENGTHS ─── */
-        #strengths { background: var(--noir-900); }
+        #strengths { background: var(--paper-soft); }
 
         .strengths-grid {
             display: grid;
@@ -808,7 +829,7 @@
             width: 54px;
             height: 54px;
             min-width: 54px;
-            background: rgba(201, 164, 92, 0.08);
+            background: rgba(28, 94, 168, 0.06);
             border: 1px solid var(--line);
             display: flex;
             align-items: center;
@@ -823,13 +844,18 @@
             height: 100%;
             object-fit: cover;
             filter: contrast(1.03) brightness(1.05) saturate(1.02);
+            transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
+        }
+
+        .strength-item:hover .strength-icon img {
+            transform: scale(1.12);
         }
 
         .strength-icon-photo::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(160deg, rgba(201, 164, 92, 0.18), rgba(201, 164, 92, 0.03) 65%);
+            background: linear-gradient(160deg, rgba(28, 94, 168, 0.2), rgba(28, 94, 168, 0.04) 65%);
             mix-blend-mode: soft-light;
         }
 
@@ -838,13 +864,13 @@
             font-size: 1.02rem;
             font-weight: 700;
             margin-bottom: 0.55rem;
-            color: var(--cream);
+            color: var(--ink-900);
             letter-spacing: 0.02em;
         }
 
         .strength-item p {
             font-size: 0.87rem;
-            color: var(--cream-dim);
+            color: var(--slate);
             line-height: 1.9;
         }
 
@@ -854,7 +880,7 @@
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.5rem;
             margin-top: 3.5rem;
-            max-width: 640px;
+            max-width: 340px;
         }
 
         .stat-card {
@@ -884,7 +910,7 @@
         .stat-label {
             margin-top: 0.6rem;
             font-size: 0.82rem;
-            color: var(--cream-dim);
+            color: var(--slate);
             letter-spacing: 0.05em;
         }
 
@@ -895,32 +921,70 @@
             font-size: 0.72rem;
             font-weight: 700;
             letter-spacing: 0.28em;
-            color: var(--gold);
+            color: var(--blue);
             margin-bottom: 1.2rem;
         }
 
-        #results .stats-grid { margin-top: 0; margin-bottom: 1.8rem; }
-        #results .career-list { max-width: 720px; margin-top: 0; border-top: 1px dashed var(--line); }
+        #results .stats-grid {
+            margin-top: 0;
+            margin-bottom: 1.8rem;
+            max-width: 760px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .stat-number .stat-pre { margin-left: 0; margin-right: 0.1em; }
+        .stat-label span { display: inline-block; }
+
+        @media (max-width: 560px) {
+            #results .stats-grid { gap: 0.5rem; }
+            #results .stat-card { padding: 1.3rem 0.4rem; }
+            #results .stat-label { font-size: 0.7rem; letter-spacing: 0; }
+        }
+
+        .career-list {
+            list-style: none;
+            margin-top: 1.6rem;
+            border-top: 1px dashed var(--line);
+            max-width: 720px;
+        }
+
+        .career-list li {
+            position: relative;
+            padding: 0.95rem 0 0.95rem 1.15rem;
+            border-bottom: 1px dashed var(--line);
+            font-size: 0.87rem;
+            color: var(--slate);
+        }
+
+        .career-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            top: 0.95rem;
+            color: var(--blue);
+            font-size: 0.72rem;
+        }
 
         /* ─── CTA BAND ─── */
         .cta-band {
             padding: 3.2rem 2rem;
             text-align: center;
-            background: var(--noir-900);
+            background: var(--paper-soft);
             border-top: 1px solid var(--line);
             border-bottom: 1px solid var(--line);
         }
 
         .cta-band p {
             font-size: 0.95rem;
-            color: var(--cream-dim);
+            color: var(--slate);
             margin-bottom: 1.4rem;
         }
 
         /* ─── PROFILE ─── */
         .profile-layout {
             display: grid;
-            grid-template-columns: 260px 1fr;
+            grid-template-columns: 220px 1fr;
             gap: 5rem;
             align-items: start;
             margin-top: 3.5rem;
@@ -935,17 +999,7 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, rgba(201, 164, 92, 0.07), transparent 70%);
-        }
-
-        .profile-mark span {
-            font-family: var(--serif);
-            font-size: 6rem;
-            font-weight: 700;
-            background: var(--gradient-text);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background: linear-gradient(135deg, rgba(28, 94, 168, 0.06), transparent 70%);
         }
 
         .profile-mark img {
@@ -953,16 +1007,31 @@
             height: 100%;
             object-fit: cover;
             object-position: top center;
-            filter: contrast(1.03) brightness(1.08) saturate(1.02);
+            filter: contrast(1.03) brightness(1.05) saturate(1.02);
+            transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
+        }
+
+        .profile-mark:hover img {
+            transform: scale(1.06);
         }
 
         .profile-mark::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(160deg, rgba(201, 164, 92, 0.16), rgba(201, 164, 92, 0.03) 65%);
+            background: linear-gradient(160deg, rgba(28, 94, 168, 0.16), rgba(28, 94, 168, 0.03) 65%);
             mix-blend-mode: soft-light;
             pointer-events: none;
+        }
+
+        .profile-mark span {
+            font-family: var(--serif);
+            font-size: 4.4rem;
+            font-weight: 700;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .profile-brand {
@@ -970,17 +1039,26 @@
             font-size: 0.78rem;
             font-weight: 700;
             letter-spacing: 0.28em;
-            color: var(--gold);
+            color: var(--blue);
             margin-bottom: 0.7rem;
+        }
+
+        .profile-role {
+            font-family: var(--serif);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--blue-deep);
+            letter-spacing: 0.04em;
+            margin-bottom: 0.4rem;
         }
 
         .profile-name {
             font-family: var(--serif);
-            font-size: 2rem;
+            font-size: 1.9rem;
             font-weight: 900;
             letter-spacing: 0.06em;
             margin-bottom: 0.4rem;
-            color: var(--cream);
+            color: var(--ink-900);
         }
 
         .profile-name-en {
@@ -999,43 +1077,20 @@
 
         .tag {
             padding: 0.35rem 1.05rem;
-            background: rgba(201, 164, 92, 0.07);
+            background: rgba(28, 94, 168, 0.06);
             border: 1px solid var(--line);
             border-radius: 50px;
             font-size: 0.76rem;
-            color: var(--gold-2);
+            color: var(--blue-deep);
             font-weight: 500;
             letter-spacing: 0.03em;
         }
 
         .profile-bio {
             font-size: 0.93rem;
-            color: var(--cream-dim);
+            color: var(--slate);
             line-height: 2.1;
             margin-bottom: 1rem;
-        }
-
-        .career-list {
-            list-style: none;
-            margin-top: 1.6rem;
-            border-top: 1px dashed var(--line);
-        }
-
-        .career-list li {
-            position: relative;
-            padding: 0.95rem 0 0.95rem 1.15rem;
-            border-bottom: 1px dashed var(--line);
-            font-size: 0.87rem;
-            color: var(--cream-dim);
-        }
-
-        .career-list li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            top: 0.95rem;
-            color: var(--gold);
-            font-size: 0.72rem;
         }
 
         .qualifications { margin-top: 2rem; }
@@ -1044,12 +1099,12 @@
             font-size: 0.72rem;
             font-weight: 700;
             letter-spacing: 0.28em;
-            color: var(--gold);
+            color: var(--blue);
             margin-bottom: 0.8rem;
         }
 
         /* ─── FAQ ─── */
-        #faq { background: var(--noir-900); }
+        #faq { background: var(--paper-soft); }
 
         .faq-wrap {
             max-width: 780px;
@@ -1067,12 +1122,12 @@
             cursor: pointer;
             font-weight: 700;
             font-size: 0.98rem;
-            color: var(--cream);
+            color: var(--ink-900);
             transition: color 0.2s;
             user-select: none;
         }
 
-        .faq-question:hover { color: var(--gold-2); }
+        .faq-question:hover { color: var(--blue); }
 
         .faq-toggle {
             width: 26px;
@@ -1083,13 +1138,13 @@
             align-items: center;
             justify-content: center;
             font-size: 1.05rem;
-            color: var(--gold);
+            color: var(--blue);
             transition: transform 0.3s, background 0.3s;
         }
 
         .faq-item.open .faq-toggle {
             transform: rotate(45deg);
-            background: rgba(201, 164, 92, 0.12);
+            background: rgba(28, 94, 168, 0.1);
         }
 
         .faq-answer {
@@ -1097,17 +1152,52 @@
             overflow: hidden;
             transition: max-height 0.35s ease;
             font-size: 0.9rem;
-            color: var(--cream-dim);
+            color: var(--slate);
             line-height: 2;
         }
 
         .faq-item.open .faq-answer {
-            max-height: 220px;
             padding-bottom: 1.6rem;
         }
 
+        .faq-answer-inner { padding-bottom: 0.2rem; }
+
+        .faq-answer p + p,
+        .faq-answer ul + p { margin-top: 0.9rem; }
+
+        .faq-answer ul {
+            list-style: none;
+            margin: 0.8rem 0 0.2rem;
+        }
+
+        .faq-answer ul li {
+            position: relative;
+            padding-left: 1.05rem;
+            line-height: 1.85;
+            margin-bottom: 0.25rem;
+        }
+
+        .faq-answer ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.82em;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--blue-2);
+        }
+
+        .faq-flowline {
+            margin-top: 0.9rem;
+            font-size: 0.86rem;
+            font-weight: 700;
+            color: var(--blue-deep);
+            line-height: 1.9;
+        }
+
         /* ─── CONTACT ─── */
-        #contact { background: var(--noir-950); }
+        #contact { background: var(--paper); }
 
         .contact-inner {
             text-align: center;
@@ -1115,9 +1205,565 @@
             margin: 0 auto;
         }
 
+        .contact-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            max-width: 340px;
+            margin: 3.5rem auto 0;
+            gap: 1.5rem;
+        }
+
+        .contact-card {
+            padding: 3rem 2rem;
+            background: var(--card);
+            border: 1px solid var(--line);
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: block;
+        }
+
+        .contact-card:hover {
+            border-color: var(--blue);
+            transform: translateY(-6px);
+            box-shadow: 0 24px 60px -22px rgba(28, 94, 168, 0.25);
+        }
+
+        .contact-icon-wrap { font-size: 2.4rem; margin-bottom: 1rem; }
+
+        .contact-card h3 {
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: var(--ink-900);
+        }
+
+        .contact-card p {
+            font-size: 0.84rem;
+            color: var(--slate);
+            line-height: 1.7;
+        }
+
+        .contact-note {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            padding: 2.2rem;
+            text-align: center;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 0.76rem;
+            letter-spacing: 0.06em;
+            background: var(--paper);
+        }
+
+        .footer-other-link {
+            margin-bottom: 0.9rem;
+        }
+
+        .footer-other-link a {
+            color: var(--muted);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .footer-other-link a:hover {
+            color: var(--blue);
+            border-color: var(--blue);
+        }
+
+        /* ─── PROBLEM TAGS（その他の声） ─── */
+        .problem-tags {
+            margin-top: 2.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            align-items: center;
+        }
+
+        .problem-tags-label {
+            font-size: 0.82rem;
+            color: var(--slate);
+            font-weight: 700;
+            margin-right: 0.3rem;
+        }
+
+        .problem-tags span.ptag {
+            font-size: 0.78rem;
+            color: var(--ink-700);
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 0.42rem 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* ─── PROBLEM DETAIL（課題の解説文） ─── */
+        .problem-detail {
+            margin-top: 3rem;
+            max-width: 760px;
+            padding-top: 2.6rem;
+            border-top: 1px solid var(--line);
+        }
+
+        .problem-detail h3 {
+            font-family: var(--serif);
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: var(--ink-900);
+            margin-bottom: 0.6rem;
+        }
+
+        .problem-detail p {
+            font-size: 0.9rem;
+            color: var(--slate);
+            line-height: 2;
+            margin-bottom: 1.6rem;
+        }
+
+        .problem-detail p:last-child { margin-bottom: 0; }
+
+        /* ─── IMPROVEMENTS（具体的改善例） ─── */
+        #improvements { background: var(--paper); }
+
+        .imp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .imp-card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            padding: 2.2rem 2rem 2.4rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .imp-card:hover {
+            border-color: rgba(28, 94, 168, 0.4);
+            box-shadow: 0 18px 50px -22px rgba(14, 33, 56, 0.18);
+        }
+
+        .imp-card h3 {
+            font-family: var(--serif);
+            font-size: 1.12rem;
+            font-weight: 700;
+            color: var(--ink-900);
+            padding-bottom: 1.1rem;
+            border-bottom: 1px solid var(--line);
+            margin-bottom: 1.4rem;
+        }
+
+        .imp-step { margin-bottom: 1.25rem; }
+        .imp-step:last-child { margin-bottom: 0; }
+
+        .imp-step-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            padding: 0.22rem 0.7rem;
+            border-radius: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .imp-now .imp-step-label {
+            color: var(--slate);
+            background: rgba(14, 33, 56, 0.07);
+        }
+
+        .imp-fix .imp-step-label {
+            color: var(--blue-deep);
+            background: rgba(28, 94, 168, 0.11);
+        }
+
+        .imp-goal .imp-step-label {
+            color: #ffffff;
+            background: var(--gradient-blue);
+        }
+
+        .imp-step p {
+            font-size: 0.89rem;
+            color: var(--slate);
+            line-height: 1.9;
+        }
+
+        .imp-goal p { color: var(--ink-700); font-weight: 500; }
+
+        .imp-note {
+            margin-top: 2.6rem;
+            font-size: 0.86rem;
+            color: var(--muted);
+            line-height: 1.95;
+            border-left: 2px solid var(--line);
+            padding-left: 1.1rem;
+        }
+
+        @media (max-width: 820px) {
+            .imp-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ─── FLOW（支援の流れ） ─── */
+        #flow { background: var(--paper); }
+
+        .flow-list {
+            margin-top: 3.5rem;
+            display: grid;
+            gap: 0;
+        }
+
+        .flow-step {
+            display: grid;
+            grid-template-columns: 92px 1fr;
+            gap: 1.8rem;
+            align-items: start;
+            padding: 1.9rem 0;
+            border-bottom: 1px solid var(--line);
+            position: relative;
+        }
+
+        .flow-step:first-child { border-top: 1px solid var(--line); }
+
+        .flow-num {
+            font-family: var(--serif);
+            font-size: 0.74rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            color: var(--blue);
+        }
+
+        .flow-num strong {
+            display: block;
+            font-size: 1.9rem;
+            font-weight: 900;
+            letter-spacing: 0;
+            line-height: 1.1;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .flow-step h3 {
+            font-family: var(--serif);
+            font-size: 1.06rem;
+            font-weight: 700;
+            color: var(--ink-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .flow-step p {
+            font-size: 0.9rem;
+            color: var(--slate);
+            line-height: 1.95;
+            max-width: 640px;
+        }
+
+        .flow-tag {
+            display: inline-block;
+            margin-top: 0.7rem;
+            font-size: 0.74rem;
+            font-weight: 700;
+            color: var(--blue-deep);
+            background: rgba(28, 94, 168, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 640px) {
+            .flow-step { grid-template-columns: 58px 1fr; gap: 1.1rem; }
+            .flow-num strong { font-size: 1.5rem; }
+        }
+
+        /* ─── PRICING（料金・導入プラン） ─── */
+        #pricing { background: var(--paper-soft); }
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.1rem;
+            margin-top: 3.5rem;
+            align-items: stretch;
+        }
+
+        .price-card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            padding: 2.1rem 1.6rem 2.3rem;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+        }
+
+        .price-card:hover {
+            border-color: rgba(28, 94, 168, 0.4);
+            box-shadow: 0 18px 50px -22px rgba(14, 33, 56, 0.18);
+        }
+
+        .price-card-featured {
+            border-color: var(--blue);
+            box-shadow: 0 20px 55px -24px rgba(28, 94, 168, 0.4);
+            position: relative;
+        }
+
+        .price-badge {
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: #ffffff;
+            background: var(--gradient-blue);
+            padding: 0.3rem 0.85rem;
+        }
+
+        .price-name {
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--ink-900);
+            margin-bottom: 0.35rem;
+            margin-top: 0.5rem;
+        }
+
+        .price-for {
+            font-size: 0.76rem;
+            color: var(--muted);
+            line-height: 1.7;
+            min-height: 2.6em;
+        }
+
+        .price-amount {
+            font-family: var(--serif);
+            font-size: 1.7rem;
+            font-weight: 900;
+            line-height: 1.3;
+            color: var(--blue-deep);
+            margin: 1.1rem 0 0.35rem;
+            letter-spacing: 0.01em;
+            min-height: 3.6rem;
+        }
+
+        .price-amount small {
+            display: block;
+            font-family: var(--sans);
+            font-size: 0.76rem;
+            font-weight: 500;
+            color: var(--slate);
+            letter-spacing: 0;
+            line-height: 1.6;
+            margin-top: 0.15rem;
+        }
+
+        .price-unit {
+            font-size: 0.76rem;
+            color: var(--muted);
+            line-height: 1.7;
+            min-height: 2.6em;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid var(--line);
+            margin-bottom: 1.2rem;
+        }
+
+        .price-features {
+            list-style: none;
+            flex-grow: 1;
+        }
+
+        .price-features li {
+            font-size: 0.84rem;
+            color: var(--slate);
+            line-height: 1.8;
+            padding-left: 1.15rem;
+            position: relative;
+            margin-bottom: 0.6rem;
+        }
+
+        .price-features li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.72em;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--blue-2);
+        }
+
+        .price-notes {
+            margin-top: 2.6rem;
+            background: var(--card);
+            border: 1px solid var(--line);
+            padding: 1.8rem 1.9rem;
+        }
+
+        .price-notes-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--ink-900);
+            letter-spacing: 0.08em;
+            margin-bottom: 0.9rem;
+        }
+
+        .price-notes ul { list-style: none; }
+
+        .price-notes li {
+            font-size: 0.84rem;
+            color: var(--slate);
+            line-height: 1.9;
+            padding-left: 1.1rem;
+            position: relative;
+            margin-bottom: 0.4rem;
+        }
+
+        .price-notes li::before {
+            content: '※';
+            position: absolute;
+            left: 0;
+            color: var(--muted);
+            font-size: 0.78rem;
+        }
+
+        .price-cta {
+            text-align: center;
+            margin-top: 2.8rem;
+        }
+
+        @media (max-width: 1180px) {
+            .price-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 980px) {
+            .price-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 560px) {
+            .price-for, .price-amount, .price-unit { min-height: 0; }
+        }
+
+        @media (max-width: 560px) {
+            .price-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ─── MONITOR（モニター企業募集） ─── */
+        #monitor { background: var(--paper); }
+
+        .monitor-box {
+            max-width: 880px;
+            margin: 0 auto;
+            border: 1px solid rgba(28, 94, 168, 0.35);
+            background: linear-gradient(160deg, rgba(28, 94, 168, 0.055), rgba(47, 127, 209, 0.02));
+            padding: 2.8rem 2.6rem;
+        }
+
+        .monitor-head {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.9rem;
+            margin-bottom: 1.3rem;
+        }
+
+        .monitor-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: #ffffff;
+            background: var(--gradient-blue);
+            padding: 0.32rem 0.9rem;
+        }
+
+        .monitor-limit {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--blue-deep);
+        }
+
+        .monitor-box h2 {
+            font-family: var(--serif);
+            font-size: clamp(1.25rem, 2.6vw, 1.6rem);
+            font-weight: 700;
+            color: var(--ink-900);
+            line-height: 1.6;
+            margin-bottom: 1.1rem;
+        }
+
+        .monitor-box p {
+            font-size: 0.9rem;
+            color: var(--slate);
+            line-height: 2;
+        }
+
+        .monitor-terms {
+            list-style: none;
+            margin: 1.6rem 0 1.8rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.55rem 1.4rem;
+        }
+
+        .monitor-terms li {
+            font-size: 0.85rem;
+            color: var(--ink-700);
+            line-height: 1.8;
+            padding-left: 1.4rem;
+            position: relative;
+        }
+
+        .monitor-terms li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--blue);
+            font-weight: 700;
+        }
+
+        .monitor-cta { margin-top: 0.5rem; }
+
+        @media (max-width: 640px) {
+            .monitor-box { padding: 2.1rem 1.5rem; }
+            .monitor-terms { grid-template-columns: 1fr; }
+        }
+
+        /* ─── VOICES（導入事例・お客様の声：準備中） ─── */
+        #voices {
+            background: var(--paper);
+            padding-top: 0;
+        }
+
+        .voices-box {
+            max-width: 880px;
+            margin: 0 auto;
+            border: 1px dashed var(--line);
+            padding: 2.4rem 2.2rem;
+            text-align: center;
+        }
+
+        .voices-box h2 {
+            font-family: var(--serif);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--ink-900);
+            margin-bottom: 0.9rem;
+        }
+
+        .voices-box p {
+            font-size: 0.87rem;
+            color: var(--slate);
+            line-height: 2;
+        }
+
         /* ─── CONTACT FORM ─── */
         .contact-form-wrap {
-            max-width: 640px;
+            max-width: 720px;
             margin: 3.2rem auto 0;
             text-align: left;
         }
@@ -1134,7 +1780,7 @@
             display: block;
             font-size: 0.86rem;
             font-weight: 700;
-            color: var(--cream);
+            color: var(--ink-900);
             margin-bottom: 0.55rem;
         }
 
@@ -1149,18 +1795,19 @@
             white-space: nowrap;
         }
 
-        .req { color: #181206; background: var(--gold); }
-        .opt { color: var(--cream-dim); background: rgba(245, 239, 224, 0.08); }
+        .req { color: #ffffff; background: #c0392b; }
+        .opt { color: var(--slate); background: rgba(14, 33, 56, 0.08); }
 
         .cform input[type="text"],
         .cform input[type="email"],
         .cform input[type="tel"],
+        .cform select,
         .cform textarea {
             width: 100%;
             font-family: var(--sans);
             font-size: 0.95rem;
-            color: var(--cream);
-            background: rgba(245, 239, 224, 0.04);
+            color: var(--ink-900);
+            background: #fbfcfe;
             border: 1px solid var(--line);
             border-radius: 2px;
             padding: 0.85rem 0.95rem;
@@ -1170,21 +1817,30 @@
             appearance: none;
         }
 
-        .cform input::placeholder,
-        .cform textarea::placeholder { color: var(--muted); }
-
-        .cform textarea { resize: vertical; min-height: 140px; }
-
-        .cform input:focus,
-        .cform textarea:focus {
-            outline: none;
-            background: rgba(245, 239, 224, 0.07);
-            border-color: var(--gold);
-            box-shadow: 0 0 0 3px rgba(201, 164, 92, 0.18);
+        .cform select {
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%234d6480' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.4rem;
         }
 
+        .cform textarea { resize: vertical; min-height: 132px; }
+
+        .cform input:focus,
+        .cform select:focus,
+        .cform textarea:focus {
+            outline: none;
+            background: #ffffff;
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(28, 94, 168, 0.12);
+        }
+
+        .cform .invalid input,
         .cform input.invalid,
-        .cform textarea.invalid { border-color: #e07a5f; }
+        .cform textarea.invalid {
+            border-color: #c0392b;
+            background: #fffafa;
+        }
 
         .cform-hint {
             font-size: 0.77rem;
@@ -1196,16 +1852,46 @@
         .cform-error {
             display: none;
             font-size: 0.78rem;
-            color: #f0a08a;
+            color: #c0392b;
             font-weight: 700;
             margin-top: 0.45rem;
         }
 
         .cform-error.show { display: block; }
 
+        .check-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.55rem 0.9rem;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 0.87rem;
+            color: var(--ink-700);
+            line-height: 1.6;
+            border: 1px solid var(--line);
+            border-radius: 2px;
+            padding: 0.72rem 0.9rem;
+            cursor: pointer;
+            background: #fbfcfe;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .check-item:hover { border-color: rgba(28, 94, 168, 0.45); }
+
+        .check-item input { margin-top: 0.28em; accent-color: #1c5ea8; width: 15px; height: 15px; flex-shrink: 0; }
+
+        .check-item:has(input:checked) {
+            border-color: var(--blue);
+            background: rgba(28, 94, 168, 0.06);
+        }
+
         .consent-box {
             border: 1px solid var(--line);
-            background: rgba(245, 239, 224, 0.025);
+            background: var(--paper-soft);
             padding: 1.3rem 1.4rem;
             margin-top: 2.2rem;
         }
@@ -1213,13 +1899,13 @@
         .consent-title {
             font-size: 0.8rem;
             font-weight: 700;
-            color: var(--cream);
+            color: var(--ink-900);
             margin-bottom: 0.6rem;
         }
 
         .consent-box p {
             font-size: 0.78rem;
-            color: var(--cream-dim);
+            color: var(--slate);
             line-height: 1.9;
         }
 
@@ -1230,12 +1916,12 @@
             margin-top: 1rem;
             font-size: 0.87rem;
             font-weight: 700;
-            color: var(--cream);
+            color: var(--ink-900);
             cursor: pointer;
             line-height: 1.6;
         }
 
-        .consent-check input { margin-top: 0.24em; accent-color: var(--gold); width: 16px; height: 16px; flex-shrink: 0; }
+        .consent-check input { margin-top: 0.24em; accent-color: #1c5ea8; width: 16px; height: 16px; flex-shrink: 0; }
 
         .cform-submit-wrap { text-align: center; margin-top: 2.2rem; }
 
@@ -1260,16 +1946,16 @@
         .cform-done {
             display: none;
             background: var(--card);
-            border: 1px solid var(--gold);
+            border: 1px solid var(--blue);
             padding: 3.4rem 2.4rem;
             text-align: center;
+            box-shadow: 0 24px 60px -26px rgba(28, 94, 168, 0.3);
         }
 
         .cform-done.show { display: block; }
 
         .cform-done-icon {
-            font-size: 2.4rem;
-            color: var(--gold-2);
+            font-size: 2.6rem;
             margin-bottom: 1rem;
         }
 
@@ -1277,36 +1963,39 @@
             font-family: var(--serif);
             font-size: 1.2rem;
             font-weight: 700;
-            color: var(--cream);
+            color: var(--ink-900);
             line-height: 1.7;
             margin-bottom: 1rem;
         }
 
         .cform-done p {
             font-size: 0.89rem;
-            color: var(--cream-dim);
+            color: var(--slate);
             line-height: 2;
         }
 
+        .contact-alt {
+            margin-top: 2.4rem;
+            text-align: center;
+            font-size: 0.84rem;
+            color: var(--slate);
+            line-height: 1.9;
+        }
+
+        .contact-alt a {
+            color: var(--blue);
+            font-weight: 700;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(28, 94, 168, 0.35);
+        }
+
+        .contact-alt a:hover { border-color: var(--blue); }
+
+
         @media (max-width: 640px) {
             .cform { padding: 1.9rem 1.3rem 2.2rem; }
-        }
-
-        .contact-note {
-            margin-top: 2rem;
-            font-size: 0.8rem;
-            color: var(--muted);
-        }
-
-        /* ─── FOOTER ─── */
-        footer {
-            padding: 2.2rem;
-            text-align: center;
-            border-top: 1px solid var(--line);
-            color: var(--muted);
-            font-size: 0.76rem;
-            letter-spacing: 0.06em;
-            background: var(--noir-950);
+            .check-grid { grid-template-columns: 1fr; }
+            .contact-inner { max-width: 100%; }
         }
 
         /* ─── ANIMATIONS ─── */
@@ -1331,10 +2020,9 @@
             section { padding: 90px 1.5rem; }
 
             .profile-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-            .profile-mark { max-width: 190px; margin: 0 auto; }
+            .profile-mark { max-width: 170px; margin: 0 auto; }
 
             .hero-cta-group { flex-direction: column; align-items: center; }
-            .kanji { font-size: 160px; }
 
             #hero { padding: 130px 1.5rem 90px; }
             .hero-badge { margin-bottom: 1.5rem; }
@@ -1346,63 +2034,436 @@
         }
 
         @media (max-width: 480px) {
-            .hero-title { font-size: 2.1rem; }
+            /* 「ムダ・ミス・属人化を、」（11文字）が1行に収まるよう画面幅に合わせて縮める */
+            .hero-title { font-size: min(1.9rem, calc((100vw - 3rem) / 11.5)); }
             .services-grid { grid-template-columns: 1fr; }
             .problems-grid { grid-template-columns: 1fr; }
-            .kanji { display: none; }
+        }
+
+        /* ─── FLOATING CTA ─── */
+        .floating-cta {
+            position: fixed;
+            right: 1.6rem;
+            bottom: 1.6rem;
+            z-index: 1001;
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            background: var(--gradient-blue);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            line-height: 1.4;
+            box-shadow: 0 14px 34px -10px rgba(28, 94, 168, 0.55);
+            opacity: 0;
+            transform: translateY(16px) scale(0.9);
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.25s ease;
+        }
+
+        .floating-cta.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        .floating-cta:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 20px 44px -10px rgba(28, 94, 168, 0.65);
+        }
+
+        @media (max-width: 560px) {
+            .floating-cta {
+                width: 72px;
+                height: 72px;
+                right: 1rem;
+                bottom: 1rem;
+                font-size: 0.62rem;
+            }
+        }
+        /* ─── v2 追加（2026-11-21） ─── */
+        .hero-lead {
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: clamp(1.05rem, 2.2vw, 1.45rem);
+            color: var(--blue-deep);
+            margin-bottom: .6rem;
+            letter-spacing: .02em;
+        }
+        #selfcheck { background: var(--paper); }
+        .selfcheck-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: .9rem 1.4rem;
+            margin-top: 2.6rem;
+            max-width: 980px;
+        }
+        .selfcheck-list li {
+            position: relative;
+            padding: 1rem 1.2rem 1rem 3.2rem;
+            background: var(--paper-soft);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            font-weight: 500;
+            color: var(--ink-900);
+            line-height: 1.7;
+        }
+        .selfcheck-list li::before {
+            content: "";
+            position: absolute;
+            left: 1.1rem; top: 1.2rem;
+            width: 1.15rem; height: 1.15rem;
+            border: 2px solid var(--blue);
+            border-radius: 3px;
+            background: #fff;
+        }
+        .selfcheck-note { margin-top: 1.6rem; color: var(--slate); font-size: .95rem; }
+        #firststep { background: var(--paper); }
+        .price-grid.firststep-grid { grid-template-columns: repeat(2, 1fr); }
+        .firststep-note { margin-top: 1.8rem; color: var(--slate); font-size: .95rem; }
+        @media (max-width: 768px) {
+            .selfcheck-list { grid-template-columns: 1fr; }
+            .price-grid.firststep-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .hero-title { font-size: min(1.9rem, calc((100vw - 3rem) / 13)); }
+        }
+        /* ─── v2 デザイン追加（2026-11-21） ─── */
+        .hero-sub { font-weight: 400; color: var(--ink-700); max-width: 700px; }
+        .hero-sub .hero-sub-lead { color: var(--ink-900); font-weight: 700; }
+        .proof-card {
+            margin: 3rem auto 0;
+            max-width: 780px;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            box-shadow: 0 24px 60px -30px rgba(14, 33, 56, 0.35);
+            padding: 1.6rem 1.8rem 1.4rem;
+            text-align: left;
+        }
+        .proof-label {
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            color: var(--blue);
+            margin-bottom: .9rem;
+        }
+        .proof-row {
+            display: grid;
+            grid-template-columns: 11rem 1fr 1.6rem 1fr;
+            align-items: center;
+            gap: .6rem;
+            padding: .75rem 0;
+            border-top: 1px solid var(--line);
+            font-size: .95rem;
+        }
+        .proof-task { font-weight: 700; color: var(--ink-900); line-height: 1.5; }
+        .proof-before { color: var(--slate); background: var(--paper-soft); border-radius: 6px; padding: .35rem .7rem; line-height: 1.5; }
+        .proof-arrow { color: var(--blue); font-weight: 900; text-align: center; }
+        .proof-after { color: var(--blue-deep); font-weight: 700; background: rgba(28, 94, 168, 0.08); border-radius: 6px; padding: .35rem .7rem; line-height: 1.5; }
+        .proof-person {
+            display: flex;
+            align-items: center;
+            gap: .9rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--line);
+        }
+        .proof-person img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; object-position: 50% 20%; flex-shrink: 0; }
+        .proof-person-name { font-weight: 700; color: var(--ink-900); font-size: 1rem; }
+        .proof-person-career { font-size: .85rem; color: var(--slate); line-height: 1.6; }
+        .proof-note { margin-top: .8rem; font-size: .78rem; color: var(--muted); line-height: 1.6; }
+        .selfcheck-list label { display: block; cursor: pointer; }
+        .selfcheck-list input { position: absolute; opacity: 0; pointer-events: none; }
+        .selfcheck-list li.checked { background: rgba(28, 94, 168, 0.08); border-color: var(--blue); }
+        .selfcheck-list li.checked::before { background: var(--blue); box-shadow: inset 0 0 0 3px #fff; }
+        .selfcheck-count { margin-top: 1.4rem; font-weight: 700; color: var(--blue-deep); min-height: 1.6em; }
+        .detail-more { margin-top: 3rem; max-width: 760px; border-top: 1px solid var(--line); padding-top: 1.6rem; }
+        .detail-more summary { cursor: pointer; font-weight: 700; color: var(--blue); list-style: none; }
+        .detail-more summary::-webkit-details-marker { display: none; }
+        .detail-more summary::before { content: "＋ "; }
+        .detail-more[open] summary::before { content: "－ "; }
+        .detail-more .problem-detail { margin-top: 1.4rem; border-top: none; padding-top: 0; }
+        @media (max-width: 768px) {
+            .proof-card { padding: 1.3rem 1.1rem 1.1rem; }
+            .proof-row { grid-template-columns: 1fr 1.4rem 1fr; }
+            .proof-task { grid-column: 1 / -1; }
+        }
+        /* ─── v3 追加（2026-11-21：文字を減らし、見本の図を追加） ─── */
+        .selfcheck-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 2rem; align-items: center; margin-top: 2.4rem; }
+        .selfcheck-layout .selfcheck-list { grid-template-columns: 1fr; margin-top: 0; }
+        .selfcheck-photo img { width: 100%; height: auto; border-radius: 14px; display: block; object-fit: cover; aspect-ratio: 4 / 5; }
+        .selfcheck-for { margin-top: 1rem; color: var(--slate); font-size: .9rem; }
+        .problem-card-photo .problem-card-body h3 { margin-bottom: 0; }
+        .exp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 3rem; }
+        .exp-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 1.8rem 1.6rem; display: flex; flex-direction: column; }
+        .exp-num { font-family: var(--serif); font-size: 2rem; font-weight: 900; color: var(--blue); line-height: 1; margin-bottom: .8rem; }
+        .exp-card h3 { font-family: var(--serif); font-size: 1.15rem; color: var(--ink-900); margin-bottom: .6rem; line-height: 1.5; }
+        .exp-card p { font-size: .92rem; color: var(--ink-700); line-height: 1.8; flex: 1; }
+        .exp-result { margin-top: 1rem; padding: .7rem .9rem; background: rgba(28, 94, 168, 0.08); border-left: 4px solid var(--blue); font-weight: 700; color: var(--blue-deep); font-size: .95rem; }
+        .pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 3rem; }
+        .pillar { background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+        .pillar-photo img { width: 100%; height: 190px; object-fit: cover; display: block; }
+        .pillar-body { padding: 1.3rem 1.4rem 1.5rem; }
+        .pillar-num { font-family: var(--serif); font-weight: 900; color: var(--blue); font-size: 1.3rem; }
+        .pillar-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--ink-900); margin: .2rem 0 .5rem; }
+        .pillar-body p { font-size: .95rem; color: var(--ink-700); line-height: 1.8; }
+        .pillar-more { margin-top: 1.6rem; color: var(--slate); font-size: .92rem; }
+        .sample-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 3rem; }
+        .sample { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 1.2rem 1.2rem 1.4rem; display: flex; flex-direction: column; }
+        .sample-fig { background: var(--paper-soft); border-radius: 10px; padding: 1rem; height: 290px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+        .sample h3 { font-family: var(--serif); font-size: 1.1rem; color: var(--ink-900); }
+        .sample-get { font-size: .88rem; color: var(--slate); margin-top: .3rem; flex: 1; }
+        .sample-price { font-family: var(--serif); font-weight: 900; font-size: 1.5rem; color: var(--blue-deep); margin-top: .4rem; }
+        .sample-note { margin-top: 1.4rem; font-size: .85rem; color: var(--slate); }
+        .xl { display: flex; align-items: center; gap: .4rem; width: 100%; }
+        .xl-col { flex: 1; min-width: 0; }
+        .xl-cap { font-size: .72rem; font-weight: 700; color: var(--slate); margin-bottom: .3rem; }
+        .xl-t { width: 100%; border-collapse: collapse; font-size: .7rem; background: #fff; }
+        .xl-t th, .xl-t td { border: 1px solid #c9d3df; padding: .15rem .3rem; white-space: nowrap; }
+        .xl-t th { background: #e3edf8; color: var(--ink-900); font-weight: 700; }
+        .xl-t td { color: var(--ink-700); }
+        .xl-t .c-a, .xl-t .c-b, .xl-t .c-c { color: var(--ink-700); }
+        .xl-t tr.g-a td { background: #e3edf8; }
+        .xl-t tr.g-b td { background: #e6f4f0; }
+        .xl-t tr.g-c td { background: #f2f6fa; }
+        .xl-arrow { color: var(--blue); font-weight: 900; }
+        .paper { background: #fff; height: 100%; aspect-ratio: 210 / 297; box-shadow: 0 6px 18px -8px rgba(14, 33, 56, .35); padding: .8rem .8rem; font-size: .7rem; color: var(--ink-700); display: flex; flex-direction: column; }
+        .paper-title { font-weight: 700; color: var(--ink-900); font-size: .8rem; border-bottom: 2px solid var(--blue); padding-bottom: .25rem; margin-bottom: .5rem; }
+        .paper-steps { list-style: none; display: grid; gap: .35rem; }
+        .paper-steps li { display: flex; align-items: center; gap: .35rem; line-height: 1.4; }
+        .paper-steps .box { width: .75rem; height: .75rem; border: 1.5px solid var(--blue); flex-shrink: 0; }
+        .paper-photo { margin-top: auto; height: 22%; background: #e3edf8; color: var(--slate); display: flex; align-items: center; justify-content: center; font-size: .65rem; }
+        .memo-map { position: relative; height: 38%; background: #f2f6fa; border: 1px solid #c9d3df; margin-bottom: .5rem; }
+        .mm-shelf { position: absolute; top: 12%; width: 16%; height: 76%; background: #c9d3df; }
+        .mm-shelf:nth-child(1) { left: 10%; } .mm-shelf:nth-child(2) { left: 42%; } .mm-shelf:nth-child(3) { left: 74%; }
+        .mm-path { position: absolute; left: 28%; right: 60%; top: 8%; bottom: 8%; border-left: 2px dashed var(--blue); }
+        .memo-list { list-style: none; display: grid; gap: .3rem; line-height: 1.4; }
+        .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 3rem; }
+        .why { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 1.5rem; }
+        .why h3 { font-family: var(--serif); font-size: 1.1rem; color: var(--ink-900); margin-bottom: .5rem; line-height: 1.5; }
+        .why p { font-size: .92rem; color: var(--ink-700); line-height: 1.8; }
+        .promise { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; margin-top: 1.6rem; }
+        .promise li { background: rgba(28, 94, 168, 0.06); border-radius: 10px; padding: .8rem 1rem; font-weight: 700; color: var(--blue-deep); font-size: .92rem; line-height: 1.6; }
+        .promise li::before { content: "✓ "; color: var(--blue); }
+        .profile-stats { margin: 1.4rem 0; }
+        #about .stats-grid { grid-template-columns: repeat(3, 1fr); gap: .5rem; }
+        #about .stat-card { padding: 1rem .3rem; }
+        /* v3修正（2026-11-21）：プロフィールの数字（約10年など）が2行に割れないように */
+        #about .profile-stats { max-width: 460px; }
+        #about .stat-number { white-space: nowrap; font-size: clamp(1.8rem, 4vw, 2.4rem); }
+        .ptable-wrap { margin-top: 2.6rem; overflow-x: auto; }
+        .ptable { width: 100%; max-width: 820px; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; }
+        .ptable th, .ptable td { padding: 1rem 1.2rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
+        .ptable th { font-weight: 700; color: var(--ink-900); font-size: .98rem; }
+        .ptable th small { display: block; font-weight: 400; color: var(--slate); font-size: .82rem; margin-top: .15rem; }
+        .ptable td { font-family: var(--serif); font-weight: 900; color: var(--blue-deep); font-size: 1.15rem; white-space: nowrap; text-align: right; }
+        .ptable tr.pt-first { background: rgba(28, 94, 168, 0.07); }
+        .ptable tr.pt-first th::before { content: "まずはここから"; display: inline-block; background: var(--gradient-blue); color: #fff; font-size: .7rem; padding: .1rem .5rem; border-radius: 3px; margin-right: .5rem; vertical-align: middle; }
+        .price-mini-notes { margin-top: 1.2rem; font-size: .85rem; color: var(--slate); padding-left: 1.2rem; line-height: 1.9; }
+        .steps { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 3rem; counter-reset: st; }
+        .steps li { counter-increment: st; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 1.3rem 1.2rem; }
+        .steps li::before { content: "STEP " counter(st); display: block; font-size: .72rem; font-weight: 700; letter-spacing: .12em; color: var(--blue); margin-bottom: .4rem; }
+        .steps b { display: block; color: var(--ink-900); font-size: 1.02rem; margin-bottom: .3rem; }
+        .steps span { font-size: .88rem; color: var(--slate); line-height: 1.7; }
+        #monitor { padding-top: 60px; padding-bottom: 60px; }
+        .notice-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.2rem; }
+        .notice { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 1.5rem; }
+        .notice h3 { font-family: var(--serif); font-size: 1.08rem; color: var(--ink-900); margin-bottom: .5rem; }
+        .notice p { font-size: .9rem; color: var(--ink-700); line-height: 1.8; margin-bottom: 1rem; }
+        @media (max-width: 900px) {
+            .exp-grid, .pillar-grid, .sample-grid, .why-grid { grid-template-columns: 1fr; }
+            .promise, .steps { grid-template-columns: repeat(2, 1fr); }
+            .selfcheck-layout { grid-template-columns: 1fr; }
+            .selfcheck-photo { display: none; }
+            .notice-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .promise, .steps { grid-template-columns: 1fr; }
+            .ptable th, .ptable td { padding: .8rem .7rem; }
+            .ptable td { font-size: 1rem; }
+        }
+        /* ─── トップページv1 追加（2026-11-21） ─── */
+        #selfcheck { background: var(--paper); }
+        #split { background: var(--paper-soft); }
+        #services { background: var(--paper); }
+        #firststep { background: var(--paper-soft); }
+        #seminar { background: var(--paper); }
+        #strengths { background: var(--paper-soft); }
+        #about { background: var(--paper); }
+        #pricing { background: var(--paper-soft); }
+        #flow { background: var(--paper); }
+        #logistics { background: var(--paper-soft); }
+        #faq { background: var(--paper); }
+        #contact { background: var(--paper-soft); }
+        .nav-links a.is-sub { color: var(--slate); }
+
+        .split-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 3rem; }
+        .split-card { background: #fff; border: 1px solid var(--line); border-top: 6px solid var(--blue); border-radius: 14px; padding: 1.5rem 1.5rem 1.6rem; display: flex; flex-direction: column; }
+        .split-card.s-excel { border-top-color: #12805c; }
+        .split-card.s-human { border-top-color: var(--ink-900); }
+        .split-tag { font-size: .78rem; font-weight: 700; letter-spacing: .12em; color: var(--blue); }
+        .split-card.s-excel .split-tag { color: #0d6b4c; }
+        .split-card.s-human .split-tag { color: var(--ink-900); }
+        .split-card h3 { font-family: var(--serif); font-size: 1.25rem; color: var(--ink-900); margin: .3rem 0 .7rem; line-height: 1.5; }
+        .split-card ul { list-style: none; display: grid; gap: .35rem; flex: 1; }
+        .split-card li { position: relative; padding-left: 1.1rem; font-size: .95rem; color: var(--ink-700); line-height: 1.7; }
+        .split-card li::before { content: ""; position: absolute; left: 0; top: .7em; width: .45rem; height: .45rem; border-radius: 50%; background: currentColor; opacity: .45; }
+        .split-point { margin-top: 1.1rem; padding: .65rem .9rem; background: var(--paper-soft); border-radius: 8px; font-weight: 700; color: var(--ink-900); font-size: .95rem; line-height: 1.6; }
+        .split-note { margin-top: 1.6rem; color: var(--ink-700); font-size: 1rem; font-weight: 500; }
+
+        .sample-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .slide-mock { width: 100%; min-height: 170px; background: #fff; box-shadow: 0 6px 18px -8px rgba(14, 33, 56, .35); border-top: 6px solid var(--blue); padding: .8rem 1rem; display: flex; flex-direction: column; color: var(--ink-700); }
+        .sm-title { font-family: var(--serif); font-weight: 900; color: var(--ink-900); font-size: .95rem; margin-bottom: .4rem; }
+        .sm-list { list-style: none; display: grid; gap: .3rem; font-size: .78rem; line-height: 1.5; }
+        .sm-list li::before { content: "● "; color: var(--blue); font-size: .6rem; }
+        .sm-foot { margin-top: auto; font-size: .62rem; color: var(--slate); text-align: right; }
+
+        .seminar-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 2.4rem; align-items: start; margin-top: 2.6rem; }
+        .seminar-photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; display: block; }
+        .seminar-facts { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+        .seminar-facts li { background: rgba(28, 94, 168, 0.08); color: var(--blue-deep); font-weight: 700; font-size: .88rem; border-radius: 20px; padding: .3rem .9rem; }
+        .seminar-grid { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: .8rem; }
+        .seminar-grid li { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.1rem; }
+        .sem-lv { display: inline-block; font-size: .74rem; font-weight: 700; color: #fff; background: var(--blue); border-radius: 4px; padding: .05rem .55rem; margin-bottom: .35rem; letter-spacing: .06em; }
+        .seminar-grid b { display: block; color: var(--ink-900); font-size: 1rem; line-height: 1.5; }
+        .seminar-grid p { font-size: .86rem; color: var(--slate); line-height: 1.6; margin-top: .2rem; }
+        .seminar-foot { margin-top: 1.6rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.4rem; }
+        .seminar-foot p { color: var(--ink-700); font-size: .95rem; }
+
+        .logi-banner { display: grid; grid-template-columns: 1fr 1.25fr; background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-top: 2.6rem; }
+        .logi-banner img { width: 100%; height: 100%; min-height: 260px; object-fit: cover; object-position: 50% 60%; display: block; }
+        .logi-body { padding: 2rem 2.2rem; display: flex; flex-direction: column; justify-content: center; }
+        .logi-body h3 { font-family: var(--serif); font-size: 1.35rem; color: var(--ink-900); line-height: 1.5; margin-bottom: .6rem; }
+        .logi-body p { color: var(--ink-700); font-size: .98rem; line-height: 1.8; margin-bottom: 1.3rem; }
+        .logi-list { list-style: none; display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1.4rem; }
+        .logi-list li { background: var(--paper-soft); border: 1px solid var(--line); border-radius: 6px; padding: .2rem .7rem; font-size: .86rem; font-weight: 700; color: var(--ink-900); }
+        .logi-body .btn-primary { align-self: flex-start; }
+
+        #about .profile-stats { max-width: 460px; }
+        #about .stat-number { white-space: nowrap; font-size: clamp(1.8rem, 4vw, 2.4rem); }
+        .footer-info { margin-bottom: .9rem; line-height: 1.8; color: var(--slate); font-size: .82rem; }
+
+        @media (max-width: 900px) {
+            .sample-grid { grid-template-columns: minmax(0, 1fr); }
+            .split-grid { grid-template-columns: 1fr; }
+            .seminar-layout { grid-template-columns: 1fr; }
+            .seminar-photo { display: none; }
+            .logi-banner { grid-template-columns: 1fr; }
+            .logi-banner img { min-height: 0; height: 190px; }
+            .logi-body { padding: 1.5rem 1.3rem 1.7rem; }
+        }
+        @media (max-width: 560px) {
+            .seminar-grid { grid-template-columns: 1fr; }
         }
     </style>
+
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "FMP WORKs",
-  "url": "https://www.fmpworks.jp/",
-  "image": "https://www.fmpworks.jp/assets/ai-efficiency.jpg",
-  "description": "中小企業・個人事業主向けに、生成AIを実際の業務で使い続けられる仕組みづくりを支援します。業務の整理、AIツールの選定、社内AI活用研修のほか、物流・運送・倉庫向けの業務改善支援、YouTube・SNSコンテンツ制作の効率化支援にも対応しています。オンラインで全国対応です。",
-  "areaServed": {
-    "@type": "Country",
-    "name": "日本"
-  },
-  "availableLanguage": "ja",
-  "founder": {
-    "@type": "Person",
-    "name": "西村 康弘",
-    "jobTitle": "生成AIコンサルタント／業務効率化アドバイザー"
-  },
-  "knowsAbout": [
-    "生成AI 業務改善",
-    "生成AI 業務効率化",
-    "AI活用 中小企業",
-    "生成AI 研修",
-    "AIツール 選定",
-    "物流 業務改善",
-    "YouTube・SNS運用 効率化"
-  ],
-  "makesOffer": [
     {
-      "@type": "Offer",
-      "name": "生成AI業務改善コンサルティング",
-      "description": "業務内容のヒアリング、AIで効率化できる業務の洗い出し、ツール選定、プロンプト作成、運用方法の整理。"
-    },
-    {
-      "@type": "Offer",
-      "name": "社内向け生成AI活用支援・研修",
-      "description": "自社の業務を題材にした実践型の生成AI研修と、社内マニュアル・活用ルールの作成。"
-    },
-    {
-      "@type": "Offer",
-      "name": "物流・運送・倉庫向け 業務改善支援",
-      "description": "紙・FAX・Excel・属人化などの業務課題を整理し、AI・SaaS・既存システムの中から現場に合った改善方法をご提案。",
-      "url": "https://www.fmpworks.jp/logistics-ai/"
-    },
-    {
-      "@type": "Offer",
-      "name": "YouTube・SNSコンテンツ制作効率化支援",
-      "description": "企画・台本・投稿文・画像制作・分析に生成AIを取り入れ、コンテンツ制作の負担を軽減。"
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "FMPWORKs",
+        "url": "https://www.fmpworks.jp/",
+        "image": "https://www.fmpworks.jp/assets/ai-efficiency.jpg",
+        "description": "尼崎を拠点に、兵庫・大阪の中小企業と個人事業主の毎日の事務を軽くします。毎月の集計や転記などのExcel作業を自動にし、メール・議事録・マニュアルづくりを生成AIで軽くします。社内の生成AI研修・勉強会、セミナー講師も承ります。AI導入ありきではなく、Excelや手順の見直しで済む所はそちらを選びます。京阪神は訪問、オンラインは全国対応です。",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "尼崎市",
+            "addressRegion": "兵庫県",
+            "addressCountry": "JP"
+        },
+        "areaServed": [
+            { "@type": "City", "name": "尼崎市" },
+            { "@type": "City", "name": "西宮市" },
+            { "@type": "City", "name": "伊丹市" },
+            { "@type": "City", "name": "宝塚市" },
+            { "@type": "City", "name": "芦屋市" },
+            { "@type": "City", "name": "大阪市" },
+            { "@type": "AdministrativeArea", "name": "兵庫県" },
+            { "@type": "AdministrativeArea", "name": "大阪府" },
+            { "@type": "AdministrativeArea", "name": "京都府" },
+            { "@type": "Country", "name": "日本" }
+        ],
+        "availableLanguage": "ja",
+        "founder": {
+            "@type": "Person",
+            "name": "西村 康弘",
+            "jobTitle": "生成AIコンサルタント／業務効率化アドバイザー"
+        },
+        "knowsAbout": [
+            "生成AI 研修",
+            "生成AI 業務効率化",
+            "ChatGPT 活用",
+            "ChatGPT 社内ルール",
+            "Excel 自動化",
+            "Excel マクロ 作成",
+            "Power Query",
+            "業務マニュアル 作成",
+            "生成AI セミナー 講師",
+            "中小企業 業務改善",
+            "物流 業務改善"
+        ],
+        "makesOffer": [
+            {
+                "@type": "Offer",
+                "name": "初回相談（60分・オンライン）",
+                "description": "困りごとを1つ伺い、Excel・生成AI・手順の見直しのどれが向くかを一緒に整理します。",
+                "price": "0",
+                "priceCurrency": "JPY"
+            },
+            {
+                "@type": "Offer",
+                "name": "はじめの1業務：Excel作業を1つ自動に",
+                "description": "集計・転記・並べ替えなど、くり返すExcel作業を1つ自動にします。使い方・直し方の説明書つき。納品後1か月は作った物の不具合を無料で修正。作業の量によりお見積り。",
+                "priceSpecification": { "@type": "PriceSpecification", "minPrice": 30000, "priceCurrency": "JPY", "valueAddedTaxIncluded": false }
+            },
+            {
+                "@type": "Offer",
+                "name": "はじめの1業務：社内のAI勉強会を1回",
+                "description": "御社の実際の仕事を題材にした生成AIの勉強会。内容によりお見積り。",
+                "priceSpecification": { "@type": "PriceSpecification", "minPrice": 30000, "priceCurrency": "JPY", "valueAddedTaxIncluded": false }
+            },
+            {
+                "@type": "Offer",
+                "name": "はじめの1業務：手順書を1業務分",
+                "description": "人についている仕事を、手順書とチェックリストにします。作業の量によりお見積り。",
+                "priceSpecification": { "@type": "PriceSpecification", "minPrice": 30000, "priceCurrency": "JPY", "valueAddedTaxIncluded": false }
+            },
+            {
+                "@type": "Offer",
+                "name": "生成AI研修（社内向け）",
+                "description": "御社の仕事を題材にした実務型の生成AI研修。入れてよい情報のルールづくりも含みます。内容によりお見積り。",
+                "priceSpecification": { "@type": "PriceSpecification", "minPrice": 80000, "priceCurrency": "JPY", "valueAddedTaxIncluded": false }
+            },
+            {
+                "@type": "Offer",
+                "name": "生成AIセミナー講師（60分）",
+                "description": "商工会議所・業界団体・企業の勉強会向けの60分のスライド講義。業種を問いません。日程・費用はご相談。"
+            },
+            {
+                "@type": "Offer",
+                "name": "物流・運送・倉庫向け 業務改善支援",
+                "description": "出荷事務のExcel自動化、新人教育・マニュアル、現場の改善。",
+                "url": "https://www.fmpworks.jp/logistics-ai/"
+            }
+        ]
     }
-  ]
-}
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "FMPWORKs",
+        "url": "https://www.fmpworks.jp/",
+        "inLanguage": "ja"
+    }
     </script>
     <script type="application/ld+json">
 {
@@ -1411,10 +2472,26 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "料金はどのくらいかかりますか？",
+      "name": "生成AI研修の費用はどのくらいですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ご相談内容や規模によって異なります。まずは無料でご相談をお受けしていますので、お気軽にお問い合わせください。ヒアリング後に詳細なお見積りをご提示します。"
+        "text": "社内の勉強会1回は3万円〜、研修は8万円〜が目安です（税別）。人数・時間・内容を伺って、お見積りします。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ChatGPTを会社で使うと、情報が漏れませんか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "入れてよい情報・入れてはいけない情報を決めるところから、一緒に始めます。お使いのプランで、入力した内容がAIの学習に使われない設定になっているかも確かめます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Excelのマクロ作成だけでも頼めますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。1本3万円〜（税別）が目安です。使い方・直し方の説明書を付けます。納品後1か月は、作った物の不具合を無料で直します。作業の中身の変更や機能の追加は、別にお見積りします。"
       }
     },
     {
@@ -1422,31 +2499,55 @@
       "name": "AIについて知識がなくても大丈夫ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい、まったく問題ありません。AIやIT知識がゼロの方でも丁寧にご説明しながらサポートします。難しい専門用語は使わず、わかりやすい言葉で進めます。"
+        "text": "はい。専門用語はできるだけ使わず、御社の実際の仕事を題材にご説明します。"
       }
     },
     {
       "@type": "Question",
-      "name": "ChatGPT以外のAIツールにも対応していますか？",
+      "name": "AIを入れなくても相談できますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい。ChatGPT・Claude・Geminiなど、業務内容や社内の環境に合わせて適したツールを選びます。特定のツールの導入を前提にはせず、すでにお使いのツールを活かす方法も含めてご提案します。"
+        "text": "はい。AIを入れること自体は目的にしていません。Excelや手順の見直しで済む場合は、そうお伝えします。"
       }
     },
     {
       "@type": "Question",
-      "name": "どのような業種・業態でも対応できますか？",
+      "name": "個人事業主でも相談できますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "個人事業主・中小企業であれば、業種を問わず対応しております。まずはお気軽にご相談ください。"
+        "text": "はい。おひとりで事業をされている方のご相談もお受けしています。1つの作業だけのご依頼でも構いません。"
       }
     },
     {
       "@type": "Question",
-      "name": "オンラインでの対応は可能ですか？",
+      "name": "どんな業種でも相談できますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい、Zoom・Google Meet等のオンラインツールでの対応が可能です。全国どこからでもご相談いただけます。"
+        "text": "はい、業種は問いません。会社やお店の事務、工場の日報・手順書づくりなども、ご相談ください。物流・倉庫・運送の会社様には、専用のページがあります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "尼崎・西宮・大阪に来てもらえますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。尼崎を拠点に、西宮・伊丹・宝塚・芦屋・大阪など、京阪神へうかがいます。オンライン（Zoom・Google Meetなど）なら、全国からご相談いただけます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "生成AIセミナーの講師を頼めますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。商工会議所・業界団体・企業の勉強会で、60分のスライド講義をお引き受けします。業種は問いません。テーマは、入門・文章・発信・仕組み化・AIの使い分け・応用から選べます。日程・費用はご相談ください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ChatGPT以外のAIにも対応していますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。ChatGPT・Claude・Geminiなどから、仕事の中身と社内の環境に合わせて選びます。すでにお使いのツールを生かす方法もご提案します。"
       }
     },
     {
@@ -1454,7 +2555,23 @@
       "name": "単発の相談だけでも大丈夫ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "もちろんです。継続サポートだけでなく、スポットでのご相談にも柔軟に対応しています。まずは一度ご連絡ください。"
+        "text": "はい。続けてのご契約が前提ではありません。1回のご相談だけでも構いません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "無料相談で、その場で契約を迫られませんか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ、その場での契約を求めることはありません。持ち帰ってご検討いただけます。お断りいただいても構いません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "頼めば、必ず効率化できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "成果を保証するものではありません。仕事の中身や使い方によって、効果は変わります。そのため、1つの作業で小さく試し、確かめてから広げる進め方をおすすめしています。"
       }
     }
   ]
@@ -1463,19 +2580,21 @@
 </head>
 <body>
 
-    <div id="intro"><span class="intro-logo">FMP WORKs<small>西村康弘 ── 中小企業の生成AI業務改善支援</small></span></div>
     <div id="progress"></div>
+
+    <a href="#contact" class="floating-cta" id="floatingCta"><span>無料相談は<br>こちら</span></a>
 
     <!-- ── NAVIGATION ── -->
     <nav id="navbar">
         <div class="nav-wrap">
-            <div class="nav-logo">FMP WORKs<span>西村康弘 — 中小企業の生成AI業務改善支援</span></div>
+            <div class="nav-logo">FMPWORKs<span>西村康弘 — 尼崎の生成AI・Excel業務改善</span></div>
             <ul class="nav-links">
-                <li><a href="#problems">お悩み</a></li>
-                <li><a href="#services">サービス</a></li>
-                <li><a href="#strengths">強み</a></li>
-                <li><a href="#results">実績</a></li>
-                <li><a href="#about">プロフィール</a></li>
+                <li><a href="#selfcheck">お悩み</a></li>
+                <li><a href="#services">できること</a></li>
+                <li class="nav-hide-md"><a href="#firststep">はじめの1業務</a></li>
+                <li><a href="#seminar">セミナー</a></li>
+                <li class="nav-hide-md"><a href="#about">プロフィール</a></li>
+                <li><a href="#pricing">料金</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li class="nav-cta-li"><a href="#contact" class="nav-cta">無料相談はこちら</a></li>
             </ul>
@@ -1485,39 +2604,59 @@
     <!-- ── HERO ── -->
     <section id="hero">
         <div class="hero-bg"></div>
-        <canvas class="shader-bg" data-shader-speed="0.8" aria-hidden="true" style="mix-blend-mode:screen; opacity:.5;"></canvas>
-        <div id="hero-particles" class="bgfx" aria-hidden="true"></div>
-        <span class="kanji" style="right:-40px; top:60px;">智</span>
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="badge-dot"></span>
-                <span class="badge-text">中小企業・個人事業主向け</span> <span class="badge-text">生成AI業務改善支援</span> <span class="badge-text">— 無料相談受付中</span>
+                <span class="badge-text">尼崎・西宮・大阪の中小企業、個人事業主の方へ</span> <span class="badge-text">— 無料相談受付中</span>
             </div>
+            <p class="hero-lead fade-up">見積書も、議事録も、毎月の集計も。</p>
             <h1 class="hero-title">
-                <span class="l"><span>生成AIを</span></span>
-                <span class="l"><span>「導入しただけ」で</span></span>
-                <span class="l"><span class="gradient-text">終わらせない。</span></span>
+                <span class="l"><span>毎日の事務を、</span></span>
+                <span class="l"><span class="gradient-text">Excelと生成AIで</span></span>
+                <span class="l"><span class="gradient-text">軽くします。</span></span>
             </h1>
             <p class="hero-subcopy fade-up">
-                中小企業・個人事業主の業務に合わせて、<br>
-                生成AIを実際に使える仕組みに変えます。
+                1つの作業から、一緒に始めます。
             </p>
             <p class="hero-sub fade-up fade-up-delay-1">
-                営業、資料作成、議事録、マニュアル、データ整理、<span class="nowrap">SNS発信など、</span><br>
-                日々の業務を整理し、<br>
-                生成AIを活用した効率化を支援します。
-                <br><br>
-                AIやITに詳しくない方にも、<br>
-                専門用語をできるだけ使わず、<br>
-                現場で実践できる形でご提案します。
+                <span class="hero-sub-lead">尼崎を拠点に、直接うかがいます。</span><br>
+                AIありきではありません。Excelで十分な所はExcelで。
             </p>
             <div class="hero-cta-group fade-up fade-up-delay-2">
-                <a href="#contact" class="btn-primary">自社で活用できる業務を<br>無料で相談する</a>
-                <a href="#services" class="btn-outline">サービスを見る</a>
+                <a href="#contact" class="btn-primary">まず困りごとを1つ、<br>無料で相談する</a>
+                <a href="#firststep" class="btn-outline">はじめの1業務を見る</a>
             </div>
-            <p class="hero-sub-link fade-up fade-up-delay-3"><a href="/logistics-ai/">物流・倉庫・運送業の方はこちら →</a></p>
+            <div class="proof-card fade-up fade-up-delay-3">
+                <div class="proof-label">前の職場で、私がやったこと</div>
+                <div class="proof-row">
+                    <div class="proof-task">毎日の集計・チェック</div>
+                    <div class="proof-before">手作業で数分</div>
+                    <div class="proof-arrow">→</div>
+                    <div class="proof-after">Excelのマクロで数秒</div>
+                </div>
+                <div class="proof-row">
+                    <div class="proof-task">データの並べ替え・整理</div>
+                    <div class="proof-before">手で並べ替え</div>
+                    <div class="proof-arrow">→</div>
+                    <div class="proof-after">Power Queryで自動に</div>
+                </div>
+                <div class="proof-row">
+                    <div class="proof-task">新人さんへの教え方</div>
+                    <div class="proof-before">一度に全部教える</div>
+                    <div class="proof-arrow">→</div>
+                    <div class="proof-after">1工程ずつ＋マニュアルを直し続ける</div>
+                </div>
+                <div class="proof-person">
+                    <img src="assets/profile.jpg" alt="代表 西村康弘" width="56" height="56" loading="lazy" decoding="async">
+                    <div>
+                        <div class="proof-person-name">代表　西村 康弘</div>
+                        <div class="proof-person-career">上場企業グループで法人営業 約10年／物流・倉庫の現場 約8年</div>
+                    </div>
+                </div>
+                <p class="proof-note">※前の職場での私自身の経験です。御社で同じ結果になることをお約束するものではありません。</p>
+            </div>
+            <p class="hero-sub-link fade-up fade-up-delay-3"><a href="/logistics-ai/">物流・倉庫・運送の会社様はこちら →</a></p>
         </div>
-        <span class="fv-tate" aria-hidden="true">AIを、実務で使える形に。</span>
         <div class="hero-scroll-indicator">
             <span>SCROLL</span>
             <div class="scroll-line"><span></span></div>
@@ -1527,231 +2666,260 @@
     <!-- ── MARQUEE STRIP ── -->
     <div class="strip" aria-hidden="true">
         <div class="strip-track">
-            <span>生成AI業務改善 — <em>社内AI活用研修</em> — 物流・運送・倉庫の業務改善 — <em>無料相談受付中</em> — &nbsp;</span>
-            <span>生成AI業務改善 — <em>社内AI活用研修</em> — 物流・運送・倉庫の業務改善 — <em>無料相談受付中</em> — &nbsp;</span>
+            <span>毎日の事務を軽く — <em>Excelの自動化</em> — <em>生成AI研修・勉強会</em> — <em>マニュアルづくり</em> — <em>尼崎拠点・京阪神へ訪問</em> — &nbsp;</span>
+            <span>毎日の事務を軽く — <em>Excelの自動化</em> — <em>生成AI研修・勉強会</em> — <em>マニュアルづくり</em> — <em>尼崎拠点・京阪神へ訪問</em> — &nbsp;</span>
         </div>
     </div>
 
-    <!-- ── PROBLEMS ── -->
-    <section id="problems">
-        <span class="kanji" style="left:-40px; top:40px;">悩</span>
+    <!-- ── SELF CHECK ── -->
+    <section id="selfcheck">
         <div class="container">
             <div class="fade-up">
-                <div class="section-label">PROBLEMS</div>
-                <h2 class="section-title">こんな課題を<br>抱えていませんか？</h2>
+                <div class="section-label">SELF CHECK</div>
+                <h2 class="section-title">毎日の、こんな作業は<br>ありませんか？</h2>
                 <div class="divider"></div>
+                <p class="section-desc">当てはまるものを押してください。1つからで大丈夫です。</p>
             </div>
-            <div class="problems-grid problems-grid-6">
-                <div class="problem-card problem-card-photo fade-up fade-up-delay-1">
-                    <div class="problem-photo"><img src="assets/problem-1-chatgpt.jpg" alt="生成AIを導入したものの、業務で使いこなせていない" width="700" height="466" loading="lazy" decoding="async"></div>
-                    <div class="problem-card-body">
-                        <h3>生成AIを導入したものの、<br>業務で使いこなせていない</h3>
-                        <p>ChatGPTなどの生成AIを導入したものの、社員が文章作成や検索に使うだけで、日々の業務効率化までつながっていない。</p>
-                    </div>
-                </div>
-                <div class="problem-card problem-card-photo fade-up fade-up-delay-2">
-                    <div class="problem-photo"><img src="assets/problem-2-task-selection.jpg" alt="AIで効率化できそうだが、対象業務を決められない" width="700" height="393" loading="lazy" decoding="async"></div>
-                    <div class="problem-card-body">
-                        <h3>AIで効率化できそうだが、<br>対象業務を決められない</h3>
-                        <p>メール作成、議事録、報告書、マニュアル、データ整理などに時間がかかっているものの、どの業務からAI化すべきかわからない。</p>
-                    </div>
-                </div>
-                <div class="problem-card problem-card-photo fade-up fade-up-delay-3">
-                    <div class="problem-photo"><img src="assets/problem-3-tool-selection.jpg" alt="AIツールが多すぎて、自社に合うものを選べない" width="700" height="466" loading="lazy" decoding="async"></div>
-                    <div class="problem-card-body">
-                        <h3>AIツールが多すぎて、<br>自社に合うものを選べない</h3>
-                        <p>ChatGPT、Claude、Geminiなど、さまざまなサービスがあり、どれを導入すればよいのか、費用に見合う効果があるのか判断できない。</p>
-                    </div>
-                </div>
-                <div class="problem-card problem-card-photo fade-up fade-up-delay-4">
-                    <div class="problem-photo"><img src="assets/problem-6-team-adoption.jpg" alt="AIを導入しても、社員が使わなくなることが不安" width="466" height="700" loading="lazy" decoding="async"></div>
-                    <div class="problem-card-body">
-                        <h3>AIを導入しても、<br>社員が使わなくなることが不安</h3>
-                        <p>ツールを導入するだけではなく、自社の業務に合わせた使い方や、現場で継続して使える仕組みを整えたい。</p>
-                    </div>
-                </div>
-                <div class="problem-card problem-card-photo fade-up fade-up-delay-5">
-                    <div class="problem-photo"><img src="assets/problem-4-content-solo.jpg" alt="SNSやYouTubeの運用が属人化している" width="466" height="700" loading="lazy" decoding="async"></div>
-                    <div class="problem-card-body">
-                        <h3>SNSやYouTubeの運用が<br>属人化している</h3>
-                        <p>投稿企画、台本作成、画像制作、分析に時間がかかり、担当者一人に負担が集中している。AIを活用して制作時間を短縮したい。</p>
-                    </div>
-                </div>
-                <div class="problem-card problem-card-photo fade-up fade-up-delay-6">
-                    <div class="problem-photo"><img src="assets/problem-5-youtube-start.jpg" alt="YouTubeを始めたいが、何から準備すればよいかわからない" width="700" height="393" loading="lazy" decoding="async"></div>
-                    <div class="problem-card-body">
-                        <h3>YouTubeを始めたいが、<br>何から準備すればよいかわからない</h3>
-                        <p>チャンネル設計、企画、タイトル、台本、投稿後の分析など、必要な作業が多く、社内だけでは進められない。</p>
-                    </div>
-                </div>
+            <div class="selfcheck-layout">
+                <ul class="selfcheck-list fade-up">
+                    <li><label><input type="checkbox" class="sc-box" value="毎月、同じExcelの集計を手で作っている">毎月、同じExcelの集計を手で作っている</label></li>
+                    <li><label><input type="checkbox" class="sc-box" value="別のファイルから、数字や名前を手で写している">別のファイルから、数字や名前を手で写している</label></li>
+                    <li><label><input type="checkbox" class="sc-box" value="見積書・請求書・案内文を、毎回ゼロから作っている">見積書・請求書・案内文を、毎回ゼロから作っている</label></li>
+                    <li><label><input type="checkbox" class="sc-box" value="議事録・日報・報告書づくりに時間がかかる">議事録・日報・報告書づくりに時間がかかる</label></li>
+                    <li><label><input type="checkbox" class="sc-box" value="マニュアルがなく、仕事が人についている">マニュアルがなく、仕事が人についている</label></li>
+                    <li><label><input type="checkbox" class="sc-box" value="ChatGPTを入れたが、使っているのは一部の人だけ">ChatGPTを入れたが、使っているのは一部の人だけ</label></li>
+                    <li><label><input type="checkbox" class="sc-box" value="AIを使いたいが、情報が漏れないか心配">AIを使いたいが、情報が漏れないか心配</label></li>
+                    <li><label><input type="checkbox" class="sc-box" value="何から手をつければいいか分からない">何から手をつければいいか分からない</label></li>
+                </ul>
+                <div class="selfcheck-photo fade-up"><!-- 写真の差し替え枠：ac-top-office.jpg（写真ACで用意したら、この src を assets/ac-top-office.jpg に変える。探す言葉の例：事務 パソコン 書類 日本人） --><img src="assets/web-writing.jpg" alt="パソコンで事務作業をする男性（イメージ）" width="700" height="467" loading="lazy" decoding="async" style="object-position: 45% 50%;"></div>
+            </div>
+            <p class="selfcheck-count" id="scCount" aria-live="polite"></p>
+            <p class="selfcheck-for fade-up">業種は問いません。会社、お店、事務所の事務にも。工場の日報・手順書づくりも、ご相談ください。</p>
+            <div class="hero-cta-group fade-up" style="justify-content: center; margin-top: 2rem;">
+                <a href="#contact" class="btn-primary" id="scCta">当てはまったものを<br>無料で相談する</a>
             </div>
         </div>
     </section>
 
-    <!-- ── SERVICES ── -->
+    <!-- ── SPLIT（AIに向く仕事・向かない仕事） ── -->
+    <section id="split">
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">EXCEL / AI / 人</div>
+                <h2 class="section-title">AIに向く仕事、<br>向かない仕事</h2>
+                <div class="divider"></div>
+                <p class="section-desc">最初に、作業をこの3つに分けます。AIを使わない方がよい作業も、正直にお伝えします。</p>
+            </div>
+            <div class="split-grid">
+                <div class="split-card s-excel fade-up fade-up-delay-1">
+                    <div class="split-tag">EXCEL</div>
+                    <h3>Excelでやること</h3>
+                    <ul>
+                        <li>毎月の集計</li>
+                        <li>別のファイルからの転記</li>
+                        <li>並べ替え・チェック</li>
+                    </ul>
+                    <p class="split-point">毎回同じ手順の作業を、決まった通りに、間違えずに。</p>
+                </div>
+                <div class="split-card s-ai fade-up fade-up-delay-2">
+                    <div class="split-tag">生成AI</div>
+                    <h3>生成AIでやること</h3>
+                    <ul>
+                        <li>メール・案内文の下書き</li>
+                        <li>議事録・日報のまとめ</li>
+                        <li>マニュアルのたたき台</li>
+                    </ul>
+                    <p class="split-point">文章の下書きを速く。最後は人が確かめます。</p>
+                </div>
+                <div class="split-card s-human fade-up fade-up-delay-3">
+                    <div class="split-tag">人</div>
+                    <h3>人がやること</h3>
+                    <ul>
+                        <li>お客様への判断</li>
+                        <li>最後の確認</li>
+                        <li>決めること</li>
+                    </ul>
+                    <p class="split-point">ここは、人の仕事として残します。</p>
+                </div>
+            </div>
+            <p class="split-note fade-up">どれにも当たらず、手順の見直しだけで済むこともあります。</p>
+        </div>
+    </section>
+
+    <!-- ── SERVICES（3本柱） ── -->
     <section id="services">
-        <span class="kanji" style="right:-30px; bottom:20px;">策</span>
         <div class="container">
             <div class="fade-up">
                 <div class="section-label">SERVICES</div>
-                <h2 class="section-title">提供サービス</h2>
+                <h2 class="section-title">お手伝いできること</h2>
                 <div class="divider"></div>
-                <p class="section-desc">AIツールを導入するだけではなく、実際の業務で使い続けられる仕組みづくりまで支援します。</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card service-card-photo fade-up fade-up-delay-1">
-                    <div class="service-photo"><img src="assets/ai-efficiency.jpg" alt="生成AI業務改善コンサルティング" width="700" height="467" loading="lazy" decoding="async"></div>
-                    <div class="service-card-body">
-                        <div class="service-num">SERVICE 01</div>
-                        <h3>生成AI業務改善コンサルティング</h3>
-                        <p>現在の業務内容をヒアリングし、生成AIで効率化できる業務を整理します。メール、議事録、報告書、マニュアル、営業資料、データ整理など、日常業務に合わせた具体的な活用方法をご提案します。</p>
-                        <ul class="service-features">
-                            <li>業務内容と課題のヒアリング</li>
-                            <li>AIで効率化できる業務の洗い出し</li>
-                            <li>ChatGPT、Claude、Geminiなどのツール選定</li>
-                            <li>自社業務に合わせたプロンプト作成</li>
-                            <li>導入後の運用方法の整理</li>
-                        </ul>
+            <div class="pillar-grid">
+                <div class="pillar fade-up fade-up-delay-1">
+                    <div class="pillar-photo"><!-- 写真の差し替え枠：ac-top-excel.jpg（探す言葉の例：Excel パソコン 作業 手元） --><img src="assets/writing-laptop.jpg" alt="パソコンで集計表を作る手元" width="700" height="467" loading="lazy" decoding="async"></div>
+                    <div class="pillar-body">
+                        <div class="pillar-num">01</div>
+                        <h3>毎日の事務を軽く</h3>
+                        <p>集計・転記はExcelのマクロで自動に。メール・議事録は生成AIで下書き。</p>
                     </div>
                 </div>
-                <div class="service-card service-card-photo fade-up fade-up-delay-2">
-                    <div class="service-photo"><img src="assets/ai-consulting.jpg" alt="社内向け生成AI活用支援・研修" width="700" height="467" loading="lazy" decoding="async"></div>
-                    <div class="service-card-body">
-                        <div class="service-num">SERVICE 02</div>
-                        <h3>社内向け生成AI活用支援・研修</h3>
-                        <p>生成AIを初めて使う社員の方にもわかりやすく、実際の業務を題材にした活用支援を行います。一般的なAI研修ではなく、自社の仕事内容に合わせた実践型の内容にカスタマイズします。</p>
-                        <ul class="service-features">
-                            <li>生成AIの基本操作</li>
-                            <li>安全に使用するための注意点</li>
-                            <li>部署別の活用事例</li>
-                            <li>実践ワークを交えたハンズオン研修</li>
-                            <li>社内マニュアル、活用ルールの作成</li>
-                        </ul>
+                <div class="pillar fade-up fade-up-delay-2">
+                    <div class="pillar-photo"><!-- 写真の差し替え枠：ac-top-training.jpg（探す言葉の例：研修 会議室 日本人 説明） --><img src="assets/ai-consulting.jpg" alt="会議室での社内勉強会の様子（イメージ）" width="700" height="467" loading="lazy" decoding="async" style="object-position: 50% 30%;"></div>
+                    <div class="pillar-body">
+                        <div class="pillar-num">02</div>
+                        <h3>生成AI研修・社内勉強会</h3>
+                        <p>御社の実際の仕事を題材に。入れてよい情報のルールも一緒に。</p>
                     </div>
                 </div>
-                <div class="service-card service-card-photo fade-up fade-up-delay-3">
-                    <div class="service-photo"><img src="logistics-ai/assets/strength-1-warehouse-experience.jpg" alt="物流・運送・倉庫向け 業務改善支援" width="400" height="252" loading="lazy" decoding="async"></div>
-                    <div class="service-card-body">
-                        <div class="service-num">SERVICE 03</div>
-                        <h3>物流・運送・倉庫向け 業務改善支援</h3>
-                        <p>物流センターでの現場マネジメント経験を活かし、紙・FAX・Excel・属人化などの業務課題を整理して、AI・SaaS・既存システムの中から現場に合った改善方法をご提案する業界特化型の支援です。AI導入ありき、システム開発ありきではありません。</p>
-                        <a href="/logistics-ai/" class="service-link">物流特化ページを見る →</a>
-                    </div>
-                </div>
-                <div class="service-card service-card-photo fade-up fade-up-delay-4">
-                    <div class="service-photo"><img src="assets/sns-support.jpg" alt="YouTube・SNSコンテンツ制作効率化支援" width="700" height="466" loading="lazy" decoding="async"></div>
-                    <div class="service-card-body">
-                        <div class="service-num">SERVICE 04</div>
-                        <h3>YouTube・SNSコンテンツ制作効率化支援</h3>
-                        <p>YouTubeやSNSの企画、台本作成、投稿文、画像制作、分析業務に生成AIを取り入れ、コンテンツ制作の負担を軽減します。自身のYouTube・Facebook運用経験をもとに、実際の運用現場で使える方法をご提案します。</p>
-                        <ul class="service-features">
-                            <li>YouTubeチャンネル、SNSの企画設計</li>
-                            <li>動画タイトル、構成、台本作成</li>
-                            <li>投稿文、画像制作の効率化</li>
-                            <li>競合リサーチの仕組みづくり</li>
-                            <li>投稿後の数値分析と改善提案</li>
-                            <li>AIを使った制作フローの構築</li>
-                        </ul>
+                <div class="pillar fade-up fade-up-delay-3">
+                    <div class="pillar-photo"><!-- 写真の差し替え枠：ac-top-manual.jpg（探す言葉の例：マニュアル 書類 手順書） --><img src="assets/problem-2-task-selection.jpg" alt="机の上の書類とノートパソコン" width="700" height="393" loading="lazy" decoding="async"></div>
+                    <div class="pillar-body">
+                        <div class="pillar-num">03</div>
+                        <h3>マニュアル・手順書づくり</h3>
+                        <p>人についた仕事を、誰でも読める手順書に。</p>
                     </div>
                 </div>
             </div>
+            <p class="pillar-more fade-up">そのほか：YouTube・SNSの発信の相談／システムの提案を受けた時の相談（セカンドオピニオン）</p>
+        </div>
+    </section>
+
+    <!-- ── FIRST STEP（はじめの1業務＋手元に残る物の見本） ── -->
+    <section id="firststep">
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">FIRST STEP</div>
+                <h2 class="section-title">はじめの1業務</h2>
+                <div class="divider"></div>
+                <p class="section-desc">まず1つの作業だけ。手元に残る物は、たとえばこんな形です。</p>
+            </div>
+            <div class="sample-grid">
+                <div class="sample fade-up fade-up-delay-1">
+                    <div class="sample-fig">
+                        <div class="xl">
+                            <div class="xl-col">
+                                <div class="xl-cap">前：手で集計</div>
+                                <table class="xl-t"><tr><th>日付</th><th>担当</th><th>金額</th></tr>
+                                <tr><td>11/1</td><td>山田</td><td>12,000</td></tr>
+                                <tr><td>11/1</td><td>佐藤</td><td>8,500</td></tr>
+                                <tr><td>11/2</td><td>山田</td><td>4,000</td></tr>
+                                <tr><td>11/2</td><td>鈴木</td><td>15,000</td></tr>
+                                <tr><td>11/3</td><td>佐藤</td><td>6,500</td></tr></table>
+                            </div>
+                            <div class="xl-arrow">→</div>
+                            <div class="xl-col">
+                                <div class="xl-cap">後：ボタン1つで集計</div>
+                                <table class="xl-t"><tr><th>担当</th><th>合計</th></tr>
+                                <tr class="g-a"><td>山田</td><td>16,000</td></tr>
+                                <tr class="g-b"><td>佐藤</td><td>15,000</td></tr>
+                                <tr class="g-c"><td>鈴木</td><td>15,000</td></tr></table>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Excel作業を1つ自動に</h3>
+                    <p class="sample-get">残る物：Excel＋使い方・直し方の説明書。納品後1か月は、不具合を無料で直します</p>
+                    <p class="sample-price">3万円〜</p>
+                </div>
+                <div class="sample fade-up fade-up-delay-2">
+                    <div class="sample-fig">
+                            <div class="slide-mock">
+                                <div class="sm-title">1. はじめての生成AI</div>
+                                <ul class="sm-list">
+                                    <li>入れてよい情報・いけない情報</li>
+                                    <li>メールの下書きを作ってみる</li>
+                                    <li>議事録をまとめてみる</li>
+                                </ul>
+                                <div class="sm-foot">社内勉強会（60分）</div>
+                            </div>
+                    </div>
+                    <h3>社内のAI勉強会を1回</h3>
+                    <p class="sample-get">残る物：当日の資料（社内で見返せます）</p>
+                    <p class="sample-price">3万円〜</p>
+                </div>
+                <div class="sample fade-up fade-up-delay-3">
+                    <div class="sample-fig">
+                        <div class="paper">
+                            <div class="paper-title">見積書の作り方</div>
+                            <ol class="paper-steps">
+                                <li><span class="box"></span>ひな形を開く</li>
+                                <li><span class="box"></span>品名と数量を入れる</li>
+                                <li><span class="box"></span><b>金額を2人で確認</b></li>
+                                <li><span class="box"></span>PDFにして送る</li>
+                            </ol>
+                            <div class="paper-photo">画面の写真</div>
+                        </div>
+                    </div>
+                    <h3>手順書を1業務分</h3>
+                    <p class="sample-get">残る物：手順書＋チェックリスト</p>
+                    <p class="sample-price">3万円〜</p>
+                </div>
+            </div>
+            <p class="sample-note fade-up">図はイメージです（架空のデータ）。ほかに「作業の様子を1時間見て、気づきメモを渡す（1万円〜）」もあります。金額は税別の目安で、作業の量を伺ってからお見積りします。</p>
         </div>
     </section>
 
     <!-- ── CTA BAND ── -->
     <div class="cta-band fade-up">
-        <p>どのサービスが合うか分からない場合も、<br>まずは無料相談でご相談ください。</p>
-        <a href="#contact" class="btn-primary">自社で活用できる業務を<br>無料で相談する</a>
+        <p>どこから手をつければよいか分からなくても大丈夫です。<br>一番困っていることを、1つだけ聞かせてください。</p>
+        <a href="#contact" class="btn-primary">まず困りごとを1つ、<br>無料で相談する</a>
     </div>
 
-    <!-- ── STRENGTHS ── -->
+    <!-- ── SEMINAR（支援機関・業界団体・企業向け） ── -->
+    <section id="seminar">
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">SEMINAR</div>
+                <h2 class="section-title">生成AIセミナー・<br>研修講師のご依頼</h2>
+                <div class="divider"></div>
+                <p class="section-desc">商工会議所・業界団体・企業の勉強会へ。生成AIのはじめの一歩を、60分のスライド講義でお話しします。</p>
+                <ul class="seminar-facts">
+                    <li>60分のスライド講義</li>
+                    <li>業種を問わない内容</li>
+                    <li>単発でも、シリーズでも</li>
+                </ul>
+            </div>
+            <div class="seminar-layout">
+                <div class="seminar-photo fade-up"><!-- 写真の差し替え枠：ac-top-seminar.jpg（探す言葉の例：セミナー 講師 スライド 日本人） --><img src="assets/ai-efficiency.jpg" alt="スライドを使って説明する講師（イメージ）" width="700" height="467" loading="lazy" decoding="async"></div>
+                <ul class="seminar-grid fade-up fade-up-delay-1">
+                    <li><span class="sem-lv">入門</span><b>いつもの仕事を、生成AIで時短する</b><p>メール・資料・段取りの基本</p></li>
+                    <li><span class="sem-lv">文章</span><b>メール・提案文をAIで速く、ていねいに</b><p>下書き・言い換え・敬語の確認</p></li>
+                    <li><span class="sem-lv">発信</span><b>SNS・ブログ・動画の発信をAIで続ける</b><p>講師自身の発信の実践から</p></li>
+                    <li><span class="sem-lv">仕組み化</span><b>Excel×AIで、くり返し作業を減らす</b><p>集計・転記・チェックの手間を減らす</p></li>
+                    <li><span class="sem-lv">最新AI</span><b>AIツールの選び方と使い分け</b><p>ChatGPT・Claude・Gemini など</p></li>
+                    <li><span class="sem-lv">応用</span><b>AIに作業を任せる入門</b><p>指示を出して、作業を進めてもらう</p></li>
+                </ul>
+            </div>
+            <div class="seminar-foot fade-up">
+                <a href="#contact" class="btn-outline" data-prefill="【セミナー・研修のご依頼】">セミナーについて相談する</a>
+                <p>日程・費用はご相談ください。オンラインでも、会場へうかがうこともできます。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── STRENGTHS（強み＋約束） ── -->
     <section id="strengths">
-        <span class="kanji" style="right:6%; top:30px;">力</span>
         <div class="container">
             <div class="fade-up">
-                <div class="section-label">WHY CHOOSE ME</div>
-                <h2 class="section-title">選ばれる理由</h2>
+                <div class="section-label">WHY ME</div>
+                <h2 class="section-title">私の強み</h2>
                 <div class="divider"></div>
             </div>
-            <div class="strengths-grid">
-                <div class="strength-item fade-up fade-up-delay-1">
-                    <div class="strength-icon strength-icon-photo"><img src="assets/enterprise-experience.jpg" alt="上場企業でのビジネス実務経験" width="160" height="124" loading="lazy" decoding="async"></div>
-                    <div>
-                        <h3>上場企業でのビジネス実務経験</h3>
-                        <p>営業・企画・物流と複数部門にわたる実務経験から、現場感覚に基づいた具体的なアドバイスが可能です。</p>
-                    </div>
-                </div>
-                <div class="strength-item fade-up fade-up-delay-2">
-                    <div class="strength-icon strength-icon-photo"><img src="assets/small-business.jpg" alt="個人・中小企業に特化した提案" width="160" height="106" loading="lazy" decoding="async"></div>
-                    <div>
-                        <h3>個人・中小企業に特化した提案</h3>
-                        <p>大企業向けの理論ではなく、リソースが限られた規模に合った、現実的で実行可能な戦略を提案します。</p>
-                    </div>
-                </div>
-                <div class="strength-item fade-up fade-up-delay-3">
-                    <div class="strength-icon strength-icon-photo"><img src="assets/personal-support.jpg" alt="一人ひとりに寄り添う対応" width="160" height="91" loading="lazy" decoding="async"></div>
-                    <div>
-                        <h3>一人ひとりに寄り添う対応</h3>
-                        <p>テンプレートではなく、お客様の状況・目標に合わせてカスタマイズしたサポートを一貫して提供します。</p>
-                    </div>
-                </div>
-                <div class="strength-item fade-up fade-up-delay-4">
-                    <div class="strength-icon strength-icon-photo"><img src="assets/ai-business-fusion.jpg" alt="AIとビジネス視点の融合" width="160" height="91" loading="lazy" decoding="async"></div>
-                    <div>
-                        <h3>AIとビジネス視点の融合</h3>
-                        <p>Claude Code・Codex・Geminiなどの最新AIツールを実際の業務で使い分けている知見と、ビジネス現場の経験を掛け合わせ、現場で使い続けられる形に落とし込みます。</p>
-                    </div>
-                </div>
+            <div class="why-grid">
+                <div class="why fade-up fade-up-delay-1"><h3>事務の自動化を、自分の手でやってきた</h3><p>前の職場で、毎日の事務をExcelのマクロとPower Queryで自動にしました。</p></div>
+                <div class="why fade-up fade-up-delay-2"><h3>専門用語を使わずに教えられる</h3><p>新人さんには1工程ずつ。法人営業 約10年、相手に合わせて説明してきました。</p></div>
+                <div class="why fade-up fade-up-delay-3"><h3>小さく始めて、確かめる</h3><p>1つの作業から一緒に変えます。合わなければ、そこで止められます。</p></div>
             </div>
+            <ul class="promise fade-up">
+                <li>最初に、一番の困りごとを聞きます</li>
+                <li>AIありきで提案しません</li>
+                <li>その場で契約を求めません</li>
+                <li>できないことも先に伝えます</li>
+            </ul>
         </div>
     </section>
-
-    <!-- ── RESULTS / TRACK RECORD ── -->
-    <section id="results">
-        <span class="kanji" style="right:-30px; top:50px;">実</span>
-        <div class="container">
-            <div class="fade-up">
-                <div class="section-label">TRACK RECORD</div>
-                <h2 class="section-title">実績・信頼性</h2>
-                <div class="divider"></div>
-                <p class="section-desc">会社員としての約20年の実務経験と、生成AIを実務で使い込んできた実践知をもとにご支援します。</p>
-            </div>
-            <div class="results-block fade-up">
-                <div class="results-label">生成AI活用の実務経験</div>
-                <ul class="career-list">
-                    <li>Claude Code・Codex・Gemini・ChatGPTなどを、用途に応じて使い分けて実務で活用</li>
-                    <li>AIを活用した資料作成・情報整理・分析・業務フロー構築の実務経験</li>
-                    <li>会社員としての実務経験 約20年（物流・倉庫現場 約8年、法人営業 約10年）</li>
-                </ul>
-            </div>
-            <div class="results-block fade-up fade-up-delay-1">
-                <div class="results-label">YouTube・SNS運用実績</div>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">2万人<span>超</span></div>
-                        <div class="stat-label">YouTube登録者数</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">5万人<span>以上</span></div>
-                        <div class="stat-label">SNS総フォロワー数</div>
-                    </div>
-                </div>
-                <ul class="career-list">
-                    <li>YouTube・Facebookでのコンテンツ収益化実績</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── CTA BAND ── -->
-    <div class="cta-band fade-up">
-        <p>上場企業での実務経験とAIの実践知をもとに、<br>現実的な形でご提案します。</p>
-        <a href="#contact" class="btn-primary">自社で活用できる業務を<br>無料で相談する</a>
-    </div>
 
     <!-- ── PROFILE ── -->
     <section id="about">
-        <span class="kanji" style="left:-50px; top:80px;">歴</span>
         <div class="container">
             <div class="fade-up">
                 <div class="section-label">PROFILE</div>
@@ -1759,29 +2927,19 @@
                 <div class="divider"></div>
             </div>
             <div class="profile-layout">
-                <div class="profile-mark fade-up"><img src="assets/profile.jpg" alt="西村康弘" width="675" height="900" loading="lazy" decoding="async"></div>
+                <div class="profile-mark fade-up"><img src="assets/profile.jpg" alt="FMPWORKs 代表 西村康弘のプロフィール写真" width="675" height="900" loading="lazy" decoding="async"></div>
                 <div class="fade-up fade-up-delay-1">
-                    <div class="profile-brand">FMP WORKs</div>
+                    <div class="profile-brand">FMPWORKs</div>
+                    <div class="profile-role"><span class="nowrap">生成AIコンサルタント</span>／<span class="nowrap">業務効率化アドバイザー</span></div>
                     <div class="profile-name">西村 康弘</div>
                     <div class="profile-name-en">NISHIMURA YASUHIRO</div>
-                    <div class="profile-tags">
-                        <span class="tag">生成AIコンサルタント</span>
-                        <span class="tag">業務効率化アドバイザー</span>
-                        <span class="tag">物流DX・業務改善アドバイザー</span>
-                        <span class="tag">YouTube・SNS運用アドバイザー</span>
+                    <div class="stats-grid profile-stats">
+                        <div class="stat-card"><div class="stat-number"><span class="stat-pre">約</span>10<span>年</span></div><div class="stat-label"><span>法人営業</span></div></div>
+                        <div class="stat-card"><div class="stat-number"><span class="stat-pre">約</span>8<span>年</span></div><div class="stat-label"><span>物流・倉庫</span><span>現場経験</span></div></div>
+                        <div class="stat-card"><div class="stat-number">2万<span>人超</span></div><div class="stat-label"><span>YouTube</span><span>登録者</span></div></div>
                     </div>
-                    <p class="profile-bio">
-                        上場企業にて営業・企画・物流部門を幅広く経験。現場でのビジネス実務を通じて培った戦略思考と問題解決力を武器に、現在は中小企業・個人事業主向けの生成AI業務改善支援を中心に、物流・運送・倉庫向けの業務改善支援や、YouTube・SNS運用支援も行っています。
-                    </p>
-                    <p class="profile-bio">
-                        「難しいことをわかりやすく、現実的な形で」をモットーに、お客様のビジネス成長に伴走します。
-                    </p>
-                    <ul class="career-list">
-                        <li>上場企業 営業部門にて新規開拓・顧客管理を担当</li>
-                        <li>企画部門にて事業戦略・マーケティング施策の立案に携わる</li>
-                        <li>物流部門にて業務フロー改善・効率化プロジェクトを推進</li>
-                        <li>現在：生成AI業務改善支援を中心に、個人・中小企業のビジネス支援に従事</li>
-                    </ul>
+                    <p class="profile-bio">東証プライム上場企業グループで、営業・企画・物流を経験しました。物流センターでは派遣・パートさん約20名をまとめ、事務の自動化とマニュアルづくり、新人教育を担当しました。</p>
+                    <p class="profile-bio">今は、自分の仕事でも毎日、生成AIを使っています。YouTubeでの発信も続けています。困った時に、ふと顔が浮かぶ相手でいたいと思っています。自分で解決できないことは、信頼できる専門の方におつなぎします。</p>
                     <div class="qualifications">
                         <div class="qualifications-label">保有資格</div>
                         <div class="profile-tags">
@@ -1796,9 +2954,77 @@
         </div>
     </section>
 
+    <!-- ── PRICING（表1つに） ── -->
+    <section id="pricing">
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">PRICE</div>
+                <h2 class="section-title">料金の目安</h2>
+                <div class="divider"></div>
+                <p class="section-desc">税別の目安です。内容を伺ってからお見積りし、ご納得いただいてから始めます。</p>
+            </div>
+            <div class="ptable-wrap fade-up">
+                <table class="ptable">
+                    <tr class="pt-free"><th>初回相談（60分・オンライン）</th><td>無料</td></tr>
+                    <tr class="pt-first"><th>はじめの1業務<small>Excel自動化／AI勉強会／手順書は3万円〜、作業を見るは1万円〜</small></th><td>1万円〜</td></tr>
+                    <tr><th>生成AI研修（社内向け）<small>御社の仕事を題材に。使い方のルールづくりも</small></th><td>8万円〜</td></tr>
+                    <tr><th>生成AIセミナーの講師<small>60分のスライド講義</small></th><td>ご相談</td></tr>
+                    <tr><th>業務改善の診断（簡易）<small>聞き取り＋簡易レポート</small></th><td>5万円〜</td></tr>
+                    <tr><th>業務改善の提案<small>優先順位と進め方の提案書</small></th><td>10万円〜</td></tr>
+                    <tr><th>月額の伴走<small>根づくまで。途中でやめられます</small></th><td>月15万円〜</td></tr>
+                </table>
+            </div>
+            <ul class="price-mini-notes fade-up">
+                <li>交通費等の実費は、事前にお伝えします。ツールの利用料は各社とのご契約です。</li>
+                <li>Excelの自動化は、納品後1か月、作った物の不具合を無料で直します（変更・追加は別途お見積り）。</li>
+                <li>見積りの段階でやめても、費用はかかりません。</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ── FLOW ── -->
+    <section id="flow">
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">FLOW</div>
+                <h2 class="section-title">進め方</h2>
+                <div class="divider"></div>
+            </div>
+            <ol class="steps fade-up">
+                <li><b>お問い合わせ</b><span>困りごとを、まとまっていなくても</span></li>
+                <li><b>無料相談（60分）</b><span>AIが不要なら、そうお伝えします</span></li>
+                <li><b>1つの作業で試す</b><span>はじめの1業務から</span></li>
+                <li><b>確かめて、広げる</b><span>手順とルールを残します</span></li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- ── LOGISTICS（物流ページへの案内） ── -->
+    <section id="logistics">
+        <div class="container">
+            <div class="fade-up">
+                <div class="section-label">FOR LOGISTICS</div>
+                <h2 class="section-title">物流・倉庫・運送の<br>会社様へ</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="logi-banner fade-up">
+                <img src="logistics-ai/assets/ac-warehouse.jpg" alt="倉庫の通路と棚" width="1000" height="750" loading="lazy" decoding="async">
+                <div class="logi-body">
+                    <h3>物流向けの専用ページ</h3>
+                    <p>物流センターで約8年。その経験をもとにした、現場向けのご案内です。</p>
+                    <ul class="logi-list">
+                        <li>出荷事務のExcel自動化</li>
+                        <li>新人教育・マニュアル</li>
+                        <li>置き場・動線の見直し</li>
+                    </ul>
+                    <a href="/logistics-ai/" class="btn-primary">物流向けページへ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ── FAQ ── -->
     <section id="faq">
-        <span class="kanji" style="right:-30px; top:40px;">問</span>
         <div class="container">
             <div class="fade-up">
                 <div class="section-label">FAQ</div>
@@ -1808,45 +3034,94 @@
             <div class="faq-wrap fade-up">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>料金はどのくらいかかりますか？</span>
+                        <span>生成AI研修の費用はどのくらいですか？</span>
                         <div class="faq-toggle">+</div>
                     </div>
-                    <div class="faq-answer">ご相談内容や規模によって異なります。まずは無料でご相談をお受けしていますので、お気軽にお問い合わせください。ヒアリング後に詳細なお見積りをご提示します。</div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>社内の勉強会1回は3万円〜、研修は8万円〜が目安です（税別）。人数・時間・内容を伺って、お見積りします。</p></div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>ChatGPTを会社で使うと、情報が漏れませんか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>入れてよい情報・入れてはいけない情報を決めるところから、一緒に始めます。</p><p>お使いのプランで、入力した内容がAIの学習に使われない設定になっているかも確かめます。</p></div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Excelのマクロ作成だけでも頼めますか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>はい。1本3万円〜（税別）が目安です。使い方・直し方の説明書を付けます。</p><p>納品後1か月は、作った物の不具合を無料で直します。作業の中身の変更や機能の追加は、別にお見積りします。</p></div></div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
                         <span>AIについて知識がなくても大丈夫ですか？</span>
                         <div class="faq-toggle">+</div>
                     </div>
-                    <div class="faq-answer">はい、まったく問題ありません。AIやIT知識がゼロの方でも丁寧にご説明しながらサポートします。難しい専門用語は使わず、わかりやすい言葉で進めます。</div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>はい。専門用語はできるだけ使わず、御社の実際の仕事を題材にご説明します。</p></div></div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>ChatGPT以外のAIツールにも対応していますか？</span>
+                        <span>AIを入れなくても相談できますか？</span>
                         <div class="faq-toggle">+</div>
                     </div>
-                    <div class="faq-answer">はい。ChatGPT・Claude・Geminiなど、業務内容や社内の環境に合わせて適したツールを選びます。特定のツールの導入を前提にはせず、すでにお使いのツールを活かす方法も含めてご提案します。</div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>はい。AIを入れること自体は目的にしていません。Excelや手順の見直しで済む場合は、そうお伝えします。</p></div></div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>どのような業種・業態でも対応できますか？</span>
+                        <span>個人事業主でも相談できますか？</span>
                         <div class="faq-toggle">+</div>
                     </div>
-                    <div class="faq-answer">個人事業主・中小企業であれば、業種を問わず対応しております。まずはお気軽にご相談ください。</div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>はい。おひとりで事業をされている方のご相談もお受けしています。1つの作業だけのご依頼でも構いません。</p></div></div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>オンラインでの対応は可能ですか？</span>
+                        <span>どんな業種でも相談できますか？</span>
                         <div class="faq-toggle">+</div>
                     </div>
-                    <div class="faq-answer">はい、Zoom・Google Meet等のオンラインツールでの対応が可能です。全国どこからでもご相談いただけます。</div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>はい、業種は問いません。会社やお店の事務、工場の日報・手順書づくりなども、ご相談ください。</p><p>物流・倉庫・運送の会社様には、<a href="/logistics-ai/">専用のページ</a>があります。</p></div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>尼崎・西宮・大阪に来てもらえますか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>はい。尼崎を拠点に、西宮・伊丹・宝塚・芦屋・大阪など、京阪神へうかがいます。</p><p>オンライン（Zoom・Google Meetなど）なら、全国からご相談いただけます。</p></div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>生成AIセミナーの講師を頼めますか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>はい。商工会議所・業界団体・企業の勉強会で、60分のスライド講義をお引き受けします。業種は問いません。</p><p>テーマは、入門・文章・発信・仕組み化・AIの使い分け・応用から選べます。日程・費用はご相談ください。</p></div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>ChatGPT以外のAIにも対応していますか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>はい。ChatGPT・Claude・Geminiなどから、仕事の中身と社内の環境に合わせて選びます。すでにお使いのツールを生かす方法もご提案します。</p></div></div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
                         <span>単発の相談だけでも大丈夫ですか？</span>
                         <div class="faq-toggle">+</div>
                     </div>
-                    <div class="faq-answer">もちろんです。継続サポートだけでなく、スポットでのご相談にも柔軟に対応しています。まずは一度ご連絡ください。</div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>はい。続けてのご契約が前提ではありません。1回のご相談だけでも構いません。</p></div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>無料相談で、その場で契約を迫られませんか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>いいえ、その場での契約を求めることはありません。持ち帰ってご検討いただけます。お断りいただいても構いません。</p></div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>頼めば、必ず効率化できますか？</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>成果を保証するものではありません。仕事の中身や使い方によって、効果は変わります。</p><p>そのため、1つの作業で小さく試し、確かめてから広げる進め方をおすすめしています。</p></div></div>
                 </div>
             </div>
         </div>
@@ -1854,443 +3129,153 @@
 
     <!-- ── CONTACT ── -->
     <section id="contact">
-        <canvas class="shader-bg" data-shader-speed="0.75" aria-hidden="true" style="opacity:.35;"></canvas>
-        <div id="contact-particles" class="bgfx" aria-hidden="true"></div>
-        <span class="kanji" style="left:-30px; bottom:30px;">縁</span>
         <div class="container">
             <div class="contact-inner">
                 <div class="fade-up">
                     <div class="section-label">CONTACT</div>
-                    <h2 class="section-title">お問い合わせ</h2>
+                    <h2 class="section-title">無料相談のお申し込み</h2>
                     <div class="divider" style="margin-left: auto; margin-right: auto;"></div>
-                    <p class="section-desc" style="margin: 0 auto; text-align: center; max-width: 520px;">
-                        無料相談では、現在の業務やお困りごとを伺い、生成AIを活用できそうな業務を一緒に整理します。<br><br>
-                        無理な営業や、その場での契約を<br>求めることはありません。
+                    <p class="section-desc" style="margin: 0 auto; text-align: center; max-width: 560px;">
+                        まず、今の仕事と困りごとを伺います。<br>
+                        AIありきの提案や、その場での契約は求めません。<br>
+                        「何を相談すればよいか分からない」でも構いません。
                     </p>
                 </div>
-                <div class="contact-form-wrap fade-up">
-                    <form id="contactForm" class="cform" novalidate>
-                        <div class="cform-row">
-                            <label class="cform-label" for="cf-company">会社名・屋号<span class="req">必須</span></label>
-                            <input type="text" id="cf-company" name="company" autocomplete="organization" placeholder="株式会社○○／○○事務所">
-                            <p class="cform-error" id="err-company"></p>
-                        </div>
+            </div>
 
-                        <div class="cform-row">
-                            <label class="cform-label" for="cf-name">お名前<span class="req">必須</span></label>
-                            <input type="text" id="cf-name" name="name" autocomplete="name" placeholder="山田 太郎">
-                            <p class="cform-error" id="err-name"></p>
-                        </div>
-
-                        <div class="cform-row">
-                            <label class="cform-label" for="cf-email">メールアドレス<span class="req">必須</span></label>
-                            <input type="email" id="cf-email" name="email" autocomplete="email" placeholder="info@example.co.jp">
-                            <p class="cform-error" id="err-email"></p>
-                        </div>
-
-                        <div class="cform-row">
-                            <label class="cform-label" for="cf-tel">電話番号<span class="opt">任意</span></label>
-                            <input type="tel" id="cf-tel" name="tel" autocomplete="tel" placeholder="03-1234-5678">
-                            <p class="cform-hint">お電話でのご連絡をご希望の場合のみご記入ください。</p>
-                        </div>
-
-                        <div class="cform-row">
-                            <label class="cform-label" for="cf-message">ご相談内容<span class="opt">任意</span></label>
-                            <textarea id="cf-message" name="message" placeholder="例）営業資料や議事録の作成に時間がかかっています。どの業務からAIを使えばよいか相談したいです。"></textarea>
-                            <p class="cform-hint">まとまっていない状態でも構いません。現状をそのままお書きください。</p>
-                        </div>
-
-                        <div class="consent-box">
-                            <div class="consent-title">個人情報の取り扱いについて</div>
-                            <p>
-                                ご記入いただいた個人情報は、お問い合わせへのご返信、ご相談内容の確認、および必要なご連絡のためにのみ利用します。
-                                ご本人の同意なく第三者へ提供することはありません。営業目的の一斉配信は行いません。
-                                削除をご希望の場合は、ご連絡いただければ速やかに対応します。
-                            </p>
-                            <label class="consent-check">
-                                <input type="checkbox" id="cf-consent" name="consent">
-                                <span>個人情報の取り扱いに同意する<span class="req">必須</span></span>
-                            </label>
-                            <p class="cform-error" id="err-consent"></p>
-                        </div>
-
-                        <div class="cf-hp" aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;">
-                            <label for="cf-website">Website</label>
-                            <input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off">
-                        </div>
-
-                        <div class="cform-submit-wrap">
-                            <button type="submit" class="btn-primary cform-submit" id="cfSubmit">無料相談を申し込む</button>
-                            <p class="cform-submit-note">この時点で費用は一切発生しません。</p>
-                            <p class="cform-error" id="err-global" style="margin-top: 1rem;"></p>
-                        </div>
-                    </form>
-
-                    <div class="cform-done" id="cformDone" role="status" aria-live="polite">
-                        <div class="cform-done-icon">✓</div>
-                        <h3>お問い合わせありがとうございます。<br>内容を確認のうえご連絡いたします。</h3>
-                        <p>
-                            通常2営業日以内に、ご記入いただいたメールアドレス宛にご返信します。<br>
-                            しばらく経っても返信が届かない場合は、<br>
-                            お手数ですが迷惑メールフォルダをご確認ください。
-                        </p>
+            <div class="contact-form-wrap fade-up">
+                <form id="contactForm" class="cform" novalidate>
+                    <div class="cform-row">
+                        <label class="cform-label" for="cf-company">会社名・屋号<span class="req">必須</span></label>
+                        <input type="text" id="cf-company" name="company" autocomplete="organization" placeholder="株式会社○○／○○事務所">
+                        <p class="cform-error" id="err-company"></p>
                     </div>
+
+                    <div class="cform-row">
+                        <label class="cform-label" for="cf-name">お名前<span class="req">必須</span></label>
+                        <input type="text" id="cf-name" name="name" autocomplete="name" placeholder="山田 太郎">
+                        <p class="cform-error" id="err-name"></p>
+                    </div>
+
+                    <div class="cform-row">
+                        <label class="cform-label" for="cf-email">メールアドレス<span class="req">必須</span></label>
+                        <input type="email" id="cf-email" name="email" autocomplete="email" placeholder="info@example.co.jp">
+                        <p class="cform-error" id="err-email"></p>
+                    </div>
+
+                    <div class="cform-row">
+                        <label class="cform-label" for="cf-tel">電話番号<span class="opt">任意</span></label>
+                        <input type="tel" id="cf-tel" name="tel" autocomplete="tel" placeholder="06-1234-5678">
+                        <p class="cform-hint">お電話でのご連絡をご希望の場合のみご記入ください。</p>
+                    </div>
+
+                    <div class="cform-row">
+                        <label class="cform-label" for="cf-industry">業種<span class="opt">任意</span></label>
+                        <select id="cf-industry" name="industry">
+                            <option value="">選択してください</option>
+                            <option value="製造業">製造業</option>
+                            <option value="卸売・小売">卸売・小売</option>
+                            <option value="建設・不動産">建設・不動産</option>
+                            <option value="飲食・サービス">飲食・サービス</option>
+                            <option value="士業・事務所">士業・事務所</option>
+                            <option value="運送・倉庫・物流">運送・倉庫・物流</option>
+                            <option value="商工会議所・団体">商工会議所・団体</option>
+                            <option value="その他">その他</option>
+                        </select>
+                    </div>
+
+                    <div class="cform-row">
+                        <label class="cform-label" for="cf-size">従業員規模<span class="opt">任意</span></label>
+                        <select id="cf-size" name="size">
+                            <option value="">選択してください</option>
+                            <option value="1〜9名">1〜9名（個人事業主を含む）</option>
+                            <option value="10〜29名">10〜29名</option>
+                            <option value="30〜49名">30〜49名</option>
+                            <option value="50〜99名">50〜99名</option>
+                            <option value="100〜299名">100〜299名</option>
+                            <option value="300名以上">300名以上</option>
+                        </select>
+                    </div>
+
+                    <div class="cform-row">
+                        <label class="cform-label" for="cf-message">ご相談内容<span class="opt">任意</span></label>
+                        <textarea id="cf-message" name="message" placeholder="例）毎月の売上集計を手で作っていて、半日かかります。何から手をつければよいか相談したいです。"></textarea>
+                        <p class="cform-hint">まとまっていない状態でも構いません。現状をそのままお書きください。</p>
+                    </div>
+
+                    <div class="consent-box">
+                        <div class="consent-title">個人情報の取り扱いについて</div>
+                        <p>
+                            ご記入いただいた個人情報は、お問い合わせへのご返信、ご相談内容の確認、および必要なご連絡のためにのみ利用します。
+                            ご本人の同意なく第三者へ提供することはありません。営業目的の一斉配信は行いません。
+                            削除をご希望の場合は、ご連絡いただければ速やかに対応します。
+                        </p>
+                        <label class="consent-check">
+                            <input type="checkbox" id="cf-consent" name="consent">
+                            <span>個人情報の取り扱いに同意する<span class="req">必須</span></span>
+                        </label>
+                        <p class="cform-error" id="err-consent"></p>
+                    </div>
+
+                    <div class="cf-hp" aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;">
+                        <label for="cf-website">Website</label>
+                        <input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <div class="cform-submit-wrap">
+                        <button type="submit" class="btn-primary cform-submit" id="cfSubmit">無料相談を申し込む</button>
+                        <p class="cform-submit-note">
+                            送信後、通常2営業日以内にご返信します。<br>
+                            この時点で費用は一切発生しません。
+                        </p>
+                        <p class="cform-error" id="err-global" style="margin-top: 1rem;"></p>
+                    </div>
+                </form>
+
+                <div class="cform-done" id="cformDone" role="status" aria-live="polite">
+                    <div class="cform-done-icon">✓</div>
+                    <h3>お問い合わせありがとうございます。<br>内容を確認のうえご連絡いたします。</h3>
+                    <p>
+                        通常2営業日以内に、ご記入いただいたメールアドレス宛にご返信します。<br>
+                        しばらく経っても返信が届かない場合は、<br>
+                        お手数ですが迷惑メールフォルダをご確認ください。
+                    </p>
                 </div>
-                <p class="contact-note fade-up">※ 返信は通常2営業日以内に、ご記入のメールアドレス宛にお送りします。</p>
+
+                <p class="contact-alt">
+                    お問い合わせは上記フォームからのみ承っております。<br>
+                    ご記入いただいたメールアドレス宛に、直接ご返信します。
+                </p>
             </div>
         </div>
     </section>
 
     <!-- ── FOOTER ── -->
     <footer>
-        <p>© 2026 FMP WORKs（Nishimura Yasuhiro）. All rights reserved.</p>
+        <p class="footer-info">FMPWORKs（代表 西村 康弘）　兵庫県尼崎市<br>訪問：尼崎・西宮・伊丹・宝塚・芦屋・大阪など京阪神／オンライン：全国</p>
+        <p class="footer-other-link"><a href="/logistics-ai/">物流・倉庫・運送の会社様向けページ</a></p>
+        <p>© 2026 FMPWORKs（Nishimura Yasuhiro）. All rights reserved.</p>
     </footer>
 
     <script>
-        /* ============================================================
-           お問い合わせフォーム
-           ------------------------------------------------------------
-           物流LP（/logistics-ai/）と同じGoogleフォームに送信します。
-           回答シートで見分けられるよう、ご相談内容の先頭に【トップページから】を付けます。
-           Googleフォームに届かなかった場合は、メール送信（メーラー起動）に切り替わります。
-           ============================================================ */
-        const GOOGLE_FORM = {
-            actionUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfXDABEACoj7ED-LEbZBnpRsUf2v7jLv2cAoIPWzfaYxwf4eQ/formResponse',
-            fields: {
-                company: 'entry.87414654',   // 会社名
-                name:    'entry.127413698',  // お名前
-                email:   'entry.2103741711', // メールアドレス
-                tel:     'entry.671809913',  // 電話番号
-                message: 'entry.716999445'   // ご相談内容
-            },
-            sourceLabel: '【トップページから】'
-        };
-
-        /* 迷惑メール対策：アドレスはページ上に一切表示しません。
-           Googleフォームに届かなかったときの送信先としてのみ、分割した文字列から組み立てます。 */
-        const MAIL_PARTS = ['brothe', 'rhood', '0514', String.fromCharCode(64), 'gmail', '.', 'com'];
-        const mailAddress = () => MAIL_PARTS.slice(0, 3).join('') + MAIL_PARTS[3] + MAIL_PARTS.slice(4).join('');
-
-        (function () {
-            const form = document.getElementById('contactForm');
-            if (!form) return;
-
-            const doneBox = document.getElementById('cformDone');
-            const submitBtn = document.getElementById('cfSubmit');
-            const globalErr = document.getElementById('err-global');
-
-            const showError = (key, message) => {
-                const el = document.getElementById('err-' + key);
-                if (el) { el.textContent = message; el.classList.add('show'); }
-                const field = document.getElementById('cf-' + key);
-                if (field) field.classList.add('invalid');
-            };
-
-            const clearErrors = () => {
-                form.querySelectorAll('.cform-error').forEach(el => {
-                    el.textContent = ''; el.classList.remove('show');
-                });
-                form.querySelectorAll('.invalid').forEach(el => el.classList.remove('invalid'));
-                if (globalErr) { globalErr.textContent = ''; globalErr.classList.remove('show'); }
-            };
-
-            const val = (id) => {
-                const el = document.getElementById(id);
-                return el ? el.value.trim() : '';
-            };
-
-            const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-
-            // 入力し直したらエラー表示を消す
-            form.querySelectorAll('input, textarea').forEach(el => {
-                el.addEventListener('input', () => {
-                    el.classList.remove('invalid');
-                    const err = document.getElementById('err-' + el.name);
-                    if (err) { err.textContent = ''; err.classList.remove('show'); }
-                });
-            });
-
-            const validate = () => {
-                clearErrors();
-                let firstInvalid = null;
-
-                if (!val('cf-company')) { showError('company', '会社名・屋号をご入力ください。'); firstInvalid = firstInvalid || 'cf-company'; }
-                if (!val('cf-name'))    { showError('name', 'お名前をご入力ください。'); firstInvalid = firstInvalid || 'cf-name'; }
-
-                const email = val('cf-email');
-                if (!email) {
-                    showError('email', 'メールアドレスをご入力ください。');
-                    firstInvalid = firstInvalid || 'cf-email';
-                } else if (!isEmail(email)) {
-                    showError('email', 'メールアドレスの形式をご確認ください。');
-                    firstInvalid = firstInvalid || 'cf-email';
-                }
-
-                if (!document.getElementById('cf-consent').checked) {
-                    showError('consent', '個人情報の取り扱いへの同意が必要です。');
-                    firstInvalid = firstInvalid || 'cf-consent';
-                }
-
-                if (firstInvalid) {
-                    const el = document.getElementById(firstInvalid);
-                    if (el) {
-                        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        setTimeout(() => { try { el.focus({ preventScroll: true }); } catch (e) {} }, 320);
-                    }
-                    return false;
-                }
-                return true;
-            };
-
-            const buildMailBody = () => [
-                '■ 会社名・屋号: ' + val('cf-company'),
-                '■ お名前: ' + val('cf-name'),
-                '■ メールアドレス: ' + val('cf-email'),
-                '■ 電話番号: ' + (val('cf-tel') || '（未記入）'),
-                '',
-                '■ ご相談内容:',
-                (val('cf-message') || '（未記入）'),
-                '',
-                '（個人情報の取り扱いに同意済み）'
-            ].join('\n');
-
-            const showDone = (mode) => {
-                form.style.display = 'none';
-                if (mode === 'mail') {
-                    const h = doneBox.querySelector('h3');
-                    const p = doneBox.querySelector('p');
-                    if (h) h.innerHTML = 'メール作成画面を開きました。<br>そのまま送信してください。';
-                    if (p) p.innerHTML = '送信フォームが一時的に使えなかったため、メールでの送信に切り替えました。<br>メールアプリが開かない場合は、お手数ですが時間をおいて再度お試しください。';
-                }
-                doneBox.classList.add('show');
-                doneBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            };
-
-            // Googleフォームが使えないときの送信手段。メールソフトを起動します。
-            const sendByMail = () => {
-                const subject = '【AI業務改善相談】' + val('cf-company') + '／' + val('cf-name') + ' 様';
-                try {
-                    window.location.href = 'mailto:' + mailAddress() +
-                        '?subject=' + encodeURIComponent(subject) +
-                        '&body=' + encodeURIComponent(buildMailBody());
-                } catch (e) {
-                    // メールソフトを開けない環境でも、案内は必ず表示します
-                }
-                setTimeout(() => showDone('mail'), 400);
-            };
-
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-
-                // ハニーポット（自動投稿対策）：入力されていたら送信しない
-                const hp = document.getElementById('cf-website');
-                if (hp && hp.value) { showDone('form'); return; }
-
-                if (!validate()) return;
-
-                submitBtn.disabled = true;
-                submitBtn.textContent = '送信中…';
-
-                try {
-                    const fd = new FormData();
-                    const f = GOOGLE_FORM.fields;
-                    const put = (key, value) => { if (f[key] && value) fd.append(f[key], value); };
-                    put('company', val('cf-company'));
-                    put('name', val('cf-name'));
-                    put('email', val('cf-email'));
-                    put('tel', val('cf-tel'));
-                    put('message', GOOGLE_FORM.sourceLabel + '\n' + val('cf-message'));
-
-                    await fetch(GOOGLE_FORM.actionUrl, { method: 'POST', mode: 'no-cors', body: fd });
-                    showDone('form');
-                } catch (err) {
-                    // Googleフォームに届かなかった場合は、メール送信に切り替えます
-                    sendByMail();
-                }
-            });
-        })();
-
-        // ── Reduced-motion & pointer capability ──
+        // ── Reduced-motion ──
         const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (reduced) document.body.classList.add('reduced');
-        const fine = window.matchMedia('(pointer:fine)').matches;
-
-        // ── Intro reveal ──
-        (function () {
-            const intro = document.getElementById('intro');
-            if (!intro) return;
-            if (reduced) { intro.remove(); return; }
-            const logo = intro.querySelector('.intro-logo');
-            requestAnimationFrame(() => {
-                logo.style.transition = 'opacity .6s ease, transform .6s ease, letter-spacing .6s ease';
-                logo.style.opacity = '0';
-                logo.style.transform = 'translateY(26px)';
-                logo.style.letterSpacing = '.6em';
-                requestAnimationFrame(() => {
-                    logo.style.opacity = '1';
-                    logo.style.transform = 'translateY(0)';
-                    logo.style.letterSpacing = '.3em';
-                });
-            });
-            setTimeout(() => {
-                logo.style.transition = 'opacity .35s ease, transform .35s ease';
-                logo.style.opacity = '0';
-                logo.style.transform = 'translateY(-16px)';
-                intro.style.transition = 'clip-path .65s cubic-bezier(.7,0,.3,1)';
-                intro.style.clipPath = 'inset(0 0 100% 0)';
-                setTimeout(() => intro.remove(), 700);
-            }, 1150);
-        })();
-
-        // ── Spotlight cursor glow ──
-        if (fine && !reduced) {
-            const spot = document.createElement('div');
-            spot.id = 'spotlight';
-            document.body.appendChild(spot);
-            let sx = 0, sy = 0, tx = 0, ty = 0, spotActive = false;
-            window.addEventListener('mousemove', e => {
-                tx = e.clientX; ty = e.clientY;
-                if (!spotActive) { spotActive = true; spot.style.opacity = '1'; sx = tx; sy = ty; }
-            }, { passive: true });
-            (function loop() {
-                sx += (tx - sx) * 0.12;
-                sy += (ty - sy) * 0.12;
-                spot.style.left = sx + 'px';
-                spot.style.top = sy + 'px';
-                requestAnimationFrame(loop);
-            })();
-        }
-
-        // ── WebGL ambient light-flow shader ──
-        (function () {
-            const canvases = document.querySelectorAll('.shader-bg');
-            if (!canvases.length || reduced) return;
-            const FS = [
-                'precision highp float;',
-                'uniform vec2 u_res; uniform float u_time;',
-                'void main(){',
-                '  vec2 uv = gl_FragCoord.xy / u_res.xy;',
-                '  vec2 p = uv * 2.0 - 1.0; p.x *= u_res.x / u_res.y;',
-                '  float t = u_time * 0.14;',
-                '  float v = 0.0;',
-                '  v += sin(p.x * 1.3 + t + sin(p.y * 2.0 - t * 0.55) * 1.3);',
-                '  v += sin(length(p + vec2(sin(t * 0.32), cos(t * 0.26))) * 2.6 - t);',
-                '  v += sin(p.y * 1.9 - t * 0.75 + sin(p.x * 1.5 + t * 0.4) * 1.1);',
-                '  v *= 0.3333;',
-                '  float m1 = smoothstep(0.05, 0.95, sin(v * 3.14159 + t) * 0.5 + 0.5);',
-                '  float m2 = smoothstep(0.2, 1.0, sin(v * 4.2 - t * 1.0) * 0.5 + 0.5);',
-                '  vec3 col = vec3(0.039, 0.035, 0.028);',
-                '  col = mix(col, vec3(0.30, 0.24, 0.15), m1 * 0.5);',
-                '  col = mix(col, vec3(0.79, 0.64, 0.36) * 0.85, m2 * 0.4);',
-                '  col = mix(col, vec3(0.89, 0.77, 0.52) * 0.9, smoothstep(0.6, 1.0, m1 * m2) * 0.6);',
-                '  col *= 1.0 - 0.4 * length(uv - 0.5);',
-                '  gl_FragColor = vec4(col, 1.0);',
-                '}'
-            ].join('\n');
-            const VS = 'attribute vec2 a; void main(){ gl_Position = vec4(a, 0.0, 1.0); }';
-            const items = [];
-            canvases.forEach(cv => {
-                const gl = cv.getContext('webgl', { antialias: false, depth: false, stencil: false });
-                if (!gl) return;
-                const sh = (type, src) => { const o = gl.createShader(type); gl.shaderSource(o, src); gl.compileShader(o); return o; };
-                const prog = gl.createProgram();
-                gl.attachShader(prog, sh(gl.VERTEX_SHADER, VS));
-                gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, FS));
-                gl.linkProgram(prog);
-                if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) return;
-                gl.useProgram(prog);
-                const buf = gl.createBuffer();
-                gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-                gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
-                const loc = gl.getAttribLocation(prog, 'a');
-                gl.enableVertexAttribArray(loc);
-                gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
-                items.push({
-                    cv, gl, uRes: gl.getUniformLocation(prog, 'u_res'), uTime: gl.getUniformLocation(prog, 'u_time'),
-                    speed: parseFloat(cv.getAttribute('data-shader-speed') || '1'), visible: false
-                });
-            });
-            if (!items.length) return;
-            const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-            function resize() {
-                items.forEach(it => {
-                    const r = it.cv.getBoundingClientRect();
-                    const w = Math.max(1, Math.round(r.width * dpr)), h = Math.max(1, Math.round(r.height * dpr));
-                    if (it.cv.width !== w || it.cv.height !== h) { it.cv.width = w; it.cv.height = h; it.gl.viewport(0, 0, w, h); }
-                });
-            }
-            resize();
-            window.addEventListener('resize', resize, { passive: true });
-            const vIO = new IntersectionObserver(entries => {
-                entries.forEach(en => {
-                    const it = items.find(x => x.cv === en.target);
-                    if (it) it.visible = en.isIntersecting;
-                });
-            }, { rootMargin: '80px' });
-            items.forEach(it => vIO.observe(it.cv));
-            const t0 = performance.now();
-            (function loop(now) {
-                const t = (now - t0) / 1000;
-                items.forEach(it => {
-                    if (!it.visible) return;
-                    it.gl.uniform2f(it.uRes, it.cv.width, it.cv.height);
-                    it.gl.uniform1f(it.uTime, t * it.speed);
-                    it.gl.drawArrays(it.gl.TRIANGLE_STRIP, 0, 4);
-                });
-                requestAnimationFrame(loop);
-            })(t0);
-        })();
-
-        // ── Ambient gold dust particles ──
-        (function () {
-            const containers = document.querySelectorAll('.bgfx');
-            if (!containers.length || reduced || !window.matchMedia('(min-width:769px)').matches) return;
-            containers.forEach(container => {
-                const canvas = document.createElement('canvas');
-                canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;';
-                container.appendChild(canvas);
-                const ctx = canvas.getContext('2d');
-                let w, h, particles = [], running = false;
-                function resize() {
-                    const r = container.getBoundingClientRect();
-                    w = canvas.width = r.width;
-                    h = canvas.height = r.height;
-                }
-                function spawn() {
-                    return { x: Math.random() * w, y: h + Math.random() * 40, r: 0.8 + Math.random() * 1.8, s: 0.25 + Math.random() * 0.55, drift: (Math.random() - 0.5) * 0.4, o: 0.15 + Math.random() * 0.5 };
-                }
-                resize();
-                for (let i = 0; i < 34; i++) { const p = spawn(); p.y = Math.random() * h; particles.push(p); }
-                window.addEventListener('resize', resize, { passive: true });
-                function tick() {
-                    if (!running) return;
-                    ctx.clearRect(0, 0, w, h);
-                    particles.forEach(p => {
-                        p.y -= p.s;
-                        p.x += p.drift;
-                        if (p.y < -10) Object.assign(p, spawn());
-                        ctx.beginPath();
-                        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                        ctx.fillStyle = `rgba(230,190,110,${p.o})`;
-                        ctx.fill();
-                    });
-                    requestAnimationFrame(tick);
-                }
-                const io = new IntersectionObserver(entries => {
-                    entries.forEach(en => {
-                        if (en.isIntersecting && !running) { running = true; tick(); }
-                        else if (!en.isIntersecting) { running = false; }
-                    });
-                }, { rootMargin: '100px' });
-                io.observe(container);
-            });
-        })();
 
         // ── Navbar on scroll ──
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             navbar.classList.toggle('scrolled', window.scrollY > 60);
         }, { passive: true });
+
+        // ── Floating CTA after hero ──
+        const floatingCta = document.getElementById('floatingCta');
+        const heroEl = document.getElementById('hero');
+        const toggleFloatingCta = () => {
+            floatingCta.classList.toggle('visible', heroEl.getBoundingClientRect().bottom < 0);
+        };
+        window.addEventListener('scroll', toggleFloatingCta, { passive: true });
+        toggleFloatingCta();
 
         // ── Scroll progress bar ──
         const progressBar = document.getElementById('progress');
@@ -2342,7 +3327,7 @@
                         if (ch === '\n') return;
                         const span = document.createElement('span');
                         span.className = 'ch';
-                        span.textContent = ch === ' ' ? ' ' : ch;
+                        span.textContent = ch === ' ' ? ' ' : ch;
                         frag.appendChild(span);
                     });
                 } else {
@@ -2368,39 +3353,261 @@
 
         document.querySelectorAll('.fade-up').forEach(el => revealObserver.observe(el));
 
-        // ── Card tilt on hover (fine pointers only) ──
-        if (window.matchMedia('(pointer:fine)').matches) {
-            document.querySelectorAll('.problem-card, .service-card').forEach(card => {
-                card.addEventListener('mousemove', e => {
-                    const r = card.getBoundingClientRect();
-                    const rx = ((e.clientY - r.top) / r.height - 0.5) * -6;
-                    const ry = ((e.clientX - r.left) / r.width - 0.5) * 6;
-                    card.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
-                });
-                card.addEventListener('mouseleave', () => { card.style.transform = ''; });
-            });
-        }
-
-        // ── Kanji watermark parallax ──
-        const kanjis = document.querySelectorAll('.kanji');
-        window.addEventListener('scroll', () => {
-            kanjis.forEach((k, i) => {
-                const rect = k.parentElement.getBoundingClientRect();
-                const center = rect.top + rect.height / 2 - window.innerHeight / 2;
-                k.style.transform = `translateY(${center * -0.06 * (i % 2 ? 1 : -1)}px)`;
-            });
-        }, { passive: true });
-
         // ── FAQ accordion ──
-        document.querySelectorAll('.faq-question').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const item = btn.closest('.faq-item');
-                const isOpen = item.classList.contains('open');
+        const closeFaq = (item) => {
+            item.classList.remove('open');
+            const a = item.querySelector('.faq-answer');
+            if (a) a.style.maxHeight = '';
+            const q = item.querySelector('.faq-question');
+            if (q) q.setAttribute('aria-expanded', 'false');
+        };
 
-                document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-                if (!isOpen) item.classList.add('open');
+        const openFaq = (item) => {
+            item.classList.add('open');
+            const a = item.querySelector('.faq-answer');
+            if (a) a.style.maxHeight = a.scrollHeight + 'px';
+            const q = item.querySelector('.faq-question');
+            if (q) q.setAttribute('aria-expanded', 'true');
+        };
+
+        document.querySelectorAll('.faq-question').forEach((btn, i) => {
+            const item = btn.closest('.faq-item');
+            const answer = item.querySelector('.faq-answer');
+            btn.setAttribute('role', 'button');
+            btn.setAttribute('tabindex', '0');
+            btn.setAttribute('aria-expanded', 'false');
+            if (answer) {
+                const id = 'faq-answer-' + (i + 1);
+                answer.id = id;
+                btn.setAttribute('aria-controls', id);
+            }
+
+            const toggle = () => {
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item.open').forEach(closeFaq);
+                if (!isOpen) openFaq(item);
+            };
+
+            btn.addEventListener('click', toggle);
+            btn.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
             });
         });
+
+        // 画面幅が変わったとき、開いているFAQの高さを測り直す
+        window.addEventListener('resize', () => {
+            document.querySelectorAll('.faq-item.open .faq-answer').forEach(a => {
+                a.style.maxHeight = a.scrollHeight + 'px';
+            });
+        });
+
+
+        /* ============================================================
+           お問い合わせフォーム
+           ------------------------------------------------------------
+           ▼▼ 設定はここだけ ▼▼
+           Googleフォームを作成し、「事前入力したURLを取得」で得たURLから
+           actionUrl と各 entry.XXXXXXX を転記してください。
+           未設定の間は、自動的にメール送信（メーラー起動）に切り替わります。
+           ============================================================ */
+        const GOOGLE_FORM = {
+            actionUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfXDABEACoj7ED-LEbZBnpRsUf2v7jLv2cAoIPWzfaYxwf4eQ/formResponse',
+            fields: {
+                company:  'entry.87414654',   // 会社名
+                name:     'entry.127413698',  // お名前
+                email:    'entry.2103741711', // メールアドレス
+                tel:      'entry.671809913',  // 電話番号
+                industry: 'entry.213601191',  // 業種
+                size:     'entry.2084401005', // 従業員規模
+                issues:   'entry.510879797',  // 現在困っていること（チェックボックス）
+                message:  'entry.716999445'   // ご相談内容
+            },
+            /* Googleフォーム側「業種」の選択肢。選択肢にない値を送ると回答ごと受け付けられないため、
+               ここにない業種は近い選択肢に置き換え、元の業種はご相談内容の先頭に残します。
+               Googleフォームに選択肢を追加したら、ここにも同じ文字列を追加してください。 */
+            industryOptions: ['運送', '倉庫', '物流', 'EC物流', 'その他'],
+            industryFallback: { '運送・倉庫・物流': '物流' }
+        };
+
+        /* 迷惑メール対策：アドレスはページ上に一切表示しません。
+           Googleフォーム未設定時の送信先としてのみ、分割した文字列から組み立てます。
+           GOOGLE_FORM を設定すればこの経路は使われなくなり、丸ごと削除できます。 */
+        const MAIL_PARTS = ['brothe', 'rhood', '0514', String.fromCharCode(64), 'gmail', '.', 'com'];
+        const mailAddress = () => MAIL_PARTS.slice(0, 3).join('') + MAIL_PARTS[3] + MAIL_PARTS.slice(4).join('');
+
+        (function () {
+            const form = document.getElementById('contactForm');
+            if (!form) return;
+
+            const doneBox = document.getElementById('cformDone');
+            const submitBtn = document.getElementById('cfSubmit');
+            const globalErr = document.getElementById('err-global');
+
+            const showError = (key, message) => {
+                const el = document.getElementById('err-' + key);
+                if (el) { el.textContent = message; el.classList.add('show'); }
+                const field = document.getElementById('cf-' + key);
+                if (field) field.classList.add('invalid');
+            };
+
+            const clearErrors = () => {
+                form.querySelectorAll('.cform-error').forEach(el => {
+                    el.textContent = ''; el.classList.remove('show');
+                });
+                form.querySelectorAll('.invalid').forEach(el => el.classList.remove('invalid'));
+                if (globalErr) { globalErr.textContent = ''; globalErr.classList.remove('show'); }
+            };
+
+            const val = (id) => {
+                const el = document.getElementById(id);
+                return el ? el.value.trim() : '';
+            };
+
+            const checkedIssues = () =>
+                Array.from(form.querySelectorAll('input[name="issues"]:checked')).map(el => el.value);
+
+            const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+            // 入力し直したらエラー表示を消す
+            form.querySelectorAll('input, select, textarea').forEach(el => {
+                el.addEventListener('input', () => {
+                    el.classList.remove('invalid');
+                    const err = document.getElementById('err-' + el.name);
+                    if (err) { err.textContent = ''; err.classList.remove('show'); }
+                });
+            });
+
+            const validate = () => {
+                clearErrors();
+                let firstInvalid = null;
+
+                if (!val('cf-company')) { showError('company', '会社名をご入力ください。'); firstInvalid = firstInvalid || 'cf-company'; }
+                if (!val('cf-name'))    { showError('name', 'お名前をご入力ください。'); firstInvalid = firstInvalid || 'cf-name'; }
+
+                const email = val('cf-email');
+                if (!email) {
+                    showError('email', 'メールアドレスをご入力ください。');
+                    firstInvalid = firstInvalid || 'cf-email';
+                } else if (!isEmail(email)) {
+                    showError('email', 'メールアドレスの形式をご確認ください。');
+                    firstInvalid = firstInvalid || 'cf-email';
+                }
+
+                const consent = document.getElementById('cf-consent');
+                if (!consent.checked) {
+                    showError('consent', '個人情報の取り扱いへの同意が必要です。');
+                    firstInvalid = firstInvalid || 'cf-consent';
+                }
+
+                if (firstInvalid) {
+                    const el = document.getElementById(firstInvalid);
+                    if (el) {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        setTimeout(() => { try { el.focus({ preventScroll: true }); } catch (e) {} }, 320);
+                    }
+                    return false;
+                }
+                return true;
+            };
+
+            const isConfigured = () =>
+                !!GOOGLE_FORM.actionUrl &&
+                !!GOOGLE_FORM.fields.company &&
+                !!GOOGLE_FORM.fields.name &&
+                !!GOOGLE_FORM.fields.email;
+
+            const buildMailBody = () => {
+                const issues = checkedIssues();
+                return [
+                    '■ 会社名: ' + val('cf-company'),
+                    '■ お名前: ' + val('cf-name'),
+                    '■ メールアドレス: ' + val('cf-email'),
+                    '■ 電話番号: ' + (val('cf-tel') || '（未記入）'),
+                    '■ 業種: ' + (val('cf-industry') || '（未選択）'),
+                    '■ 従業員規模: ' + (val('cf-size') || '（未選択）'),
+                    '',
+                    '■ ご相談内容:',
+                    (val('cf-message') || '（未記入）'),
+                    '',
+                    '（個人情報の取り扱いに同意済み）'
+                ].join('\n');
+            };
+
+            const showDone = (mode) => {
+                form.style.display = 'none';
+                if (mode === 'mail') {
+                    const h = doneBox.querySelector('h3');
+                    const p = doneBox.querySelector('p');
+                    if (h) h.innerHTML = 'メール作成画面を開きました。<br>そのまま送信してください。';
+                    if (p) p.innerHTML = '送信フォームが一時的に使えなかったため、メールでの送信に切り替えました。<br>メールアプリが開かない場合は、お手数ですが時間をおいて再度お試しください。';
+                }
+                doneBox.classList.add('show');
+                doneBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            };
+
+            // Googleフォームが使えないときの送信手段。メールソフトを起動します。
+            const sendByMail = () => {
+                const subject = '【AI業務改善相談】' + val('cf-company') + '／' + val('cf-name') + ' 様';
+                try {
+                    window.location.href = 'mailto:' + mailAddress() +
+                        '?subject=' + encodeURIComponent(subject) +
+                        '&body=' + encodeURIComponent(buildMailBody());
+                } catch (e) {
+                    // メールソフトを開けない環境でも、案内は必ず表示します
+                }
+                setTimeout(() => showDone('mail'), 400);
+            };
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                // ハニーポット（自動投稿対策）：入力されていたら送信しない
+                const hp = document.getElementById('cf-website');
+                if (hp && hp.value) { showDone('form'); return; }
+
+                if (!validate()) return;
+
+                submitBtn.disabled = true;
+                const originalLabel = submitBtn.textContent;
+                submitBtn.textContent = '送信中…';
+
+                if (isConfigured()) {
+                    try {
+                        const fd = new FormData();
+                        const f = GOOGLE_FORM.fields;
+                        const put = (key, value) => { if (f[key] && value) fd.append(f[key], value); };
+                        put('company', val('cf-company'));
+                        put('name', val('cf-name'));
+                        put('email', val('cf-email'));
+                        put('tel', val('cf-tel'));
+                        const industry = val('cf-industry');
+                        const formIndustry = !industry || GOOGLE_FORM.industryOptions.includes(industry)
+                            ? industry
+                            : (GOOGLE_FORM.industryFallback[industry] || 'その他');
+                        put('industry', formIndustry);
+                        put('size', val('cf-size'));
+                        const msgBody = industry !== formIndustry
+                            ? '【業種：' + industry + '】\n' + val('cf-message')
+                            : val('cf-message');
+                        // どのページからの申し込みかを、回答シートで分かるようにする
+                        put('message', '【トップページより】\n' + msgBody);
+                        if (f.issues) checkedIssues().forEach(v => fd.append(f.issues, v));
+
+                        await fetch(GOOGLE_FORM.actionUrl, { method: 'POST', mode: 'no-cors', body: fd });
+                        showDone('form');
+                        return;
+                    } catch (err) {
+                        // Googleフォームに届かなかった場合は、メール送信に切り替えます
+                        // （通信が切れている、Googleフォーム側が停止している等）
+                        sendByMail();
+                        return;
+                    }
+                }
+
+                // Googleフォーム未設定時も、同じくメールで送信します
+                sendByMail();
+            });
+        })();
 
         // ── Smooth scroll for anchor links ──
         document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -2410,6 +3617,36 @@
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
+            });
+        });
+        // ── v2：自分ごとチェック（選んだ項目を相談内容に入れる） ──
+        (function () {
+            const boxes = document.querySelectorAll('.sc-box');
+            const countEl = document.getElementById('scCount');
+            const cta = document.getElementById('scCta');
+            const msg = document.getElementById('cf-message');
+            if (!boxes.length) return;
+            const update = () => {
+                const n = Array.from(boxes).filter(b => b.checked).length;
+                boxes.forEach(b => b.closest('li').classList.toggle('checked', b.checked));
+                countEl.textContent = n ? '当てはまった場面：' + n + 'つ。そのうち1つから始められます。' : '';
+            };
+            boxes.forEach(b => b.addEventListener('change', update));
+            if (cta && msg) {
+                cta.addEventListener('click', () => {
+                    const picked = Array.from(boxes).filter(b => b.checked).map(b => '・' + b.value);
+                    if (!picked.length) return;
+                    const head = '【当てはまった場面】\n' + picked.join('\n') + '\n\n';
+                    if (!msg.value.includes('【当てはまった場面】')) msg.value = head + msg.value;
+                });
+            }
+        })();
+        // ── セミナー相談ボタン：相談内容の先頭に見出しを入れる ──
+        document.querySelectorAll('[data-prefill]').forEach(a => {
+            a.addEventListener('click', () => {
+                const msg = document.getElementById('cf-message');
+                const head = a.getAttribute('data-prefill');
+                if (msg && !msg.value.includes(head)) msg.value = head + '\n' + msg.value;
             });
         });
     </script>
