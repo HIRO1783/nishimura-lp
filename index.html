@@ -2363,6 +2363,146 @@
         @media (max-width: 560px) {
             .seminar-grid { grid-template-columns: 1fr; }
         }
+        /* ─── 2026-11-26 追加：最初の画面を2列に／動く見本／改行の調整 ─── */
+        #hero { min-height: 0; display: block; padding: 100px 2rem 64px; }
+        #hero .ib { display: inline-block; }
+        .hero-wrap { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; }
+        .hero-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); gap: 3rem; align-items: center; }
+        #hero .hero-content { text-align: left; max-width: none; word-break: keep-all; overflow-wrap: anywhere; }
+        #hero .hero-badge { margin-bottom: 1.1rem; flex-wrap: nowrap; text-align: left; letter-spacing: .08em; }
+        #hero .badge-text { white-space: normal; }
+        #hero .badge-dot { flex-shrink: 0; }
+        #hero .hero-lead { margin-bottom: .3rem; }
+        #hero .hero-title { margin-bottom: 1.1rem; line-height: 1.42; }
+        #hero .hero-subcopy { margin: 0 0 .7rem; max-width: none; line-height: 1.8; }
+        #hero .hero-sub { margin: 0 0 1.4rem; max-width: none; line-height: 1.9; }
+        #hero .hero-cta-group { justify-content: flex-start; }
+        #hero .proof-card { margin-top: 3.4rem; max-width: 980px; word-break: keep-all; overflow-wrap: anywhere; }
+        @media (min-width: 981px) {
+            #hero .hero-title { font-size: var(--hero-title-size, clamp(2.3rem, 3.4vw, 3.2rem)); }
+        }
+        @media (max-width: 980px) {
+            #hero { padding: 104px 1.5rem 56px; }
+            .hero-grid { grid-template-columns: 1fr; gap: 2.6rem; }
+            #hero .hero-content { text-align: center; }
+            #hero .hero-cta-group { justify-content: center; }
+            .hero-demo { width: 100%; max-width: 560px; margin: 0 auto; }
+        }
+        @media (max-width: 560px) {
+            #hero { padding: 92px 1.25rem 48px; }
+            #hero .hero-badge { padding: .5rem 1rem; letter-spacing: .04em; }
+        }
+
+        /* 動く見本（架空のデータ） */
+        .demo { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 34px 70px -38px rgba(14, 33, 56, .5); overflow: hidden; text-align: left; font-family: var(--sans); color: var(--ink-700); word-break: keep-all; overflow-wrap: anywhere; }
+        .demo-tabs { display: flex; gap: .4rem; padding: .6rem .6rem 0; background: var(--paper-soft); border-bottom: 1px solid var(--line); }
+        .demo-tab { position: relative; flex: 1 1 0; min-width: 0; -webkit-appearance: none; appearance: none; border: 1px solid transparent; border-bottom: 0; background: transparent; border-radius: 10px 10px 0 0; padding: .55rem .5rem .7rem; font: 700 .8rem/1.35 var(--sans); color: var(--slate); cursor: pointer; overflow: hidden; margin-bottom: -1px; }
+        .demo-tab.is-on { background: #fff; border-color: var(--line); color: var(--blue-deep); }
+        .demo-tab:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
+        .demo-tab .bar { position: absolute; left: 0; bottom: 1px; height: 3px; width: 0; background: var(--blue); }
+        .demo.playing .demo-tab.is-on .bar { animation: demoBar var(--dur, 9s) linear forwards; }
+        @keyframes demoBar { to { width: 100%; } }
+        .demo-scene { display: none; padding: .8rem 1rem .9rem; }
+        .demo-scene.is-on { display: block; }
+        .demo-reset, .demo-reset * { transition: none !important; animation: none !important; }
+        .demo-file { display: flex; align-items: center; gap: .55rem; font-size: .78rem; font-weight: 700; color: var(--ink-700); margin-bottom: .6rem; min-width: 0; }
+        .demo-file .dots { display: inline-flex; gap: 4px; flex-shrink: 0; }
+        .demo-file .dots i { width: 8px; height: 8px; border-radius: 50%; background: #D5DEE8; }
+        .demo-file .fn { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .demo-tag { margin-left: auto; flex-shrink: 0; font-size: .75rem; font-weight: 700; color: #0F7F68; background: #E6F4F0; border-radius: 999px; padding: .15rem .65rem; white-space: nowrap; }
+        .demo-stage { position: relative; height: 340px; }
+        .demo-bar { display: flex; align-items: center; justify-content: space-between; gap: .6rem; height: 40px; margin-bottom: .5rem; }
+        .demo-hint { font-size: .78rem; color: var(--slate); }
+        .demo-btn { position: relative; display: inline-flex; align-items: center; gap: .4rem; padding: .42rem .95rem; border-radius: 8px; background: var(--blue); color: #fff; font-weight: 700; font-size: .8rem; line-height: 1.3; white-space: nowrap; box-shadow: 0 8px 16px -8px rgba(28, 94, 168, .7); }
+        .demo-btn::before { content: ''; width: 0; height: 0; border-left: 7px solid #fff; border-top: 4.5px solid transparent; border-bottom: 4.5px solid transparent; }
+        .demo-btn::after { content: ''; position: absolute; inset: 0; border-radius: inherit; }
+        .st3 .demo-btn { animation: demoPress .55s ease; }
+        .st3 .demo-btn::after { animation: demoRipple .8s ease-out; }
+        @keyframes demoPress { 0% { transform: scale(1); } 35% { transform: scale(.93); background: var(--blue-deep); } 100% { transform: scale(1); } }
+        @keyframes demoRipple { from { box-shadow: 0 0 0 0 rgba(28, 94, 168, .5); } to { box-shadow: 0 0 0 14px rgba(28, 94, 168, 0); } }
+        .demo-cursor { position: absolute; left: 58%; top: 52%; width: 22px; height: 26px; pointer-events: none; opacity: 0; transform: translate(-150px, 150px); transition: transform .85s cubic-bezier(.3, .7, .2, 1), opacity .3s ease; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 26'%3E%3Cpath d='M2 2v19l5-4.5 3.5 7.5 3.5-1.5-3.5-7.5h7z' fill='%230E2138' stroke='%23fff' stroke-width='1.6' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / contain; z-index: 3; }
+        .st2 .demo-cursor { opacity: 1; transform: translate(0, 0); }
+        .st3 .demo-cursor { animation: demoClick .45s ease; }
+        .st5 .demo-cursor { opacity: 0; }
+        @keyframes demoClick { 0%, 100% { transform: translate(0, 0) scale(1); } 40% { transform: translate(0, 0) scale(.82); } }
+
+        /* 見本：Excelの表 */
+        .xs-sheet { --rh: 28px; border: 1px solid #C9D3DF; border-radius: 6px; overflow: hidden; background: #fff; }
+        .xs-sheet.lg { --rh: 26px; }
+        .xs-row { display: grid; grid-template-columns: var(--cols, 1fr 1fr 1.2fr); height: var(--rh); align-items: stretch; font-size: .8rem; line-height: 1; }
+        .xs-row > span { display: flex; align-items: center; padding: 0 .55rem; border-right: 1px solid #DCE3EC; white-space: nowrap; overflow: hidden; }
+        .xs-row > span:last-child { border-right: 0; }
+        .xs-row > .num { justify-content: flex-end; font-variant-numeric: tabular-nums; }
+        .xs-row > .res { justify-content: center; }
+        .xs-head { background: #E3EDF8; color: var(--ink-900); font-weight: 700; }
+        .xs-body { position: relative; height: calc(var(--n) * var(--rh)); }
+        .xs-body .xs-row { position: absolute; left: 0; right: 0; top: calc(var(--a) * var(--rh)); border-top: 1px solid #DCE3EC; background: #fff; color: var(--ink-700); opacity: 0; transform: translateX(-10px); transition: top .75s cubic-bezier(.6, 0, .2, 1), opacity .35s ease calc(var(--a) * 90ms), transform .35s ease calc(var(--a) * 90ms), background-color .45s ease, box-shadow .3s ease; }
+        .st1 .xs-body .xs-row { opacity: 1; transform: none; }
+        .st4 .xs-sort .xs-row { top: calc(var(--b) * var(--rh)); }
+        .st4 .xs-sort .xs-row[data-g="a"] { background: #E3EDF8; }
+        .st4 .xs-sort .xs-row[data-g="b"] { background: #E6F4F0; }
+        .st4 .xs-sort .xs-row[data-g="c"] { background: #F2F6FA; }
+        .xs-scan { position: absolute; left: 0; right: 0; top: 0; height: 2px; background: var(--blue); box-shadow: 0 0 10px 2px rgba(28, 94, 168, .45); opacity: 0; z-index: 2; }
+        .st4 .xs-scan { animation: demoScan 1.3s cubic-bezier(.45, 0, .55, 1) forwards; }
+        @keyframes demoScan { 0% { top: 0; opacity: 1; } 92% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
+        .xs-ck .xs-row.is-ng { transition: opacity .35s ease calc(var(--a) * 90ms), transform .35s ease calc(var(--a) * 90ms), background-color .3s ease calc(.15s + var(--a) * .2s), box-shadow .3s ease calc(.15s + var(--a) * .2s); }
+        .st4 .xs-ck .xs-row.is-ng { background: #E6F4F0; box-shadow: inset 4px 0 0 #0F7F68; }
+        .xs-ck .res > * { opacity: 0; transform: scale(.7); transition: opacity .3s ease calc(.15s + var(--a) * .2s), transform .3s ease calc(.15s + var(--a) * .2s); }
+        .st4 .xs-ck .res > * { opacity: 1; transform: none; }
+        .xs-ck .ok { color: var(--slate); font-weight: 700; font-style: normal; }
+        .xs-ck .ng { display: inline-block; padding: .2rem .45rem; border-radius: 999px; background: #0F7F68; color: #fff; font-size: .75rem; font-weight: 700; font-style: normal; }
+
+        /* 見本：結果の欄 */
+        .demo-out { margin-top: .7rem; opacity: 0; transform: translateY(8px); transition: opacity .4s ease, transform .4s ease; }
+        .st5 .demo-out { opacity: 1; transform: none; }
+        .demo-cap { display: flex; align-items: center; gap: .5rem; font-size: .78rem; font-weight: 700; color: var(--ink-900); margin-bottom: .3rem; min-height: 26px; }
+        .demo-done { margin-left: auto; display: inline-flex; align-items: center; gap: .3rem; padding: .2rem .7rem; border-radius: 999px; background: #E6F4F0; color: #0F7F68; font-weight: 700; font-size: .76rem; white-space: nowrap; opacity: 0; transform: scale(.9); transition: opacity .3s ease, transform .3s ease; }
+        .st6 .demo-done { opacity: 1; transform: none; }
+        .xs-b { display: grid; grid-template-columns: 2.8em 1fr 5em; align-items: center; gap: .6rem; height: 26px; font-size: .8rem; }
+        .xs-b .nm { font-weight: 700; color: var(--ink-900); }
+        .xs-b .tr { height: 10px; background: var(--paper-soft); border-radius: 99px; overflow: hidden; }
+        .xs-b .tr i { display: block; height: 100%; width: 0; border-radius: 99px; background: var(--c, var(--blue)); transition: width .9s cubic-bezier(.2, .8, .2, 1) calc(var(--k, 0) * 120ms); }
+        .st5 .xs-b .tr i { width: var(--w); }
+        .xs-b b { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-900); }
+        .ck-sum { display: flex; align-items: center; gap: .9rem; }
+        .ck-num { flex-shrink: 0; color: var(--ink-900); font-size: .8rem; font-weight: 700; white-space: nowrap; }
+        .ck-num b { font-family: var(--serif); font-size: 2rem; color: #0F7F68; margin-right: .1rem; font-variant-numeric: tabular-nums; }
+        .ck-why { list-style: none; display: flex; flex-wrap: wrap; gap: .3rem; margin: 0; padding: 0; }
+        .ck-why li { font-size: .75rem; font-weight: 700; color: var(--ink-700); background: var(--paper-soft); border: 1px solid var(--line); border-radius: 999px; padding: .15rem .6rem; white-space: nowrap; }
+
+        /* 見本：生成AIの下書き */
+        .ai-memo { background: #F7F9FC; border: 1px dashed #B3C2D4; border-radius: 8px; padding: .45rem .8rem .5rem; }
+        .ai-memo .demo-cap { margin-bottom: 0; }
+        .ai-memo p { font-size: .82rem; line-height: 1.75; color: var(--ink-700); opacity: 0; transform: translateY(4px); transition: opacity .35s ease calc(var(--a) * 160ms), transform .35s ease calc(var(--a) * 160ms); }
+        .st1 .ai-memo p { opacity: 1; transform: none; }
+        .ai-memo + .demo-bar { margin: .45rem 0 .45rem; }
+        .ai-out { border: 1px solid var(--line); border-radius: 8px; padding: .45rem .8rem .55rem; background: #fff; min-height: 160px; }
+        .ai-out .demo-cap { margin-bottom: .1rem; flex-wrap: wrap; row-gap: .25rem; }
+        .ai-out .ty { width: fit-content; max-width: 100%; font-size: .82rem; line-height: 1.75; color: var(--ink-700); clip-path: inset(0 100% 0 0); transition: clip-path .6s steps(16, end) calc(var(--d) * .42s), background-color .4s ease; }
+        .st4 .ai-out .ty { clip-path: inset(0 0 0 0); }
+        .ai-out .ty b { color: var(--blue-deep); }
+        .st5 .ai-out .chk { background: #E6F4F0; border-radius: 4px; box-shadow: 0 0 0 3px #E6F4F0; }
+
+        /* 見本：段階の表示 */
+        .demo-steps { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; margin: .7rem 0 0; padding: .65rem 0 0; border-top: 1px solid var(--line); counter-reset: ds; }
+        .demo-steps li { counter-increment: ds; display: flex; align-items: center; gap: .4rem; font-size: .76rem; font-weight: 700; color: var(--slate); line-height: 1.35; transition: color .3s ease; }
+        .demo-steps li::before { content: counter(ds); flex-shrink: 0; width: 1.5rem; height: 1.5rem; border-radius: 50%; display: grid; place-items: center; border: 2px solid #C9D3DF; color: var(--slate); font-size: .75rem; transition: background-color .3s ease, border-color .3s ease, color .3s ease; }
+        .st1 .demo-steps li:nth-child(1), .st3 .demo-steps li:nth-child(2), .st6 .demo-steps li:nth-child(3) { color: var(--blue-deep); }
+        .st1 .demo-steps li:nth-child(1)::before, .st3 .demo-steps li:nth-child(2)::before, .st6 .demo-steps li:nth-child(3)::before { background: #0F7F68; border-color: #0F7F68; color: #fff; }
+        .demo-note { word-break: keep-all; overflow-wrap: anywhere; margin-top: .8rem; font-size: .8rem; color: var(--slate); text-align: center; line-height: 1.7; }
+        @media (max-width: 560px) {
+            .demo-scene { padding: .75rem .8rem .8rem; }
+            .demo-stage { height: 350px; }
+            .xs-row > span { padding: 0 .4rem; }
+            .xs-row, .xs-b, .ai-out .ty, .ai-memo p { font-size: .76rem; }
+            .demo-steps li { font-size: .75rem; }
+        }
+
+        /* 改行の調整（言葉の途中で切れない・1〜2文字だけの行を作らない） */
+        .proof-card, .selfcheck-list li, .demo-steps li { word-break: keep-all; overflow-wrap: anywhere; }
+        h2, h3, .faq-question > span, .selfcheck-list li, .btn-primary, .btn-outline, .split-point, .exp-result { text-wrap: balance; word-break: auto-phrase; }
+        p, li { text-wrap: pretty; }
+        .xl-t { font-size: .75rem; }
     </style>
 
     <script type="application/ld+json">
@@ -2604,62 +2744,115 @@
     <!-- ── HERO ── -->
     <section id="hero">
         <div class="hero-bg"></div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="badge-dot"></span>
-                <span class="badge-text">尼崎・西宮・大阪の中小企業、個人事業主の方へ</span> <span class="badge-text">— 無料相談受付中</span>
+        <div class="hero-wrap">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        <span class="badge-text">尼崎・西宮・大阪の中小企業、<wbr>個人事業主の方へ</span>
+                    </div>
+                    <p class="hero-lead fade-up">見積書も、議事録も、<wbr>毎月の集計も。</p>
+                    <h1 class="hero-title">
+                        <span class="l"><span>毎日の事務を、</span></span>
+                        <span class="l"><span class="gradient-text">Excelと生成AIで</span></span>
+                        <span class="l"><span class="gradient-text">軽くします。</span></span>
+                    </h1>
+                    <p class="hero-subcopy fade-up"><span class="ib">1つの作業から、一緒に始めます。</span><span class="ib">尼崎を拠点に、直接うかがいます。</span></p>
+                    <p class="hero-sub fade-up fade-up-delay-1"><span class="hero-sub-lead ib">AIありきではありません。</span><span class="ib">Excelで十分な所はExcelで。</span></p>
+                    <div class="hero-cta-group fade-up fade-up-delay-2">
+                        <a href="#contact" class="btn-primary">まず困りごとを1つ、<br>無料で相談する</a>
+                        <a href="#firststep" class="btn-outline">はじめの1業務を見る</a>
+                    </div>
+                </div>
+
+                <!-- 動く見本（架空のデータ。JSなしでも、できあがりの形が見える） -->
+                <div class="hero-demo fade-up fade-up-delay-2">
+                    <figure class="demo" aria-label="見本：Excelで毎月の集計をする様子と、生成AIで議事録を下書きする様子（架空のデータ）">
+                        <div class="demo-tabs" role="tablist">
+                            <button type="button" class="demo-tab is-on" role="tab" aria-selected="true">Excelで集計<span class="bar"></span></button>
+                            <button type="button" class="demo-tab" role="tab" aria-selected="false" tabindex="-1">生成AIで議事録<span class="bar"></span></button>
+                        </div>
+
+                        <div class="demo-scene is-on st1 st2 st3 st4 st5 st6" role="tabpanel" data-dur="9000" data-times="300,1400,2300,2600,3900,5200">
+                            <div class="demo-file"><span class="dots"><i></i><i></i><i></i></span><span class="fn">売上明細.xlsx</span><span class="demo-tag">見本・架空のデータ</span></div>
+                            <div class="demo-stage">
+                                <div class="demo-bar"><span class="demo-hint">いつもは手で集計</span><span class="demo-btn">集計する<span class="demo-cursor" aria-hidden="true"></span></span></div>
+                                <div class="xs-sheet">
+                                    <div class="xs-row xs-head"><span>日付</span><span>担当</span><span class="num">金額</span></div>
+                                    <div class="xs-body xs-sort" style="--n:5">
+                                        <div class="xs-row" data-g="a" style="--a:0;--b:0"><span>11/1</span><span>山田</span><span class="num">12,000</span></div>
+                                        <div class="xs-row" data-g="b" style="--a:1;--b:2"><span>11/1</span><span>佐藤</span><span class="num">8,500</span></div>
+                                        <div class="xs-row" data-g="a" style="--a:2;--b:1"><span>11/2</span><span>山田</span><span class="num">4,000</span></div>
+                                        <div class="xs-row" data-g="c" style="--a:3;--b:4"><span>11/2</span><span>鈴木</span><span class="num">15,000</span></div>
+                                        <div class="xs-row" data-g="b" style="--a:4;--b:3"><span>11/3</span><span>佐藤</span><span class="num">6,500</span></div>
+                                    </div>
+                                </div>
+                                <div class="demo-out">
+                                    <div class="demo-cap">担当ごとの合計<span class="demo-done">✓ 集計表ができました</span></div>
+                                    <div class="xs-b"><span class="nm">山田</span><span class="tr"><i style="--w:100%;--k:0;--c:#1C5EA8"></i></span><b data-count="16000">16,000</b></div>
+                                    <div class="xs-b"><span class="nm">佐藤</span><span class="tr"><i style="--w:94%;--k:1;--c:#0F7F68"></i></span><b data-count="15000">15,000</b></div>
+                                    <div class="xs-b"><span class="nm">鈴木</span><span class="tr"><i style="--w:94%;--k:2;--c:#5C8BC0"></i></span><b data-count="15000">15,000</b></div>
+                                </div>
+                            </div>
+                            <ol class="demo-steps"><li>いつもの表</li><li>ボタンを<wbr>押す</li><li>集計表が<wbr>できる</li></ol>
+                        </div>
+
+                        <div class="demo-scene" role="tabpanel" hidden data-dur="10000" data-times="300,1500,2400,2700,5000,5800">
+                            <div class="demo-file"><span class="dots"><i></i><i></i><i></i></span><span class="fn">会議のメモ → 議事録</span><span class="demo-tag">見本・架空のデータ</span></div>
+                            <div class="demo-stage">
+                                <div class="ai-memo">
+                                    <div class="demo-cap">会議のメモ（走り書き）</div>
+                                    <p style="--a:0">・来月の見積　25日しめ</p>
+                                    <p style="--a:1">・新しい担当　Aさん</p>
+                                    <p style="--a:2">・研修　12月2週目？</p>
+                                </div>
+                                <div class="demo-bar"><span class="demo-hint">生成AIに下書きを頼む</span><span class="demo-btn">下書きを作る<span class="demo-cursor" aria-hidden="true"></span></span></div>
+                                <div class="ai-out">
+                                    <div class="demo-cap">議事録（下書き）<span class="demo-done">✓ 人が確かめてから送る</span></div>
+                                    <p class="ty" style="--d:0"><b>決まったこと</b></p>
+                                    <p class="ty" style="--d:1">・見積の締め切りは25日</p>
+                                    <p class="ty" style="--d:2">・新しい担当はAさん</p>
+                                    <p class="ty" style="--d:3"><b>確かめること</b></p>
+                                    <p class="ty chk" style="--d:4">・研修の日程（12月第2週で合っているか）</p>
+                                </div>
+                            </div>
+                            <ol class="demo-steps"><li>走り書きの<wbr>メモ</li><li>AIが<wbr>下書き</li><li>人が<wbr>確かめる</li></ol>
+                        </div>
+                    </figure>
+                    <p class="demo-note">見本（架空のデータ）です。<wbr>Excelのマクロと生成AIで<wbr>作る形の一例です。</p>
+                </div>
             </div>
-            <p class="hero-lead fade-up">見積書も、議事録も、毎月の集計も。</p>
-            <h1 class="hero-title">
-                <span class="l"><span>毎日の事務を、</span></span>
-                <span class="l"><span class="gradient-text">Excelと生成AIで</span></span>
-                <span class="l"><span class="gradient-text">軽くします。</span></span>
-            </h1>
-            <p class="hero-subcopy fade-up">
-                1つの作業から、一緒に始めます。
-            </p>
-            <p class="hero-sub fade-up fade-up-delay-1">
-                <span class="hero-sub-lead">尼崎を拠点に、直接うかがいます。</span><br>
-                AIありきではありません。Excelで十分な所はExcelで。
-            </p>
-            <div class="hero-cta-group fade-up fade-up-delay-2">
-                <a href="#contact" class="btn-primary">まず困りごとを1つ、<br>無料で相談する</a>
-                <a href="#firststep" class="btn-outline">はじめの1業務を見る</a>
-            </div>
-            <div class="proof-card fade-up fade-up-delay-3">
+
+            <div class="proof-card fade-up">
                 <div class="proof-label">前の職場で、私がやったこと</div>
                 <div class="proof-row">
                     <div class="proof-task">毎日の集計・チェック</div>
                     <div class="proof-before">手作業で数分</div>
                     <div class="proof-arrow">→</div>
-                    <div class="proof-after">Excelのマクロで数秒</div>
+                    <div class="proof-after">Excelのマクロで<wbr>数秒</div>
                 </div>
                 <div class="proof-row">
                     <div class="proof-task">データの並べ替え・整理</div>
                     <div class="proof-before">手で並べ替え</div>
                     <div class="proof-arrow">→</div>
-                    <div class="proof-after">Power Queryで自動に</div>
+                    <div class="proof-after">Power&nbsp;Queryで<wbr>自動に</div>
                 </div>
                 <div class="proof-row">
                     <div class="proof-task">新人さんへの教え方</div>
-                    <div class="proof-before">一度に全部教える</div>
+                    <div class="proof-before">一度に<wbr>全部教える</div>
                     <div class="proof-arrow">→</div>
-                    <div class="proof-after">1工程ずつ＋マニュアルを直し続ける</div>
+                    <div class="proof-after">1工程ずつ＋<wbr>マニュアルを<wbr>直し続ける</div>
                 </div>
                 <div class="proof-person">
                     <img src="assets/profile.jpg" alt="代表 西村康弘" width="56" height="56" loading="lazy" decoding="async">
                     <div>
                         <div class="proof-person-name">代表　西村 康弘</div>
-                        <div class="proof-person-career">上場企業グループで法人営業 約10年／物流・倉庫の現場 約8年</div>
+                        <div class="proof-person-career">上場企業グループで法人営業&nbsp;約10年／<wbr>物流・倉庫の現場&nbsp;約8年</div>
                     </div>
                 </div>
-                <p class="proof-note">※前の職場での私自身の経験です。御社で同じ結果になることをお約束するものではありません。</p>
+                <p class="proof-note">※前の職場での私自身の経験です。<wbr>御社で同じ結果になることを<wbr>お約束するものではありません。</p>
             </div>
-            <p class="hero-sub-link fade-up fade-up-delay-3"><a href="/logistics-ai/">物流・倉庫・運送の会社様はこちら →</a></p>
-        </div>
-        <div class="hero-scroll-indicator">
-            <span>SCROLL</span>
-            <div class="scroll-line"><span></span></div>
+            <p class="hero-sub-link fade-up"><a href="/logistics-ai/">物流・倉庫・運送の会社様はこちら →</a></p>
         </div>
     </section>
 
@@ -2682,14 +2875,14 @@
             </div>
             <div class="selfcheck-layout">
                 <ul class="selfcheck-list fade-up">
-                    <li><label><input type="checkbox" class="sc-box" value="毎月、同じExcelの集計を手で作っている">毎月、同じExcelの集計を手で作っている</label></li>
-                    <li><label><input type="checkbox" class="sc-box" value="別のファイルから、数字や名前を手で写している">別のファイルから、数字や名前を手で写している</label></li>
-                    <li><label><input type="checkbox" class="sc-box" value="見積書・請求書・案内文を、毎回ゼロから作っている">見積書・請求書・案内文を、毎回ゼロから作っている</label></li>
-                    <li><label><input type="checkbox" class="sc-box" value="議事録・日報・報告書づくりに時間がかかる">議事録・日報・報告書づくりに時間がかかる</label></li>
-                    <li><label><input type="checkbox" class="sc-box" value="マニュアルがなく、仕事が人についている">マニュアルがなく、仕事が人についている</label></li>
-                    <li><label><input type="checkbox" class="sc-box" value="ChatGPTを入れたが、使っているのは一部の人だけ">ChatGPTを入れたが、使っているのは一部の人だけ</label></li>
-                    <li><label><input type="checkbox" class="sc-box" value="AIを使いたいが、情報が漏れないか心配">AIを使いたいが、情報が漏れないか心配</label></li>
-                    <li><label><input type="checkbox" class="sc-box" value="何から手をつければいいか分からない">何から手をつければいいか分からない</label></li>
+                    <li><label><input type="checkbox" class="sc-box" value="毎月、同じExcelの集計を手で作っている">毎月、<wbr>同じExcelの集計を<wbr>手で作っている</label></li>
+                    <li><label><input type="checkbox" class="sc-box" value="別のファイルから、数字や名前を手で写している">別のファイルから、<wbr>数字や名前を<wbr>手で写している</label></li>
+                    <li><label><input type="checkbox" class="sc-box" value="見積書・請求書・案内文を、毎回ゼロから作っている">見積書・請求書・案内文を、<wbr>毎回ゼロから<wbr>作っている</label></li>
+                    <li><label><input type="checkbox" class="sc-box" value="議事録・日報・報告書づくりに時間がかかる">議事録・日報・報告書づくりに<wbr>時間がかかる</label></li>
+                    <li><label><input type="checkbox" class="sc-box" value="マニュアルがなく、仕事が人についている">マニュアルがなく、<wbr>仕事が人についている</label></li>
+                    <li><label><input type="checkbox" class="sc-box" value="ChatGPTを入れたが、使っているのは一部の人だけ">ChatGPTを入れたが、<wbr>使っているのは<wbr>一部の人だけ</label></li>
+                    <li><label><input type="checkbox" class="sc-box" value="AIを使いたいが、情報が漏れないか心配">AIを使いたいが、<wbr>情報が漏れないか心配</label></li>
+                    <li><label><input type="checkbox" class="sc-box" value="何から手をつければいいか分からない">何から手をつければ<wbr>いいか分からない</label></li>
                 </ul>
                 <div class="selfcheck-photo fade-up"><!-- 写真の差し替え枠：ac-top-office.jpg（写真ACで用意したら、この src を assets/ac-top-office.jpg に変える。探す言葉の例：事務 パソコン 書類 日本人） --><img src="assets/web-writing.jpg" alt="パソコンで事務作業をする男性（イメージ）" width="700" height="467" loading="lazy" decoding="async" style="object-position: 45% 50%;"></div>
             </div>
@@ -2780,7 +2973,7 @@
                     </div>
                 </div>
             </div>
-            <p class="pillar-more fade-up">そのほか：YouTube・SNSの発信の相談／システムの提案を受けた時の相談（セカンドオピニオン）</p>
+            <p class="pillar-more fade-up">そのほか：YouTube・SNSの発信の相談／システムの提案を受けた時の相談<span class="nowrap">（セカンドオピニオン）</span></p>
         </div>
     </section>
 
@@ -3138,7 +3331,7 @@
                     <p class="section-desc" style="margin: 0 auto; text-align: center; max-width: 560px;">
                         まず、今の仕事と困りごとを伺います。<br>
                         AIありきの提案や、その場での契約は求めません。<br>
-                        「何を相談すればよいか分からない」でも構いません。
+                        「何を相談すればよいか分からない」<wbr>でも構いません。
                     </p>
                 </div>
             </div>
@@ -3649,6 +3842,99 @@
                 if (msg && !msg.value.includes(head)) msg.value = head + '\n' + msg.value;
             });
         });
+    </script>
+    <script>
+        // ── 2026-11-26 追加：動く見本（見えている間だけ動かす。動きを減らす設定の人には、できあがりの形だけを見せる） ──
+        (function () {
+            var demos = document.querySelectorAll('.demo');
+            if (!demos.length) return;
+            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var fmt = function (n) { return n.toLocaleString('ja-JP'); };
+            Array.prototype.forEach.call(demos, function (demo) {
+                var scenes = Array.prototype.slice.call(demo.querySelectorAll('.demo-scene'));
+                var tabs = Array.prototype.slice.call(demo.querySelectorAll('.demo-tab'));
+                var cur = 0, timers = [], inView = false;
+                function stop() {
+                    timers.forEach(clearTimeout);
+                    timers = [];
+                    demo.classList.remove('playing');
+                }
+                function count(sc, instant) {
+                    sc.querySelectorAll('[data-count]').forEach(function (el) {
+                        var to = +el.getAttribute('data-count');
+                        if (instant) { el.textContent = fmt(to); return; }
+                        var t0 = performance.now();
+                        (function step(t) {
+                            var p = Math.min(1, (t - t0) / 900);
+                            el.textContent = fmt(Math.round(to * (1 - Math.pow(1 - p, 3))));
+                            if (p < 1) requestAnimationFrame(step);
+                        })(t0);
+                    });
+                }
+                function stage(sc, n, instant) {
+                    for (var i = 1; i <= 6; i++) sc.classList.toggle('st' + i, i <= n);
+                    if (n < 5) sc.querySelectorAll('[data-count]').forEach(function (el) { el.textContent = '0'; });
+                    else if (n === 5 || instant) count(sc, instant);
+                }
+                function reset(sc) {
+                    sc.classList.add('demo-reset');
+                    stage(sc, 0);
+                    void sc.offsetWidth;
+                    sc.classList.remove('demo-reset');
+                }
+                function times(sc) {
+                    return (sc.getAttribute('data-times') || '300,1400,2300,2600,3900,5200').split(',').map(Number);
+                }
+                function show(i) {
+                    stop();
+                    cur = i;
+                    scenes.forEach(function (s, k) { s.classList.toggle('is-on', k === i); s.hidden = k !== i; });
+                    tabs.forEach(function (t, k) {
+                        t.classList.toggle('is-on', k === i);
+                        t.setAttribute('aria-selected', k === i ? 'true' : 'false');
+                        t.tabIndex = k === i ? 0 : -1;
+                    });
+                    var sc = scenes[i];
+                    if (reduce || !inView) { stage(sc, 6, true); return; }
+                    reset(sc);
+                    var dur = +(sc.getAttribute('data-dur') || 9000);
+                    demo.style.setProperty('--dur', dur + 'ms');
+                    void demo.offsetWidth;
+                    demo.classList.add('playing');
+                    times(sc).forEach(function (t, k) {
+                        timers.push(setTimeout(function () { stage(sc, k + 1); }, t));
+                    });
+                    timers.push(setTimeout(function () { show((i + 1) % scenes.length); }, dur));
+                }
+                tabs.forEach(function (t, k) {
+                    t.addEventListener('click', function () { show(k); });
+                    t.addEventListener('keydown', function (e) {
+                        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+                        var n = (k + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length;
+                        tabs[n].focus();
+                        show(n);
+                    });
+                });
+                // 確認用：URLの最後に #demo=場面-段階（例 #demo=1-4）を付けると、その状態で止める
+                var m = location.hash.match(/demo=(\d)-(\d)/);
+                if (m && scenes[+m[1]]) { show(+m[1]); stop(); stage(scenes[+m[1]], +m[2], true); return; }
+                if ('IntersectionObserver' in window) {
+                    new IntersectionObserver(function (entries) {
+                        entries.forEach(function (e) {
+                            if (e.isIntersecting && !inView) { inView = true; show(cur); }
+                            else if (!e.isIntersecting && inView) { inView = false; stop(); stage(scenes[cur], 6, true); }
+                        });
+                    }, { threshold: 0.35 }).observe(demo);
+                } else {
+                    inView = true;
+                    show(0);
+                }
+                document.addEventListener('visibilitychange', function () {
+                    if (document.hidden) { stop(); stage(scenes[cur], 6, true); }
+                    else if (inView) show(cur);
+                });
+            });
+        })();
     </script>
 </body>
 </html>
