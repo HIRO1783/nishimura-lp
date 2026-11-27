@@ -2438,6 +2438,14 @@
             .problems-grid-6 .problem-card h3 { font-size: .88rem; line-height: 1.55; }
         }
         .xl-t { font-size: .75rem; }
+        /* 2026-11-27 追加：勉強会の見本の図（トップと同じ） */
+        .slide-mock { width: 100%; min-height: 170px; background: #fff; box-shadow: 0 6px 18px -8px rgba(14, 33, 56, .35); border-top: 6px solid var(--blue); padding: .8rem 1rem; display: flex; flex-direction: column; color: var(--ink-700); }
+        .sm-title { font-family: var(--serif); font-weight: 900; color: var(--ink-900); font-size: .95rem; margin-bottom: .4rem; }
+        .sm-list { list-style: none; display: grid; gap: .3rem; font-size: .78rem; line-height: 1.5; }
+        .sm-list li::before { content: "● "; color: var(--blue); font-size: .6rem; }
+        .sm-foot { margin-top: auto; font-size: .75rem; color: var(--slate); text-align: right; }
+        /* 2026-11-27：料金表の小さい説明も、言葉の途中で切らない */
+        .ptable th, .ptable small { text-wrap: pretty; word-break: auto-phrase; }
     </style>
 
     <script type="application/ld+json">
@@ -2513,32 +2521,27 @@
             {
                 "@type": "Offer",
                 "name": "はじめの1業務：Excel作業を1つ自動に",
-                "description": "Excel＋使い方・直し方の説明書。納品後1か月は不具合を無料で修正。3万円〜、作業の量によりお見積り。"
+                "description": "Excel＋使い方・直し方の説明書。納品後1か月は不具合を無料で修正。5万円〜、作業の量によりお見積り。"
             },
             {
                 "@type": "Offer",
                 "name": "はじめの1業務：新人向け手順書を1業務分",
-                "description": "手順書＋チェックリスト。3万円〜、作業の量によりお見積り。"
-            },
-            {
-                "@type": "Offer",
-                "name": "はじめの1業務：現場を1時間見る",
-                "description": "気づきメモ（A4）。1万円〜。"
+                "description": "手順書＋チェックリスト。5万円〜、作業の量によりお見積り。"
             },
             {
                 "@type": "Offer",
                 "name": "はじめの1業務：社内のAI勉強会を1回",
-                "description": "3万円〜、内容によりお見積り。"
+                "description": "5万円〜、内容によりお見積り。"
             },
             {
                 "@type": "Offer",
                 "name": "業務改善診断（簡易）",
-                "description": "現場ヒアリング・業務の棚卸し・簡易診断レポートのご提出。5万円〜、内容により個別見積。"
+                "description": "現場ヒアリング・業務の棚卸し・簡易診断レポートのご提出。10万円〜、内容により個別見積。"
             },
             {
                 "@type": "Offer",
                 "name": "業務改善提案・改善レポート",
-                "description": "診断結果をもとにした改善提案書・改善レポートの作成。10万円〜、内容により個別見積。"
+                "description": "診断結果をもとにした改善提案書・改善レポートの作成。20万円〜、内容により個別見積。"
             },
             {
                 "@type": "Offer",
@@ -2548,12 +2551,12 @@
             {
                 "@type": "Offer",
                 "name": "月額伴走支援（導入・定着）",
-                "description": "導入したツール・仕組みの定着支援、マニュアル・SOP整備を月次で継続支援。月額15万円〜、内容により個別見積。"
+                "description": "導入したツール・仕組みの定着支援、マニュアル・SOP整備を月次で継続支援（月2回の打ち合わせ＋チャット）。月額15万円〜、内容により個別見積。"
             },
             {
                 "@type": "Offer",
                 "name": "物流現場向け 生成AI研修",
-                "description": "自社の物流業務を題材にした実務型の生成AI研修。8万円〜、内容により個別見積。"
+                "description": "自社の物流業務を題材にした実務型の生成AI研修。15万円〜、内容により個別見積。"
             }
         ]
     }
@@ -2728,7 +2731,7 @@
       "name": "物流現場を直接見てもらうことはできますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい、可能です。大阪・兵庫・京都を中心とした京阪神エリアの企業様には、現場への訪問対応もしております。作業の様子を直接拝見することで、書類やヒアリングだけでは分かりにくい作業導線やムダも整理しやすくなります。訪問の要否は、初回相談の中でご相談ください。"
+        "text": "はい、内容によっては現場に伺います。作業の流れを見たほうがよい時は伺い、写真や動画、画面共有で足りる時はオンラインで進めます。どちらにするかは、初回のご相談で一緒に決めます。伺うのは京阪神が中心です。"
       }
     }
   ]
@@ -2795,7 +2798,7 @@
                         <span class="l"><span class="gradient-text">軽くします。</span></span>
                     </h1>
                     <p class="hero-subcopy fade-up"><span class="ib">担当者が休んでも止まらない。</span><span class="ib">新人が早くひとり立ちできる。</span></p>
-                    <p class="hero-sub fade-up fade-up-delay-1"><span class="hero-sub-lead">物流センター出身の私が、<wbr>直接うかがいます。</span><br><span class="ib">AIありきではありません。</span><span class="ib">Excelで十分な所はExcelで。</span></p>
+                    <p class="hero-sub fade-up fade-up-delay-1"><span class="hero-sub-lead">物流センター出身。<wbr>現場の言葉で、お話を伺います。</span><br><span class="ib">AIありきではありません。</span><span class="ib">Excelで十分な所はExcelで。</span></p>
                     <div class="hero-cta-group fade-up fade-up-delay-2">
                         <a href="#contact" class="btn-primary">まず困りごとを1つ、<br>無料で相談する</a>
                         <a href="#firststep" class="btn-outline">はじめの1業務を見る</a>
@@ -2899,8 +2902,8 @@
     <!-- ── MARQUEE STRIP ── -->
     <div class="strip" aria-hidden="true">
         <div class="strip-track">
-            <span>物流・運送・倉庫の業務改善 — <em>出荷事務のExcel自動化</em> — <em>新人教育・マニュアル</em> — <em>生成AIの使い方</em> — <em>尼崎拠点・京阪神へ訪問</em> — &nbsp;</span>
-            <span>物流・運送・倉庫の業務改善 — <em>出荷事務のExcel自動化</em> — <em>新人教育・マニュアル</em> — <em>生成AIの使い方</em> — <em>尼崎拠点・京阪神へ訪問</em> — &nbsp;</span>
+            <span>物流・運送・倉庫の業務改善 — <em>出荷事務のExcel自動化</em> — <em>新人教育・マニュアル</em> — <em>生成AIの使い方</em> — <em>尼崎から、京阪神の会社へ</em> — &nbsp;</span>
+            <span>物流・運送・倉庫の業務改善 — <em>出荷事務のExcel自動化</em> — <em>新人教育・マニュアル</em> — <em>生成AIの使い方</em> — <em>尼崎から、京阪神の会社へ</em> — &nbsp;</span>
         </div>
     </div>
 
@@ -3045,15 +3048,15 @@
                     </div>
                 </div>
                 <div class="pillar fade-up fade-up-delay-3">
-                    <div class="pillar-photo"><!-- 写真の差し替え枠：ac-warehouse.jpg（2026-11-21 写真AC 31447590 に差し替え済み。元の写真は strength-1-warehouse-experience.jpg） --><img src="assets/ac-warehouse.jpg" alt="倉庫の通路と棚" width="1000" height="750" loading="lazy" decoding="async" style="object-position: 50% 60%;"></div>
+                    <div class="pillar-photo"><!-- 写真の差し替え枠：ac-training-room.jpg（2026-11-27 現場の改善をやめ、勉強会に入れ替え。写真は仮にトップと同じ ai-consulting.jpg。探す言葉の例：研修 会議室 日本人 説明） --><img src="assets/ai-consulting.jpg" alt="会議室での社内勉強会の様子（イメージ）" width="700" height="467" loading="lazy" decoding="async" style="object-position: 50% 30%;"></div>
                     <div class="pillar-body">
                         <div class="pillar-num">03</div>
-                        <h3>現場の改善に、外の目を</h3>
-                        <p>置き場・動線・ムダを、一緒に歩いて見ます。</p>
+                        <h3>社内のAI勉強会・研修</h3>
+                        <p>現場の言葉で、AIの使い方とルールを教えます。</p>
                     </div>
                 </div>
             </div>
-            <p class="pillar-more fade-up">そのほか：社内のAI勉強会・研修／根づくまでの伴走／システムの提案を受けた時の相談<span class="nowrap">（セカンドオピニオン）</span></p>
+            <p class="pillar-more fade-up">そのほか：根づくまでの伴走／システムの提案を受けた時の相談<span class="nowrap">（セカンドオピニオン）</span></p>
         </div>
     </section>
 
@@ -3093,7 +3096,7 @@
                     </div>
                     <h3>Excel作業を1つ自動に</h3>
                     <p class="sample-get">残る物：Excel＋使い方・直し方の説明書</p>
-                    <p class="sample-price">3万円〜</p>
+                    <p class="sample-price">5万円〜</p>
                 </div>
                 <div class="sample fade-up fade-up-delay-2">
                     <div class="sample-fig">
@@ -3110,29 +3113,26 @@
                     </div>
                     <h3>新人向け手順書を1業務分</h3>
                     <p class="sample-get">残る物：手順書＋チェックリスト</p>
-                    <p class="sample-price">3万円〜</p>
+                    <p class="sample-price">5万円〜</p>
                 </div>
                 <div class="sample fade-up fade-up-delay-3">
                     <div class="sample-fig">
-                        <div class="paper">
-                            <div class="paper-title">気づきメモ</div>
-                            <div class="memo-map">
-                                <span class="mm-shelf"></span><span class="mm-shelf"></span><span class="mm-shelf"></span>
-                                <span class="mm-path"></span>
-                            </div>
-                            <ul class="memo-list">
-                                <li>① 出荷待ちの置き場を決める</li>
-                                <li>② よく出る品を手前の棚へ</li>
-                                <li>③ 通路の荷物をなくす</li>
+                        <div class="slide-mock">
+                            <div class="sm-title">1. はじめての生成AI</div>
+                            <ul class="sm-list">
+                                <li>入れてよい情報・いけない情報</li>
+                                <li>日報の下書きを作ってみる</li>
+                                <li>手順書のたたき台を作ってみる</li>
                             </ul>
+                            <div class="sm-foot">社内勉強会（60分）</div>
                         </div>
                     </div>
-                    <h3>現場を1時間見る</h3>
-                    <p class="sample-get">残る物：気づきメモ（A4）</p>
-                    <p class="sample-price">1万円〜</p>
+                    <h3>社内のAI勉強会を1回</h3>
+                    <p class="sample-get">残る物：当日の資料（社内で見返せます）</p>
+                    <p class="sample-price">5万円〜</p>
                 </div>
             </div>
-            <p class="sample-note fade-up">図はイメージです（架空のデータ）。ほかに「社内のAI勉強会を1回（3万円〜）」もあります。金額は税別の目安で、作業の量を伺ってからお見積りします。</p>
+            <p class="sample-note fade-up">図はイメージです（架空のデータ）。進め方（伺うか、オンラインか）は、内容に合わせてご相談します。金額は税別の目安で、作業の量を伺ってからお見積りします。</p>
         </div>
     </section>
 
@@ -3212,16 +3212,17 @@
             <div class="ptable-wrap fade-up">
                 <table class="ptable">
                     <tr class="pt-free"><th>初回相談（60分・オンライン）</th><td>無料</td></tr>
-                    <tr class="pt-first"><th>はじめの1業務<small>Excel自動化／手順書／AI勉強会は3万円〜、現場を見るは1万円〜</small></th><td>1万円〜</td></tr>
-                    <tr><th>業務改善診断（簡易）<small>現場の聞き取り＋簡易レポート</small></th><td>5万円〜</td></tr>
-                    <tr><th>業務改善提案<small>優先順位と進め方の提案書</small></th><td>10万円〜</td></tr>
-                    <tr><th>物流現場向け 生成AI研修<small>研修＋マニュアルづくり</small></th><td>8万円〜</td></tr>
-                    <tr><th>月額の伴走<small>根づくまで。途中でやめられます</small></th><td>月15万円〜</td></tr>
+                    <tr class="pt-first"><th>はじめの1業務<small>Excel自動化／手順書／AI勉強会</small></th><td>5万円〜</td></tr>
+                    <tr><th>業務改善診断（簡易）<small>現場の聞き取り＋簡易レポート</small></th><td>10万円〜</td></tr>
+                    <tr><th>業務改善提案<small>優先順位と進め方の提案書</small></th><td>20万円〜</td></tr>
+                    <tr><th>物流現場向け 生成AI研修<small>研修＋マニュアルづくり</small></th><td>15万円〜</td></tr>
+                    <tr><th>月額の伴走<small>月2回の打ち合わせ＋チャット。途中でやめられます</small></th><td>月15万円〜</td></tr>
                     <tr><th>システム選定・<span class="nowrap">セカンドオピニオン</span></th><td>個別見積</td></tr>
                 </table>
             </div>
             <ul class="price-mini-notes fade-up">
                 <li>交通費等の実費は、事前にお伝えします。システムの利用料・開発費は各社とのご契約です。</li>
+                <li>研修は、条件が合えば国の助成金（人材開発支援助成金）が使える場合があります。</li>
                 <li>Excelの自動化は、納品後1か月、作った物の不具合を無料で直します（変更・追加は別途お見積り）。</li>
                 <li>見積りの段階でやめても、費用はかかりません。</li>
             </ul>
@@ -3245,15 +3246,6 @@
         </div>
     </section>
 
-    <!-- ── NOTICE（モニター・お客様の声） ── -->
-    <section id="monitor">
-        <div class="container">
-            <div class="notice-grid fade-up">
-                <div class="notice"><h3>モニター企業を募集しています<span class="nowrap">（3社まで）</span></h3><p>取り組みを事例として載せてよい会社様は、通常より優待した条件でご支援します。社名は匿名でも構いません。</p><a href="#contact" class="btn-outline">モニターについて相談する</a></div>
-                <div class="notice"><h3>お客様の声</h3><p>準備中です。実在しない実績やお客様の声は載せません。</p></div>
-            </div>
-        </div>
-    </section>
 
     <!-- ── FAQ ── -->
     <section id="faq">
@@ -3410,7 +3402,7 @@
                         <span>物流現場を直接見てもらうことはできますか？</span>
                         <div class="faq-toggle">+</div>
                     </div>
-                    <div class="faq-answer"><div class="faq-answer-inner"><p>はい、可能です。大阪・兵庫・京都を中心とした京阪神エリアの企業様には、現場への訪問対応もしております。作業の様子を直接拝見することで、書類やヒアリングだけでは分かりにくい作業導線やムダも整理しやすくなります。訪問の要否は、初回相談の中でご相談ください。</p></div></div>
+                    <div class="faq-answer"><div class="faq-answer-inner"><p>はい、内容によっては現場に伺います。作業の流れを見たほうがよい時は伺い、写真や動画、画面共有で足りる時はオンラインで進めます。</p><p>どちらにするかは、初回のご相談で一緒に決めます。伺うのは京阪神が中心です。</p></div></div>
                 </div>
             </div>
         </div>
